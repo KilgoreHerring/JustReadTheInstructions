@@ -1,0 +1,754 @@
+[
+  {
+    "section": { "number": "2A.1", "title": "Application and purpose", "level": 1 },
+    "rules": [
+      {
+        "reference": "PRIN 2A.1.1R",
+        "rawText": "This chapter applies to a firm with respect to the carrying on of regulated activities in relation to products and services for retail customers, including prospective retail customers.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must comply with PRIN 2A when carrying on regulated activities",
+            "objectText": "Products and services offered to retail customers including prospective retail customers",
+            "conditionText": "When the firm carries on regulated activities in relation to retail customer products and services",
+            "summary": "The Consumer Duty applies to all regulated activities relating to retail customer products and services, covering the entire product lifecycle from design through to post-sale support.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Consumer Duty Scope and Application",
+              "templateText": "We are authorised and regulated by the Financial Conduct Authority. We comply with the Consumer Duty set out in the FCA's Principles for Businesses (PRIN 2A) in respect of all products and services we provide to you as a retail customer. This means we are committed to acting to deliver good outcomes for you throughout your relationship with us.",
+              "guidance": "This foundational clause establishes the firm's commitment to the Consumer Duty and signals to the customer that all dealings are subject to the Duty's requirements. It should appear early in any customer-facing terms."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.1.4R",
+        "rawText": "A firm must act to deliver good outcomes for retail customers. This is an overarching requirement which applies in respect of all the other provisions of this chapter.",
+        "obligations": [
+          {
+            "obligationType": "principle",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must act to deliver good outcomes for retail customers",
+            "objectText": "All dealings with retail customers across all four outcome areas",
+            "conditionText": "At all times when engaged in regulated activities relating to retail customer products",
+            "summary": "The overarching duty requires firms to actively deliver good outcomes for customers, not merely avoid causing harm. This is a positive obligation underpinning every other rule in PRIN 2A.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": { "number": "2A.2", "title": "The Consumer Duty cross-cutting rules", "level": 1 },
+    "rules": [
+      {
+        "reference": "PRIN 2A.2.1R",
+        "rawText": "A firm must act in good faith toward retail customers. Acting in good faith means the firm must act honestly, fairly and openly, must not seek to exploit customers' vulnerabilities, lack of knowledge or behavioural biases, and must act consistently with the reasonable expectations of retail customers.",
+        "obligations": [
+          {
+            "obligationType": "principle",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must act in good faith toward retail customers by acting honestly, fairly and openly",
+            "objectText": "All interactions with retail customers including marketing, sales, servicing and complaints",
+            "conditionText": "At all times throughout the customer relationship",
+            "summary": "Firms must act in good faith in all dealings with retail customers. This requires honest, fair and open conduct, and prohibits exploiting customer vulnerabilities, knowledge gaps or behavioural biases.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.2.2R",
+        "rawText": "A firm must avoid causing foreseeable harm to retail customers. A firm must not act in a way, or fail to act in a way, that could foreseeably cause harm to retail customers. Where a firm becomes aware that its conduct, or its products or services, are causing or could foreseeably cause harm, it must take appropriate action to mitigate that harm.",
+        "obligations": [
+          {
+            "obligationType": "principle",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must not act, or fail to act, in a way that could foreseeably cause harm to retail customers",
+            "objectText": "The firm's conduct, products and services in relation to retail customers",
+            "conditionText": "Applies at all times; remedial action required when actual or foreseeable harm is identified",
+            "summary": "Firms are prohibited from causing foreseeable harm to retail customers through their actions or inaction. Where harm is identified or foreseeable, firms must take appropriate steps to mitigate it.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.2.3R",
+        "rawText": "A firm must enable and support retail customers to pursue their financial objectives. A firm must enable and support retail customers in relation to its products and services to make informed decisions about their financial products, act in their interests and pursue their financial objectives.",
+        "obligations": [
+          {
+            "obligationType": "principle",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must enable and support retail customers to pursue their financial objectives",
+            "objectText": "Retail customers' ability to make informed decisions, act in their own interests and pursue financial objectives",
+            "conditionText": "In relation to the firm's products and services throughout the customer relationship",
+            "summary": "Firms must actively enable and support customers in making informed decisions and pursuing their financial objectives. This goes beyond disclosure-based regulation and requires firms to positively help customers.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": { "number": "2A.3", "title": "Products and services outcome", "level": 1 },
+    "rules": [
+      {
+        "reference": "PRIN 2A.3.1R",
+        "rawText": "A firm which manufactures products or services for retail customers must design those products and services to meet the needs, characteristics and objectives of an identified target market of retail customers.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "Product manufacturers (firms designing or creating financial products)",
+            "actionText": "Must design products and services to meet the needs, characteristics and objectives of an identified target market",
+            "objectText": "All retail customer products and services manufactured by the firm",
+            "conditionText": "At the point of product design and development",
+            "summary": "Manufacturers must ensure products are designed with a specific target market in mind and genuinely meet the needs of that market. Products must not be created speculatively without understanding who they are for.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Target Market and Product Design",
+              "templateText": "This product has been designed to meet the needs of customers who [target market description]. Before entering into this agreement, we have assessed that the product is appropriate for customers with [relevant characteristics]. If your circumstances change such that this product may no longer be suitable for your needs, we encourage you to contact us to discuss alternative options.",
+              "guidance": "This clause should be customised for each product with a specific target market description. For mortgages, it might reference owner-occupiers or first-time buyers. For investment products, it should reference the target risk profile and investment horizon. This clause helps demonstrate compliance with the products and services outcome."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.3.3R",
+        "rawText": "A firm which manufactures or distributes products or services for retail customers must have an appropriate distribution strategy for those products, ensuring that the distribution channels used are appropriate for the target market and do not result in products being distributed to customers outside the target market.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "Product manufacturers and distributors",
+            "actionText": "Must have an appropriate distribution strategy ensuring products reach the target market through suitable channels",
+            "objectText": "Distribution channels and strategies for retail products and services",
+            "conditionText": "When distributing or arranging distribution of retail customer products",
+            "summary": "Firms must ensure their distribution strategy is appropriate for the target market and does not result in products reaching customers for whom they are not designed.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.9,
+            "clauseTemplate": {
+              "title": "Distribution and Eligibility",
+              "templateText": "This product is available through [specified channels] and is designed for customers who meet the eligibility criteria set out in this agreement. We may decline an application or recommend an alternative product where we reasonably believe this product does not meet your needs or you fall outside the intended target market.",
+              "guidance": "This clause supports the distribution strategy obligation. It gives the firm a contractual basis to manage distribution in accordance with target market requirements. It should be combined with clear eligibility criteria specific to the product."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.3.5R",
+        "rawText": "A firm which manufactures products or services for retail customers must carry out regular reviews of those products and services to ensure they continue to meet the needs, characteristics and objectives of the identified target market, including consideration of whether the target market itself remains appropriate.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "Product manufacturers",
+            "actionText": "Must carry out regular reviews of products to ensure they continue to meet target market needs",
+            "objectText": "Existing products and services, including assessment of whether the target market remains appropriate",
+            "conditionText": "On an ongoing basis throughout the product lifecycle",
+            "summary": "Manufacturers must regularly review their products to check they still deliver good outcomes for the target market, and must consider whether the target market definition itself needs updating.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.9,
+            "clauseTemplate": {
+              "title": "Ongoing Product Review",
+              "templateText": "We regularly review this product to ensure it continues to meet the needs of our customers and delivers good outcomes. As a result of these reviews, we may make changes to the product terms, features or pricing. We will give you reasonable notice of any material changes and explain how they may affect you. If a review indicates this product is no longer suitable for your needs, we will contact you to discuss alternatives.",
+              "guidance": "This clause provides transparency about the firm's ongoing product review obligations and gives a contractual basis for changes driven by those reviews. It should specify the notice period for changes, which will vary by product type and may be subject to specific regulatory requirements (e.g., MCOB for mortgages)."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.3.7R",
+        "rawText": "A firm which manufactures products or services for retail customers must not design products or services in a way that could foreseeably cause harm to retail customers in the target market, including features that could exploit customers' behavioural biases, lack of knowledge or characteristics of vulnerability.",
+        "obligations": [
+          {
+            "obligationType": "prohibition",
+            "addressee": "Product manufacturers",
+            "actionText": "Must not design products with features that could foreseeably harm retail customers or exploit their vulnerabilities, behavioural biases or lack of knowledge",
+            "objectText": "Product design features, terms and conditions, pricing structures and operational processes",
+            "conditionText": "At the point of product design, development and subsequent modification",
+            "summary": "Manufacturers are prohibited from designing products with features that could foreseeably harm the target market, including features that exploit behavioural biases (such as complex fee structures designed to generate revenue from customer inertia) or vulnerability.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Fair Product Design",
+              "templateText": "This product has been designed to operate fairly and transparently. We have assessed the product features, charges and terms to ensure they do not cause foreseeable harm to customers in the target market. We do not include features designed to take advantage of customer inertia, behavioural tendencies or lack of familiarity with financial products. All charges and fees are clearly disclosed and serve a legitimate purpose.",
+              "guidance": "This clause addresses the prohibition on harmful product design. It is particularly relevant for credit products where features like teaser rates, complex fee structures or penalty charges could exploit behavioural biases. For credit cards and overdrafts, consider how this applies to minimum payment structures and compounding interest."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.3.11R",
+        "rawText": "A firm which distributes products or services for retail customers must not distribute a product or service to a retail customer where the firm has information available to it which indicates that the customer is not in the target market for that product or service.",
+        "obligations": [
+          {
+            "obligationType": "prohibition",
+            "addressee": "Product distributors",
+            "actionText": "Must not distribute a product to a customer when available information indicates the customer is outside the target market",
+            "objectText": "Distribution decisions for retail customer products and services",
+            "conditionText": "When the firm has information indicating the customer is not in the target market",
+            "summary": "Distributors are prohibited from selling or distributing a product to a customer when the firm has information suggesting the customer falls outside the identified target market for that product.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.95,
+            "clauseTemplate": {
+              "title": "Target Market Suitability",
+              "templateText": "Before providing this product, we will assess whether it is appropriate for your circumstances based on the information available to us. We may decline to provide this product, or recommend an alternative, if the information we hold indicates it may not be suitable for your needs. We may ask you to confirm certain information to help us make this assessment.",
+              "guidance": "This clause reflects the distributor obligation not to sell outside the target market. It gives the firm contractual grounds to refuse distribution where target market criteria are not met. For investment products, this should work alongside the MiFID II appropriateness and suitability requirements."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": { "number": "2A.4", "title": "Price and value outcome", "level": 1 },
+    "rules": [
+      {
+        "reference": "PRIN 2A.4.1R",
+        "rawText": "A firm must ensure that the price of a product or service it manufactures for retail customers provides fair value. The relationship between the price retail customers pay and the benefits they can reasonably expect to receive from the product or service must be reasonable.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "Product manufacturers",
+            "actionText": "Must ensure the price of retail products and services provides fair value with a reasonable relationship between price and benefits",
+            "objectText": "Pricing of all retail customer products and services, including the relationship between cost and benefit",
+            "conditionText": "At the point of product launch and on an ongoing basis",
+            "summary": "The price customers pay for a product must be reasonable in relation to the benefits they receive. This encompasses all elements of price including interest rates, fees and charges.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Fair Value Commitment",
+              "templateText": "We are committed to ensuring this product provides fair value for money. The charges, interest rates and fees applicable to this product are set out in our tariff of charges and have been assessed to ensure they are reasonable in relation to the benefits the product provides. We regularly review our pricing to ensure it continues to represent fair value.",
+              "guidance": "This is a key clause for all products. It should be accompanied by clear disclosure of all charges and their purpose. For lending products, this includes interest rates, arrangement fees, early repayment charges and penalty fees. For investment products, it includes management charges, platform fees and transaction costs. The clause should cross-reference the specific charges schedule."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.4.3R",
+        "rawText": "A firm which manufactures products or services for retail customers must carry out a fair value assessment for each product or service, which must consider the nature of the product including the benefits it provides, any limitations on the benefits, and the expected total price to be paid by retail customers.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "Product manufacturers",
+            "actionText": "Must carry out a fair value assessment for each product considering benefits, limitations and expected total price",
+            "objectText": "Each retail product or service manufactured by the firm, assessed for fair value",
+            "conditionText": "Before launching a product and at regular intervals thereafter",
+            "summary": "Manufacturers must conduct a structured fair value assessment for every retail product, weighing the benefits customers receive against the total price they pay including all fees, charges and interest.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.9,
+            "clauseTemplate": {
+              "title": "Value Assessment",
+              "templateText": "We have conducted a fair value assessment of this product, taking into account the benefits it provides, any limitations, and the total cost to you. A summary of the key benefits and costs of this product is set out in the product summary document provided to you before you entered into this agreement. We will keep this assessment under review.",
+              "guidance": "This clause references the firm's fair value assessment obligation. While the assessment itself is an internal process, transparency about it builds trust. For investment products, this aligns with the existing value assessment requirements. The clause should reference the product summary or key facts document that details costs and benefits."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.4.5R",
+        "rawText": "When assessing whether a product or service provides fair value, a firm must consider the total price to the retail customer, including all fees, charges, interest and any other costs, whether payable to the firm or to any third party in connection with the product or service.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "Product manufacturers",
+            "actionText": "Must consider total price including all fees, charges, interest and third-party costs when assessing fair value",
+            "objectText": "All components of cost to the retail customer, including fees, charges, interest and third-party costs",
+            "conditionText": "When carrying out fair value assessments",
+            "summary": "Fair value assessments must consider the total cost to the customer holistically, not just headline rates or individual charges. This includes all fees, interest, charges and costs payable to third parties.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Total Cost Transparency",
+              "templateText": "The total cost of this product to you includes: [list all applicable cost components, e.g., interest, arrangement fees, annual fees, transaction fees, early repayment charges, third-party costs]. All charges are set out in the tariff of charges which forms part of this agreement. We have considered the total cost to you, including all these components, in assessing whether this product provides fair value. An illustration of the total cost over the expected life of the product is available on request.",
+              "guidance": "This clause addresses the total cost transparency requirement. It should be tailored for each product type. For mortgages, include APRC and total amount payable. For credit cards, include representative APR, annual fees and foreign transaction fees. For investments, include ongoing charges figure (OCF), entry/exit charges and performance fees."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.4.7R",
+        "rawText": "When assessing whether a product or service provides fair value, a firm must consider the value the product or service provides for different groups of retail customers, including any groups that may be particularly affected by the pricing structure or who may receive a lower level of benefit from the product.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "Product manufacturers",
+            "actionText": "Must consider value for different customer groups, including those who may receive lower benefit or be disproportionately affected by pricing",
+            "objectText": "The value received by different segments of the customer base, particularly disadvantaged groups",
+            "conditionText": "When carrying out fair value assessments",
+            "summary": "Fair value must be assessed not just on average but across different customer groups. Firms must identify whether some groups receive less value or are disproportionately affected by the pricing structure.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.9,
+            "clauseTemplate": {
+              "title": "Fair Value for All Customer Groups",
+              "templateText": "We have assessed the value this product provides to different groups of customers, including those who may use the product differently or who may be subject to different charges. Where we identify that particular groups of customers may receive less favourable value, we will take steps to address this, which may include adjusting the product terms, offering alternative products or providing additional support.",
+              "guidance": "This clause is particularly relevant for products with complex fee structures or where some customer segments subsidise others. For current accounts, consider how packaged account fees affect customers who do not use all bundled benefits. For credit cards, consider how customers who always pay the minimum versus those who pay in full receive different value."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.4.9R",
+        "rawText": "Where a firm identifies that a product or service, or a group of products or services, it manufactures does not or will not provide fair value to retail customers, the firm must take appropriate action to address the situation, which may include amending the pricing, amending the product features, or withdrawing the product.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "Product manufacturers",
+            "actionText": "Must take appropriate remedial action when a product is identified as not providing fair value",
+            "objectText": "Products or services identified as failing the fair value requirement",
+            "conditionText": "When the firm's fair value assessment identifies that a product does not provide fair value",
+            "summary": "Where a product is found not to provide fair value, the firm must act: this could mean changing the price, adjusting features, providing remediation or withdrawing the product from sale.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.95,
+            "clauseTemplate": {
+              "title": "Remedial Action on Value",
+              "templateText": "If we determine through our regular reviews that this product no longer provides fair value, we will take appropriate action which may include: (a) reducing or restructuring charges or interest rates; (b) improving the product features or benefits; (c) contacting you to discuss whether the product remains appropriate for your needs; or (d) offering you the opportunity to move to an alternative product on favourable terms. We will notify you of any material changes resulting from a value review.",
+              "guidance": "This clause provides a contractual framework for the remedial action obligation. It gives the firm flexibility to take different types of action while committing to transparency. For back-book products (particularly savings and mortgages), this is critical to addressing legacy pricing issues."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": { "number": "2A.5", "title": "Consumer understanding outcome", "level": 1 },
+    "rules": [
+      {
+        "reference": "PRIN 2A.5.1R",
+        "rawText": "A firm must ensure that its communications to retail customers in relation to a product or service equip the customer to make effective, timely and properly informed decisions about the product or service, including whether to acquire, use or dispose of the product.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must ensure communications equip retail customers to make effective, timely and properly informed decisions",
+            "objectText": "All communications to retail customers about products and services, including marketing, pre-sale, point-of-sale and post-sale communications",
+            "conditionText": "Whenever the firm communicates with retail customers about its products or services",
+            "summary": "All customer communications must enable effective decision-making. Communications must give customers the information they need, when they need it, in a way they can understand, so they can make informed choices.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Informed Decision-Making",
+              "templateText": "We will provide you with clear and relevant information to help you make informed decisions about this product. This includes information about how the product works, its costs and charges, the risks involved and your rights. We will provide this information at the right time and in a format that is accessible to you. If you do not understand any aspect of this product, please contact us and we will explain it in plain language.",
+              "guidance": "This clause establishes the firm's commitment to the consumer understanding outcome. It should be accompanied by practical measures such as summary documents, key facts sheets, worked examples and glossaries. For complex products like mortgages and investments, consider what specific information aids are needed."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.5.3R",
+        "rawText": "A firm must ensure that its communications to retail customers are clear, fair and not misleading. Communications must present information in a way that is likely to be understood by the average member of the target market, having regard to the nature and complexity of the product or service and the characteristics of the target market.",
+        "obligations": [
+          {
+            "obligationType": "principle",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must ensure communications are clear, fair and not misleading, presented in a way understandable by the average target market member",
+            "objectText": "All customer communications including terms and conditions, marketing materials, correspondence and digital content",
+            "conditionText": "For all communications to retail customers, having regard to the nature and complexity of the product",
+            "summary": "Communications must be clear, fair and not misleading, tailored to the understanding of the average member of the target market. Complex products require greater effort to ensure comprehension.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.5.5R",
+        "rawText": "A firm must ensure that information is provided to retail customers at an appropriate point in the customer journey, having regard to the information needs of the customer at each stage, and with sufficient time for the customer to consider the information before making a decision.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must provide information at the appropriate point in the customer journey with sufficient time for consideration",
+            "objectText": "The timing and sequencing of information provision throughout the customer journey",
+            "conditionText": "At each stage of the customer journey from pre-sale through to post-sale and renewal",
+            "summary": "Information must reach customers at the right time. Pre-contractual information must be provided early enough for meaningful consideration. Post-sale communications must be timely and relevant to the customer's current situation.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.95,
+            "clauseTemplate": {
+              "title": "Timely Information Provision",
+              "templateText": "We will provide you with key information about this product at the following stages: (a) before you apply, a product summary setting out the main features, costs and risks; (b) before you enter into this agreement, the full terms and conditions with sufficient time for you to review them; (c) at key points during the life of the product, updates on any changes that affect you; and (d) in advance of any renewal or maturity date, information about your options. You may request copies of any product documentation from us at any time.",
+              "guidance": "This clause addresses the timing obligation. For mortgages, it should align with MCOB requirements for the European Standardised Information Sheet (ESIS). For insurance, it should reflect ICOBS pre-contract disclosure requirements. For all products, it should specify concrete timescales for provision of pre-contractual information."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.5.7R",
+        "rawText": "A firm must tailor its communications to retail customers having regard to the characteristics of the intended recipients, including the characteristics of the target market for the product or service, and any characteristics of vulnerability that the firm is aware of or should reasonably be aware of.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must tailor communications to the characteristics of intended recipients including vulnerability characteristics",
+            "objectText": "All communications to retail customers, adapted for target market and vulnerability characteristics",
+            "conditionText": "When communicating with retail customers, taking into account known or reasonably foreseeable vulnerability",
+            "summary": "Communications must be tailored to the intended audience. Firms must consider the target market's characteristics and any known vulnerability when designing communications, and must adapt format, language and channel accordingly.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.95,
+            "clauseTemplate": {
+              "title": "Accessible Communications",
+              "templateText": "We are committed to communicating with you in a way that meets your needs. If you require communications in an alternative format (such as large print, braille, audio or Easy Read), or if you would prefer to communicate with us through a particular channel, please let us know and we will make reasonable adjustments. If you have any difficulty understanding our communications or managing your product, we can provide additional support including access to specialist teams.",
+              "guidance": "This clause addresses the tailoring obligation, particularly for customers with characteristics of vulnerability. The firm should ensure it has operational capability to deliver on this commitment, including alternative format production, specialist support teams and systems to record communication preferences."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.5.9R",
+        "rawText": "A firm must test or otherwise monitor the effectiveness of its communications to retail customers for complex or high-risk products and services, or where the firm has identified that the target market includes customers with characteristics of vulnerability that may affect their ability to understand the communications.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must test or monitor the effectiveness of communications for complex, high-risk products or where the target market includes vulnerable customers",
+            "objectText": "Communications relating to complex or high-risk products, or products aimed at potentially vulnerable customer groups",
+            "conditionText": "For complex or high-risk products, or where the target market includes customers with characteristics of vulnerability",
+            "summary": "For complex or high-risk products, and where vulnerable customers are in the target market, firms must actively test whether their communications are understood and effective, not merely assume compliance.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Investment Product (Retail)",
+              "General Insurance"
+            ],
+            "relevanceScore": 0.85,
+            "clauseTemplate": {
+              "title": "Communication Effectiveness",
+              "templateText": "We regularly test and review our communications to ensure they are effective and understandable. We may ask for your feedback on our communications from time to time to help us improve. If you find any of our communications confusing or unhelpful, we encourage you to tell us so we can improve them for you and other customers.",
+              "guidance": "This clause is most relevant for complex products like mortgages, investments and structured insurance. The firm should have a testing programme that includes comprehension testing, A/B testing of key communications and analysis of customer queries that indicate misunderstanding. The clause creates a feedback loop with customers."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": { "number": "2A.6", "title": "Consumer support outcome", "level": 1 },
+    "rules": [
+      {
+        "reference": "PRIN 2A.6.1R",
+        "rawText": "A firm must provide a level of support for retail customers in relation to its products and services that meets the needs of retail customers, including in relation to the characteristics of the target market, and that enables retail customers to realise the benefits of the products and services they buy and to act in their own interests.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must provide support that meets customer needs and enables them to realise the benefits of their products",
+            "objectText": "The level and quality of customer support for all retail products and services",
+            "conditionText": "Throughout the customer relationship from onboarding to product closure",
+            "summary": "Customer support must enable customers to actually benefit from their products. This is a positive obligation requiring firms to provide support that helps customers use products effectively, not merely a complaints-handling requirement.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Customer Support",
+              "templateText": "We will provide you with the support you need to use this product effectively and to realise its benefits. Our support is available through [specify channels: telephone, online, in-branch, mobile app] during [specify hours]. Our support team can help you with: understanding how your product works; making changes to your product; dealing with any difficulties you experience; accessing additional features or benefits; and resolving complaints. We aim to respond to all enquiries within [specified timeframe].",
+              "guidance": "This clause establishes the firm's support commitment and should be practical and specific. Avoid vague commitments. Specify actual channels, hours and response times. For each product type, consider what specific support needs customers will have, e.g., for mortgages: payment difficulties, rate switches, porting; for investments: portfolio changes, withdrawal processes."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.6.3R",
+        "rawText": "A firm must provide support for retail customers that meets the needs of customers with characteristics of vulnerability, having regard to the nature and extent of those characteristics, and must make reasonable adjustments to its support to meet those needs.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must provide support meeting the needs of vulnerable customers and make reasonable adjustments",
+            "objectText": "Customer support processes and services, adapted for customers with characteristics of vulnerability",
+            "conditionText": "When dealing with customers who have, or may have, characteristics of vulnerability",
+            "summary": "Firms must ensure their support processes are accessible and effective for vulnerable customers, making reasonable adjustments as needed. This includes customers with health conditions, life events, low resilience or low capability.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Support for Vulnerable Customers",
+              "templateText": "We recognise that some customers may need additional support due to their personal circumstances, including health conditions, significant life events, financial difficulties or other factors that may affect their ability to manage their finances. If you need additional support, or if your circumstances change in a way that may affect your ability to manage this product, please contact us. We will work with you to understand your needs and make reasonable adjustments to our services, which may include: (a) providing additional time to make decisions; (b) allowing a trusted third party to act on your behalf; (c) adapting our communication methods; (d) referring you to specialist support services; or (e) adjusting repayment arrangements where applicable.",
+              "guidance": "This clause addresses the specific vulnerability support obligation. Firms must ensure they can operationally deliver on these commitments, including staff training, specialist teams, third-party authority processes and flexible policies. Consider the FCA's Guidance for firms on the fair treatment of vulnerable customers (FG21/1)."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.6.5R",
+        "rawText": "A firm must not place unreasonable barriers in the way of retail customers who wish to switch to a different product, make changes to an existing product, submit a claim, make a complaint, or cancel or terminate a product or contract.",
+        "obligations": [
+          {
+            "obligationType": "prohibition",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must not place unreasonable barriers to switching, changing, claiming, complaining or cancelling",
+            "objectText": "Customer journeys for switching, product changes, claims, complaints and cancellation or termination",
+            "conditionText": "When a retail customer wishes to switch, change, claim, complain, cancel or terminate",
+            "summary": "Firms must not create unreasonable barriers that discourage or prevent customers from switching products, making changes, submitting claims, raising complaints or cancelling. The process for these actions should be as easy as the process for acquiring the product.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Switching, Changes and Cancellation",
+              "templateText": "You have the right to switch, change or cancel this product at any time, subject to the specific terms set out below. We will not place unreasonable barriers in the way of you exercising these rights. To switch or cancel this product, you may [specify simple process: contact us by phone, online, in-branch or in writing]. We will process your request within [specified timeframe] of receiving it. Any applicable charges for early termination or switching are set out in our tariff of charges and will be clearly explained to you before you proceed. We will not require you to go through a more difficult process to cancel or switch than the process you went through to acquire this product.",
+              "guidance": "This clause is critical for demonstrating compliance with the 'no unreasonable barriers' prohibition. Sludge practices are a key area of FCA focus. Ensure cancellation is genuinely as easy as acquisition. For products with retention teams, ensure the process does not create undue friction. For insurance, ensure claims processes are straightforward. For savings with notice periods, ensure the notice mechanism is easy to operate."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.6.7R",
+        "rawText": "A firm must ensure that the level of support provided to retail customers is of the same standard and quality throughout the lifecycle of the product or service, including at the point of sale, during the term of the product or service, and when the customer seeks to switch, make changes or cancel.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must ensure support quality is consistent throughout the entire product lifecycle",
+            "objectText": "The standard and quality of support at all stages: sale, during term, switching, changes and cancellation",
+            "conditionText": "At all stages of the product lifecycle from acquisition to termination",
+            "summary": "Support quality must not decline after the point of sale. Customers seeking to cancel, switch or make changes must receive the same quality of service as customers acquiring a product.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 1.0,
+            "clauseTemplate": {
+              "title": "Consistent Service Standards",
+              "templateText": "We are committed to providing you with the same quality of service throughout your relationship with us. Whether you are taking out, managing, changing or closing this product, you can expect the same standard of support. Our service levels and response times apply equally at all stages. If you feel the quality of support you are receiving does not meet the standards we have committed to, please let us know through our complaints process.",
+              "guidance": "This clause addresses a common area of poor practice where firms invest in sales support but under-resource post-sale, cancellation or switching support. Firms should audit their service levels across the lifecycle and ensure consistent staffing, training and response times. Consider using the same channels and contact methods for all lifecycle stages."
+            }
+          }
+        ]
+      },
+      {
+        "reference": "PRIN 2A.6.9R",
+        "rawText": "Where a firm introduces friction into a customer journey, or maintains existing friction, the firm must be able to demonstrate that the friction is in the interests of retail customers. Friction which is designed to, or has the effect of, discouraging the customer from taking an action that is in their interest is not in the interests of retail customers.",
+        "obligations": [
+          {
+            "obligationType": "obligation",
+            "addressee": "All FCA-authorised firms",
+            "actionText": "Must demonstrate that any friction in customer journeys is in the interests of retail customers",
+            "objectText": "Friction points in customer journeys including additional steps, delays, requirements and processes",
+            "conditionText": "Where any friction exists in customer journeys, whether introduced or pre-existing",
+            "summary": "Any friction in customer journeys must be justified as being in the customer's interest. Friction designed to discourage customers from acting in their own interest (e.g., making cancellation harder than purchase) is prohibited.",
+            "applicableProductTypes": [
+              "Residential Mortgage",
+              "Personal Loan",
+              "Credit Card",
+              "Current Account",
+              "Savings Account",
+              "Investment Product (Retail)",
+              "General Insurance",
+              "Payment Service"
+            ],
+            "relevanceScore": 0.95,
+            "clauseTemplate": {
+              "title": "Justified Process Steps",
+              "templateText": "Where our processes include additional steps or verification requirements, these are included for your protection or to meet our regulatory obligations. For example: (a) identity verification is required to protect your account security; (b) cooling-off periods are provided to give you time to reconsider significant decisions; (c) risk warnings are provided to ensure you understand the risks of certain actions; and (d) confirmation steps are included to prevent accidental transactions. We do not include any steps in our processes that are designed to discourage you from taking actions that are in your interest.",
+              "guidance": "This clause transparently explains the purpose of friction points. Firms should audit all customer journeys to identify friction, determine whether each friction point is genuinely in the customer's interest, and remove or simplify any that are not. Common problematic friction includes: multi-step cancellation processes, mandatory retention calls, hard-to-find exit routes in digital journeys, and unnecessary documentation requirements."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

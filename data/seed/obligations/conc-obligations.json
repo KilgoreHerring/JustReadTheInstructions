@@ -1,0 +1,197 @@
+{
+  "regulation": {
+    "id": "conc",
+    "regulatorId": "fca",
+    "title": "Consumer Credit Sourcebook (CONC)",
+    "citation": "FCA CONC",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2014-04-01",
+    "url": "https://www.handbook.fca.org.uk/handbook/CONC/"
+  },
+  "sections": [
+    {
+      "section": { "number": "CONC 3", "title": "Financial promotions and communications", "level": 1 },
+      "rules": [
+        {
+          "reference": "CONC 3.3.1R",
+          "rawText": "A firm must ensure that a financial promotion of a credit agreement is clear, fair and not misleading. A financial promotion must specify the nature of the credit agreement and, where applicable, that security is required.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must ensure credit agreement promotions are clear, fair and not misleading and specify the nature of the agreement and any security required",
+              "objectText": "Financial promotions of credit agreements including advertising, marketing materials and digital promotions",
+              "conditionText": "When promoting or advertising credit agreements to consumers",
+              "summary": "All credit product promotions must be clear, fair and not misleading. They must specify the type of credit and whether security is required (e.g. for secured loans).",
+              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "relevanceScore": 1.0
+            }
+          ]
+        },
+        {
+          "reference": "CONC 3.5.3R",
+          "rawText": "A financial promotion of a credit agreement that includes a rate of interest or an amount relating to the cost of credit must include the representative APR and the following standard information: the borrowing rate (fixed or variable); the total amount of credit; the representative APR; the duration of the agreement; the total amount payable; the amount of each repayment.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must include representative APR and standard information when promotions mention interest rates or credit costs",
+              "objectText": "Representative APR and prescribed standard information in credit promotions that trigger the requirement",
+              "conditionText": "When a credit promotion includes a rate of interest or cost of credit figure",
+              "summary": "Credit promotions that mention interest rates or costs must include: representative APR, borrowing rate (fixed or variable), total credit amount, duration, total repayable and instalment amounts.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Representative APR Disclosure",
+                "templateText": "Representative example: If you borrow [amount] over [term] at a rate of [X]% per annum (fixed/variable), your monthly repayments would be [amount]. The total amount repayable would be [amount]. Representative [X]% APR. At least 51% of successful applicants will receive this rate or better.",
+                "guidance": "The representative APR must be offered to at least 51% of applicants. Ensure the representative example uses realistic borrowing amounts. For credit cards, include the assumed credit limit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CONC 5", "title": "Responsible lending", "level": 1 },
+      "rules": [
+        {
+          "reference": "CONC 5.2.1R",
+          "rawText": "Before making a regulated credit agreement the firm must undertake a reasonable assessment of the creditworthiness of the customer, taking into account factors including the customer's ability to make repayments as they fall due over the life of the agreement, or in the case of an open-end credit agreement, to make repayments within a reasonable period.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must undertake a reasonable creditworthiness assessment before entering into a regulated credit agreement",
+              "objectText": "Creditworthiness assessment including ability to make repayments over the life of the agreement",
+              "conditionText": "Before making a regulated credit agreement",
+              "summary": "Lenders must assess creditworthiness before lending, considering the customer's ability to make all repayments over the full term. For open-ended credit like credit cards, this means ability to repay within a reasonable period.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Creditworthiness Assessment",
+                "templateText": "Before agreeing to lend to you, we assessed your creditworthiness to ensure that the repayments are affordable for you. This assessment considered your income, existing financial commitments and credit history. We used information from credit reference agencies and the information you provided to us. If your financial circumstances change and you are struggling to make repayments, please contact us as soon as possible.",
+                "guidance": "CONC 5.2.1R requires a forward-looking affordability assessment. For credit cards, the FCA expects lenders to assess ability to repay within a 'reasonable period' — not just minimum payments indefinitely. Consider persistent debt rules."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 5.2A.4R",
+          "rawText": "A firm must not increase the credit limit on a credit card or store card where the credit limit increase would not be affordable for the customer, having regard to the customer's financial circumstances.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Credit card issuers",
+              "actionText": "Must not increase credit limits where the increase would be unaffordable for the customer",
+              "objectText": "Credit limit increases on credit cards and store cards",
+              "conditionText": "When considering whether to increase a credit limit",
+              "summary": "Credit limit increases must be affordable. Lenders must reassess affordability before increasing a customer's credit limit and must not increase it if the higher limit would be unaffordable.",
+              "applicableProductTypes": ["Credit Card"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Credit Limit Increases",
+                "templateText": "We may offer to increase your credit limit from time to time. Before doing so, we will assess whether the higher limit is affordable for you based on the information available to us. We will not increase your limit if we believe it would not be affordable. You have the right to decline any credit limit increase or to request a lower limit at any time. You can also opt out of receiving credit limit increase offers.",
+                "guidance": "The FCA has focused heavily on responsible credit limit increases. Ensure assessments are robust, offer genuine opt-out mechanisms, and consider how persistent debt indicators affect limit increase decisions."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CONC 6", "title": "Post-contractual requirements", "level": 1 },
+      "rules": [
+        {
+          "reference": "CONC 6.7.2R",
+          "rawText": "A firm must monitor the repayment record of a customer who has a credit card or a store card and must take appropriate action where there are signs of actual or possible financial difficulties, including where the customer is making only minimum repayments over a sustained period.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Credit card issuers",
+              "actionText": "Must monitor repayment records and take action where there are signs of financial difficulty including persistent minimum repayments",
+              "objectText": "Customer repayment records on credit cards and store cards, including persistent debt patterns",
+              "conditionText": "On an ongoing basis throughout the life of the credit card agreement",
+              "summary": "Card issuers must actively monitor repayment patterns and intervene when customers show signs of difficulty, including making only minimum repayments over a sustained period (persistent debt).",
+              "applicableProductTypes": ["Credit Card"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Repayment Monitoring and Persistent Debt",
+                "templateText": "We monitor your repayment patterns to identify if you may be in financial difficulty. If you have been making only minimum repayments or are consistently not reducing your balance, we will contact you to: (a) help you understand the cost of minimum repayments; (b) encourage you to repay more where possible; and (c) offer support if you are struggling. If after 36 months you are still in persistent debt (paying more in interest and charges than you have repaid of the amount borrowed), we may offer you a repayment plan or reduce or waive interest to help you repay.",
+                "guidance": "The persistent debt rules (CONC 6.7.27R onwards) require specific interventions at 18 and 36 months. Ensure communications are clear about the cost of minimum repayments and the options available."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 6.7.3AR",
+          "rawText": "A firm must provide a customer with a credit card or store card with an annual statement of charges, showing the total interest, fees and charges paid during the preceding 12 months, and a comparison of that total with the amount the customer has repaid of the principal during the same period.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Credit card issuers",
+              "actionText": "Must provide annual statement showing total interest/fees paid versus principal repaid in the preceding 12 months",
+              "objectText": "Annual summary statement comparing interest/charges paid with principal repayment",
+              "conditionText": "Annually for each credit card and store card account",
+              "summary": "Card issuers must provide an annual summary showing total interest and fees paid versus how much of the actual balance was repaid, giving customers a clear picture of the true cost of their borrowing.",
+              "applicableProductTypes": ["Credit Card"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Annual Credit Card Summary",
+                "templateText": "Each year, we will send you a summary showing: (a) the total amount of interest charged during the year; (b) the total fees and charges applied; (c) the total amount you have repaid; and (d) how much of your repayments went towards reducing the amount you originally borrowed. This helps you understand the true cost of your credit card and whether you could save money by repaying more each month.",
+                "guidance": "The annual summary is a powerful tool for combating persistent debt. Ensure the presentation is clear and includes actionable advice about increasing repayments."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CONC 7", "title": "Arrears, default and recovery", "level": 1 },
+      "rules": [
+        {
+          "reference": "CONC 7.3.4R",
+          "rawText": "A firm must treat customers in default or in arrears difficulties with forbearance and due consideration. A firm must consider whether it is appropriate to do one or more of the following: (a) reducing or waiving interest charges; (b) allowing additional time to repay; (c) accepting token repayments; (d) agreeing a repayment plan.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must treat customers in default or arrears with forbearance and due consideration, including considering reducing charges, allowing extra time, accepting token payments or agreeing a repayment plan",
+              "objectText": "Treatment of customers in default or arrears including forbearance options and repayment arrangements",
+              "conditionText": "When a customer is in default or arrears on a consumer credit agreement",
+              "summary": "Credit firms must treat customers in financial difficulty with forbearance, actively considering options including reducing interest, extending time to pay, accepting token payments and agreeing structured repayment plans.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Financial Difficulty and Forbearance",
+                "templateText": "If you are having difficulty making your repayments, please contact us as soon as possible. We will treat you fairly and with understanding. Options we may consider include: (a) reducing or waiving interest and charges; (b) giving you more time to repay; (c) accepting reduced or token repayments for a period; (d) agreeing a structured repayment plan. We will also signpost you to free debt advice services such as StepChange, Citizens Advice and the Money Advice Service.",
+                "guidance": "CONC 7 forbearance obligations align with and reinforce the Consumer Duty. Ensure staff are trained to handle vulnerability and financial difficulty with empathy. Consider how debt advice referrals are made in practice."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 7.6.2R",
+          "rawText": "A firm must not impose charges on customers in default or arrears difficulties where the charges are not a reasonable estimate of the cost of the additional administration required as a result of the customer being in default or arrears.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must not impose charges on customers in default or arrears that exceed a reasonable estimate of the additional administration costs",
+              "objectText": "Charges applied to customers in default or arrears on consumer credit agreements",
+              "conditionText": "When a customer is in default or arrears on a consumer credit agreement",
+              "summary": "Default and arrears charges must be cost-reflective only. Firms cannot profit from customers who are in financial difficulty through excessive charges.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Default Charges",
+                "templateText": "If you miss a payment or fall into arrears, we may apply a default charge to cover our additional administration costs. Any such charge will be a reasonable estimate of our actual costs — we do not use default charges as a penalty or revenue source. Our current default charges are set out in the tariff of charges which forms part of this agreement.",
+                "guidance": "Default charges must be genuinely cost-reflective per CONC 7.6.2R. This also aligns with the unfair terms provisions of the Consumer Rights Act 2015. Ensure the firm can evidence the cost basis for all default charges."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "regulation": {
+    "id": "mcob",
+    "regulatorId": "fca",
+    "title": "Mortgages and Home Finance: Conduct of Business (MCOB)",
+    "citation": "FCA MCOB",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2004-10-31",
+    "url": "https://www.handbook.fca.org.uk/handbook/MCOB/"
+  },
+  "sections": [
+    {
+      "section": { "number": "MCOB 4", "title": "Advising and selling standards", "level": 1 },
+      "rules": [
+        {
+          "reference": "MCOB 4.4A.1R",
+          "rawText": "A firm must not enter into a regulated mortgage contract with a customer, or make a further advance on a regulated mortgage contract, unless the firm can demonstrate that entering into the contract is, or the further advance is, affordable for the customer.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must not enter into a mortgage contract or make a further advance unless affordability has been demonstrated",
+              "objectText": "All regulated mortgage contracts and further advances",
+              "conditionText": "Before entering into a regulated mortgage contract or making a further advance",
+              "summary": "Lenders must not proceed with a mortgage unless they can demonstrate it is affordable for the customer. This requires a robust affordability assessment considering income, expenditure and stress testing.",
+              "applicableProductTypes": ["Residential Mortgage"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Affordability Requirement",
+                "templateText": "Before offering you this mortgage, we carried out an affordability assessment to ensure the repayments are affordable for you based on the information you provided about your income and outgoings. We stress-tested the repayments against possible future interest rate increases. If your circumstances change and you have difficulty making repayments, please contact us immediately so we can discuss options to help you.",
+                "guidance": "Affordability assessment is a core MCOB requirement. The terms should reference the assessment without implying the customer bears no responsibility. Ensure there is a clear route for customers to contact the firm if they experience financial difficulty."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 4.7A.1R",
+          "rawText": "A firm must assess the affordability of a regulated mortgage contract for the customer by reference to the customer's income net of income tax and national insurance contributions, the customer's committed and essential expenditure, and the basic mortgage interest payments and other costs associated with the regulated mortgage contract.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must assess mortgage affordability by reference to net income, committed expenditure and mortgage costs including stress testing",
+              "objectText": "The affordability assessment process including income verification, expenditure analysis and cost projections",
+              "conditionText": "Before entering into a regulated mortgage contract",
+              "summary": "The affordability assessment must consider net income (after tax and NI), committed and essential expenditure, and the full cost of the mortgage including interest rate stress scenarios.",
+              "applicableProductTypes": ["Residential Mortgage"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Affordability Assessment Methodology",
+                "templateText": "Our affordability assessment considers: (a) your income after tax and national insurance; (b) your regular committed expenditure (such as other loans, credit commitments and essential living costs); (c) the mortgage repayments at the current rate and at a stressed higher rate; and (d) any other costs associated with the mortgage. We may verify the information you provide using credit reference agencies and other sources.",
+                "guidance": "MCOB 4.7A requires detailed affordability calculation. Stress testing must account for potential rate rises over the initial rate period. The assessment should be documented and retainable."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "MCOB 5", "title": "Pre-application disclosure", "level": 1 },
+      "rules": [
+        {
+          "reference": "MCOB 5.4.1R",
+          "rawText": "A firm must provide a customer with an illustration that complies with the requirements of this chapter before or at the point at which the customer submits an application for a regulated mortgage contract.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders and brokers",
+              "actionText": "Must provide a compliant mortgage illustration before or at the point of application",
+              "objectText": "A mortgage illustration (ESIS) complying with MCOB 5 requirements",
+              "conditionText": "Before or at the point the customer submits a mortgage application",
+              "summary": "A standardised mortgage illustration (European Standardised Information Sheet / ESIS) must be provided to the customer before or when they apply, showing key product details, costs and risks in a standard format.",
+              "applicableProductTypes": ["Residential Mortgage"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Mortgage Illustration",
+                "templateText": "Before you submitted your application, we provided you with a personalised mortgage illustration (European Standardised Information Sheet). This document sets out the key features of the mortgage, including: the total amount to borrow; the interest rate and type; monthly repayment amounts; the total cost over the mortgage term (APRC); and any fees and charges. This illustration forms the basis of your mortgage offer.",
+                "guidance": "The ESIS is a regulatory requirement under MCOB 5. Ensure the illustration is provided in the prescribed format and includes all mandated information. The illustration should be personalised to the customer's actual borrowing."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "MCOB 7", "title": "Disclosure at start of contract and after sale", "level": 1 },
+      "rules": [
+        {
+          "reference": "MCOB 7.4.1R",
+          "rawText": "A firm must send a mortgage offer to the customer at least 7 business days before the completion date, setting out the key terms of the regulated mortgage contract including the amount borrowed, the interest rate, the term, the repayment method and any fees.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must send a mortgage offer at least 7 business days before completion, setting out key terms",
+              "objectText": "The mortgage offer document containing all key contract terms",
+              "conditionText": "At least 7 business days before the mortgage completion date",
+              "summary": "The formal mortgage offer must be sent at least 7 business days before completion, giving the customer time to review the terms including amount, rate, term, repayment method and fees.",
+              "applicableProductTypes": ["Residential Mortgage"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Mortgage Offer",
+                "templateText": "We will send you a formal mortgage offer at least 7 business days before the proposed completion date. The offer sets out the key terms of your mortgage including: the amount you are borrowing; the interest rate and whether it is fixed or variable; the term of the mortgage; how repayments are calculated; and any fees that apply. You should read the offer carefully and seek independent advice if you are unsure about any aspect.",
+                "guidance": "The 7-day requirement gives customers a reflection period. Ensure the offer document is clear and comprehensive. Consider providing a summary document alongside the full offer."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 7.5.1R",
+          "rawText": "A firm must provide an annual statement to a customer with a regulated mortgage contract, containing: the amount outstanding; the interest rate; the amount of each instalment due under the contract; the number of remaining instalments; and the total amount paid by the customer during the statement period.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must provide annual mortgage statements containing balance, rate, payment amounts, remaining term and amounts paid",
+              "objectText": "Annual mortgage statement with prescribed information",
+              "conditionText": "For each regulated mortgage contract, on an annual basis",
+              "summary": "Lenders must send annual statements showing the outstanding balance, current rate, payment amounts, remaining instalments and total paid during the year.",
+              "applicableProductTypes": ["Residential Mortgage"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Annual Mortgage Statement",
+                "templateText": "We will send you an annual statement showing: the amount outstanding on your mortgage; the current interest rate; the amount of each monthly payment; the number of payments remaining; the total amount you have paid during the year (split between capital and interest); and any fees or charges applied. If you would like a statement at any other time, please contact us.",
+                "guidance": "MCOB 7.5.1R prescribes the minimum content. Consider providing additional useful information such as the split between capital and interest, comparison with original illustration, and overpayment options."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "MCOB 7A", "title": "Rate switches and product transfers", "level": 1 },
+      "rules": [
+        {
+          "reference": "MCOB 7A.2.1R",
+          "rawText": "Where a fixed or discounted rate period on a regulated mortgage contract is due to expire, the firm must give the customer at least 3 months' notice before the expiry date, informing the customer of the rate that will apply after expiry and the options available to the customer including switching to a new product.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must give at least 3 months' notice before a fixed or discounted rate expires, with information about the new rate and switching options",
+              "objectText": "Notification of rate expiry, the rate that will apply thereafter and available product transfer options",
+              "conditionText": "When a fixed or discounted rate period on a mortgage is due to expire",
+              "summary": "Lenders must notify customers at least 3 months before their fixed or discount rate ends, telling them what rate they will revert to and what alternative products they can switch to.",
+              "applicableProductTypes": ["Residential Mortgage"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Rate Expiry Notification",
+                "templateText": "If your current fixed or discounted interest rate is due to expire, we will write to you at least 3 months before the expiry date to let you know: (a) the interest rate that will apply to your mortgage after the current rate expires (typically our Standard Variable Rate); (b) what your new monthly payment will be; and (c) the alternative products available to you, including new fixed or discounted rates. You can switch to a new rate without a full re-application in most cases.",
+                "guidance": "The 3-month notice requirement is critical for preventing customers from falling onto SVR unaware. Ensure the communication is clear about the financial impact of reversion and makes switching easy."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "MCOB 13", "title": "Arrears, payment shortfalls and repossessions", "level": 1 },
+      "rules": [
+        {
+          "reference": "MCOB 13.3.1R",
+          "rawText": "A firm must deal fairly with any customer who is in payment difficulties on a regulated mortgage contract. A firm must make reasonable efforts to reach agreement with the customer over the method of repaying any payment shortfall, and must not repossess the property unless all other reasonable attempts to resolve the position have failed.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must deal fairly with customers in payment difficulty, make reasonable efforts to agree repayment, and treat repossession as a last resort",
+              "objectText": "Treatment of customers in arrears or payment difficulty, including forbearance options and repossession policy",
+              "conditionText": "When a customer falls into payment difficulty on a regulated mortgage contract",
+              "summary": "Lenders must treat customers in financial difficulty fairly, explore all forbearance options and treat repossession only as a last resort after all other reasonable attempts to resolve the position have failed.",
+              "applicableProductTypes": ["Residential Mortgage"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Payment Difficulty and Forbearance",
+                "templateText": "If you have difficulty making your mortgage payments, please contact us as soon as possible. We will treat you fairly and work with you to find a solution. Options we may consider include: (a) extending the mortgage term to reduce payments; (b) a temporary payment holiday or reduced payment arrangement; (c) switching to an interest-only basis for a period; (d) capitalising arrears in appropriate circumstances. Repossession of your home is always a last resort and will only be considered after all other reasonable options have been explored. We will also direct you to free independent debt advice services.",
+                "guidance": "MCOB 13 is a critical consumer protection provision. Ensure operational processes support genuine forbearance. Staff should be trained in vulnerability and financial difficulty. Consider how this interacts with Consumer Duty requirements for consumer support."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 13.3.4AR",
+          "rawText": "A firm must not charge a customer a charge for arrears on a regulated mortgage contract unless that charge is a reasonable estimate of the cost of the additional administration required as a result of the customer being in arrears.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must not charge arrears fees that exceed a reasonable estimate of the additional administration costs",
+              "objectText": "Charges applied to customers in arrears on regulated mortgage contracts",
+              "conditionText": "When a customer is in arrears on a regulated mortgage contract",
+              "summary": "Arrears charges must be cost-reflective only — they cannot include a profit element or be punitive. The charge must reasonably reflect the actual additional administrative cost of managing the arrears.",
+              "applicableProductTypes": ["Residential Mortgage"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Arrears Charges",
+                "templateText": "If your account falls into arrears, we may charge a fee to cover the additional costs of managing the arrears. Any such charge will be a reasonable estimate of our actual additional administration costs only. We will not use arrears charges as a penalty or profit source. Our current arrears charges are set out in the tariff of charges.",
+                "guidance": "Arrears charges must be genuinely cost-reflective. The firm should be able to demonstrate the cost basis for any arrears charge. This aligns with Consumer Duty fair value requirements."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

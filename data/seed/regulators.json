@@ -1,0 +1,57 @@
+[
+  {
+    "id": "fca",
+    "name": "Financial Conduct Authority",
+    "abbreviation": "FCA",
+    "jurisdiction": "UK",
+    "website": "https://www.fca.org.uk",
+    "description": "The Financial Conduct Authority regulates the conduct of financial services firms and financial markets in the United Kingdom.",
+    "supervisoryApproach": "conduct",
+    "keyLegislation": ["Financial Services and Markets Act 2000", "Financial Services Act 2012"],
+    "active": true
+  },
+  {
+    "id": "pra",
+    "name": "Prudential Regulation Authority",
+    "abbreviation": "PRA",
+    "jurisdiction": "UK",
+    "website": "https://www.bankofengland.co.uk/prudential-regulation",
+    "description": "The Prudential Regulation Authority is responsible for the prudential regulation and supervision of banks, building societies, credit unions, insurers and major investment firms in the United Kingdom.",
+    "supervisoryApproach": "prudential",
+    "keyLegislation": ["Financial Services and Markets Act 2000", "Bank of England Act 1998"],
+    "active": true
+  },
+  {
+    "id": "ec",
+    "name": "European Commission",
+    "abbreviation": "EC",
+    "jurisdiction": "EU",
+    "website": "https://ec.europa.eu",
+    "description": "The European Commission proposes and enforces legislation across the European Union, including financial services regulation through directives and regulations.",
+    "supervisoryApproach": "legislative",
+    "keyLegislation": ["MiFID II", "PSD2", "GDPR", "Consumer Credit Directive"],
+    "active": true
+  },
+  {
+    "id": "sec",
+    "name": "Securities and Exchange Commission",
+    "abbreviation": "SEC",
+    "jurisdiction": "US",
+    "website": "https://www.sec.gov",
+    "description": "The Securities and Exchange Commission protects investors, maintains fair and efficient markets, and facilitates capital formation in the United States.",
+    "supervisoryApproach": "conduct",
+    "keyLegislation": ["Securities Act of 1933", "Securities Exchange Act of 1934", "Dodd-Frank Act"],
+    "active": true
+  },
+  {
+    "id": "cfpb",
+    "name": "Consumer Financial Protection Bureau",
+    "abbreviation": "CFPB",
+    "jurisdiction": "US",
+    "website": "https://www.consumerfinance.gov",
+    "description": "The Consumer Financial Protection Bureau is a regulatory agency responsible for consumer protection in the financial sector in the United States.",
+    "supervisoryApproach": "conduct",
+    "keyLegislation": ["Dodd-Frank Act", "Truth in Lending Act", "Fair Credit Reporting Act"],
+    "active": true
+  }
+]

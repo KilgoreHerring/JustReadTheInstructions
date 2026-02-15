@@ -1,0 +1,281 @@
+{
+  "regulation": {
+    "id": "psr-2017",
+    "regulatorId": "fca",
+    "title": "Payment Services Regulations 2017",
+    "citation": "SI 2017/752 (PSRs 2017)",
+    "type": "legislation",
+    "status": "active",
+    "effectiveDate": "2018-01-13",
+    "url": "https://www.legislation.gov.uk/uksi/2017/752/contents"
+  },
+  "sections": [
+    {
+      "section": { "number": "Part 6", "title": "Information requirements for payment services", "level": 1 },
+      "rules": [
+        {
+          "reference": "PSR Reg 48",
+          "rawText": "Before the payment service user is bound by any single payment service contract, the payment service provider must provide the following information in good time: the specification of the information or unique identifier to be provided by the payment service user; the maximum execution time; all charges payable and a breakdown; where applicable the actual or reference exchange rate.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must provide specified pre-contractual information to payment service users before they are bound by a single payment service contract",
+              "objectText": "Pre-contractual information including identifier requirements, execution times, charges breakdown and exchange rates",
+              "conditionText": "Before the payment service user is bound by any single payment service contract",
+              "summary": "Payment service providers must disclose key transaction information before execution: what data the user needs to provide, how long the transaction will take, all charges with a breakdown, and applicable exchange rates.",
+              "applicableProductTypes": ["Payment Service", "Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Pre-Transaction Information",
+                "templateText": "Before you make a payment, we will provide you with the following information: (a) the details you need to provide for the payment to be made (e.g. sort code, account number or IBAN); (b) the maximum time the payment will take to reach the payee; (c) all charges payable by you, with a breakdown of each charge; and (d) where applicable, the exchange rate that will be used and the amount the payee will receive.",
+                "guidance": "This clause must be provided before the user initiates a payment. For online/mobile banking, this is typically presented on the payment confirmation screen. Consider how to present this for recurring payments and standing orders."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 49",
+          "rawText": "Before the payment service user is bound by any framework contract, the payment service provider must provide the following information: the payment service provider's name, address, contact details; the payment services covered; the form and procedure for consent and withdrawal of consent; the time of receipt of a payment order; the maximum execution time; any spending limits; all charges and interest rates; exchange rate methodology; communication methods.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must provide comprehensive pre-contractual information before a framework contract is entered into",
+              "objectText": "Full framework contract terms including provider details, services covered, consent procedures, execution times, spending limits, charges, rates and communication methods",
+              "conditionText": "Before the payment service user is bound by a framework contract",
+              "summary": "Before entering into an ongoing payment services relationship (framework contract), providers must give users comprehensive information about the service, charges, consent procedures, execution times and communication methods.",
+              "applicableProductTypes": ["Payment Service", "Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Framework Contract Pre-Contractual Disclosure",
+                "templateText": "Before you open this account/service, we will provide you with the following: our full contact details; the payment services covered by this agreement; how to give and withdraw consent for payments; when a payment order is considered received; maximum execution times for payments; any spending limits that apply; all charges including how they are calculated; any interest or exchange rates that apply; and how we will communicate with you about the service.",
+                "guidance": "This is a core PSR 2017 requirement. All specified information must be provided in a durable medium. Ensure the terms cover each item listed in Reg 49. This replaces the old PSR 2009 requirements."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 53",
+          "rawText": "A payment service provider must not charge a payment service user for providing information under this Part unless the charge is for additional or more frequent information provided at the request of the payment service user and the charge is reasonable and commensurate with the actual costs.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Payment service providers",
+              "actionText": "Must not charge payment service users for providing information required under Part 6, except for additional or more frequent information requested by the user at a reasonable cost",
+              "objectText": "Charges for providing statutory payment services information to users",
+              "conditionText": "When providing information required by Part 6 of the PSRs",
+              "summary": "Providers cannot charge for mandatory information provision. Additional information requested by the user may be charged for, but only at a rate reasonable to actual costs.",
+              "applicableProductTypes": ["Payment Service", "Current Account"],
+              "relevanceScore": 0.85,
+              "clauseTemplate": {
+                "title": "Free Information Provision",
+                "templateText": "We will not charge you for providing the information about your payment services that we are required to provide by law. If you request additional or more frequent information beyond what we are required to provide, we may charge a reasonable fee which reflects our actual costs. Any such charge will be agreed with you before the information is provided.",
+                "guidance": "Ensure no hidden charges are levied for statements, transaction histories or other mandatory disclosures. Only genuinely additional user-requested information can carry a charge."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "Part 7", "title": "Rights and obligations in relation to payment services", "level": 1 },
+      "rules": [
+        {
+          "reference": "PSR Reg 67",
+          "rawText": "A payment service provider may not rely on a framework contract term to change the conditions of the framework contract unless the term allows for such changes and the payment service provider proposes the changes no later than 2 months before the proposed date of their application, and the payment service user may either accept or reject the changes before the proposed date of application and terminate the framework contract without charge before the date of the proposed application.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must give at least 2 months' notice of changes to framework contract conditions and allow the user to terminate without charge before the change takes effect",
+              "objectText": "Changes to framework contract conditions including terms, charges and service features",
+              "conditionText": "When proposing changes to the conditions of a framework contract",
+              "summary": "Changes to ongoing payment service contracts require 2 months' advance notice. Users must be able to accept or reject changes and terminate without charge before the new terms take effect.",
+              "applicableProductTypes": ["Payment Service", "Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Changes to Terms",
+                "templateText": "We may change the terms of this agreement by giving you at least 2 months' written notice before the proposed change takes effect. We will inform you of any changes in a clear and understandable way. If you do not agree with the proposed changes, you may terminate this agreement at no cost before the changes take effect. If we do not hear from you before the proposed date of application, you will be deemed to have accepted the changes.",
+                "guidance": "The 2-month notice period is a hard regulatory requirement under PSR Reg 67. Deemed acceptance is permitted but must be clearly communicated. The right to terminate without charge must be genuine and easy to exercise."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 69",
+          "rawText": "A payment service user may terminate a framework contract at any time, unless the parties have agreed a period of notice, which may not exceed one month. Termination of a framework contract must be free of charge to the payment service user, except where the contract has been in operation for less than 6 months.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must allow payment service users to terminate framework contracts at any time with no more than one month notice, free of charge (unless under 6 months)",
+              "objectText": "Termination rights for framework contracts and associated charges",
+              "conditionText": "When a payment service user wishes to terminate a framework contract",
+              "summary": "Users can exit payment service agreements at any time with max one month's notice. Termination must be free unless the contract has been in place for less than 6 months.",
+              "applicableProductTypes": ["Payment Service", "Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Termination Rights",
+                "templateText": "You may close your account at any time by giving us [one month / no] notice. Closing your account is free of charge, provided the account has been open for at least 6 months. If you close your account within the first 6 months, we may charge a reasonable fee to cover our costs of setting up the account. We will return any remaining balance to you within a reasonable timeframe.",
+                "guidance": "Maximum notice period is 1 month by law. Charges for early termination (under 6 months) must be reasonable and reflect actual costs. Ensure the closure process is simple and accessible."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 70",
+          "rawText": "A payment transaction is to be regarded as authorised only if the payer has given consent to the execution of the payment transaction. Consent may be given in the form agreed between the payer and the payment service provider.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must obtain the payer's consent before executing a payment transaction, in the form agreed between the parties",
+              "objectText": "Consent for execution of payment transactions",
+              "conditionText": "Before executing any payment transaction",
+              "summary": "Every payment must be explicitly authorised by the payer. The form of consent must be agreed between provider and user. An unauthorised payment is one executed without valid consent.",
+              "applicableProductTypes": ["Payment Service", "Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Payment Authorisation",
+                "templateText": "We will only execute a payment from your account if you have given us your consent. You can authorise payments in the following ways: [online banking, mobile app, card transaction, verbal instruction, written instruction]. You may withdraw your consent at any time before the payment has been executed. Once a payment has been executed, it cannot be revoked except in the circumstances described in these terms.",
+                "guidance": "The form of consent is flexible but must be agreed. For card payments, consent is typically via PIN or contactless. For online, it's login + confirmation. Ensure all authorisation methods are clearly listed."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 76",
+          "rawText": "Where a payment service user denies having authorised an executed payment transaction, or claims that a payment transaction has not been correctly executed, it is for the payment service provider to prove that the payment transaction was authenticated, accurately recorded, entered in the accounts and not affected by a technical breakdown or some other deficiency of the service.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must bear the burden of proof to demonstrate that a disputed payment was properly authenticated, recorded and executed without technical deficiency",
+              "objectText": "Evidence of authentication, accurate recording and proper execution of disputed payment transactions",
+              "conditionText": "When a payment service user denies authorising a transaction or claims incorrect execution",
+              "summary": "The provider bears the burden of proof in disputed transactions. They must prove the payment was authenticated, accurately recorded and not affected by technical failure. The mere use of a payment instrument does not necessarily prove authorisation.",
+              "applicableProductTypes": ["Payment Service", "Current Account", "Credit Card"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Disputed Transactions",
+                "templateText": "If you tell us that you did not authorise a payment from your account, or that a payment was not carried out correctly, we will investigate. The burden is on us to prove that the payment was properly authenticated and correctly processed. We will not assume that a payment was authorised simply because your payment instrument (card, login credentials etc.) was used. While we investigate, we will refund the amount of the disputed transaction unless we have reasonable grounds to suspect fraud.",
+                "guidance": "This is a key consumer protection. PSR Reg 76 places the burden of proof firmly on the provider. Authentication records (e.g. SCA logs) are critical evidence. Consider operational processes for handling disputes within the required timescales."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 77",
+          "rawText": "Where a payment service user denies having authorised an executed payment transaction, the payment service provider must refund the amount of the unauthorised payment transaction immediately and in any event no later than by the end of the business day following the day on which it becomes aware of the transaction, except where the payment service provider has reasonable grounds for suspecting fraud.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must immediately refund unauthorised transactions, no later than end of the next business day, unless there are reasonable grounds to suspect fraud",
+              "objectText": "Refund of the full amount of unauthorised payment transactions to the payment service user's account",
+              "conditionText": "When the user denies authorising a transaction and fraud is not reasonably suspected",
+              "summary": "Unauthorised payments must be refunded immediately, by the end of the next business day at the latest. The only exception is where the provider has reasonable grounds to suspect fraud by the user.",
+              "applicableProductTypes": ["Payment Service", "Current Account", "Credit Card"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Refund of Unauthorised Transactions",
+                "templateText": "If a payment is made from your account without your authorisation, we will refund the full amount to your account immediately, and in any event by the end of the next business day after we become aware of the unauthorised transaction. We will also restore your account to the state it would have been in had the unauthorised transaction not taken place, including any charges or interest. We may withhold the refund only if we have reasonable grounds to suspect that you acted fraudulently.",
+                "guidance": "The refund obligation is strict: end of next business day. 'Reasonable grounds for suspecting fraud' is a high bar. Consider implementing automated refund processes to ensure compliance with the tight timescale."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 79",
+          "rawText": "The payer is liable for losses up to a maximum of £35 resulting from any unauthorised payment transactions arising from the use of a lost or stolen payment instrument or from the misappropriation of the payment instrument, provided that strong customer authentication was used. Where strong customer authentication was not used, the payer shall not bear any financial losses.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must limit payer liability for unauthorised transactions to £35 maximum where SCA was applied and the instrument was lost/stolen, or zero liability where SCA was not applied",
+              "objectText": "Payer's maximum liability for losses from unauthorised payment transactions",
+              "conditionText": "When an unauthorised payment results from a lost, stolen or misappropriated payment instrument",
+              "summary": "User liability for unauthorised payments is capped at £35 where strong customer authentication (SCA) was used and the instrument was lost/stolen. Where SCA was not applied by the provider, the user has zero liability.",
+              "applicableProductTypes": ["Payment Service", "Current Account", "Credit Card"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Your Liability for Unauthorised Payments",
+                "templateText": "If an unauthorised payment is made using your lost, stolen or misappropriated payment instrument and we applied strong customer authentication, your liability is limited to a maximum of £35. If we did not apply strong customer authentication, you will not be liable for any losses from the unauthorised payment. You will not be liable for any losses arising after you have notified us that your payment instrument has been lost, stolen or compromised, unless you acted fraudulently.",
+                "guidance": "The £35 cap replaced the previous £50 cap. Where SCA was required but not applied by the provider, the user bears zero liability. This creates a strong incentive for providers to implement robust SCA."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 86",
+          "rawText": "Where a payment service provider receives a payment order on or before the cut-off time on a business day, the payment service provider must ensure that the amount of the payment transaction is credited to the payee's payment service provider's account by the end of the next business day following the time of receipt of the payment order.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must ensure payment amounts are credited to the payee's provider by the end of the next business day after receipt of the payment order",
+              "objectText": "Execution time for payment transactions received before the cut-off time",
+              "conditionText": "Where a payment order is received on or before the cut-off time on a business day",
+              "summary": "Payments must reach the payee's bank by the end of the next business day. This is a maximum execution time — many payments will settle faster via Faster Payments.",
+              "applicableProductTypes": ["Payment Service", "Current Account"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Payment Execution Times",
+                "templateText": "If you instruct us to make a payment on a business day before our cut-off time, we will ensure the funds reach the payee's bank by the end of the next business day. Payments instructed after the cut-off time or on non-business days will be treated as received on the next business day. Our cut-off times are: [specify times for different payment types]. Many payments will arrive sooner than the maximum timeframe, particularly if made via the Faster Payments service.",
+                "guidance": "The D+1 maximum applies to GBP payments within the UK. Cross-border and non-GBP payments may have longer timeframes (up to D+4). Clearly specify cut-off times for different payment types."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PSR Reg 91",
+          "rawText": "Where a payment service provider is liable for the non-execution, defective or late execution of a payment transaction, the payment service provider must, without undue delay, refund to the payer the amount of the non-executed or defective payment transaction and, where applicable, restore the debited payment account to the state in which it would have been had the defective payment transaction not taken place.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must refund without undue delay and restore the account for non-executed, defective or late payment transactions where the provider is liable",
+              "objectText": "Refund and account restoration for failed, defective or late payments",
+              "conditionText": "Where the payment service provider is liable for non-execution, defective or late execution",
+              "summary": "When the provider is at fault for a failed, defective or late payment, they must refund without undue delay and restore the account to the state it would have been in had the error not occurred.",
+              "applicableProductTypes": ["Payment Service", "Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Liability for Failed or Late Payments",
+                "templateText": "If we fail to execute a payment you have instructed, execute it incorrectly or execute it late, and we are responsible, we will: (a) refund the payment amount to your account without undue delay; (b) restore your account to the state it would have been in had the error not occurred, including reversing any charges or interest; and (c) make reasonable efforts to trace the payment and notify you of the outcome. We will also refund any charges we applied in connection with the failed or defective payment.",
+                "guidance": "This covers the provider's liability for execution failures. The obligation to restore the account includes reversing any charges or interest that resulted from the error. Consider implementing automated detection of execution failures."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "Part 8", "title": "Strong customer authentication and secure communication", "level": 1 },
+      "rules": [
+        {
+          "reference": "PSR Reg 100",
+          "rawText": "A payment service provider must apply strong customer authentication where the payer: (a) accesses its payment account online; (b) initiates an electronic payment transaction; (c) carries out any action through a remote channel which may imply a risk of payment fraud or other abuse.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Payment service providers",
+              "actionText": "Must apply strong customer authentication for online account access, electronic payment initiation and remote channel actions with fraud risk",
+              "objectText": "Strong customer authentication (two or more factors from knowledge, possession and inherence) for specified actions",
+              "conditionText": "When the payer accesses their account online, initiates an electronic payment or acts through a remote channel with fraud risk",
+              "summary": "Strong Customer Authentication (SCA) is mandatory for online account access, electronic payments and high-risk remote actions. SCA requires two or more factors from: knowledge (e.g. password), possession (e.g. phone) and inherence (e.g. fingerprint).",
+              "applicableProductTypes": ["Payment Service", "Current Account", "Credit Card"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Strong Customer Authentication",
+                "templateText": "To protect your account, we apply Strong Customer Authentication (SCA) when you: access your account online or via our app; make an electronic payment; or take any action through a remote channel that may carry a risk of fraud. SCA requires you to verify your identity using two or more of the following: something you know (e.g. password or PIN); something you have (e.g. your phone or card); or something you are (e.g. fingerprint or face recognition). We may be unable to process certain transactions if SCA cannot be completed.",
+                "guidance": "SCA is mandatory under PSR Reg 100. Exemptions exist under the Regulatory Technical Standards (e.g. low-value transactions, trusted beneficiaries, recurring payments). Clearly explain to customers why SCA is required and how to complete it."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "regulation": {
+    "id": "bcobs",
+    "regulatorId": "fca",
+    "title": "Banking Conduct of Business Sourcebook (BCOBS)",
+    "citation": "FCA BCOBS",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2009-11-01",
+    "url": "https://www.handbook.fca.org.uk/handbook/BCOBS/"
+  },
+  "sections": [
+    {
+      "section": { "number": "BCOBS 2", "title": "Communications with banking customers and financial promotions", "level": 1 },
+      "rules": [
+        {
+          "reference": "BCOBS 2.2.1R",
+          "rawText": "A firm must ensure that a communication or financial promotion relating to a retail banking product or service is clear, fair and not misleading.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "Banks and building societies",
+              "actionText": "Must ensure all communications and financial promotions for retail banking products are clear, fair and not misleading",
+              "objectText": "All communications and financial promotions relating to retail banking products and services",
+              "conditionText": "When communicating with or promoting to banking customers",
+              "summary": "All banking product communications and promotions must be clear, fair and not misleading. This applies to advertising, product literature, terms and conditions, and all customer correspondence.",
+              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "relevanceScore": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "BCOBS 3", "title": "Distance communications", "level": 1 },
+      "rules": [
+        {
+          "reference": "BCOBS 3.1.2R",
+          "rawText": "Where a distance contract for a retail banking service is concluded, the firm must provide the banking customer with the terms and conditions of that contract in a durable medium in good time either before the conclusion of the contract, or immediately after the conclusion of the contract where the contract has been concluded at the banking customer's request using a means of distance communication which does not enable the provision of the terms and conditions in that manner.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks and building societies",
+              "actionText": "Must provide terms and conditions in a durable medium before or immediately after conclusion of a distance contract",
+              "objectText": "Full terms and conditions of the distance contract for the retail banking service",
+              "conditionText": "When concluding a distance contract for a retail banking service",
+              "summary": "When banking products are sold at a distance (online, phone), full terms must be provided in a durable medium either before or immediately after the contract is made.",
+              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Distance Contract Terms",
+                "templateText": "If you opened this account online, by phone or through another distance channel, we will provide you with the full terms and conditions in writing (by post or email) either before or immediately after the account is opened. You have the right to receive a paper copy of these terms at any time on request.",
+                "guidance": "Durable medium includes email and downloadable PDF but must allow the customer to store and reproduce the information unchanged. Ensure digital delivery meets the durable medium test."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "BCOBS 4", "title": "Information to be provided to banking customers", "level": 1 },
+      "rules": [
+        {
+          "reference": "BCOBS 4.1.1R",
+          "rawText": "A firm must provide or make available to a banking customer appropriate information about a retail banking product or service and any charges in good time before, during, and after the contract for the product or service has been entered into.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks and building societies",
+              "actionText": "Must provide appropriate product and charges information in good time before, during and after the contract",
+              "objectText": "Appropriate information about the retail banking product, its features and any charges",
+              "conditionText": "Before, during and after the customer has entered into the banking contract",
+              "summary": "Banks must provide customers with appropriate product and charges information at all stages: pre-sale, at point of sale, and on an ongoing basis throughout the life of the account.",
+              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Ongoing Information Provision",
+                "templateText": "We will provide you with clear information about this account and any charges that apply: (a) before you open the account — a summary of key features, interest rates and charges; (b) when you open the account — the full terms and conditions; (c) during the life of the account — regular statements, notification of changes to rates or charges, and an annual summary of charges applied. You can request information about your account at any time.",
+                "guidance": "BCOBS 4 requires ongoing information, not just pre-sale. Annual statements of charges are particularly important for current accounts. Ensure interest rate changes are communicated promptly."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "BCOBS 4.1.2AG",
+          "rawText": "A firm should provide a banking customer with information about the interest rate that applies to a retail banking product and information that will enable the banking customer to identify the interest rate that will apply if the current rate changes, including a statement of any relevant base rate or reference rate.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks and building societies",
+              "actionText": "Should provide information about the applicable interest rate and how it may change, including the reference rate",
+              "objectText": "Interest rate information including current rate, basis of rate and reference to any base rate or reference rate",
+              "conditionText": "When providing product information to banking customers",
+              "summary": "Banks should clearly disclose the current interest rate, how it is determined, and what will happen if it changes, including reference to any base rate that the product rate follows.",
+              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Interest Rate Disclosure",
+                "templateText": "The interest rate on this account is [X]% AER / [X]% gross per annum. [This is a variable rate linked to the Bank of England base rate / This is a fixed rate that applies until [date]]. We will tell you the current rate at any time on request and publish it on our website. If the rate changes, we will notify you [before the change takes effect / within 30 days].",
+                "guidance": "Must include AER for savings. For tracker products, clearly explain the relationship to the base rate. For easy access savings, consider whether the rate is genuinely competitive versus a teaser that drops."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "BCOBS 5", "title": "Post-sale requirements", "level": 1 },
+      "rules": [
+        {
+          "reference": "BCOBS 5.1.1R",
+          "rawText": "A firm must provide or make available to a banking customer statements relating to a retail banking product at least annually in a durable medium, or more frequently if agreed or required by the terms of the product.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks and building societies",
+              "actionText": "Must provide account statements at least annually in a durable medium",
+              "objectText": "Account statements for retail banking products",
+              "conditionText": "On an ongoing basis, at least annually",
+              "summary": "Banks must provide account statements at least once a year in a durable medium. More frequent statements may be required by the product terms or customer agreement.",
+              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Account Statements",
+                "templateText": "We will provide you with account statements at least once a year. For current accounts, we provide monthly statements. Statements are available online through our banking app and website, and you can request paper statements at any time. Your statement will show all transactions, interest applied and any charges.",
+                "guidance": "Durable medium is required. Online statements accessible through a login are generally considered durable. Ensure customers can easily access historical statements."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "BCOBS 5.1.3R",
+          "rawText": "When a firm proposes to vary the terms of the contract for a retail banking product to the significant disadvantage of the banking customer, the firm must provide the banking customer with at least 60 days' notice before the change takes effect.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks and building societies",
+              "actionText": "Must give at least 60 days' notice of changes to banking product terms that are significantly disadvantageous to the customer",
+              "objectText": "Notification of changes to retail banking product terms and conditions",
+              "conditionText": "When varying contract terms to the significant disadvantage of the banking customer",
+              "summary": "Changes to banking product terms that significantly disadvantage the customer require at least 60 days' advance notice. This includes rate reductions on savings and increases to charges.",
+              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Notice of Adverse Changes",
+                "templateText": "If we need to make a change to your account terms that is significantly disadvantageous to you, we will give you at least 60 days' written notice before the change takes effect. This includes changes such as reducing interest rates or increasing charges. We will explain the change clearly and tell you how it affects you. You will have the right to close your account or switch to a different product before the change takes effect without penalty.",
+                "guidance": "The 60-day notice period is a minimum for significantly disadvantageous changes. Consider what constitutes 'significant disadvantage' — interest rate reductions on savings, new charges, and removal of benefits are clear examples."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "BCOBS 5.1.5R",
+          "rawText": "A firm must ensure that a banking customer can move from one retail banking product to another retail banking product with the same firm, or to a different firm, without unreasonable barriers or delay.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks and building societies",
+              "actionText": "Must enable customers to switch products or providers without unreasonable barriers or delay",
+              "objectText": "Customer switching processes between products and between providers",
+              "conditionText": "When a banking customer wishes to switch products or providers",
+              "summary": "Banks must not create unreasonable barriers to switching, whether the customer is moving to another product at the same bank or switching to a different provider entirely.",
+              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Switching and Account Closure",
+                "templateText": "You are free to switch this account to a different product with us, or to move to a different bank or building society, at any time. We will not place unreasonable barriers in your way. For current accounts, the Current Account Switch Service (CASS) provides a free and simple switching process that completes within 7 working days. For savings accounts, we will transfer your balance within [X] working days of your request.",
+                "guidance": "CASS compliance is essential for current accounts. For savings, ensure closure and transfer processes are genuinely straightforward with no unnecessary delays or requirements."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "BCOBS 6A", "title": "Cancellation", "level": 1 },
+      "rules": [
+        {
+          "reference": "BCOBS 6A.1.1R",
+          "rawText": "Where a distance contract for a retail banking product is concluded, the banking customer has a right to cancel the contract within 14 days beginning on the day after the day on which the contract is concluded.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks and building societies",
+              "actionText": "Must provide a 14-day cancellation right for distance contracts for retail banking products",
+              "objectText": "The right to cancel a distance contract within 14 days",
+              "conditionText": "When a retail banking product is sold via a distance channel",
+              "summary": "Customers who open banking products at a distance (online, phone) have a 14-day cooling-off period during which they can cancel the contract.",
+              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "relevanceScore": 0.85,
+              "clauseTemplate": {
+                "title": "14-Day Cancellation Right",
+                "templateText": "If you opened this account online, by telephone or through another distance channel, you have the right to cancel within 14 days of opening the account. To cancel, contact us by [phone/online/in writing]. If you cancel, we will return any money in the account to you or to your nominated account. You will receive any interest earned up to the date of cancellation.",
+                "guidance": "The 14-day right applies to distance contracts only. Ensure the cancellation process is simple and that interest is calculated fairly up to the cancellation date."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

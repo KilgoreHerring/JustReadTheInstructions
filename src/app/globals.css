@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* ── The Modern Codex: Design Tokens ── */
+
+:root {
+  /* Surface */
+  --background: #FAFAF9;
+  --foreground: #1A1A1A;
+  --muted: #F5F5F4;
+  --muted-foreground: #525252;
+  --border: #E5E5E5;
+
+  /* Accent */
+  --accent: #1E3A5F;
+  --accent-foreground: #FFFFFF;
+  --accent-light: #EEF2F7;
+  --primary: #1E3A5F;
+  --primary-foreground: #FFFFFF;
+
+  /* Status: Muted Pastels */
+  --status-compliant-bg: #F0F4EC;
+  --status-compliant-text: #3A5A28;
+  --status-non-compliant-bg: #FDF0EE;
+  --status-non-compliant-text: #7A3B32;
+  --status-in-progress-bg: #FDF6EE;
+  --status-in-progress-text: #7A5B3A;
+  --status-not-assessed-bg: #F3F4F6;
+  --status-not-assessed-text: #4B5563;
+  --status-na-bg: #F1F5F9;
+  --status-na-text: #64748B;
+
+  /* Obligation types */
+  --type-obligation-bg: #EEF2F7;
+  --type-obligation-text: #1E3A5F;
+  --type-prohibition-bg: #FDF0EE;
+  --type-prohibition-text: #7A3B32;
+  --type-permission-bg: #F0F4EC;
+  --type-permission-text: #3A5A28;
+  --type-dispensation-bg: #F5F0FF;
+  --type-dispensation-text: #5B3A8A;
+  --type-principle-bg: #ECFDF5;
+  --type-principle-text: #166534;
+  --type-principle-border: #D1FAE5;
+
+  /* Document types */
+  --doc-tc-bg: #EEF2F7;
+  --doc-tc-text: #1E3A5F;
+  --doc-fva-bg: #FDF6EE;
+  --doc-fva-text: #7A5B3A;
+  --doc-tma-bg: #F5F0FF;
+  --doc-tma-text: #5B3A8A;
+
+  /* Analysis statuses */
+  --analysis-pending-bg: #F3F4F6;
+  --analysis-pending-text: #4B5563;
+  --analysis-analysing-bg: #FDF6EE;
+  --analysis-analysing-text: #7A5B3A;
+  --analysis-complete-bg: #F0F4EC;
+  --analysis-complete-text: #3A5A28;
+  --analysis-failed-bg: #FDF0EE;
+  --analysis-failed-text: #7A3B32;
+
+  /* Citation pill */
+  --citation-bg: #F3F4F6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1C1C1A;
+    --foreground: #E8E8E6;
+    --muted: #2A2A28;
+    --muted-foreground: #A0A09E;
+    --border: #3A3A38;
+
+    --accent: #6B9BD2;
+    --accent-foreground: #1C1C1A;
+    --accent-light: #1E2A3A;
+    --primary: #6B9BD2;
+    --primary-foreground: #1C1C1A;
+
+    --status-compliant-bg: #2A3A24;
+    --status-compliant-text: #B8CCA6;
+    --status-non-compliant-bg: #3A2824;
+    --status-non-compliant-text: #D4A49C;
+    --status-in-progress-bg: #3A3024;
+    --status-in-progress-text: #D4BC9C;
+    --status-not-assessed-bg: #2A2C30;
+    --status-not-assessed-text: #9CA3AF;
+    --status-na-bg: #252830;
+    --status-na-text: #94A3B8;
+
+    --type-obligation-bg: #1E2A3A;
+    --type-obligation-text: #6B9BD2;
+    --type-prohibition-bg: #3A2824;
+    --type-prohibition-text: #D4A49C;
+    --type-permission-bg: #2A3A24;
+    --type-permission-text: #B8CCA6;
+    --type-dispensation-bg: #2E2440;
+    --type-dispensation-text: #B8A0D4;
+    --type-principle-bg: #1A3A2E;
+    --type-principle-text: #86EFAC;
+    --type-principle-border: #2D5A44;
+
+    --doc-tc-bg: #1E2A3A;
+    --doc-tc-text: #6B9BD2;
+    --doc-fva-bg: #3A3024;
+    --doc-fva-text: #D4BC9C;
+    --doc-tma-bg: #2E2440;
+    --doc-tma-text: #B8A0D4;
+
+    --analysis-pending-bg: #2A2C30;
+    --analysis-pending-text: #9CA3AF;
+    --analysis-analysing-bg: #3A3024;
+    --analysis-analysing-text: #D4BC9C;
+    --analysis-complete-bg: #2A3A24;
+    --analysis-complete-text: #B8CCA6;
+    --analysis-failed-bg: #3A2824;
+    --analysis-failed-text: #D4A49C;
+
+    --citation-bg: #2A2C30;
+  }
+}
+
+/* ── Typography ── */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+code, .font-mono {
+  font-family: var(--font-mono), ui-monospace, "Cascadia Code", monospace;
+}
+
+/* ── Layout Utilities ── */
+
+.prose-column {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* ── Focus Ring ── */
+
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

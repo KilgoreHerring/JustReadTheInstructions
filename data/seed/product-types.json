@@ -1,0 +1,95 @@
+[
+  {
+    "id": "residential-mortgage",
+    "name": "Residential Mortgage",
+    "category": "lending",
+    "description": "A loan secured against residential property, used by consumers to purchase or refinance a home. Subject to FCA mortgage conduct rules under MCOB.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "MCOB" },
+      { "key": "secured", "value": "yes" }
+    ]
+  },
+  {
+    "id": "personal-loan",
+    "name": "Personal Loan",
+    "category": "lending",
+    "description": "An unsecured fixed-term loan to a consumer for personal purposes. Regulated under the Consumer Credit Act and FCA consumer credit rules in CONC.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "CONC" },
+      { "key": "secured", "value": "no" }
+    ]
+  },
+  {
+    "id": "credit-card",
+    "name": "Credit Card",
+    "category": "lending",
+    "description": "A revolving credit facility allowing consumers to borrow up to a pre-set limit for purchases, balance transfers and cash advances. Regulated under CONC.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "CONC" },
+      { "key": "revolving", "value": "yes" }
+    ]
+  },
+  {
+    "id": "current-account",
+    "name": "Current Account",
+    "category": "deposits",
+    "description": "A transactional bank account providing day-to-day banking services including payments, direct debits and standing orders. Regulated under BCOBS and payment services legislation.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "BCOBS" },
+      { "key": "payment_services", "value": "yes" }
+    ]
+  },
+  {
+    "id": "savings-account",
+    "name": "Savings Account",
+    "category": "deposits",
+    "description": "A deposit account designed for consumers to save money and earn interest. Subject to FCA banking conduct of business rules under BCOBS.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "BCOBS" }
+    ]
+  },
+  {
+    "id": "investment-product-retail",
+    "name": "Investment Product (Retail)",
+    "category": "investments",
+    "description": "Investment products marketed to retail consumers including funds, structured deposits and portfolio management services. Subject to MiFID II requirements and COBS.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "COBS" },
+      { "key": "mifid", "value": "yes" }
+    ]
+  },
+  {
+    "id": "general-insurance",
+    "name": "General Insurance",
+    "category": "insurance",
+    "description": "Non-life insurance products sold to consumers including home, motor, travel and pet insurance. Regulated under ICOBS.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "ICOBS" }
+    ]
+  },
+  {
+    "id": "payment-service",
+    "name": "Payment Service",
+    "category": "payments",
+    "description": "Payment initiation, account information and electronic money services provided to consumers. Subject to the Payment Services Regulations and PSD2.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "psd2", "value": "yes" }
+    ]
+  }
+]

@@ -1,0 +1,261 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Regulator {
+  id           String       @id @default(cuid())
+  name         String
+  abbreviation String
+  jurisdiction String
+  website      String?
+  rssFeedUrl   String?
+  regulations  Regulation[]
+  createdAt    DateTime     @default(now())
+}
+
+model Regulation {
+  id            String                     @id @default(cuid())
+  regulatorId   String
+  regulator     Regulator                  @relation(fields: [regulatorId], references: [id])
+  title         String
+  citation      String
+  type          String
+  status        String
+  effectiveDate DateTime?
+  url           String?
+  sections      Section[]
+  versions      RegulationVersion[]
+  crossRefsFrom RegulationCrossReference[] @relation("CrossRefFrom")
+  crossRefsTo   RegulationCrossReference[] @relation("CrossRefTo")
+  createdAt     DateTime                   @default(now())
+  updatedAt     DateTime                   @updatedAt
+
+  @@index([regulatorId])
+}
+
+model Section {
+  id           String     @id @default(cuid())
+  regulationId String
+  regulation   Regulation @relation(fields: [regulationId], references: [id])
+  parentId     String?
+  parent       Section?   @relation("SectionHierarchy", fields: [parentId], references: [id])
+  children     Section[]  @relation("SectionHierarchy")
+  number       String
+  title        String
+  level        Int
+  rules        Rule[]
+  createdAt    DateTime   @default(now())
+
+  @@index([regulationId])
+  @@index([parentId])
+}
+
+model Rule {
+  id            String       @id @default(cuid())
+  sectionId     String
+  section       Section      @relation(fields: [sectionId], references: [id])
+  reference     String
+  rawText       String       @db.Text
+  status        String       @default("active")
+  effectiveDate DateTime?
+  obligations   Obligation[]
+  createdAt     DateTime     @default(now())
+
+  @@index([sectionId])
+}
+
+model Obligation {
+  id                   String                          @id @default(cuid())
+  ruleId               String
+  rule                 Rule                            @relation(fields: [ruleId], references: [id])
+  obligationType       String
+  addressee            String
+  actionText           String                          @db.Text
+  objectText           String?                         @db.Text
+  conditionText        String?                         @db.Text
+  summary              String                          @db.Text
+  isActive             Boolean                         @default(true)
+  extractedBy          String
+  confidenceScore      Float?
+  verifiedBy           String?
+  verifiedAt           DateTime?
+  productApplicability ObligationProductApplicability[]
+  clauseTemplates      ClauseTemplate[]
+  controls             ComplianceControl[]
+  changes              ObligationChange[]
+  matrixEntries        ComplianceMatrixEntry[]         @relation("MatrixObligations")
+  createdAt            DateTime                        @default(now())
+  updatedAt            DateTime                        @updatedAt
+
+  @@index([ruleId])
+  @@index([obligationType])
+}
+
+model ProductType {
+  id            String                          @id @default(cuid())
+  name          String
+  category      String
+  description   String?                         @db.Text
+  attributes    ProductTypeAttribute[]
+  applicability ObligationProductApplicability[]
+  products      Product[]
+  createdAt     DateTime                        @default(now())
+
+  @@index([category])
+}
+
+model ProductTypeAttribute {
+  id            String      @id @default(cuid())
+  productTypeId String
+  productType   ProductType @relation(fields: [productTypeId], references: [id])
+  key           String
+  value         String
+
+  @@index([productTypeId])
+}
+
+model ObligationProductApplicability {
+  id             String      @id @default(cuid())
+  obligationId   String
+  obligation     Obligation  @relation(fields: [obligationId], references: [id])
+  productTypeId  String
+  productType    ProductType @relation(fields: [productTypeId], references: [id])
+  relevanceScore Float
+  rationale      String?     @db.Text
+
+  @@unique([obligationId, productTypeId])
+  @@index([obligationId])
+  @@index([productTypeId])
+}
+
+model Product {
+  id                  String                 @id @default(cuid())
+  name                String
+  productTypeId       String
+  productType         ProductType            @relation(fields: [productTypeId], references: [id])
+  description         String?                @db.Text
+  jurisdictions       String[]
+  customerType        String
+  distributionChannel String
+  status              String                 @default("draft")
+  matrixEntries       ComplianceMatrixEntry[]
+  documents           ProductDocument[]
+  createdAt           DateTime               @default(now())
+  updatedAt           DateTime               @updatedAt
+
+  @@index([productTypeId])
+}
+
+model ProductDocument {
+  id                  String    @id @default(cuid())
+  productId           String
+  product             Product   @relation(fields: [productId], references: [id])
+  documentType        String    // "terms_and_conditions" | "fair_value_assessment" | "target_market_assessment"
+  fileName            String
+  content             String    @db.Text
+  analysisStatus      String    @default("pending") // "pending" | "analysing" | "complete" | "failed"
+  analysisResult      Json?
+  analysisError       String?   @db.Text
+  analysisCompletedAt DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@index([productId])
+  @@index([productId, documentType])
+}
+
+model ComplianceMatrixEntry {
+  id               String     @id @default(cuid())
+  productId        String
+  product          Product    @relation(fields: [productId], references: [id])
+  obligationId     String
+  obligation       Obligation @relation("MatrixObligations", fields: [obligationId], references: [id])
+  complianceStatus String     @default("not_assessed")
+  owner            String?
+  evidence         String?    @db.Text
+  notes            String?    @db.Text
+  documentEvidence Json?
+  evidenceSource   String?    // "manual" | "document_analysis" | "mixed"
+  reviewedAt       DateTime?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([productId, obligationId])
+  @@index([productId])
+  @@index([obligationId])
+}
+
+model ClauseTemplate {
+  id           String     @id @default(cuid())
+  obligationId String
+  obligation   Obligation @relation(fields: [obligationId], references: [id])
+  title        String
+  templateText String     @db.Text
+  guidance     String?    @db.Text
+  version      Int        @default(1)
+  createdAt    DateTime   @default(now())
+
+  @@index([obligationId])
+}
+
+model ComplianceControl {
+  id           String     @id @default(cuid())
+  obligationId String
+  obligation   Obligation @relation(fields: [obligationId], references: [id])
+  description  String     @db.Text
+  owner        String?
+  status       String
+
+  @@index([obligationId])
+}
+
+model RegulationCrossReference {
+  id             String     @id @default(cuid())
+  fromRegId      String
+  fromRegulation Regulation @relation("CrossRefFrom", fields: [fromRegId], references: [id])
+  toRegId        String
+  toRegulation   Regulation @relation("CrossRefTo", fields: [toRegId], references: [id])
+  relationship   String
+}
+
+model RegulationVersion {
+  id            String     @id @default(cuid())
+  regulationId  String
+  regulation    Regulation @relation(fields: [regulationId], references: [id])
+  version       String
+  publishedDate DateTime
+  changeSummary String     @db.Text
+  sourceUrl     String?
+
+  @@index([regulationId])
+}
+
+model ObligationChange {
+  id            String     @id @default(cuid())
+  obligationId  String
+  obligation    Obligation @relation(fields: [obligationId], references: [id])
+  changeType    String
+  oldText       String?    @db.Text
+  newText       String?    @db.Text
+  effectiveDate DateTime
+  detectedAt    DateTime   @default(now())
+
+  @@index([obligationId])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  entityType String
+  entityId   String
+  action     String
+  userId     String?
+  details    String?  @db.Text
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+}
