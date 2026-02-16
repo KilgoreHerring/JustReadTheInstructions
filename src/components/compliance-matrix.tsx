@@ -9,7 +9,7 @@ import {
   getComplianceLabel,
 } from "@/lib/utils";
 import { useContextPanel } from "./context-panel-provider";
-import { Link2, Flag, MessageSquarePlus, AlertTriangle, AlertCircle, CheckCircle2, Sparkles, HelpCircle } from "lucide-react";
+import { AlertTriangle, AlertCircle, CheckCircle2, Sparkles, HelpCircle, ChevronDown, ChevronRight } from "lucide-react";
 
 interface MatrixEntry {
   id: string;
@@ -109,7 +109,8 @@ function getPrimaryFinding(entry: MatrixEntry) {
   return sorted[0];
 }
 
-export function ComplianceMatrix({ productId, productName, entries }: Props) {
+export function ComplianceMatrix({ productId, productName, entries: initialEntries }: Props) {
+  const [entries, setEntries] = useState(initialEntries);
   const [filter, setFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
   const [evidenceFilter, setEvidenceFilter] = useState("all");
@@ -119,6 +120,7 @@ export function ComplianceMatrix({ productId, productName, entries }: Props) {
   const [clauses, setClauses] = useState<
     Record<string, { title: string; clauseText: string; guidance: string }>
   >({});
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
 
   const { open } = useContextPanel();
 
@@ -162,6 +164,9 @@ export function ComplianceMatrix({ productId, productName, entries }: Props) {
   const grouped = groupEntries(filtered, viewMode);
 
   async function handleStatusChange(entryId: string, newStatus: string) {
+    setEntries((prev) =>
+      prev.map((e) => (e.id === entryId ? { ...e, complianceStatus: newStatus } : e))
+    );
     await fetch(`/api/products/${productId}/matrix`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -381,29 +386,39 @@ export function ComplianceMatrix({ productId, productName, entries }: Props) {
         const triageKey = viewMode === "triage" ? (group as TriageGroup) : null;
         const triageMeta = triageKey ? TRIAGE_GROUPS[triageKey] : null;
         const TriageIcon = triageMeta?.icon;
+        const isCollapsed = collapsed.has(group);
 
         return (
           <div key={group} className="mb-6">
-            <h3
-              className="text-sm font-semibold px-4 py-2 border-b border-[var(--border)] text-[var(--foreground)] flex items-center gap-2"
+            <button
+              onClick={() => setCollapsed((prev) => {
+                const next = new Set(prev);
+                if (next.has(group)) next.delete(group);
+                else next.add(group);
+                return next;
+              })}
+              className="w-full text-left text-sm font-semibold px-4 py-2 border-b border-[var(--border)] text-[var(--foreground)] flex items-center gap-2 hover:bg-[var(--muted)] transition-colors"
               style={{ fontFamily: "var(--font-heading), Georgia, serif" }}
             >
+              {isCollapsed ? <ChevronRight size={14} className="text-[var(--muted-foreground)]" /> : <ChevronDown size={14} className="text-[var(--muted-foreground)]" />}
               {TriageIcon && <TriageIcon size={14} className={triageMeta!.color} />}
               {triageMeta ? triageMeta.label : group} ({groupEntries.length})
-            </h3>
-            <div className="divide-y divide-[var(--border)] border-b border-[var(--border)]">
-              {groupEntries.map((entry) => (
-                <ObligationRow
-                  key={entry.id}
-                  entry={entry}
-                  clauses={clauses}
-                  highlightId={highlightId}
-                  onStatusChange={handleStatusChange}
-                  onOpenPanel={openObligationPanel}
-                  showEvidence={viewMode === "triage"}
-                />
-              ))}
-            </div>
+            </button>
+            {!isCollapsed && (
+              <div className="divide-y divide-[var(--border)] border-b border-[var(--border)]">
+                {groupEntries.map((entry) => (
+                  <ObligationRow
+                    key={entry.id}
+                    entry={entry}
+                    clauses={clauses}
+                    highlightId={highlightId}
+                    onStatusChange={handleStatusChange}
+                    onOpenPanel={openObligationPanel}
+                    showEvidence={viewMode === "triage"}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         );
       })}
@@ -440,17 +455,13 @@ function ObligationRow({
   const visibleTags = tags.slice(0, 3);
   const hiddenCount = tags.length - 3;
 
-  function copyLink() {
-    const url = `${window.location.origin}${window.location.pathname}#${anchorId}`;
-    navigator.clipboard.writeText(url);
-  }
-
   return (
     <div
       id={anchorId}
-      className={`group relative px-4 py-3 cursor-pointer hover:bg-[var(--muted)] transition-colors ${
+      className={`group relative px-4 py-3 cursor-pointer hover:bg-[var(--muted)] transition-colors border-l-2 ${
         isHighlighted ? "ring-2 ring-[var(--accent)] ring-inset" : ""
-      } ${isPrinciple ? "border-l-2 border-[var(--type-principle-border)]" : ""}`}
+      }`}
+      style={{ borderLeftColor: `var(--type-${ob.obligationType}-text)` }}
       onClick={() => onOpenPanel(entry)}
     >
       <div className="flex items-start gap-3">
@@ -529,7 +540,7 @@ function ObligationRow({
         </div>
 
         {/* Status dropdown */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-2 shrink-0 w-[130px] justify-end">
           <select
             suppressHydrationWarning
             value={entry.complianceStatus}
@@ -538,7 +549,7 @@ function ObligationRow({
               onStatusChange(entry.id, e.target.value);
             }}
             onClick={(e) => e.stopPropagation()}
-            className={`text-xs rounded-full px-2.5 py-1 border-0 font-medium cursor-pointer ${status?.color || ""}`}
+            className={`text-xs rounded-full px-2.5 py-1 border-0 font-medium cursor-pointer w-full ${status?.color || ""}`}
           >
             {Object.entries(COMPLIANCE_STATUSES).map(([k, v]) => (
               <option key={k} value={k}>
@@ -549,33 +560,6 @@ function ObligationRow({
         </div>
       </div>
 
-      {/* Hover actions */}
-      <div className="absolute right-4 top-1 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-0.5">
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            copyLink();
-          }}
-          className="p-1 rounded hover:bg-[var(--border)] text-[var(--muted-foreground)]"
-          title="Copy link"
-        >
-          <Link2 size={12} />
-        </button>
-        <button
-          onClick={(e) => e.stopPropagation()}
-          className="p-1 rounded hover:bg-[var(--border)] text-[var(--muted-foreground)]"
-          title="Flag"
-        >
-          <Flag size={12} />
-        </button>
-        <button
-          onClick={(e) => e.stopPropagation()}
-          className="p-1 rounded hover:bg-[var(--border)] text-[var(--muted-foreground)]"
-          title="Add note"
-        >
-          <MessageSquarePlus size={12} />
-        </button>
-      </div>
     </div>
   );
 }

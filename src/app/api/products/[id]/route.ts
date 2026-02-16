@@ -29,3 +29,22 @@ export async function GET(
 
   return NextResponse.json(product);
 }
+
+export async function DELETE(
+  _request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
+
+  const product = await prisma.product.findUnique({ where: { id } });
+  if (!product) {
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+
+  // Delete in dependency order
+  await prisma.complianceMatrixEntry.deleteMany({ where: { productId: id } });
+  await prisma.productDocument.deleteMany({ where: { productId: id } });
+  await prisma.product.delete({ where: { id } });
+
+  return NextResponse.json({ ok: true });
+}

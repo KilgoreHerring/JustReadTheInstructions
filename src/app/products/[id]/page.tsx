@@ -5,6 +5,7 @@ import { DocumentUpload } from "@/components/document-upload";
 import { DocumentAnalysisResults } from "@/components/document-analysis-results";
 import { ClauseGenerationCard } from "@/components/clause-generation-card";
 import { ReadabilityResultsServer } from "@/components/readability-results-server";
+import { DeleteProductButton } from "@/components/delete-product-button";
 
 export const dynamic = "force-dynamic";
 
@@ -62,13 +63,14 @@ export default async function ProductDetailPage({
             <span className="capitalize">{product.customerType}</span>
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <a
             href={`/products/${id}/matrix`}
             className="px-4 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-md text-sm font-medium hover:opacity-90"
           >
             View Compliance Matrix
           </a>
+          <DeleteProductButton productId={id} productName={product.name} />
         </div>
       </div>
 

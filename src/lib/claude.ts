@@ -1,8 +1,23 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { jsonrepair } from "jsonrepair";
+import { readFileSync } from "fs";
+import { resolve } from "path";
+
+function getApiKey(): string | undefined {
+  const envKey = process.env.ANTHROPIC_API_KEY?.trim();
+  if (envKey) return envKey;
+  // Fallback: read .env.local directly (handles empty inherited env vars)
+  try {
+    const envFile = readFileSync(resolve(process.cwd(), ".env.local"), "utf-8");
+    const match = envFile.match(/^ANTHROPIC_API_KEY=(.+)$/m);
+    return match?.[1]?.trim();
+  } catch {
+    return undefined;
+  }
+}
 
 const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
+  apiKey: getApiKey(),
 });
 
 export async function askClaude(
