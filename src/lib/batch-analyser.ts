@@ -131,6 +131,21 @@ export interface BatchJobStatus {
   error: string | null;
 }
 
+export async function resolveOutstandingBatches(): Promise<void> {
+  const pending = await prisma.batchJob.findMany({
+    where: { status: { in: ["submitted", "processing"] } },
+  });
+  if (pending.length === 0) return;
+  console.log(`[Batch] Resolving ${pending.length} outstanding batch job(s)`);
+  for (const job of pending) {
+    try {
+      await pollBatchJob(job.id);
+    } catch (e) {
+      console.error(`[Batch] Failed to resolve job ${job.id}:`, e);
+    }
+  }
+}
+
 export async function pollBatchJob(batchJobId: string): Promise<BatchJobStatus> {
   const job = await prisma.batchJob.findUniqueOrThrow({ where: { id: batchJobId } });
 

@@ -6,6 +6,7 @@ import { ProductComplianceGrid } from "@/components/dashboard/product-compliance
 import { AttentionQueue } from "@/components/dashboard/attention-queue";
 import { RecentActivityFeed } from "@/components/dashboard/recent-activity-feed";
 import { RiskSummary } from "@/components/dashboard/risk-summary";
+import { resolveOutstandingBatches } from "@/lib/batch-analyser";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +21,9 @@ interface DocumentEvidence {
 }
 
 async function getDashboardData() {
+  // Resolve any batch jobs that finished while the user was away
+  await resolveOutstandingBatches();
+
   const [heatmapEntries, products, recentAnalyses, gapObligations, entriesWithEvidence] =
     await Promise.all([
       prisma.complianceMatrixEntry.findMany({

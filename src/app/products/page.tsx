@@ -1,10 +1,13 @@
 import { prisma } from "@/lib/db";
 import { formatDate } from "@/lib/utils";
 import { BulkAnalyseButton } from "@/components/bulk-analyse-button";
+import { resolveOutstandingBatches } from "@/lib/batch-analyser";
 
 export const dynamic = "force-dynamic";
 
 export default async function ProductsPage() {
+  await resolveOutstandingBatches();
+
   const products = await prisma.product.findMany({
     include: {
       productType: true,
