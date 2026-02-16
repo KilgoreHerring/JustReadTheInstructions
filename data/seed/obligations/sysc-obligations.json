@@ -1,0 +1,266 @@
+{
+  "regulation": {
+    "id": "sysc",
+    "regulatorId": "fca",
+    "title": "Senior Management Arrangements, Systems and Controls (SYSC)",
+    "citation": "FCA SYSC",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2007-11-01",
+    "url": "https://www.handbook.fca.org.uk/handbook/SYSC/"
+  },
+  "sections": [
+    {
+      "section": { "number": "SYSC 3", "title": "Systems and controls", "level": 1 },
+      "rules": [
+        {
+          "reference": "SYSC 3.1.1R",
+          "rawText": "A firm must take reasonable care to establish and maintain such systems and controls as are appropriate to its business.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must take reasonable care to establish and maintain systems and controls appropriate to the firm's business",
+              "objectText": "Systems and controls covering all aspects of the firm's business operations, risk management and regulatory compliance",
+              "conditionText": "At all times while carrying on regulated activities",
+              "summary": "Foundational requirement for firms to have appropriate systems and controls. The scope and complexity of systems must be proportionate to the nature, scale and complexity of the firm's business. This underpins all other SYSC requirements and is the basis on which the FCA assesses operational resilience and governance.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Systems and Controls",
+                "templateText": "We maintain systems and controls appropriate to our business to ensure that our operations, risk management and regulatory compliance meet the standards required by the Financial Conduct Authority. These systems are regularly reviewed and updated to reflect changes in our business, regulatory requirements and the risks we manage on your behalf.",
+                "guidance": "This is the overarching systems and controls obligation. Firms should document their systems and controls framework and review it at least annually. The FCA expects proportionality — a large bank needs more sophisticated controls than a small IFA. Evidence of regular review and board-level oversight is critical for supervisory assessments."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "SYSC 3.2.6R",
+          "rawText": "A firm must take reasonable care to establish and maintain effective systems and controls for compliance with applicable requirements and standards under the regulatory system and for countering the risk that the firm might be used to further financial crime. The systems and controls must include appropriate internal reporting lines.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must take reasonable care to establish and maintain effective systems and controls for compliance with applicable requirements and standards, and for countering financial crime risk, including appropriate internal reporting lines",
+              "objectText": "Compliance monitoring systems, financial crime controls and internal reporting structures",
+              "conditionText": "At all times while carrying on regulated activities",
+              "summary": "Firms must have effective compliance monitoring and financial crime prevention systems with clear internal reporting lines. This requires dedicated compliance resources, escalation procedures and management information flows to ensure breaches are detected, reported and remediated promptly.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Compliance and Financial Crime Controls",
+                "templateText": "We operate effective compliance monitoring and financial crime prevention systems. Our internal reporting lines ensure that any issues are identified, escalated and addressed promptly. We are committed to meeting all applicable regulatory requirements and to preventing our services from being used for financial crime.",
+                "guidance": "The internal reporting lines requirement means firms need documented escalation procedures from front-line staff through compliance to senior management and the board. The FCA will assess whether reporting lines are genuinely effective — not just documented — and whether management information reaches decision-makers in a timely way."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "SYSC 4", "title": "General organisational requirements", "level": 1 },
+      "rules": [
+        {
+          "reference": "SYSC 4.1.1R",
+          "rawText": "A firm must have robust governance arrangements, which include a clear organisational structure with well-defined, transparent and consistent lines of responsibility, effective processes to identify, manage, monitor and report the risks it is or might be exposed to, and internal control mechanisms, including sound administrative and accounting procedures and effective control and safeguard arrangements for information processing systems.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must have robust governance arrangements including clear organisational structure, well-defined transparent and consistent lines of responsibility, effective risk management processes, and internal control mechanisms",
+              "objectText": "Governance framework encompassing organisational structure, responsibility allocation, risk identification and management, internal controls, administrative and accounting procedures, and information processing safeguards",
+              "conditionText": "At all times while the firm is authorised to carry on regulated activities",
+              "summary": "Comprehensive governance obligation requiring firms to maintain a clear organisational structure with transparent reporting lines, effective risk management processes covering identification, management, monitoring and reporting of risks, and sound internal control mechanisms. This is the central organisational requirement from which many other SYSC obligations flow.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Governance and Organisational Structure",
+                "templateText": "We maintain robust governance arrangements with a clear organisational structure and well-defined lines of responsibility. Our risk management framework ensures that risks are identified, managed, monitored and reported effectively. Our internal controls, including administrative, accounting and information security procedures, are designed to protect your interests and ensure the sound management of our business.",
+                "guidance": "This implements MiFID II Article 16(2) organisational requirements as transposed into UK law. The FCA assesses governance quality during supervisory visits and through SREP. Firms should maintain an up-to-date governance map showing reporting lines, committee structures and delegated authorities. Risk management must be demonstrably effective — not merely a paper exercise."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "SYSC 4.1.2R",
+          "rawText": "A firm must establish, implement and maintain adequate policies and procedures sufficient to ensure compliance of the firm including its managers, employees and appointed representatives (or where applicable, tied agents) with its obligations under the regulatory system and for countering the risk that the firm might be used to further financial crime.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must establish, implement and maintain adequate policies and procedures to ensure compliance by the firm, its managers, employees and appointed representatives with regulatory obligations and to counter financial crime risk",
+              "objectText": "Compliance policies and procedures covering all relevant persons including managers, employees and appointed representatives or tied agents",
+              "conditionText": "At all times, covering all persons acting on behalf of the firm",
+              "summary": "Firms must have documented policies and procedures that are adequate to ensure compliance across the entire organisation, including appointed representatives and tied agents. Policies must be implemented in practice — not just written — and must address both regulatory compliance and financial crime prevention.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Compliance Policies and Procedures",
+                "templateText": "We have established and maintain comprehensive policies and procedures to ensure that we, and everyone acting on our behalf, comply with all applicable regulatory requirements. These policies cover our obligations to you as a customer, our conduct standards, and our controls to prevent financial crime. Our policies are kept under regular review and all our staff are trained on their requirements.",
+                "guidance": "The FCA expects policies to be living documents — reviewed regularly, updated when regulations change, and embedded in day-to-day operations through training and monitoring. Firms with appointed representatives face heightened scrutiny; the FCA's AR review has emphasised that principal firms must ensure ARs comply with the same standards. Policies should cover onboarding, ongoing monitoring and termination of AR relationships."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "SYSC 6", "title": "Compliance, internal audit and financial crime", "level": 1 },
+      "rules": [
+        {
+          "reference": "SYSC 6.1.1R",
+          "rawText": "A firm must establish, implement and maintain adequate policies and procedures sufficient to ensure compliance of the firm including its managers, employees and appointed representatives (or where applicable, tied agents) with its obligations under the regulatory system and for countering the risk that the firm might be used to further financial crime. A firm must also establish, implement and maintain adequate policies and procedures designed to detect any risk of failure by the firm to comply with its obligations under the regulatory system, and put in place adequate measures and procedures designed to minimise such risk and to enable the FCA to exercise its powers effectively under the regulatory system.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must establish and maintain adequate compliance policies and procedures to detect the risk of failure to comply with regulatory obligations, and put in place measures to minimise such risk",
+              "objectText": "Compliance risk detection systems, monitoring procedures and remediation measures across all regulated activities",
+              "conditionText": "At all times while carrying on regulated activities",
+              "summary": "Firms must have proactive compliance monitoring that detects the risk of regulatory breaches before they occur. This goes beyond reactive compliance — firms need forward-looking risk assessment, regular monitoring programmes and remediation procedures. The policies must also facilitate the FCA's ability to exercise its supervisory powers.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "SYSC 6.1.2R",
+          "rawText": "A firm must, taking into account the nature, scale and complexity of its business, and the nature and range of the investment services and activities undertaken in the course of that business, allocate to a senior person the function of: (1) having responsibility for the firm's compliance function; and (2) reporting to the management body, on a frequent basis, as to the compliance function's discharge of its responsibilities.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must allocate to a senior person the responsibility for the compliance function and for reporting to the management body on the discharge of compliance responsibilities",
+              "objectText": "Appointment and mandate of a senior compliance officer with direct reporting line to the management body",
+              "conditionText": "Taking into account the nature, scale and complexity of the firm's business",
+              "summary": "Firms must appoint a named senior individual responsible for compliance oversight, with a direct reporting line to the board or management body. The compliance officer must report frequently on how the compliance function is performing. This ensures board-level accountability for regulatory compliance.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "SYSC 6.3.1R",
+          "rawText": "A firm must ensure that it has adequate policies and procedures sufficient to ensure compliance with its obligation to establish and maintain effective and transparent procedures for the reasonable and prompt handling of complaints received from or on behalf of eligible complainants, and to establish, implement and maintain adequate internal control mechanisms designed to ensure compliance with decisions relating to the handling of complaints.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must establish and maintain effective systems and controls to prevent the firm from being used to further financial crime",
+              "objectText": "Financial crime prevention systems covering money laundering, terrorist financing, fraud, market abuse and other financial crimes",
+              "conditionText": "At all times while carrying on regulated activities",
+              "summary": "Firms must have effective and proportionate financial crime prevention systems and controls. This encompasses anti-money laundering, counter-terrorist financing, anti-fraud and anti-bribery measures. The FCA expects firms to conduct regular risk assessments and ensure controls are commensurate with the financial crime risks they face.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "SYSC 10", "title": "Conflicts of interest", "level": 1 },
+      "rules": [
+        {
+          "reference": "SYSC 10.1.3R",
+          "rawText": "A firm must take all reasonable steps to identify conflicts of interest between: (1) the firm, including its managers, employees and appointed representatives (or where applicable, tied agents), or any person directly or indirectly linked to them by control, and a client of the firm; or (2) one client of the firm and another client; that arise or may arise in the course of the firm providing any service.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must take all reasonable steps to identify conflicts of interest between the firm (including managers, employees, appointed representatives and connected persons) and clients, or between one client and another",
+              "objectText": "All actual and potential conflicts of interest arising in the course of providing any regulated service",
+              "conditionText": "In the course of providing any service to clients",
+              "summary": "Firms must proactively identify all conflicts of interest — both firm-vs-client and client-vs-client. This requires a systematic conflicts identification process covering all business lines, products and services. The obligation extends to persons connected to the firm by control, not just direct employees.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Conflicts of Interest Identification",
+                "templateText": "We take all reasonable steps to identify conflicts of interest that may arise between us and you, or between you and our other clients. We maintain a conflicts of interest register and conduct regular assessments to identify situations where our interests, or those of another client, may conflict with yours.",
+                "guidance": "Firms should maintain a conflicts of interest register that is reviewed and updated at least annually. Common conflicts include commission-driven sales incentives, proprietary product bias, allocation of limited resources or investment opportunities between clients, and personal account dealing. The FCA expects the identification process to be dynamic — not a one-off exercise."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "SYSC 10.1.7R",
+          "rawText": "A firm must maintain and operate effective organisational and administrative arrangements with a view to taking all reasonable steps to prevent conflicts of interest as defined in SYSC 10.1.3R from constituting or giving rise to a material risk of damage to the interests of its clients.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must maintain and operate effective organisational and administrative arrangements to prevent conflicts of interest from adversely affecting client interests",
+              "objectText": "Organisational and administrative arrangements including information barriers, remuneration structures, supervision and separate reporting lines as needed to manage identified conflicts",
+              "conditionText": "Where conflicts of interest have been identified under SYSC 10.1.3R",
+              "summary": "Once conflicts are identified, firms must have effective arrangements to prevent them from harming clients. This may include information barriers (Chinese walls), remuneration policies that do not incentivise conflicted behaviour, separate supervision and reporting lines, and restrictions on personal account dealing. The arrangements must be proportionate to the materiality of the conflict.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Conflicts of Interest Management",
+                "templateText": "We maintain organisational and administrative arrangements designed to prevent conflicts of interest from adversely affecting your interests. These arrangements may include: information barriers between departments; controls on personal account dealing by our staff; remuneration policies designed to avoid incentivising conflicted behaviour; and independent oversight of activities where conflicts may arise.",
+                "guidance": "The FCA assesses conflict management arrangements as part of its conduct supervision. Common arrangements include Chinese walls between advisory and proprietary trading, gift and entertainment policies, personal account dealing restrictions, and independent compliance monitoring. Firms should document why they believe their arrangements are effective and review them when business models change."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "SYSC 10.1.8R",
+          "rawText": "If arrangements made by a firm under SYSC 10.1.7R to manage conflicts of interest are not sufficient to ensure, with reasonable confidence, that risks of damage to the interests of a client will be prevented, the firm must clearly disclose the general nature and/or sources of conflicts of interest and the steps taken to mitigate those risks to the client before undertaking business for the client.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must clearly disclose the general nature and sources of conflicts of interest, and the steps taken to mitigate those risks, to the client before undertaking business",
+              "objectText": "Disclosure of the general nature, sources and mitigation steps for conflicts of interest that cannot be fully prevented by organisational arrangements",
+              "conditionText": "Where the firm's organisational arrangements under SYSC 10.1.7R are insufficient to prevent risks of damage to client interests with reasonable confidence",
+              "summary": "Disclosure is the last resort where conflicts cannot be adequately managed through organisational arrangements. The firm must tell the client about the nature and source of the conflict and what steps have been taken to mitigate it, before acting. The FCA has emphasised that disclosure should not be used as a substitute for proper conflict management — it is a residual safeguard only.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Conflicts of Interest Disclosure",
+                "templateText": "Where we are unable to fully prevent a conflict of interest from potentially affecting you, we will disclose the nature and source of the conflict to you before we undertake business on your behalf. This disclosure will include the steps we have taken to mitigate the conflict and will be made in sufficient detail for you to make an informed decision about whether to proceed. We regard disclosure as a measure of last resort and will always seek to manage conflicts through our organisational arrangements in the first instance.",
+                "guidance": "The FCA has repeatedly stated that disclosure is not a cure-all for conflicts and should not be used as a substitute for proper management. Disclosure must be specific enough for the client to understand the conflict and make an informed decision — generic boilerplate is insufficient. Under the Consumer Duty, firms face an even higher bar: they must act to deliver good outcomes, which may mean declining to act where a conflict cannot be adequately managed, rather than simply disclosing it."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "SYSC 18", "title": "Whistleblowing", "level": 1 },
+      "rules": [
+        {
+          "reference": "SYSC 18.3.1R",
+          "rawText": "A firm must have appropriate internal procedures for its employees to report concerns about the firm's compliance with relevant regulatory requirements and standards, including concerns about potential breaches of the firm's obligations under the regulatory system.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must have appropriate internal procedures for employees to report concerns about regulatory breaches (whistleblowing)",
+              "objectText": "Internal whistleblowing procedures enabling employees to report concerns about regulatory compliance, including potential breaches of the firm's obligations",
+              "conditionText": "At all times; procedures must be accessible to all employees",
+              "summary": "Firms must establish and maintain internal whistleblowing procedures that allow employees to raise concerns about potential regulatory breaches. The procedures must be appropriate to the size and nature of the firm and must ensure that reporters are not subjected to detriment. This supports the FCA's objective of early identification of misconduct.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.8
+            }
+          ]
+        },
+        {
+          "reference": "SYSC 18.4.1R",
+          "rawText": "A relevant authorised person must appoint a senior manager as the firm's whistleblowers' champion.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must appoint a senior manager as the firm's whistleblowers' champion",
+              "objectText": "Appointment of a named senior manager responsible for overseeing the effectiveness of the firm's whistleblowing arrangements and ensuring whistleblowers are treated fairly",
+              "conditionText": "Applicable to relevant authorised persons (firms with assets over a specified threshold or regulated by PRA, or CASS large firms, or firms with permission to deal as principal)",
+              "summary": "Larger and more significant firms must appoint a senior manager as whistleblowers' champion. This person is responsible for ensuring the firm's whistleblowing arrangements are effective, that whistleblowers are protected from retaliation, and that the board is informed about whistleblowing issues. The champion role is typically held as a prescribed responsibility under the Senior Managers and Certification Regime.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

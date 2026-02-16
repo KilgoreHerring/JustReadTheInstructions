@@ -1,6 +1,6 @@
 import { prisma } from "./db";
 
-interface MatchedObligation {
+export interface MatchedObligation {
   obligationId: string;
   summary: string;
   obligationType: string;

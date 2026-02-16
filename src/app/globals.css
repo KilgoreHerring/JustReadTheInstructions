@@ -45,10 +45,8 @@
   /* Document types */
   --doc-tc-bg: #EEF2F7;
   --doc-tc-text: #1E3A5F;
-  --doc-fva-bg: #FDF6EE;
-  --doc-fva-text: #7A5B3A;
-  --doc-tma-bg: #F5F0FF;
-  --doc-tma-text: #5B3A8A;
+  --doc-overview-bg: #FDF6EE;
+  --doc-overview-text: #7A5B3A;
 
   /* Analysis statuses */
   --analysis-pending-bg: #F3F4F6;
@@ -103,10 +101,8 @@
 
     --doc-tc-bg: #1E2A3A;
     --doc-tc-text: #6B9BD2;
-    --doc-fva-bg: #3A3024;
-    --doc-fva-text: #D4BC9C;
-    --doc-tma-bg: #2E2440;
-    --doc-tma-text: #B8A0D4;
+    --doc-overview-bg: #3A3024;
+    --doc-overview-text: #D4BC9C;
 
     --analysis-pending-bg: #2A2C30;
     --analysis-pending-text: #9CA3AF;

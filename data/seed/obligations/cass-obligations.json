@@ -1,0 +1,286 @@
+{
+  "regulation": {
+    "id": "cass",
+    "regulatorId": "fca",
+    "title": "Client Assets Sourcebook (CASS)",
+    "citation": "FCA CASS",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2007-11-01",
+    "url": "https://www.handbook.fca.org.uk/handbook/CASS/"
+  },
+  "sections": [
+    {
+      "section": { "number": "CASS 6", "title": "Custody rules", "level": 1 },
+      "rules": [
+        {
+          "reference": "CASS 6.1.1R",
+          "rawText": "A firm must, when holding financial instruments belonging to clients, make adequate arrangements so as to safeguard clients' ownership rights, especially in the event of the firm's insolvency, and to prevent the use of a client's financial instruments on the firm's own account.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must make adequate arrangements to safeguard clients' ownership rights and prevent use of client instruments for the firm's own account",
+              "objectText": "Financial instruments belonging to clients held by the firm",
+              "conditionText": "When holding financial instruments belonging to clients",
+              "summary": "Firms holding client financial instruments must put in place adequate safeguarding arrangements to protect clients' ownership rights, particularly in the event of the firm's insolvency, and must not use those instruments for the firm's own account without explicit client consent.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Custody and Safekeeping of Your Assets",
+                "templateText": "When we hold financial instruments on your behalf, we make adequate arrangements to safeguard your ownership rights. Your assets are held separately from our own and will not be used for our own account. In the unlikely event of our insolvency, your assets would be identifiable and returned to you in accordance with the FCA's Client Assets Sourcebook (CASS) rules.",
+                "guidance": "This is the cornerstone custody obligation under CASS 6. Firms must demonstrate that organisational arrangements — including legal structures, IT systems and operational controls — are sufficient to protect client ownership. The prohibition on own-account use is absolute unless the client has given prior express consent in writing under CASS 6.1.4R."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CASS 6.1.7R",
+          "rawText": "A firm must keep such records and accounts as are necessary to enable it at any time and without delay to distinguish assets held for one client from assets held for any other client, and from the firm's own assets.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must keep records and accounts to distinguish assets held for each client from the firm's own assets and from other clients' assets",
+              "objectText": "Records and accounts for client financial instruments",
+              "conditionText": "At all times when holding client assets",
+              "summary": "Firms must maintain accurate records and accounts that allow immediate identification and separation of each client's assets from those of other clients and from the firm's own assets. This supports the orderly return of assets in the event of insolvency.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Custody and Safekeeping of Your Assets",
+                "templateText": "We maintain detailed records that clearly identify the financial instruments held on your behalf, distinguishing them from those held for other clients and from our own assets. These records enable us to identify your assets at any time without delay.",
+                "guidance": "The 'at any time and without delay' standard is critical — firms must be able to produce client-level asset records immediately, not just after a reconciliation cycle. This underpins the CASS resolution pack requirements in CASS 9."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CASS 6.2.1R",
+          "rawText": "A firm must deposit any financial instruments held by it on behalf of its clients in an account or accounts opened with a third party and identified separately from any account used to hold financial instruments belonging to the firm, exercising all due skill, care and diligence in the selection, appointment and periodic review of the third party and of the arrangements for holding and safekeeping of those financial instruments.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must deposit client financial instruments with a qualifying third party custodian, exercising due skill, care and diligence in selection, appointment and periodic review",
+              "objectText": "Client financial instruments deposited with third party custodians",
+              "conditionText": "When holding financial instruments on behalf of clients",
+              "summary": "Client financial instruments must be held with a third party custodian in separately designated accounts. The firm must exercise due skill, care and diligence in choosing, appointing and periodically reviewing the custodian and the safekeeping arrangements.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Custody and Safekeeping of Your Assets",
+                "templateText": "Your financial instruments are held with a third party custodian selected by us with due skill, care and diligence. We conduct periodic reviews of our custodian arrangements to ensure ongoing suitability. Your assets are held in accounts that are clearly identified and separate from our own assets. The custodian(s) we use are: [Custodian Name(s)].",
+                "guidance": "Due diligence on sub-custodians must cover creditworthiness, legal and regulatory standing, market practices and the legal framework in the relevant jurisdiction. Periodic reviews should be documented and conducted at least annually. The FCA expects firms to have a formal custodian oversight framework."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CASS 6.5.1R",
+          "rawText": "A firm must, at regular intervals which must be at least as frequent as once a month, conduct a reconciliation of the internal records and accounts of client financial instrument holdings against corresponding records and accounts of any third party by whom those financial instruments are held.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must conduct reconciliations of internal records against external custodian records at appropriate intervals, at least monthly",
+              "objectText": "Internal records and accounts of client financial instrument holdings reconciled against third party custodian records",
+              "conditionText": "At regular intervals, at least monthly",
+              "summary": "Firms must perform regular reconciliations — at minimum monthly — comparing their internal records of client financial instruments with the records held by the third party custodian. Discrepancies must be investigated and resolved promptly.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Custody and Safekeeping of Your Assets",
+                "templateText": "We carry out regular reconciliations of our internal records of your assets against those maintained by our custodian(s), at least once per month, to ensure the accuracy and completeness of our records. Any discrepancies identified are promptly investigated and resolved.",
+                "guidance": "The FCA expects firms to investigate and resolve discrepancies within a reasonable timeframe. Where discrepancies are material, the firm should consider whether a breach notification to the FCA under SUP 15.3 is required. CASS large firms may be expected to reconcile more frequently than monthly."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CASS 7", "title": "Client money rules", "level": 1 },
+      "rules": [
+        {
+          "reference": "CASS 7.2.1R",
+          "rawText": "A firm must, on receiving any client money, promptly place that money into one or more accounts opened with any of the following: (1) a central bank; (2) a CRD credit institution; (3) a bank authorised in a third country; (4) a qualifying money market fund.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must, on receiving any client money, promptly place that money into a client bank account held with an approved bank or qualifying money market fund",
+              "objectText": "Client money received by the firm",
+              "conditionText": "On receiving any client money",
+              "summary": "Upon receiving client money, firms must promptly deposit it into one or more accounts at an approved institution — a central bank, CRD credit institution, authorised third country bank, or qualifying money market fund. Delay in segregation exposes client money to firm insolvency risk.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Client Money Protection",
+                "templateText": "Any money we receive on your behalf is promptly deposited into a designated client bank account held with an approved bank, separate from our own funds. We select the banks with which your money is held with due skill, care and diligence, and we periodically review those arrangements.",
+                "guidance": "The FCA interprets 'promptly' as meaning on the day of receipt or, where that is not possible, on the next business day. Firms must have systems and controls to ensure that client money is identified and segregated without delay. The choice of approved bank must be subject to ongoing due diligence."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CASS 7.4.1R",
+          "rawText": "A firm receives and holds client money as trustee (or in Scotland as agent) on the following terms: (1) for the purposes of and on the terms of the client money rules and the client money distribution rules; (2) subject to that, for the clients for whom that money is held, according to their respective interests in it.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must hold client money in accounts designated as client accounts, separate from the firm's own money, under statutory trust",
+              "objectText": "Client money held under statutory trust in designated client accounts",
+              "conditionText": "At all times when holding client money",
+              "summary": "Client money is held on statutory trust (or as agent in Scotland) for clients according to their respective interests. This means it is legally separated from the firm's own money. In the event of the firm's insolvency, client money is not available to the firm's general creditors.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Client Money Protection",
+                "templateText": "Money held on your behalf is held on trust (statutory trust under the FCA's Client Money Rules). This means your money is held separately from our own funds and, in the event of our insolvency, is not available to our general creditors. Your money will be returned to you in priority to the claims of our unsecured creditors.",
+                "guidance": "The statutory trust under CASS 7.4 is the primary legal mechanism protecting client money. Firms must ensure that client bank account acknowledgement letters are obtained from all banks holding client money, confirming the trust status and that the bank will not exercise set-off rights against those accounts."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CASS 7.6.1R",
+          "rawText": "A firm must perform an internal reconciliation of client money each business day, calculating the total amount of client money it should be holding and comparing that with the total amount of client money it is actually holding in client bank accounts and client transaction accounts.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must carry out internal reconciliations of client money records each business day",
+              "objectText": "Client money balances compared against internal records",
+              "conditionText": "Each business day",
+              "summary": "Firms must perform a daily internal reconciliation comparing the total client money obligation (what the firm should be holding) against the actual balances in client bank accounts and client transaction accounts. Any shortfall must be corrected promptly.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Client Money Protection",
+                "templateText": "We perform daily internal reconciliations of client money to ensure that the total amount held in designated client bank accounts matches our obligations to clients. Any discrepancies are promptly investigated and resolved to ensure your money is fully protected at all times.",
+                "guidance": "The daily internal reconciliation is a core control in the client money framework. Firms may use either the 'standard method' or the 'alternative approach' under CASS 7.6. Shortfalls must be corrected by paying the firm's own money into the client bank account by close of business on the day the shortfall is identified."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CASS 7.7.2R",
+          "rawText": "A firm must perform a reconciliation of client money held in each client bank account and client transaction account with the balances recorded by the bank or other third party, as often as is necessary and as soon as reasonably practicable after the date to which the reconciliation relates, and in any case no less frequently than once a month.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must perform an external reconciliation of client money held in client bank accounts at least monthly",
+              "objectText": "Client money in client bank accounts reconciled against bank statements and third party records",
+              "conditionText": "As often as necessary and at least monthly",
+              "summary": "Firms must reconcile each client bank account and client transaction account against the bank's or third party's own records, at least monthly. This external check validates that the amounts held externally match the firm's internal records.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Client Money Protection",
+                "templateText": "In addition to our daily internal checks, we perform external reconciliations at least monthly, comparing the balances in our client bank accounts against the records held by our banks and third parties. This provides an independent verification that your money is being held correctly.",
+                "guidance": "The external reconciliation supplements the daily internal reconciliation and acts as an independent check. Where the firm identifies discrepancies, they must be investigated and resolved promptly. Large CASS firms may be expected to perform external reconciliations more frequently."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CASS 7.8.1R",
+          "rawText": "Where a firm holds client money in a pooled client bank account, it must maintain internal records sufficient to enable it to distinguish client money held for one client from client money held for any other client at any time and without delay.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must maintain records sufficient to identify each client's entitlement where client money is held in a pooled account",
+              "objectText": "Internal records identifying each client's entitlement in pooled client bank accounts",
+              "conditionText": "Where client money is held in a pooled client bank account",
+              "summary": "When using pooled client bank accounts (where multiple clients' money is held together), the firm must keep internal records that allow it to identify each individual client's share at any time and without delay. This is essential for an orderly distribution in insolvency.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Client Money Protection",
+                "templateText": "Your money may be pooled with money belonging to other clients in a single client bank account. We maintain detailed internal records that identify your individual entitlement at all times. This means we can distinguish your money from that of other clients without delay, including in the event of our insolvency.",
+                "guidance": "Pooled accounts are standard practice but create distribution challenges in insolvency. The accuracy of the firm's individual client records directly determines the speed and accuracy of client money distribution. The FCA's CASS audit focus frequently targets the accuracy of pooled account records."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CASS 7.10", "title": "Client money distribution", "level": 1 },
+      "rules": [
+        {
+          "reference": "CASS 7.10.1R",
+          "rawText": "If a primary pooling event occurs, a firm must distribute client money in accordance with CASS 7A (the client money distribution rules). A primary pooling event occurs when a firm is subject to an insolvency procedure such as administration, receivership, or winding-up.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must distribute client money in accordance with clients' entitlements if a primary pooling event occurs",
+              "objectText": "Client money pool distributed to clients based on their individual entitlements",
+              "conditionText": "If a primary pooling event occurs (e.g., the firm enters administration or insolvency proceedings)",
+              "summary": "If a primary pooling event occurs — such as the firm entering administration, receivership, or winding-up — client money is pooled and distributed to clients in proportion to their individual entitlements as shown in the firm's records. Clients share in any shortfall pro rata.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "What happens to your money if we become insolvent",
+                "templateText": "In the unlikely event that we become insolvent, your money held in our client bank accounts would be pooled and distributed to clients in proportion to their entitlements. This means you would receive your share of the client money pool based on our records of what we owe you. If there is a shortfall in the pool, you would share in that shortfall proportionately with other clients. Any claim not met from the client money pool may be eligible for compensation from the Financial Services Compensation Scheme (FSCS), subject to its rules and limits.",
+                "guidance": "This clause addresses the 'primary pooling event' scenario under CASS 7A. Firms should be transparent about the pooling mechanism and the risk of shortfall. Reference to FSCS eligibility is important for retail clients. The speed of distribution depends heavily on the quality of the firm's records — which is why CASS 9 resolution pack requirements exist."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CASS 9", "title": "CASS resolution pack", "level": 1 },
+      "rules": [
+        {
+          "reference": "CASS 9.2.1R",
+          "rawText": "A CASS firm must maintain a CASS resolution pack which contains information sufficient to enable an insolvency practitioner to facilitate the orderly return of client assets and client money in the event of a failure of the firm.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must maintain a CASS resolution pack to assist an insolvency practitioner in returning client assets and client money",
+              "objectText": "CASS resolution pack containing information for the orderly return of client assets and money",
+              "conditionText": "At all times when the firm holds client assets or client money",
+              "summary": "Firms holding client assets or client money must maintain a CASS resolution pack — a comprehensive information package designed to enable an insolvency practitioner to quickly understand the firm's client asset and money arrangements and facilitate an orderly return to clients.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "What happens to your money if we become insolvent",
+                "templateText": "We maintain a CASS resolution pack as required by the FCA. This pack contains the information an insolvency practitioner would need to facilitate the orderly return of your assets and money in the event of our failure. This is designed to speed up the return of your assets should the worst happen.",
+                "guidance": "The resolution pack must include details of client bank accounts, custodian arrangements, reconciliation processes, systems used, key personnel, and relevant legal agreements. The FCA views the resolution pack as a critical component of client protection — its quality directly affects the speed and cost of client asset distribution in insolvency."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CASS 9.3.1R",
+          "rawText": "A CASS firm must be able to produce its CASS resolution pack or the relevant part of it within 48 hours of a request from the FCA, the firm's auditor, or an insolvency practitioner.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Investment firms and fund managers",
+              "actionText": "Must be capable of producing the CASS resolution pack within 48 hours of a request",
+              "objectText": "CASS resolution pack produced within 48 hours",
+              "conditionText": "Upon request from the FCA, the firm's auditor, or an insolvency practitioner",
+              "summary": "The CASS resolution pack must be capable of being produced within 48 hours of a request from the FCA, the firm's auditor, or an insolvency practitioner. This ensures rapid availability of critical information in a crisis scenario.",
+              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "What happens to your money if we become insolvent",
+                "templateText": "Our CASS resolution pack can be produced within 48 hours of a request from the FCA or an insolvency practitioner, helping to ensure the prompt return of your assets and money in the event of our failure.",
+                "guidance": "The 48-hour requirement means the resolution pack must be kept up to date on an ongoing basis — it cannot be compiled from scratch when requested. Firms should have documented processes for producing the pack and should test these regularly. The FCA may request the pack during supervisory visits or as part of themed reviews."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

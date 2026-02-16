@@ -1,0 +1,249 @@
+{
+  "regulation": {
+    "id": "disp",
+    "regulatorId": "fca",
+    "title": "Dispute Resolution: Complaints Sourcebook (DISP)",
+    "citation": "FCA DISP",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2001-12-01",
+    "url": "https://www.handbook.fca.org.uk/handbook/DISP/"
+  },
+  "sections": [
+    {
+      "section": { "number": "DISP 1.2", "title": "Consumer awareness rules", "level": 1 },
+      "rules": [
+        {
+          "reference": "DISP 1.2.1R",
+          "rawText": "A respondent must publish appropriate summary details of its internal procedures for handling complaints fairly and promptly, including details of how to complain to the firm, that the complainant has the right to refer the complaint to the Financial Ombudsman Service where the respondent does not resolve the complaint to the satisfaction of the complainant within eight weeks, and must refer the complainant to the availability of further information on the Financial Ombudsman Service website.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must publish and make available appropriate summary details of internal complaints handling procedures, including how to complain and the right to refer unresolved complaints to the Financial Ombudsman Service",
+              "objectText": "Summary details of internal complaints handling procedures, including complaint submission methods and FOS referral rights",
+              "conditionText": "At all times; must be made available to eligible complainants",
+              "summary": "Firms must publish a summary of their complaints process so consumers know how to complain and are aware of their right to escalate to the Financial Ombudsman Service if the complaint is not resolved within eight weeks.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "How to Complain",
+                "templateText": "If you wish to make a complaint about this product or our service, you can contact us by: (a) writing to [Complaints Address]; (b) calling [Complaints Phone Number]; (c) emailing [Complaints Email]; or (d) completing the complaints form on our website at [URL]. We will handle your complaint in accordance with our internal complaints procedure, a copy of which is available on request. If you are not satisfied with our response, or if we have not resolved your complaint within eight weeks, you may refer your complaint to the Financial Ombudsman Service free of charge. Details are available at www.financial-ombudsman.org.uk.",
+                "guidance": "This clause must appear in product terms and conditions or be referenced prominently. Ensure all contact channels are current. The FOS referral right must be clearly stated. Consider also including this information in welcome packs and on the firm's website."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "DISP 1.3", "title": "Complaints handling rules", "level": 1 },
+      "rules": [
+        {
+          "reference": "DISP 1.3.1R",
+          "rawText": "A respondent must put in place and maintain effective and transparent procedures for the reasonable and prompt handling of complaints that it receives from eligible complainants. These procedures must allow complaints to be made free of charge and must not require the complainant to use a specific method of communication.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must establish and maintain effective, transparent, and free-of-charge complaints handling procedures that do not restrict the method of communication by which complaints can be made",
+              "objectText": "Effective and transparent internal complaints handling procedures",
+              "conditionText": "At all times; procedures must be in place and operational",
+              "summary": "Firms must have robust, transparent procedures for handling complaints fairly and promptly. Complaints must be accepted free of charge through any reasonable communication method, and firms cannot require use of a specific channel.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Complaints Handling Procedure",
+                "templateText": "We have established internal procedures for handling complaints fairly, effectively and promptly. You may make a complaint at no cost using any reasonable method of communication, including by telephone, email, letter or in person. We will not require you to submit your complaint in a particular format or through a specific channel. Our aim is to resolve all complaints as quickly as possible and to your satisfaction.",
+                "guidance": "Firms must not create barriers to complaining (e.g. requiring complaints only in writing or only via a web form). Ensure frontline staff are trained to recognise and record complaints. The procedure should cover identification, recording, investigation, and resolution of complaints."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "DISP 1.3.3R",
+          "rawText": "A respondent must put in place appropriate management controls and take reasonable steps to ensure that in handling complaints it identifies and remedies any recurring or systemic problems, for example, by analysing the causes of individual complaints so as to identify root causes common to types of complaint, considering whether such root causes may also affect other processes or products, including those not directly complained of, and where reasonable, correcting such root causes.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must implement management controls to identify and remedy recurring or systemic problems through root cause analysis of complaints, including consideration of impact on other products and processes",
+              "objectText": "Management controls and root cause analysis processes for complaints",
+              "conditionText": "On an ongoing basis when handling complaints",
+              "summary": "Firms must analyse complaint root causes to identify recurring or systemic issues. Where root causes are found, firms must consider whether other products or processes are affected and take reasonable steps to correct the underlying problems.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Continuous Improvement from Complaints",
+                "templateText": "We use complaints as an opportunity to improve our products and services. We analyse complaint trends and root causes to identify any recurring or systemic issues, and where we find them, we take steps to put things right — not only for the individual complainant but for all affected customers.",
+                "guidance": "Root cause analysis should feed into product governance, Consumer Duty outcomes monitoring, and MI reporting. Systemic issues may trigger proactive customer contact and remediation programmes. Ensure findings are escalated to appropriate senior management and governance committees."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "DISP 1.4", "title": "Complaints time limit rules", "level": 1 },
+      "rules": [
+        {
+          "reference": "DISP 1.4.1R",
+          "rawText": "On receipt of a complaint, a respondent must send the complainant a prompt written acknowledgement providing early reassurance that it has received the complaint and is dealing with it, and include details of the firm's internal complaints handling procedures.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must send a prompt written acknowledgement of the complaint, providing reassurance that it is being dealt with and including details of the complaints handling procedure",
+              "objectText": "Written acknowledgement of complaint receipt, including details of the complaints handling procedure",
+              "conditionText": "Upon receipt of a complaint from an eligible complainant",
+              "summary": "Firms must promptly acknowledge receipt of every complaint in writing, reassuring the complainant that the matter is being handled, and providing information about the firm's complaints process.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Complaint Acknowledgement",
+                "templateText": "When we receive your complaint, we will send you a written acknowledgement promptly, usually within five business days. Our acknowledgement will confirm the details of your complaint, provide the name or reference of the person handling it, and explain the next steps in our complaints process, including the expected timeframe for our response.",
+                "guidance": "While DISP does not specify an exact acknowledgement deadline, the FCA expects acknowledgement within five business days as good practice. The acknowledgement should include sufficient detail so the complainant knows the firm understands the issue. Include a complaint reference number for tracking."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "DISP 1.4.4R",
+          "rawText": "Where the respondent is unable to provide a final response within eight weeks of receiving the complaint, the respondent must, by the end of eight weeks after the date of receipt of the complaint, send the complainant a written response which explains why the respondent is not yet in a position to provide a final response and indicates when the firm expects to be able to provide one, and informs the complainant that the complainant may now refer the complaint to the Financial Ombudsman Service and encloses a copy of the Financial Ombudsman Service's standard explanatory leaflet.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must, where a final response cannot be issued within eight weeks, send a holding response by the end of eight weeks explaining the delay, providing an expected resolution date, informing the complainant of their right to refer to the Financial Ombudsman Service, and enclosing the FOS explanatory leaflet",
+              "objectText": "Written holding response explaining delay, expected resolution timeframe, and FOS referral rights with the FOS standard explanatory leaflet",
+              "conditionText": "Where the firm has not provided a final response within eight weeks of receiving the complaint",
+              "summary": "If a complaint cannot be resolved within eight weeks, the firm must send a holding letter by the eight-week deadline explaining why, indicating when a final response is expected, and informing the complainant of their right to refer the matter to the Financial Ombudsman Service.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Complaints Timeframe",
+                "templateText": "We aim to resolve your complaint as quickly as possible. If we are unable to provide you with a final response within eight weeks of receiving your complaint, we will write to you explaining why and let you know when you can expect a final response. At that point, you will also have the right to refer your complaint to the Financial Ombudsman Service without waiting for our final response. We will provide you with the Financial Ombudsman Service's contact details and explanatory leaflet.",
+                "guidance": "The eight-week deadline is absolute. Firms must have systems in place to track complaint ageing and trigger the holding response automatically if needed. Failure to meet this deadline is a common source of FCA enforcement action. Ensure the FOS leaflet is enclosed with every holding response."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "DISP 1.6", "title": "Complaints resolution rules", "level": 1 },
+      "rules": [
+        {
+          "reference": "DISP 1.6.1R",
+          "rawText": "By the end of eight weeks after its receipt of the complaint, the respondent must send the complainant a final response, being a written response from the respondent which: (a) accepts the complaint and, where appropriate, offers redress or remedial action; or (b) offers redress or remedial action without accepting the complaint; or (c) rejects the complaint and gives reasons for doing so; and which (d) encloses a copy of the Financial Ombudsman Service's standard explanatory leaflet; and (e) informs the complainant that if the complainant remains dissatisfied, the complainant may now refer the complaint to the Financial Ombudsman Service.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must send a final response within eight weeks that either accepts the complaint and offers redress, offers redress without acceptance, or rejects with reasons; must enclose the FOS leaflet and inform of FOS referral rights",
+              "objectText": "Written final response including decision, reasons, any redress offered, FOS explanatory leaflet, and FOS referral information",
+              "conditionText": "Within eight weeks of receipt of a complaint",
+              "summary": "Firms must issue a final written response within eight weeks of receiving a complaint. The response must clearly accept or reject the complaint (with reasons), offer redress where appropriate, and inform the complainant of their right to escalate to the Financial Ombudsman Service.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Final Response to Complaints",
+                "templateText": "We will provide you with a final written response to your complaint within eight weeks of receiving it. Our final response will clearly set out: (a) whether we uphold your complaint, in full or in part; (b) where we uphold the complaint, the redress or remedial action we are offering; (c) where we do not uphold the complaint, the reasons for our decision; and (d) your right to refer the complaint to the Financial Ombudsman Service if you remain dissatisfied, together with the Financial Ombudsman Service's explanatory leaflet and contact details.",
+                "guidance": "Final responses must be clear and comprehensive. Where a complaint is rejected, the reasons must be specific and evidence-based, not generic. Where redress is offered, it must be fair and clearly explained. The FOS leaflet and referral rights must be included in every final response, regardless of outcome."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "DISP 1.6.2R",
+          "rawText": "Where a respondent decides to uphold a complaint and offer redress, the redress offered must provide fair compensation for any acts or omissions of the respondent, be appropriate to the nature and severity of the complaint, and take into account whether the complainant has suffered (or may suffer) any financial loss, material distress, or material inconvenience.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must offer fair compensation that is appropriate to the nature and severity of the complaint, accounting for financial loss, material distress, and material inconvenience",
+              "objectText": "Fair redress appropriate to the complaint, including compensation for financial loss, distress and inconvenience where relevant",
+              "conditionText": "When upholding a complaint and offering redress",
+              "summary": "When a firm upholds a complaint and offers redress, the compensation must be fair and proportionate to the harm suffered. It must account for any financial loss, and also for material distress or inconvenience caused to the complainant.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Complaints Redress",
+                "templateText": "Where we uphold your complaint, we will offer you fair compensation. This will take into account: (a) any financial loss you have suffered as a result of our error or failing; (b) any material distress or inconvenience caused to you; and (c) the nature and severity of the issue. We aim to put you back in the position you would have been in had the problem not occurred.",
+                "guidance": "Redress should aim to restore the complainant to the position they would have been in absent the firm's failing. Distress and inconvenience payments should be consistent and proportionate — consider using a structured scale. Document the rationale for redress calculations. Ensure redress is offered promptly and payment mechanisms are efficient."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "DISP 1.9", "title": "Complaints record rule", "level": 1 },
+      "rules": [
+        {
+          "reference": "DISP 1.9.1R",
+          "rawText": "A respondent must keep a record of each complaint received and the measures taken for its resolution. The record must be retained for a minimum period of three years from the date the complaint was received.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must keep a record of each complaint received and the measures taken for its resolution, retained for at least three years from the date of receipt",
+              "objectText": "Records of each complaint and the steps taken to resolve it",
+              "conditionText": "For every complaint received; records retained for a minimum of three years",
+              "summary": "Firms must maintain comprehensive records of all complaints received and the actions taken to resolve them. These records must be retained for at least three years from the date the complaint was received.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Complaints Records",
+                "templateText": "We will maintain a record of your complaint and the steps taken to resolve it. In accordance with regulatory requirements, we retain complaint records for a minimum of three years from the date the complaint was received. You may request a copy of the record of your complaint at any time during this period.",
+                "guidance": "Records should include: date received, complainant details, product/service complained about, substance of complaint, investigation steps, outcome, redress offered/paid, and all correspondence. Records support root cause analysis, regulatory reporting, and FOS referral responses. Consider retaining records for longer than three years where complaints relate to long-term products such as mortgages or pensions."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "DISP 1.10", "title": "Complaints data publication rules", "level": 1 },
+      "rules": [
+        {
+          "reference": "DISP 1.10.1R",
+          "rawText": "A respondent that has received 500 or more reportable complaints in any reporting period must publish a summary of the number of complaints received and the percentage of complaints closed within eight weeks, broken down by product or service grouping, within 12 weeks of the end of the relevant reporting period.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must, if 500 or more reportable complaints are received in a reporting period, publish a summary of complaints data broken down by product or service grouping within 12 weeks of the end of the reporting period",
+              "objectText": "Published summary of complaints data including volume and closure rates by product/service category",
+              "conditionText": "Where 500 or more reportable complaints are received in a reporting period",
+              "summary": "Firms receiving 500 or more complaints in a six-month reporting period must publicly publish a summary showing the number of complaints and the proportion closed within eight weeks, broken down by product or service type.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "DISP 1.10A", "title": "Complaints reporting rules", "level": 1 },
+      "rules": [
+        {
+          "reference": "DISP 1.10A.1R",
+          "rawText": "A respondent must provide a complete report concerning complaints received from eligible complainants to the FCA twice a year, in respect of each relevant reporting period, using the format specified by the FCA.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-regulated firms",
+              "actionText": "Must submit a complete complaints data report to the FCA twice yearly in the prescribed format for each six-month reporting period",
+              "objectText": "Biannual complaints data report in the FCA's prescribed format",
+              "conditionText": "Twice yearly in respect of each six-month reporting period",
+              "summary": "All firms must report complaints data to the FCA on a biannual basis, covering each six-month reporting period, using the FCA's prescribed reporting format. This applies regardless of complaint volume.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.85
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

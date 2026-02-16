@@ -1,0 +1,834 @@
+{
+  "regulation": {
+    "id": "cobs",
+    "regulatorId": "fca",
+    "title": "Conduct of Business Sourcebook (COBS)",
+    "citation": "FCA COBS",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2007-11-01",
+    "url": "https://www.handbook.fca.org.uk/handbook/COBS/"
+  },
+  "sections": [
+    {
+      "section": { "number": "COBS 2", "title": "Conduct of business obligations", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 2.1.1R",
+          "rawText": "A firm must act honestly, fairly and professionally in accordance with the best interests of its client.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "MiFID investment firms and firms providing investment services",
+              "actionText": "Must act honestly, fairly and professionally in accordance with the best interests of its client",
+              "objectText": "All dealings with clients in relation to MiFID and designated investment business",
+              "conditionText": "When carrying on MiFID business or designated investment business with or for a client",
+              "summary": "The overarching client's best interests rule requires firms to act honestly, fairly and professionally. This is a conduct standard derived from MiFID II Article 24(1) and underpins all other COBS obligations.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Client's Best Interests",
+                "templateText": "We are authorised and regulated by the Financial Conduct Authority. In providing investment services to you, we are required to act honestly, fairly and professionally in accordance with your best interests. This obligation applies to all aspects of our relationship with you, including the advice we give, the products we recommend, the information we provide and the way we manage your investments.",
+                "guidance": "This clause should appear early in client agreements and terms of business. It establishes the overarching standard of conduct and reinforces the MiFID II best interests obligation. It applies to both retail and professional clients, though the level of protection differs."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 2.1.2R",
+          "rawText": "A firm must not, in any communication relating to designated investment business or MiFID business, seek to exclude or restrict, or rely on any exclusion or restriction of, any duty or liability it may have to a client under the regulatory system.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "MiFID investment firms and firms providing investment services",
+              "actionText": "Must not seek to exclude or restrict, or rely on any exclusion or restriction of, any duty or liability owed to a client under the regulatory system",
+              "objectText": "Communications, terms of business, client agreements and disclaimers relating to designated investment business",
+              "conditionText": "In any communication relating to designated investment business or MiFID business",
+              "summary": "Firms cannot use contractual terms, disclaimers or other communications to exclude or limit their regulatory duties to clients. This prevents firms undermining the protections afforded by the FCA regulatory framework.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        },
+        {
+          "reference": "COBS 2.3.1R",
+          "rawText": "A firm must not pay or accept any fee or commission, or provide or receive any non-monetary benefit, in connection with the provision of an investment service or an ancillary service, to or from any party other than the client or a person acting on behalf of the client, unless the payment or benefit is designed to enhance the quality of the relevant service to the client and does not impair compliance with the firm's duty to act in the best interests of the client.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "MiFID investment firms",
+              "actionText": "Must not pay or accept fees, commissions or non-monetary benefits from third parties unless they enhance service quality and do not impair the duty to act in the client's best interests",
+              "objectText": "All fees, commissions and non-monetary benefits paid to or received from third parties in connection with investment services",
+              "conditionText": "In connection with the provision of an investment service or ancillary service to a client",
+              "summary": "The inducements rule prohibits firms from paying or receiving third-party fees, commissions or benefits unless the inducement enhances service quality for the client and does not impair the best interests duty. Firms must disclose all inducements clearly.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Inducements and Third-Party Payments",
+                "templateText": "We will not accept or retain any fees, commissions or non-monetary benefits from third parties in connection with the investment services we provide to you, unless the payment is designed to enhance the quality of our service to you and does not impair our duty to act in your best interests. Where we receive any such payment or benefit, we will disclose the nature and amount (or method of calculating the amount) to you before providing the relevant service.",
+                "guidance": "For independent advisers, this is supplemented by COBS 6.1A which imposes a stricter ban on commission retention. For restricted advisers and discretionary managers, the enhancement test must be met. Ensure the firm's inducements policy is documented and reviewed regularly."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 2.3.2R",
+          "rawText": "A firm which receives fees, commissions or non-monetary benefits in connection with an investment service provided to a client must disclose to the client, before the provision of the relevant service, the existence, nature and amount of the payment or benefit, or where the amount cannot be ascertained, the method of calculating that amount.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "MiFID investment firms",
+              "actionText": "Must disclose to the client the existence, nature and amount (or method of calculation) of any third-party fees, commissions or benefits before providing the relevant service",
+              "objectText": "Disclosure of all third-party payments and benefits received in connection with investment services",
+              "conditionText": "Before providing the relevant investment service to the client",
+              "summary": "Pre-service disclosure of all third-party inducements is mandatory. Clients must know the existence, nature and amount of any payments or benefits the firm receives from third parties before the service is provided.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "COBS 4", "title": "Communicating with clients, including financial promotions", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 4.2.1R",
+          "rawText": "A firm must ensure that a communication or a financial promotion is fair, clear and not misleading.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All firms carrying on designated investment business",
+              "actionText": "Must ensure that all communications and financial promotions are fair, clear and not misleading",
+              "objectText": "All communications and financial promotions relating to designated investment business, including advertising, marketing materials, research, client correspondence and digital content",
+              "conditionText": "Whenever the firm communicates with clients or issues financial promotions in relation to designated investment business",
+              "summary": "The fair, clear and not misleading standard applies to every communication and financial promotion issued by the firm. This includes advertisements, fund factsheets, research notes, social media posts, website content and all client correspondence.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Fair, Clear and Not Misleading Communications",
+                "templateText": "All information we provide to you about our services and the investments we recommend or manage on your behalf will be fair, clear and not misleading. We will present information in a balanced way, giving appropriate prominence to risks as well as potential benefits. Where we use past performance data, we will ensure it is presented in context and is not used in a way that could create unrealistic expectations about future returns.",
+                "guidance": "This is one of the most frequently cited COBS rules in FCA enforcement. Particular care is needed with: comparative claims, projected returns, risk descriptions, charges disclosure, and social media content. All marketing materials should be reviewed against this rule before publication."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 4.5.2R",
+          "rawText": "A firm must ensure that information addressed to or likely to be received by retail clients, including financial promotions, satisfies the conditions in this section. The information must include the name of the firm. It must be accurate and in particular must not emphasise any potential benefits of an investment service or financial instrument without also giving a fair and prominent indication of any relevant risks. It must be sufficient for, and presented in a way that is likely to be understood by, the average member of the group to whom it is directed, or by whom it is likely to be received.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms communicating with retail clients",
+              "actionText": "Must ensure information to retail clients is accurate, balanced as to benefits and risks, and likely to be understood by the average recipient",
+              "objectText": "All information and financial promotions addressed to or likely to be received by retail clients",
+              "conditionText": "When communicating with retail clients or issuing promotions likely to be received by retail clients",
+              "summary": "Retail client communications must identify the firm, be accurate, balance benefits with a fair and prominent indication of risks, and be understandable to the average target audience member. Prominence of benefits must not exceed prominence of risks.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Balanced Risk and Benefit Disclosure",
+                "templateText": "The value of investments and the income from them can go down as well as up, and you may get back less than you originally invested. Past performance is not a reliable indicator of future results. The specific risks associated with this investment are described in the product documentation provided to you. You should read this information carefully and ensure you understand the risks before making any investment decision.",
+                "guidance": "Risk warnings must be given at least equal prominence to any discussion of potential benefits. Avoid burying risk disclosures in footnotes or small print. For structured products and derivatives, the risk warnings need to be particularly clear about the circumstances in which capital may be at risk."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 4.6.2R",
+          "rawText": "A firm must ensure that information containing an indication of past performance of a financial instrument, a financial index or an investment service satisfies the following conditions: (a) the indication is not the most prominent feature of the communication; (b) the information includes appropriate performance information which covers the immediately preceding five years, or the whole period for which the instrument has been offered if less than five years; (c) the reference period and the source of information are clearly indicated; (d) the information contains a prominent warning that the figures refer to the past and that past performance is not a reliable indicator of future results; (e) where the indication relies on figures denominated in a currency other than that of the relevant jurisdiction, the currency is clearly stated together with a warning that the return may increase or decrease as a result of currency fluctuations.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms using past performance data in communications",
+              "actionText": "Must ensure past performance information covers at least five years, is not the most prominent feature, includes the reference period and source, and carries a prominent warning that past performance is not a reliable indicator of future results",
+              "objectText": "All communications containing past performance data for financial instruments, indices or investment services",
+              "conditionText": "When including any indication of past performance in a communication or financial promotion",
+              "summary": "Past performance data must cover at least five years (or the whole period if shorter), must not dominate the communication, and must carry a prominent warning about the limitations of past performance as a predictor. Currency risks must also be flagged where relevant.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.90,
+              "clauseTemplate": {
+                "title": "Past Performance Disclosure",
+                "templateText": "Past performance is not a reliable indicator of future results. The performance data shown covers the period [start date] to [end date] and is sourced from [source]. Performance figures are shown [net/gross] of charges. Where performance is shown in a currency other than sterling, the return may increase or decrease as a result of currency fluctuations. You should not make investment decisions based solely on past performance.",
+                "guidance": "The five-year minimum applies unless the instrument has been available for less time. Simulated past performance and performance based on back-testing must be clearly labelled as such. Ensure performance charts use a consistent scale and do not exaggerate trends."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "COBS 6", "title": "Information about the firm, its services and remuneration", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 6.1ZA.1R",
+          "rawText": "A MiFID investment firm must provide a client with general information about the firm and its services in good time before the provision of investment services or ancillary services to the client. This information must include the name and address of the firm, the languages in which the client may communicate with the firm, the methods of communication to be used, the fact that the firm is authorised and the name of the competent authority that authorised it, and the nature, frequency and timing of reports the firm will provide.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "MiFID investment firms",
+              "actionText": "Must provide general information about the firm and its services in good time before providing investment or ancillary services",
+              "objectText": "Firm identification, authorisation status, contact details, methods of communication, and reporting arrangements",
+              "conditionText": "In good time before the provision of investment services or ancillary services to the client",
+              "summary": "Firms must provide comprehensive pre-service information including: firm name and address, authorisation status and regulator, communication methods, languages, reporting arrangements, and the nature of services offered. This derives from MiFID II Article 24(4).",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.90,
+              "clauseTemplate": {
+                "title": "Firm and Services Information",
+                "templateText": "[Firm name] is authorised and regulated by the Financial Conduct Authority (FCA), registered number [number]. Our registered address is [address]. You may communicate with us in English by [telephone/email/post/online portal]. We will provide you with [quarterly/annual] reports on [your portfolio/the services we provide]. Further details of the services we offer, including whether our advice is independent or restricted, are set out in our terms of business.",
+                "guidance": "This information should be provided before the client agreement is entered into. For advised services, it must include whether advice is independent or restricted. For portfolio management, it must cover the reporting frequency and the benchmark (if any) against which performance will be measured."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 6.1B.1R",
+          "rawText": "A firm which provides investment services to clients must provide the client with information on all costs and associated charges in connection with the investment services and, where applicable, with the financial instrument, which must include the cost of advice, the cost of the financial instrument recommended or marketed to the client and how the client may pay for it, encompassing any third-party payments. The information about all costs and charges, including costs and charges in connection with the investment service and the financial instrument, which are not caused by the occurrence of underlying market risk, must be aggregated to allow the client to understand the overall cost as well as the cumulative effect of costs on return, and where the client so requests, an itemised breakdown must be provided.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "MiFID investment firms providing investment services",
+              "actionText": "Must provide information on all costs and charges in connection with investment services and financial instruments, aggregated to show overall cost and cumulative effect on return",
+              "objectText": "All costs and charges including: cost of advice, cost of the financial instrument, third-party payments, entry and exit charges, ongoing charges, transaction costs, performance fees and incidental costs",
+              "conditionText": "Before providing investment services, and on an ongoing basis at least annually thereafter",
+              "summary": "Comprehensive ex-ante and ex-post costs and charges disclosure is required. All costs must be aggregated to show the total cost and its cumulative effect on investment returns. This includes advice fees, product charges, platform costs and transaction charges. An itemised breakdown must be available on request.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Costs and Charges Disclosure",
+                "templateText": "Before we provide investment services to you, we will give you a clear breakdown of all costs and charges you will incur, including: (a) the cost of our advice or portfolio management service; (b) the costs associated with the financial instruments we recommend or invest in on your behalf, including ongoing management charges and transaction costs; (c) any third-party payments we receive in connection with the services provided. We will show you the total aggregate cost expressed as both a cash amount and a percentage, together with an illustration of the cumulative effect of these costs on your investment return. We will provide an updated costs and charges statement to you at least annually.",
+                "guidance": "MiFID II costs and charges disclosure is one of the most detailed requirements in COBS. Use the FCA's standardised cost disclosure templates where available. Ensure the aggregated figure captures all layers of cost including look-through costs of underlying funds. The annual ex-post statement must show actual costs incurred."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 6.1B.9R",
+          "rawText": "Where any part of the total costs and charges is to be paid in or represents an amount of foreign currency, the firm must provide an indication of the currency involved, together with the applicable currency conversion rates and costs.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "MiFID investment firms",
+              "actionText": "Must disclose the currency involved and applicable conversion rates and costs where any part of costs and charges is in a foreign currency",
+              "objectText": "Foreign currency costs, conversion rates and currency-related charges",
+              "conditionText": "Where any part of the total costs and charges is payable in or represents a foreign currency amount",
+              "summary": "Where investment costs involve foreign currency, the firm must disclose the currency, conversion rates used and any costs associated with currency conversion.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Discretionary Portfolio",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "COBS 9", "title": "Suitability (including basic advice)", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 9.2.1R",
+          "rawText": "A firm must take reasonable steps to ensure that a personal recommendation, or a decision to trade, is suitable for its client.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing personal recommendations or managing portfolios",
+              "actionText": "Must take reasonable steps to ensure that a personal recommendation or trading decision is suitable for the client",
+              "objectText": "Each personal recommendation made to a client and each trading decision taken on behalf of a client in a discretionary portfolio",
+              "conditionText": "When making a personal recommendation or a decision to trade on behalf of a client",
+              "summary": "The core suitability obligation requires firms to take reasonable steps to ensure every personal recommendation and every discretionary trading decision is suitable for the individual client. This is one of the most important investor protection rules.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Suitability of Recommendations",
+                "templateText": "Before making any personal recommendation to you, we will assess whether the recommendation is suitable for you based on the information you have provided about your financial situation, investment objectives and risk tolerance. We will only recommend investments that we believe are suitable for your individual circumstances. If we manage your portfolio on a discretionary basis, we will ensure that all investment decisions we make on your behalf are consistent with your agreed investment objectives and risk profile.",
+                "guidance": "The suitability obligation is the cornerstone of advised investment services. It requires a proper understanding of the client before any recommendation. Firms must be able to demonstrate suitability for each recommendation made. For discretionary management, suitability must be assessed at portfolio level against the agreed mandate."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 9.2.2R",
+          "rawText": "When making the personal recommendation or managing his investments, the firm must obtain the necessary information regarding the client's knowledge and experience in the investment field relevant to the specific type of product or service, the client's financial situation including his ability to bear losses, and the client's investment objectives including his risk tolerance, so as to enable the firm to recommend to the client the investment services and financial instruments that are suitable for him and, in particular, are in accordance with his risk tolerance and ability to bear losses.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing personal recommendations or portfolio management",
+              "actionText": "Must obtain information regarding the client's knowledge and experience, financial situation including ability to bear losses, and investment objectives including risk tolerance",
+              "objectText": "Client information covering: (a) knowledge and experience relevant to the specific product type; (b) financial situation and ability to bear losses; (c) investment objectives and risk tolerance",
+              "conditionText": "Before making a personal recommendation or taking a discretionary investment decision for the client",
+              "summary": "The know-your-client obligation requires firms to gather comprehensive information about the client's knowledge, experience, financial situation, ability to bear losses, investment objectives and risk tolerance before advising or managing investments. This is the information-gathering foundation of the suitability assessment.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Know Your Client Information",
+                "templateText": "To ensure we can provide you with suitable advice and recommendations, we will ask you to provide us with information about: (a) your knowledge of and experience with financial products and services; (b) your financial situation, including your income, assets, liabilities, existing investments and ability to bear financial losses; (c) your investment objectives, including your investment time horizon, risk tolerance and the purpose for which you are investing. We rely on the accuracy of the information you provide. If any of this information changes, you should notify us promptly so we can reassess whether our recommendations remain suitable for you.",
+                "guidance": "The fact-find must be proportionate to the complexity of the recommendation. For a straightforward ISA investment in a low-cost index fund, a simpler fact-find may suffice. For a pension transfer or investment in complex products, a comprehensive fact-find covering all three limbs is essential. The information gathered must be documented and retained."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 9.2.6R",
+          "rawText": "A firm must provide the client with a report, on a durable medium, specifying the advice given, and how the advice meets the preferences, objectives and other characteristics of the retail client (a suitability report). The suitability report must be provided before the transaction is made, unless the client agrees that the report may be provided without undue delay after the transaction.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing personal recommendations to retail clients",
+              "actionText": "Must provide a suitability report on a durable medium before the transaction, specifying the advice given and how it meets the client's preferences, objectives and characteristics",
+              "objectText": "A written suitability report for each personal recommendation to a retail client, explaining the basis for the advice and how it is suitable",
+              "conditionText": "Before the recommended transaction is effected, or immediately after if the client consents to a delay",
+              "summary": "A written suitability report must be provided to every retail client who receives a personal recommendation. The report must explain what was recommended and why it is suitable for the individual client, referencing their objectives, financial situation and risk tolerance.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Suitability Report",
+                "templateText": "Following our assessment of your circumstances, we will provide you with a written suitability report before any recommended transaction is carried out. This report will explain: (a) the advice we have given; (b) how our recommendation meets your stated investment objectives and risk tolerance; (c) why we consider the recommended product or service to be suitable for you given your financial situation and knowledge and experience; (d) the risks associated with the recommendation. You should read the suitability report carefully before proceeding. If you do not agree with any aspect of our recommendation, please contact us before the transaction is executed.",
+                "guidance": "The suitability report is a critical regulatory document and a key piece of evidence if a complaint or claim is made. It must be personalised, not generic. The FCA has been particularly critical of templated suitability reports that fail to address individual client circumstances. For pension transfers, the requirements are even more stringent under COBS 19."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 9.3.1R",
+          "rawText": "Where a firm makes a personal recommendation in relation to a life policy, it must ensure that the personal recommendation is suitable for the client, having regard to the client's investment objectives, the financial risks to the client, the client's knowledge and experience, and the client's financial situation.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms making personal recommendations relating to life policies",
+              "actionText": "Must ensure recommendations for life policies are suitable having regard to the client's investment objectives, financial risks, knowledge and experience, and financial situation",
+              "objectText": "Personal recommendations for life policies including pension products and investment bonds",
+              "conditionText": "When making a personal recommendation in relation to a life policy",
+              "summary": "Suitability for life policy recommendations requires assessment of investment objectives, financial risks, knowledge and experience, and financial situation. This covers personal pensions, investment bonds and other life policy-based investments.",
+              "applicableProductTypes": [
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Advisory Investment Service"
+              ],
+              "relevanceScore": 0.90
+            }
+          ]
+        },
+        {
+          "reference": "COBS 9.4.1R",
+          "rawText": "A firm which makes a personal recommendation to a retail client to transfer or convert their pension benefits must comply with the rules in COBS 19 relating to pension transfers and conversions.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms advising retail clients on pension transfers",
+              "actionText": "Must comply with the pension transfer rules in COBS 19 when recommending a transfer or conversion of pension benefits",
+              "objectText": "Personal recommendations to retail clients to transfer or convert pension benefits, including defined benefit to defined contribution transfers",
+              "conditionText": "When making a personal recommendation to a retail client to transfer or convert pension benefits",
+              "summary": "Pension transfer advice is subject to the heightened requirements of COBS 19 in addition to the standard suitability rules. This cross-reference ensures that advisers considering a pension transfer recommendation apply the enhanced protections, including the starting assumption against transfer.",
+              "applicableProductTypes": [
+                "SIPP / Personal Pension",
+                "Workplace Pension"
+              ],
+              "relevanceScore": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "COBS 10", "title": "Appropriateness (for non-advised services)", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 10.2.1R",
+          "rawText": "When providing a service that does not involve the provision of a personal recommendation or the management of investments, a firm must ask the client to provide information regarding his knowledge and experience in the investment field relevant to the specific type of product or service offered or demanded, so as to enable the firm to assess whether the investment service or product envisaged is appropriate for the client.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing non-advised investment services",
+              "actionText": "Must ask the client to provide information about their knowledge and experience relevant to the specific product or service to assess whether it is appropriate",
+              "objectText": "Client knowledge and experience information for the purposes of the appropriateness assessment for non-advised services",
+              "conditionText": "When providing an investment service that does not involve a personal recommendation or portfolio management",
+              "summary": "For non-advised (execution-only or dealing) services, firms must assess appropriateness by gathering information about the client's knowledge and experience relevant to the specific product type. Unlike suitability, this does not require assessment of financial situation or objectives.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Appropriateness Assessment",
+                "templateText": "Where you are purchasing an investment without receiving personal advice from us, we are required to assess whether the investment is appropriate for you based on your knowledge and experience. We will ask you a series of questions about your understanding of the type of product you wish to invest in, including the risks involved. If we determine that the product is not appropriate for you, we will inform you of this. You may still proceed with the investment, but you should consider carefully whether it is right for you.",
+                "guidance": "The appropriateness test is a lighter-touch assessment than suitability. It only looks at knowledge and experience, not financial situation or objectives. If the client fails the test, the firm must warn them but is not required to refuse the transaction (unless the product is subject to specific intervention measures)."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 10.3.1R",
+          "rawText": "If the firm considers, on the basis of the information received, that the product or service is not appropriate for the client, the firm must warn the client. The warning may be provided in a standardised format.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing non-advised investment services",
+              "actionText": "Must warn the client if the appropriateness assessment indicates the product or service is not appropriate for them",
+              "objectText": "A warning to the client that the product or service is not appropriate based on the information provided",
+              "conditionText": "When the firm's appropriateness assessment concludes that the product or service is not appropriate for the client",
+              "summary": "Where the appropriateness assessment indicates a product is not appropriate for the client, the firm must issue a warning. The warning may be standardised but must be clear. The client may still proceed after receiving the warning.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.90,
+              "clauseTemplate": {
+                "title": "Appropriateness Warning",
+                "templateText": "Based on the information you have provided about your knowledge and experience, we have assessed that [product name/type] may not be appropriate for you. This means you may not have sufficient knowledge or experience to understand the risks involved with this type of investment. We strongly recommend that you consider seeking independent financial advice before proceeding. If you wish to proceed despite this warning, you do so at your own risk and acknowledge that you have been warned that the investment may not be appropriate for you.",
+                "guidance": "The warning must be given before the transaction is executed. Consider whether additional friction points (e.g., requiring the client to actively acknowledge the warning) are appropriate for higher-risk products. For complex products such as structured products or derivatives, a stronger warning may be advisable."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 10.3.2R",
+          "rawText": "If the client does not provide the information required to assess appropriateness, or provides insufficient information, the firm must warn the client that it is not in a position to determine whether the investment service or product envisaged is appropriate for the client.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing non-advised investment services",
+              "actionText": "Must warn the client that the firm cannot determine appropriateness if the client does not provide sufficient information",
+              "objectText": "A warning that the firm cannot assess appropriateness due to insufficient client information",
+              "conditionText": "When the client does not provide, or provides insufficient, knowledge and experience information",
+              "summary": "Where a client declines to provide information for the appropriateness assessment or provides insufficient information, the firm must warn them that it cannot determine whether the product is appropriate.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.85
+            }
+          ]
+        },
+        {
+          "reference": "COBS 10.4.1R",
+          "rawText": "A firm is not required to carry out an appropriateness assessment if the investment service only consists of execution or reception and transmission of client orders with or without ancillary services, the service relates to shares admitted to trading on a regulated market or equivalent, money market instruments, bonds or other forms of securitised debt (excluding those that embed a derivative), UCITS, and other non-complex financial instruments, and the service is provided at the initiative of the client.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing execution-only services",
+              "actionText": "May dispense with the appropriateness assessment for execution-only transactions in non-complex instruments initiated by the client, provided the client is warned that the firm has not assessed appropriateness",
+              "objectText": "Execution-only transactions in non-complex financial instruments including listed shares, money market instruments, non-complex bonds and UCITS",
+              "conditionText": "When the service is execution-only, relates to non-complex instruments, and is initiated by the client",
+              "summary": "The execution-only exemption allows firms to execute client-initiated orders in non-complex instruments (shares, UCITS, simple bonds) without conducting an appropriateness assessment. The firm must warn the client that no assessment has been carried out. Complex products such as structured products and derivatives do not qualify.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.90,
+              "clauseTemplate": {
+                "title": "Execution-Only Service",
+                "templateText": "Where you instruct us to buy or sell a non-complex financial instrument (such as listed shares or units in a UCITS fund) on an execution-only basis, we will carry out your instructions without assessing whether the product is appropriate for you. In these circumstances, you will not benefit from the protection of the appropriateness rules. You are responsible for ensuring that the investment is suitable for your needs. If you would like guidance or advice, please contact us before placing your order.",
+                "guidance": "The execution-only exemption is narrowly defined. It does not apply to complex instruments, client-initiated transactions in structured products or derivatives, or services that involve any element of advice. Firms should maintain clear records demonstrating that the transaction was genuinely client-initiated."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "COBS 11", "title": "Dealing and managing", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 11.2A.2R",
+          "rawText": "A firm must take all sufficient steps to obtain, when executing orders, the best possible result for its clients taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant to the execution of the order.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "MiFID investment firms executing client orders",
+              "actionText": "Must take all sufficient steps to obtain the best possible result for clients when executing orders, taking into account price, costs, speed, likelihood of execution and settlement, size and nature",
+              "objectText": "The execution of client orders, assessed across all relevant execution factors",
+              "conditionText": "When executing orders on behalf of clients",
+              "summary": "The best execution obligation requires firms to take all sufficient steps to achieve the best possible result for clients across multiple factors: price, costs, speed, likelihood of execution and settlement, order size, and nature. For retail clients, the best result is generally determined by the total consideration (price plus execution costs).",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Best Execution",
+                "templateText": "When we execute orders on your behalf, we will take all sufficient steps to obtain the best possible result for you, taking into account price, costs, speed, likelihood of execution and settlement, the size and nature of the order, and any other relevant factors. Our order execution policy, which sets out the execution venues and factors we consider when executing different types of order, is provided to you separately. For retail clients, the best result is generally determined by the total consideration, being the price of the financial instrument and the costs of execution. We will monitor the quality of execution we achieve and review our execution policy at least annually.",
+                "guidance": "Best execution is a process obligation, not a guarantee of the best price on every trade. Firms must have an order execution policy, disclose it to clients, obtain consent to it, and monitor execution quality. For discretionary portfolio managers, best execution applies to the decisions to deal. The annual review of execution quality is a regulatory requirement under COBS 11.2A."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 11.2A.15R",
+          "rawText": "A firm must establish and implement effective arrangements for complying with the best execution obligation. In particular, the firm must establish and implement an order execution policy to allow it to obtain, for its client orders, the best possible result. The order execution policy must include, in respect of each class of financial instruments, information on the different venues where the firm executes its client orders and the factors affecting the choice of execution venue.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "MiFID investment firms",
+              "actionText": "Must establish and implement an order execution policy covering each class of financial instrument, including execution venues and factors affecting venue choice",
+              "objectText": "A written order execution policy covering all classes of financial instruments in which the firm executes orders",
+              "conditionText": "As a standing requirement for firms that execute client orders",
+              "summary": "Firms must have a documented order execution policy that identifies execution venues for each asset class and explains the factors that determine venue selection. This policy must be provided to clients and consent obtained.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Discretionary Portfolio",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "COBS 14", "title": "Providing product information to clients", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 14.2.1R",
+          "rawText": "A firm must provide a retail client with a key information document or key investor information document in good time before the retail client is bound by any contract or offer relating to the investment, unless the transaction is concluded by a means of distance communication which prevents prior delivery, in which case it may be provided immediately after the transaction is concluded.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms selling or recommending investments to retail clients",
+              "actionText": "Must provide a key information document or key investor information document to the retail client in good time before the client is bound by any contract or offer",
+              "objectText": "The key information document (KID) or key investor information document (KIID) for the relevant investment product",
+              "conditionText": "In good time before the retail client is bound by any contract or offer relating to the investment",
+              "summary": "Retail clients must receive the relevant key information document (PRIIPs KID or UCITS KIID) before committing to an investment. This ensures the client has access to standardised product information including objectives, risks, costs and past performance in a comparable format.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Key Information Document",
+                "templateText": "Before you invest, we will provide you with the key information document (KID) for the investment product. This document provides key facts about the product in a standardised format, including its objectives, risk profile, costs and past performance. You should read this document carefully before making your investment decision. The KID is designed to help you compare this product with other investment options. If you have not received the KID before being asked to commit to an investment, please inform us immediately.",
+                "guidance": "The KID/KIID must be provided in good time, meaning early enough for the client to read and understand it before making a decision. For distance sales, there is an exception allowing provision immediately after the transaction if prior delivery is not possible. The firm should retain evidence that the KID was provided."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 14.3.1R",
+          "rawText": "A firm must not sell, or advise on, a packaged retail investment product to a retail investor unless a key information document has been drawn up for that product in accordance with the PRIIPs Regulation.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Firms selling or advising on PRIIPs to retail investors",
+              "actionText": "Must not sell or advise on a packaged retail investment product to a retail investor unless a PRIIPs KID has been prepared for that product",
+              "objectText": "Packaged retail and insurance-based investment products (PRIIPs) including structured deposits, investment-linked insurance products and structured products",
+              "conditionText": "When selling or advising on packaged retail investment products to retail investors",
+              "summary": "PRIIPs (packaged retail and insurance-based investment products) cannot be sold to or recommended to retail investors unless a compliant KID exists. The KID must conform to the PRIIPs Regulation requirements for content, format and methodology.",
+              "applicableProductTypes": [
+                "Structured Product",
+                "Investment Product (Retail)"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "PRIIPs KID Requirement",
+                "templateText": "This product is classified as a packaged retail investment product (PRIIP) under the PRIIPs Regulation. A key information document (KID) has been prepared for this product in accordance with the PRIIPs Regulation and will be provided to you before you invest. The KID contains important information about the product including its risk indicator, performance scenarios, costs and recommended holding period. We cannot proceed with this investment unless the KID has been made available to you.",
+                "guidance": "The PRIIPs KID must follow the prescribed format and content requirements. It includes a summary risk indicator (1-7 scale), performance scenarios, costs over time and the recommended holding period. Ensure the KID is up-to-date; it must be reviewed at least annually. From January 2023, UCITS funds are also covered by the PRIIPs regime."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 14.3A.2R",
+          "rawText": "A UCITS management company must draw up a short document containing key information for investors (a key investor information document or KIID). The KIID must include appropriate information about the essential characteristics of the UCITS concerned, so that investors are reasonably able to understand the nature and risks of the investment product that is being offered to them and to take investment decisions on an informed basis.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "UCITS management companies",
+              "actionText": "Must prepare a key investor information document (KIID) containing appropriate information about the essential characteristics of the UCITS to enable informed investment decisions",
+              "objectText": "A key investor information document for each UCITS fund, covering essential characteristics, nature and risks of the investment",
+              "conditionText": "As a standing requirement for each UCITS fund managed or distributed",
+              "summary": "UCITS management companies must produce a KIID for each fund, providing investors with key information about the fund's objectives, risk profile, charges and past performance in a standardised two-page format.",
+              "applicableProductTypes": [
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "COBS 16", "title": "Reporting information to clients", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 16.2.1R",
+          "rawText": "A firm that manages a portfolio for a client must provide the client with a periodic statement in a durable medium. For retail clients, the periodic statement must be provided at least quarterly, unless the client has opted for a statement on a half-yearly basis where the portfolio does not include leveraged financial instruments or unconditionally repayable client money.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing portfolio management services",
+              "actionText": "Must provide a periodic portfolio statement in a durable medium at least quarterly for retail clients",
+              "objectText": "A periodic statement of the composition and valuation of the managed portfolio including: the details and value of each holding, cash balance, total value, overall performance and costs incurred during the period",
+              "conditionText": "On a periodic basis, at least quarterly for retail clients (half-yearly if agreed and the portfolio has no leveraged instruments)",
+              "summary": "Portfolio managers must provide quarterly (or half-yearly if agreed and no leverage) reports to retail clients showing portfolio composition, valuations, performance and costs. The statement must be on a durable medium and enable the client to understand and verify the management of their portfolio.",
+              "applicableProductTypes": [
+                "Discretionary Portfolio"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Periodic Portfolio Statement",
+                "templateText": "We will provide you with a periodic statement of your portfolio at least every [three/six] months. The statement will include: (a) details and current value of each holding in your portfolio; (b) the cash balance held; (c) the total value of the portfolio at the beginning and end of the reporting period; (d) the overall performance of the portfolio during the period measured against the agreed benchmark (if any); (e) the total amount of fees and charges incurred during the period, including management fees, transaction costs and any third-party charges. Your statement will be provided in a durable medium and you may request a copy at any time.",
+                "guidance": "The periodic statement is a key regulatory requirement for discretionary portfolio management. It must be sufficiently detailed for the client to understand how their portfolio has been managed. Ensure performance is shown both gross and net of charges. Where a benchmark has been agreed, performance should be compared against it."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 16.2.2R",
+          "rawText": "Where a firm provides portfolio management services that involve an open position in a leveraged transaction or in a contingent liability transaction, the firm must report to the retail client any losses exceeding a predetermined threshold, agreed with the client, no later than the end of the business day in which the threshold is exceeded, or in a case where the threshold is exceeded on a non-business day, the close of the next business day.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms providing portfolio management services involving leveraged or contingent liability positions",
+              "actionText": "Must report to the retail client by close of business when portfolio losses exceed the predetermined threshold",
+              "objectText": "Notification of portfolio losses exceeding the agreed threshold for portfolios containing leveraged or contingent liability positions",
+              "conditionText": "When an open position in a leveraged or contingent liability transaction causes portfolio losses to exceed the agreed threshold",
+              "summary": "For managed portfolios containing leveraged or contingent liability positions, losses exceeding a pre-agreed threshold must be reported to the retail client by close of the business day on which the breach occurs. This is an important investor protection for higher-risk portfolios.",
+              "applicableProductTypes": [
+                "Discretionary Portfolio"
+              ],
+              "relevanceScore": 0.85
+            }
+          ]
+        },
+        {
+          "reference": "COBS 16.3.1R",
+          "rawText": "Where a firm has carried out an order, other than for portfolio management, on behalf of a client, the firm must promptly provide the client, in a durable medium, with the essential information concerning the execution of that order. For retail clients, the firm must send a notice confirming execution of the order as soon as possible and no later than the first business day following execution or, where the confirmation is received by the firm from a third party, no later than the first business day following receipt of the confirmation from the third party.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms executing client orders (other than portfolio management)",
+              "actionText": "Must promptly provide essential information concerning order execution; for retail clients, a confirmation must be sent no later than the first business day following execution",
+              "objectText": "A trade confirmation notice containing essential information about the executed order including the instrument, quantity, price, venue, date and time, total consideration and any charges",
+              "conditionText": "After executing an order on behalf of a client",
+              "summary": "Firms must promptly confirm order execution to clients. For retail clients, the confirmation must be sent by the first business day after execution. The notice must include essential details: instrument, quantity, price, venue, date and time, total consideration and charges.",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.90,
+              "clauseTemplate": {
+                "title": "Trade Confirmation",
+                "templateText": "When we execute an order on your behalf, we will send you a confirmation notice no later than the next business day. The confirmation will include: the name and type of the financial instrument; the date and time of execution; the quantity and price of the instruments traded; the execution venue; the total consideration including all charges and commissions; your responsibilities in relation to settlement; and any other relevant details. If you believe any information in the confirmation is incorrect, you should notify us immediately.",
+                "guidance": "Trade confirmations are a fundamental post-trade disclosure requirement. For aggregated orders, the confirmation must show the average price if orders have been executed at different prices. Ensure confirmations are sent within the required timeframe and contain all prescribed information."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "COBS 19", "title": "Pension transfers and opt-outs", "level": 1 },
+      "rules": [
+        {
+          "reference": "COBS 19.1.1R",
+          "rawText": "This section applies to a firm which makes a personal recommendation to a retail client to transfer their pension benefits from a defined benefit or other safeguarded benefits pension scheme, or to opt out of, or not to join, such a scheme.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms advising retail clients on pension transfers from defined benefit schemes",
+              "actionText": "Must comply with the enhanced pension transfer advice requirements when recommending a transfer from a defined benefit or safeguarded benefits scheme",
+              "objectText": "Personal recommendations to retail clients to transfer from defined benefit or safeguarded benefits pension schemes, or to opt out of or not join such schemes",
+              "conditionText": "When the firm makes a personal recommendation to a retail client in relation to a DB pension transfer, opt-out or decision not to join",
+              "summary": "Enhanced requirements apply to all advice on transferring out of defined benefit (DB) or other safeguarded benefits pension schemes. These rules impose a higher standard of advice and require specialist qualifications.",
+              "applicableProductTypes": [
+                "SIPP / Personal Pension",
+                "Workplace Pension"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Pension Transfer Advice Scope",
+                "templateText": "If you are considering transferring benefits from a defined benefit (final salary) pension scheme or another scheme that provides safeguarded benefits, we are required to follow enhanced advice procedures set by the FCA. This includes conducting a detailed analysis of the benefits you would be giving up, comparing them with the proposed receiving arrangement, and providing a personalised recommendation. The FCA's starting assumption is that a transfer from a defined benefit scheme is unlikely to be in your best interests. Our advice will be given by an adviser holding the specialist pension transfer qualification required by the FCA.",
+                "guidance": "DB pension transfer advice is one of the highest-risk areas of investment advice. The FCA requires a starting assumption that a transfer is unlikely to be suitable. Firms must hold appropriate permissions and advisers must hold the relevant Level 4 pension transfer qualification. The advice must consider the transfer value analysis (TVAS) and address the client's specific circumstances."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 19.1.2R",
+          "rawText": "When advising a retail client on a pension transfer from a defined benefit pension scheme, the firm must start from the assumption that a transfer will not be suitable. A firm should only then consider a transfer to be suitable if it can clearly demonstrate, on contemporary evidence, that the transfer is in the client's best interests.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms advising on DB pension transfers",
+              "actionText": "Must start from the assumption that a defined benefit pension transfer will not be suitable and must clearly demonstrate on contemporary evidence that a transfer is in the client's best interests before recommending one",
+              "objectText": "The suitability assessment for defined benefit pension transfer recommendations, which must overcome the presumption against transfer",
+              "conditionText": "When advising a retail client on whether to transfer out of a defined benefit pension scheme",
+              "summary": "The starting assumption is that a DB pension transfer is not suitable. This places a high evidential burden on the adviser to demonstrate, with clear contemporary evidence, that the specific client's circumstances make a transfer in their best interests. Generic reasons for transfer are insufficient.",
+              "applicableProductTypes": [
+                "SIPP / Personal Pension",
+                "Workplace Pension"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Starting Assumption Against Transfer",
+                "templateText": "In accordance with FCA rules, we begin our assessment on the basis that transferring your defined benefit pension benefits is unlikely to be in your best interests. A defined benefit pension provides a guaranteed income in retirement, usually increasing with inflation, and this valuable benefit is given up on transfer. We will only recommend a transfer if, after a thorough analysis of your individual circumstances, we can clearly demonstrate that a transfer is in your best interests. If we conclude that a transfer is not suitable, we will recommend that you retain your defined benefit pension.",
+                "guidance": "This is one of the most critical COBS rules. The FCA has taken extensive enforcement action against firms that recommended unsuitable DB transfers. The starting assumption must be genuinely applied, not treated as a formality. The suitability report for a transfer recommendation must contain compelling, individualised reasons why the transfer is in the client's best interests."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 19.1.3R",
+          "rawText": "A firm must carry out a transfer value analysis when advising a retail client on a pension transfer from a defined benefit pension scheme. The analysis must compare the benefits likely to be paid under the defined benefit pension scheme with the benefits afforded by the personal pension scheme or other arrangement to which the benefits would be transferred.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms advising on DB pension transfers",
+              "actionText": "Must carry out a transfer value analysis comparing the benefits under the DB scheme with the benefits afforded by the proposed receiving arrangement",
+              "objectText": "A transfer value analysis comparing the defined benefit pension scheme benefits with the benefits of the proposed receiving arrangement",
+              "conditionText": "When advising a retail client on a pension transfer from a defined benefit pension scheme",
+              "summary": "A transfer value analysis (TVAS) is mandatory for DB pension transfer advice. It must compare the guaranteed benefits under the DB scheme with the projected benefits under the proposed receiving scheme, using appropriate assumptions and methodology.",
+              "applicableProductTypes": [
+                "SIPP / Personal Pension",
+                "Workplace Pension"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Transfer Value Analysis",
+                "templateText": "As part of our advice process, we will carry out a transfer value analysis (TVAS) comparing the pension benefits you are entitled to under your defined benefit scheme with the benefits you could expect to receive if you transfer to a personal pension arrangement. The TVAS will take into account: (a) the guaranteed pension income and any lump sum you are entitled to under the DB scheme; (b) the cash equivalent transfer value (CETV) offered; (c) projected investment returns and the income that could be generated in the receiving scheme; (d) the impact of charges on the projected benefits; (e) the critical yield required to match your DB benefits. The results of the TVAS will form part of our suitability report to you.",
+                "guidance": "The TVAS is a core component of pension transfer advice. It must use FCA-compliant methodology and assumptions. The critical yield shows the investment return needed in the receiving scheme to match the DB benefits. A high critical yield relative to realistic expected returns is a strong indicator that transfer is not suitable. Ensure the TVAS is produced using approved software."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 19.1.6R",
+          "rawText": "A firm must provide appropriate pension transfer risk warnings to the retail client, including that the defined benefit pension provides a guaranteed income in retirement, the value of the benefits being given up, the risks involved in transferring, and the fact that by transferring the client will lose safeguarded benefits such as a guaranteed annuity rate.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Firms advising on pension transfers",
+              "actionText": "Must provide appropriate risk warnings covering the guaranteed nature of DB benefits, the value of benefits being given up, transfer risks and loss of safeguarded benefits",
+              "objectText": "Pension transfer risk warnings addressing: guaranteed income, value of benefits given up, transfer risks, and loss of safeguarded benefits such as guaranteed annuity rates",
+              "conditionText": "When advising a retail client on a pension transfer from a defined benefit or safeguarded benefits scheme",
+              "summary": "Specific risk warnings must be given in pension transfer advice, covering: the guaranteed nature of the DB income, the value of what is being given up, the investment and longevity risks of transferring, and the loss of any safeguarded benefits such as guaranteed annuity rates.",
+              "applicableProductTypes": [
+                "SIPP / Personal Pension",
+                "Workplace Pension"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Pension Transfer Risk Warnings",
+                "templateText": "Before deciding whether to transfer your defined benefit pension, you should be aware of the following important risks: (a) your defined benefit pension provides a guaranteed income for life, which you will lose if you transfer; (b) the transfer value offered may not fully reflect the value of the benefits you are giving up; (c) once transferred, your retirement income will depend on investment performance and will not be guaranteed; (d) you will bear investment risk, inflation risk and the risk of living longer than expected (longevity risk); (e) if your scheme offers a guaranteed annuity rate or other safeguarded benefits, you will lose these on transfer; (f) charges on the receiving arrangement will reduce the value of your pension fund over time. These risks should be weighed carefully against any potential benefits of transferring.",
+                "guidance": "Risk warnings for pension transfers must be specific and personalised, not generic. The warnings should be tailored to the client's specific DB scheme benefits and the proposed receiving arrangement. Where the scheme offers valuable additional benefits (such as a guaranteed annuity rate, spouse's pension or ill-health benefits), these should be specifically highlighted."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "COBS 19.1.7AR",
+          "rawText": "Where the cash equivalent transfer value is £30,000 or more, a firm must not proceed with a transfer without having obtained a recommendation from a pension transfer specialist who holds the appropriate pension transfer qualification.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Firms advising on pension transfers",
+              "actionText": "Must not proceed with a pension transfer where the CETV is £30,000 or more without a recommendation from a pension transfer specialist holding the appropriate qualification",
+              "objectText": "Pension transfers with a cash equivalent transfer value of £30,000 or more",
+              "conditionText": "Where the cash equivalent transfer value of the pension benefits is £30,000 or more",
+              "summary": "For pension transfers with a CETV of £30,000 or more, the recommendation must be given by an adviser with the specialist pension transfer qualification. This ensures that significant transfers are only advised upon by appropriately qualified individuals.",
+              "applicableProductTypes": [
+                "SIPP / Personal Pension",
+                "Workplace Pension"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+{
+  "regulation": {
+    "id": "prod",
+    "regulatorId": "fca",
+    "title": "Product Intervention and Product Governance Sourcebook (PROD)",
+    "citation": "FCA PROD",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2018-01-03",
+    "url": "https://www.handbook.fca.org.uk/handbook/PROD/"
+  },
+  "sections": [
+    {
+      "section": { "number": "PROD 1", "title": "Product governance: general", "level": 1 },
+      "rules": [
+        {
+          "reference": "PROD 1.3.1R",
+          "rawText": "This sourcebook applies to a firm which is a manufacturer or distributor of products and services to retail clients, including in respect of the product approval process, distribution arrangements, and ongoing review of products and distribution strategies.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must comply with PROD requirements when manufacturing or distributing products and services to retail clients",
+              "objectText": "Products and services offered to retail clients, including the product approval process, distribution arrangements and ongoing product review",
+              "conditionText": "When the firm acts as a manufacturer or distributor of products and services to retail clients",
+              "summary": "PROD applies to all firms that manufacture or distribute financial products and services to retail clients. It establishes a product governance framework requiring manufacturers to design products that meet identified customer needs and distributors to ensure products reach appropriate target markets.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Product Governance Application",
+                "templateText": "As a manufacturer and/or distributor of financial products and services, we comply with the FCA's product governance requirements under PROD. This means we maintain robust processes for designing, approving, distributing and reviewing the products and services we offer to ensure they meet the needs of the customers for whom they are intended.",
+                "guidance": "PROD 1 establishes the general application of the product governance sourcebook. It applies broadly to manufacturers (firms that create, develop, design or underwrite products) and distributors (firms that offer, recommend or sell products to clients). Firms should assess whether they fall within scope for each product line."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "PROD 3", "title": "Product governance: product manufacturer requirements", "level": 1 },
+      "rules": [
+        {
+          "reference": "PROD 3.2.1R",
+          "rawText": "A manufacturer must maintain, operate and review a product approval process for each product it manufactures, including for new products and significant adaptations of existing products. The product approval process must specify an identified target market of end customers for each product, at a level of granularity that is appropriate having regard to the characteristics of the product.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must maintain, operate and review a product approval process for new products and significant adaptations, identifying a target market of end customers",
+              "objectText": "Product approval process for each manufactured product, including target market identification",
+              "conditionText": "For each product the firm manufactures, including new products and significant adaptations of existing products",
+              "summary": "Manufacturers must have a formal product approval process that applies to every product they create or significantly adapt. The process must identify a specific target market of end customers, ensuring products are designed with a defined group of customers in mind rather than developed speculatively.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Product Design and Target Market",
+                "templateText": "Each product we manufacture is subject to a formal product approval process. Before a product is brought to market, we identify a target market of end customers whose needs, characteristics and objectives the product is designed to meet. We assess whether the product's features, risk profile and cost structure are compatible with the interests and needs of the target market. Products are only approved for distribution once this process is complete.",
+                "guidance": "The product approval process is the cornerstone of PROD 3. It must be documented, involve appropriate senior oversight, and be applied consistently. The target market definition should consider customer needs, financial situation, risk tolerance, knowledge and experience. Significant adaptations (not just minor changes) trigger the full approval process."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 3.2.2R",
+          "rawText": "The target market for each product must be identified at a sufficiently granular level, having regard to the characteristics, risk profile, complexity and nature of the product, to enable the manufacturer to assess whether the product meets the needs and objectives of the identified target market.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must identify the target market at a sufficiently granular level having regard to product characteristics, risk profile, complexity and nature",
+              "objectText": "Target market definition at an appropriate level of granularity for each product",
+              "conditionText": "When defining the target market as part of the product approval process",
+              "summary": "The target market must be defined with sufficient specificity. A vague or overly broad target market definition is insufficient. The granularity should reflect the product's complexity and risk: more complex or higher-risk products require more detailed target market definitions to ensure they reach appropriate customers.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Product Design and Target Market",
+                "templateText": "Our target market assessment considers the characteristics, risk profile, complexity and nature of each product. We define the target market with sufficient granularity to ensure the product is compatible with the needs, objectives and characteristics of the intended end customers. For more complex or higher-risk products, we apply a more detailed and specific target market definition.",
+                "guidance": "Granularity is key. A target market of 'all retail customers' is unlikely to be sufficient for any but the simplest products. Firms should consider segmenting by customer needs, financial situation, risk appetite, knowledge, experience, and product objectives. The FCA expects the target market definition to be a meaningful tool for guiding distribution, not a compliance tick-box."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 3.2.4R",
+          "rawText": "A manufacturer must undertake appropriate scenario analysis and product testing to assess how the product performs in a range of market conditions, including under stressed conditions, and to assess whether the product could cause customer detriment in foreseeable adverse scenarios.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must undertake scenario analysis and product testing to assess performance under a range of market conditions including stressed conditions",
+              "objectText": "Scenario analysis and product testing covering normal and stressed market conditions and foreseeable adverse scenarios",
+              "conditionText": "As part of the product approval process before bringing a product to market",
+              "summary": "Manufacturers must stress-test products before launch. This includes modelling how the product performs under various market conditions, including adverse scenarios, to identify whether it could cause customer detriment. Products that perform poorly for the target market under foreseeable stressed conditions may need to be redesigned or withdrawn.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Product Design and Target Market",
+                "templateText": "Before bringing a product to market, we conduct scenario analysis and testing to assess how the product would perform under a range of conditions, including stressed market environments. This testing helps us identify whether the product could cause detriment to customers in the target market under foreseeable adverse scenarios. Where testing reveals material risks of customer harm, we will redesign the product or decide not to proceed with its launch.",
+                "guidance": "Scenario analysis should be proportionate to the product's complexity and risk. For investment products, this may include modelling returns under different market conditions. For credit products, affordability under income stress. For insurance, claims scenarios. The FCA expects firms to retain documentation of the testing performed and the conclusions drawn."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 3.2.16R",
+          "rawText": "A manufacturer must regularly review the products it has brought to market to assess whether each product continues to be consistent with the needs of the identified target market and whether the intended distribution strategy remains appropriate. The manufacturer must take appropriate action where the review identifies issues.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must regularly review products to assess continued consistency with target market needs and appropriateness of distribution strategy, taking action where issues are identified",
+              "objectText": "Ongoing product review covering target market alignment and distribution strategy appropriateness",
+              "conditionText": "On a regular basis after each product has been brought to market",
+              "summary": "Product governance is not a one-off exercise at launch. Manufacturers must conduct ongoing reviews to confirm products still meet target market needs and the distribution strategy remains appropriate. Where issues are found — such as mis-selling, customer complaints, or market changes — the manufacturer must act, which could include amending the product, changing distribution channels, or withdrawing the product.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Product Review",
+                "templateText": "We regularly review the products we have brought to market to ensure they continue to meet the needs of the target market and that our distribution strategy remains appropriate. Our reviews consider customer outcomes, complaints data, sales patterns, market developments and any other relevant factors. Where we identify issues, we will take prompt corrective action, which may include amending the product, revising the distribution strategy, or withdrawing the product from sale.",
+                "guidance": "Review frequency should be proportionate to the product's complexity and risk profile. The FCA expects at least annual reviews for most products, with more frequent reviews where there are material changes in market conditions or emerging evidence of customer harm. Reviews should be documented and escalated to appropriate governance forums."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 3.2.20R",
+          "rawText": "A manufacturer must provide distributors with all appropriate information on the product, the product approval process, and the identified target market, including information on the appropriate distribution channels for the product, to enable distributors to understand the product and distribute it in accordance with the target market.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must provide distributors with all appropriate information on the product, approval process, target market and appropriate distribution channels",
+              "objectText": "Product information, target market details and distribution channel guidance provided to distributors",
+              "conditionText": "When making products available to distributors for distribution to end customers",
+              "summary": "Manufacturers must equip distributors with comprehensive product information, including target market details and appropriate distribution channels. This ensures distributors can make informed decisions about which customers the product is suitable for and through which channels it should be sold.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Product Design and Target Market",
+                "templateText": "We provide our distribution partners with comprehensive information about each product, including: the identified target market; the product's features, risks and costs; the outcome of our product approval process; and guidance on the distribution channels and sales strategies that are appropriate for the product. This enables our distributors to understand the product and offer it to customers within the intended target market.",
+                "guidance": "The information provided must be sufficient for the distributor to understand the product and its target market. This is a two-way obligation — distributors must also request information they need. The FCA has emphasised that manufacturers cannot discharge their responsibilities simply by making information available; they must take reasonable steps to ensure distributors have actually received and understood it."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "PROD 3.3", "title": "Product governance: distribution", "level": 1 },
+      "rules": [
+        {
+          "reference": "PROD 3.3.1R",
+          "rawText": "A distributor must understand the products it distributes, assess the compatibility of the products with the needs of the clients to whom it distributes, and ensure that products are only offered or recommended where this is consistent with the identified target market for the product.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must understand products distributed, assess compatibility with client needs, and only offer or recommend products consistent with the identified target market",
+              "objectText": "Product understanding, client needs assessment and target market alignment for all distributed products",
+              "conditionText": "When distributing, offering or recommending products to clients",
+              "summary": "Distributors bear their own product governance responsibilities. They must understand the products they sell, assess whether individual clients' needs are compatible with the product, and only offer products to customers within the identified target market. Distributing products to customers outside the target market is a breach.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Distribution and Target Market Compliance",
+                "templateText": "Before offering or recommending any product to you, we ensure that we understand the product's features, risks and target market, and that the product is compatible with your needs, objectives and characteristics. We will only offer or recommend products to you where doing so is consistent with the product's identified target market as defined by the manufacturer.",
+                "guidance": "Distributors must obtain target market information from manufacturers and use it in their sales and advice processes. Where a distributor identifies that a client falls outside the target market, the product should not be offered unless there are exceptional, documented reasons. The FCA expects distributors to have systems and controls to prevent sales outside the target market."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 3.3.11R",
+          "rawText": "A distributor must have in place adequate product governance arrangements, including effective product distribution arrangements, to ensure that the products and services it intends to offer or recommend are compatible with the needs, characteristics and objectives of an identified target market, and that the intended distribution strategy is consistent with the identified target market.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must have adequate product governance arrangements including effective distribution arrangements to ensure products are distributed to the identified target market",
+              "objectText": "Product governance and distribution arrangements ensuring target market compatibility",
+              "conditionText": "In respect of all products and services the distributor intends to offer or recommend",
+              "summary": "Distributors must have formal product governance arrangements — not just ad hoc processes. These arrangements must ensure products are only distributed to customers within the target market and that the distribution strategy (channels, sales processes, marketing) is aligned with the target market definition.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Distribution and Target Market Compliance",
+                "templateText": "We maintain product governance arrangements that ensure the products and services we offer are compatible with the needs, characteristics and objectives of their identified target markets. Our distribution arrangements are designed to ensure that products reach the customers for whom they are intended, through appropriate channels and with suitable sales processes.",
+                "guidance": "The FCA expects distributors to document their product governance arrangements, including how they assess target market compatibility, how they train staff, and how they monitor sales patterns. Distributors should have processes to escalate to manufacturers where they identify products being sold outside the target market or where customer outcomes suggest the product or target market definition may need review."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 3.3.15R",
+          "rawText": "A distributor must provide a manufacturer, on request and as appropriate, with sales data, information on product reviews and any other information that would be relevant to the product review process undertaken by the manufacturer.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Product manufacturers and distributors",
+              "actionText": "Must provide manufacturers with sales data, product review information and any other information relevant to the manufacturer's product review process",
+              "objectText": "Sales data, product review information and other relevant information shared with the manufacturer",
+              "conditionText": "On request from the manufacturer and as appropriate on an ongoing basis",
+              "summary": "Distributors must support manufacturers' product review processes by sharing relevant information, including sales data, feedback from product reviews, complaints data, and other insights. This feedback loop is essential for manufacturers to assess whether products continue to meet target market needs and whether distribution strategies are working as intended.",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Distribution and Target Market Compliance",
+                "templateText": "We cooperate with product manufacturers by providing relevant sales data and information to support their ongoing product review processes. This includes data on sales volumes, customer profiles, complaints and any other information that helps the manufacturer assess whether the product continues to meet the needs of its target market.",
+                "guidance": "This is a reciprocal obligation to the manufacturer's duty to review products. Distributors should have systems to capture and report relevant data. The information shared should include not just raw sales figures but qualitative information such as customer feedback, complaints themes, and observations about whether the product is reaching the intended target market."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "PROD 4", "title": "Insurance-specific product governance (IDD)", "level": 1 },
+      "rules": [
+        {
+          "reference": "PROD 4.2.1R",
+          "rawText": "An insurance manufacturer must maintain, operate and review a product approval process for each insurance product it manufactures, in compliance with the requirements of the Insurance Distribution Directive. The product approval process must identify a target market for each product and ensure the product is designed to meet the needs of the target market.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Insurance manufacturers and distributors",
+              "actionText": "Must maintain, operate and review a product approval process for each insurance product in compliance with IDD requirements, identifying a target market",
+              "objectText": "IDD-compliant product approval process for each insurance product, including target market identification",
+              "conditionText": "For each insurance product the firm manufactures",
+              "summary": "Insurance manufacturers must have a product approval process that complies with the Insurance Distribution Directive. This process must identify a target market for each insurance product and ensure the product is designed to meet the needs of that market. This is the insurance-specific equivalent of PROD 3.2.1R, with additional IDD requirements.",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Insurance Product Approval Process",
+                "templateText": "Each insurance product we manufacture is subject to a product approval process that complies with the Insurance Distribution Directive. We identify a target market for each product, assess the product's compatibility with the needs and characteristics of customers in that target market, and ensure the product is designed to deliver fair outcomes for the intended customers. Products are only approved for distribution once this process is satisfactorily completed.",
+                "guidance": "PROD 4 implements the product governance requirements of the Insurance Distribution Directive (IDD) as retained in UK law. The IDD requirements are broadly consistent with the general PROD 3 requirements but include insurance-specific considerations such as the nature of insurance risk, claims processes, and the role of underwriting in target market definition. Firms must comply with both PROD 3 and PROD 4 where applicable."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 4.2.5R",
+          "rawText": "An insurance manufacturer must conduct appropriate product testing before bringing an insurance product to market, or significantly adapting an existing product, to ensure the product is consistent with the needs, characteristics and objectives of customers in the identified target market and that the product does not adversely affect customers.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Insurance manufacturers and distributors",
+              "actionText": "Must conduct product testing before launch or significant adaptation to ensure consistency with target market needs and that the product does not adversely affect customers",
+              "objectText": "Pre-market product testing of insurance products for target market consistency and absence of customer detriment",
+              "conditionText": "Before bringing an insurance product to market or significantly adapting an existing insurance product",
+              "summary": "Insurance manufacturers must test products before launch to verify they meet the target market's needs and will not cause customer harm. Testing should assess product features, coverage, exclusions, pricing and claims processes against the target market's characteristics and objectives.",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Insurance Product Testing",
+                "templateText": "Before launching a new insurance product or making significant changes to an existing one, we conduct product testing to confirm the product meets the needs, characteristics and objectives of the target market. Our testing assesses whether the product's features, coverage, exclusions, pricing and claims processes deliver fair outcomes for the intended customers and do not cause customer detriment.",
+                "guidance": "Product testing for insurance should include scenario-based assessments of how the product performs for different customer segments within the target market. This may include testing claims scenarios, assessing the impact of exclusions on typical customers, and evaluating whether the price is proportionate to the cover provided. Testing results should be documented and considered by the product approval committee."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 4.2.22R",
+          "rawText": "An insurance manufacturer must review insurance products it has brought to market on a regular basis, and at least annually, to ensure each product and its distribution strategy remain consistent with the needs and characteristics of the identified target market and that the product continues to be distributed to the target market.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Insurance manufacturers and distributors",
+              "actionText": "Must review insurance products regularly and at least annually to ensure continued consistency with target market needs and appropriate distribution",
+              "objectText": "Regular review (at least annual) of insurance products and distribution strategies for target market alignment",
+              "conditionText": "On a regular basis and at least annually for each insurance product brought to market",
+              "summary": "Insurance products must be reviewed at least annually. The review must assess whether the product and its distribution strategy remain consistent with the identified target market. Where the review identifies issues, the manufacturer must take corrective action. This is more prescriptive than the general PROD 3 review requirement, specifying a minimum annual frequency.",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Insurance Product Review",
+                "templateText": "We review each insurance product we manufacture on a regular basis, and at least annually, to ensure it continues to meet the needs and characteristics of the identified target market. Our review assesses the product's performance, customer outcomes, complaints data, claims experience, distribution patterns and any changes in market conditions. Where we identify that a product or its distribution strategy is no longer consistent with the target market, we take prompt corrective action.",
+                "guidance": "The annual review minimum is an IDD-specific requirement under PROD 4. More frequent reviews may be warranted for products experiencing rapid change, high complaint volumes, or adverse market conditions. The review should consider data from distributors (as required by PROD 3.3.15R), claims data, customer outcomes, and market developments. Review conclusions and actions taken should be documented and reported to senior management."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PROD 4.3.1R",
+          "rawText": "An insurance distributor must understand the insurance products it offers or recommends, including their target market, and must have in place adequate product distribution arrangements to ensure the distribution strategy is appropriate for the identified target market.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Insurance manufacturers and distributors",
+              "actionText": "Must understand insurance products offered or recommended including target market and ensure distribution strategy is appropriate for the target market",
+              "objectText": "Insurance product understanding and distribution arrangements ensuring target market appropriateness",
+              "conditionText": "When distributing, offering or recommending insurance products to customers",
+              "summary": "Insurance distributors must understand the products they distribute, including the manufacturer-defined target market, and must have distribution arrangements that ensure products reach the right customers. This mirrors the general distributor obligation in PROD 3.3.1R but applies specifically in the insurance context with IDD requirements.",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Insurance Distribution Governance",
+                "templateText": "We ensure that we understand each insurance product we offer or recommend, including its coverage, exclusions, target market and pricing structure. Our distribution arrangements are designed to ensure that insurance products are only offered to customers within the identified target market. Our staff are trained to assess customer needs and match them to appropriate insurance products.",
+                "guidance": "Insurance distributors have specific IDD obligations beyond general product governance. They must be able to demonstrate product knowledge, including understanding of coverage, exclusions, claims processes and target market characteristics. Distribution arrangements should include staff training, sales process controls, and monitoring to detect sales outside the target market."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

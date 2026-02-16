@@ -1,6 +1,6 @@
 import { prisma } from "./db";
 import { askClaudeJSON } from "./claude";
-import { getApplicableObligations, generateComplianceMatrix } from "./matching-engine";
+import { getApplicableObligations, generateComplianceMatrix, MatchedObligation } from "./matching-engine";
 
 // --- Types ---
 
@@ -14,14 +14,7 @@ export interface ObligationFinding {
   recommendation: string;
 }
 
-interface RequiredElement {
-  element: string;
-  present: boolean;
-  quality: "good" | "adequate" | "insufficient" | "missing";
-  notes: string;
-}
-
-interface TcAnalysisResult {
+export interface AnalysisResult {
   documentType: "terms_and_conditions";
   overallAssessment: string;
   obligationFindings: ObligationFinding[];
@@ -29,162 +22,150 @@ interface TcAnalysisResult {
   qualityConcerns: string[];
 }
 
-interface FvaAnalysisResult {
-  documentType: "fair_value_assessment";
-  overallAssessment: string;
-  obligationFindings: ObligationFinding[];
-  requiredElements: RequiredElement[];
-}
-
-interface TmaAnalysisResult {
-  documentType: "target_market_assessment";
-  overallAssessment: string;
-  obligationFindings: ObligationFinding[];
-  requiredElements: RequiredElement[];
-}
-
-export type AnalysisResult = TcAnalysisResult | FvaAnalysisResult | TmaAnalysisResult;
-
 // --- Prompts ---
 
-const TC_SYSTEM = `You are an expert UK financial services regulatory compliance analyst.
-Your task is to analyse a product's Terms & Conditions document against its applicable regulatory obligations.
+const TC_SYSTEM = `You are an expert UK financial services regulatory compliance analyst with deep knowledge of the FCA Handbook, Consumer Duty (PRIN 2A), and sector-specific sourcebooks (BCOBS, MCOB, CONC, PSR 2017).
 
-For each obligation, determine:
-- Whether the T&Cs contain a clause that addresses it ("addressed", "partially_addressed", "not_addressed", "not_applicable")
-- The specific clause or section reference in the T&Cs that addresses it
-- A quality assessment (0.0-1.0) of how well the clause satisfies the obligation
-- Specific gaps or deficiencies
-- A recommendation for improvement
+Your task is to analyse a product's Terms & Conditions against applicable regulatory obligations. You must assess each obligation with the rigour and specificity of a compliance review, not a general read-through.
 
-Also identify:
-- Any obligations that have no corresponding clause at all
-- Overall quality concerns with the T&Cs document
+## Assessment Framework
 
-Consider Consumer Duty requirements: clauses must use plain English, avoid misleading terms, and be fair to consumers.
+Structure your analysis around the four Consumer Duty outcomes:
+
+**Products & Services (PRIN 2A.3):** Is the product designed to meet the needs of the identified target market? Do the T&Cs reflect features that benefit customers, or features that benefit the firm at the customer's expense?
+
+**Price & Value (PRIN 2A.4):** Are ALL costs, fees, charges, and interest rates disclosed transparently? Are charges cost-reflective and reasonable relative to the benefits provided? Are there any charges that depend on customer inertia, confusion, or failure to act?
+
+**Consumer Understanding (PRIN 2A.5):** Is the language plain and intelligible? Are key terms (fees, risks, exit conditions) visually prominent? Would a customer with low financial confidence understand what they're agreeing to?
+
+**Consumer Support (PRIN 2A.6):** Are pathways for complaints, switching, cancellation, and accessing support clearly explained? Are there unreasonable barriers to exiting the product?
+
+## Red Flags — flag these specifically in your analysis
+
+- Penalty or forfeiture clauses that are not prominently disclosed
+- Unilateral variation rights without adequate notice periods
+- Exit barriers or switching friction (e.g. complex cancellation processes)
+- Promotional terms with buried reversion conditions
+- Revenue model that depends on customer inertia or confusion (e.g. auto-renewal at higher rates)
+- Asymmetric terms: firm can change terms unilaterally but customer cannot exit without penalty
+- Opacity: charges expressed as formulas, references to other documents, or "as published from time to time"
+- Prominence inversion: risks and costs in small print while benefits are prominent
+- Terms that assume high financial literacy without explanation (APR, AER, basis points, accrued interest)
+- Cross-subsidies between customer groups without transparency
+
+## Plain English Assessment
+
+When assessing language quality, check for:
+- Sentences over 25 words containing financial or legal terminology
+- Technical terms used without an immediate, simple explanation
+- Key information (fees, risks, exit terms) not visually prominent or buried in the document
+- Boilerplate or generic text that obscures product-specific information
+- Double negatives, passive voice obscuring who is responsible, conditional chains (if X then Y unless Z)
+- Information that requires numeracy skills without worked examples (e.g. compound interest without illustration)
+- Critical terms buried in the middle/end rather than presented prominently
+
+## Principle Assessment Guidance
+
+For overarching principles (not specific clause-level obligations):
+- "Act in good faith" (PRIN 2A.2.1R): Check for exploitative language, punitive pricing, inaccessible support. Does the document treat the customer as a partner or an adversary?
+- "Avoid foreseeable harm" (PRIN 2A.2.2R): Could any term foreseeably cause harm? Does the product exploit behavioural biases? Are there predatory features?
+- "Enable customer objectives" (PRIN 2A.2.3R): Is there adequate information for informed choice? Can customers actually act on the terms (e.g. switch, cancel, complain)?
+
+## Quality Scoring Rubric
+
+Use this rubric consistently:
+- 0.9–1.0: Clause fully addresses the obligation with clear, specific, plain-English language
+- 0.7–0.8: Clause addresses the obligation but could be clearer, more specific, or better positioned
+- 0.5–0.6: Clause partially addresses the obligation with significant gaps or unclear language
+- 0.3–0.4: Clause touches on the obligation but is inadequate or misleading
+- 0.0–0.2: No meaningful attempt to address the obligation
+
 Be precise about clause references. Quote relevant T&C text when identifying evidence.`;
 
-const FVA_SYSTEM = `You are an expert UK financial services regulatory compliance analyst specialising in the FCA Consumer Duty fair value requirements (PRIN 2A.4, PS22/9).
+// --- Helpers ---
 
-Analyse a Fair Value Assessment against applicable regulatory obligations. A compliant FVA must demonstrate fair value.
+interface PerRegulationResult {
+  obligationFindings: ObligationFinding[];
+  overallAssessment?: string;
+  missingClauses?: string[];
+  qualityConcerns?: string[];
+}
 
-Required elements in a compliant FVA:
-1. Total cost to customer (all fees, charges, interest, non-financial costs)
-2. Nature and quality of the product/service
-3. Benefits customers receive vs costs
-4. Target market alignment
-5. Comparison with market alternatives
-6. Distribution costs and justification
-7. Identification of groups receiving poor value
-8. Remediation plan for identified issues
-
-For each obligation, assess whether the FVA addresses it adequately.`;
-
-const TMA_SYSTEM = `You are an expert UK financial services regulatory compliance analyst specialising in FCA Product Governance requirements (PROD 3, Consumer Duty PRIN 2A.3).
-
-Analyse a Target Market Assessment against applicable regulatory obligations. A compliant TMA must clearly define who the product is for and who it is NOT suitable for.
-
-Required elements in a compliant TMA:
-1. Positive target market (customer types, needs, characteristics)
-2. Negative target market (who should NOT buy this product)
-3. Customer needs and objectives the product serves
-4. Financial situation/capability of target customers
-5. Risk tolerance and capacity for loss
-6. Knowledge and experience requirements
-7. Vulnerability considerations (FCA FG21/1 four drivers)
-8. Distribution strategy alignment with target market
-9. Regular review triggers and methodology
-
-For each obligation, assess whether the TMA addresses it.`;
-
-// --- Core functions ---
-
-export async function analyseDocument(documentId: string): Promise<AnalysisResult> {
-  const doc = await prisma.productDocument.findUniqueOrThrow({
-    where: { id: documentId },
-    include: {
-      product: { include: { productType: true } },
-    },
-  });
-
-  const obligations = await getApplicableObligations(doc.productId);
-
-  const specificObligations = obligations.filter((o) => o.obligationType !== "principle");
-  const principleObligations = obligations.filter((o) => o.obligationType === "principle");
-
-  const obligationList = specificObligations.map((o) => ({
-    id: o.obligationId,
-    summary: o.summary,
-    actionText: o.actionText,
-    obligationType: o.obligationType,
-    reference: o.ruleReference,
-    regulation: o.regulationTitle,
-  }));
-
-  const principleList = principleObligations.map((o) => ({
-    id: o.obligationId,
-    summary: o.summary,
-    actionText: o.actionText,
-    obligationType: o.obligationType,
-    reference: o.ruleReference,
-    regulation: o.regulationTitle,
-  }));
-
-  const productContext = `${doc.product.productType.name} product ("${doc.product.name}") aimed at ${doc.product.customerType} customers, distributed via ${doc.product.distributionChannel}, offered in ${doc.product.jurisdictions.join(", ")}`;
-
-  let systemPrompt: string;
-  let docLabel: string;
-  let extraReturnSchema: string;
-
-  switch (doc.documentType) {
-    case "terms_and_conditions":
-      systemPrompt = TC_SYSTEM;
-      docLabel = "TERMS & CONDITIONS";
-      extraReturnSchema = `"missingClauses": ["obligation summary with no clause"],\n  "qualityConcerns": ["concern 1"]`;
-      break;
-    case "fair_value_assessment":
-      systemPrompt = FVA_SYSTEM;
-      docLabel = "FAIR VALUE ASSESSMENT";
-      extraReturnSchema = `"requiredElements": [{"element": "Total cost to customer", "present": true, "quality": "good|adequate|insufficient|missing", "notes": "details"}]`;
-      break;
-    case "target_market_assessment":
-      systemPrompt = TMA_SYSTEM;
-      docLabel = "TARGET MARKET ASSESSMENT";
-      extraReturnSchema = `"requiredElements": [{"element": "Positive target market", "present": true, "quality": "good|adequate|insufficient|missing", "notes": "details"}]`;
-      break;
-    default:
-      throw new Error(`Unknown document type: ${doc.documentType}`);
+function groupByRegulation(obligations: MatchedObligation[]): Map<string, MatchedObligation[]> {
+  const groups = new Map<string, MatchedObligation[]>();
+  for (const o of obligations) {
+    const key = o.regulationTitle;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key)!.push(o);
   }
+  return groups;
+}
 
-  const principleSection = principleList.length > 0
-    ? `\n\nPRINCIPLE OBLIGATIONS (assess differently):
-${JSON.stringify(principleList, null, 2)}
+async function getProductOverviewContext(productId: string): Promise<string | null> {
+  const overview = await prisma.productDocument.findFirst({
+    where: { productId, documentType: "product_overview" },
+    select: { content: true },
+  });
+  return overview?.content || null;
+}
 
-These are general principles — do NOT look for a specific clause addressing them.
-Instead, assess how well the document's overall quality, tone, clarity and structure
-reflects each principle. Score based on:
-- Plain English and readability
-- Absence of misleading or unfair terms
-- Overall alignment with the principle's intent
-Status should be "addressed" if the document generally embodies the principle,
-"partially_addressed" if there are concerns, "not_addressed" only if the document
-actively contradicts or undermines the principle.`
+// --- Per-regulation analysis ---
+
+async function analyseRegulationGroup(
+  regulationTitle: string,
+  obligations: MatchedObligation[],
+  documentContent: string,
+  productContext: string,
+  overviewContext: string | null,
+): Promise<PerRegulationResult> {
+  const specific = obligations.filter((o) => o.obligationType !== "principle");
+  const principles = obligations.filter((o) => o.obligationType === "principle");
+
+  const obligationList = specific.map((o) => ({
+    id: o.obligationId,
+    summary: o.summary,
+    actionText: o.actionText,
+    obligationType: o.obligationType,
+    reference: o.ruleReference,
+  }));
+
+  const principleSection = principles.length > 0
+    ? `\n\nPRINCIPLE OBLIGATIONS (assess using the principle assessment guidance in your instructions):
+${JSON.stringify(principles.map((o) => ({
+  id: o.obligationId,
+  summary: o.summary,
+  actionText: o.actionText,
+  obligationType: o.obligationType,
+  reference: o.ruleReference,
+})), null, 2)}
+
+These are overarching principles. Do NOT look for a single specific clause.
+Instead, assess how the document as a whole reflects each principle, using the
+principle-specific criteria in your assessment framework.`
     : "";
 
-  const userMessage = `Analyse the following ${docLabel} for a ${productContext}.
-
-REGULATORY OBLIGATIONS TO CHECK:
-${JSON.stringify(obligationList, null, 2)}${principleSection}
-
-${docLabel} DOCUMENT:
+  const overviewSection = overviewContext
+    ? `\n\nPRODUCT OVERVIEW CONTEXT (use this to inform your assessment — e.g. whether T&C language is appropriate for the target market, whether pricing aligns with the stated value proposition):
 ---
-${doc.content}
+${overviewContext.slice(0, 15000)}
+---`
+    : "";
+
+  const userMessage = `Analyse the following TERMS & CONDITIONS for a ${productContext}.
+
+REGULATION: ${regulationTitle}
+
+REGULATORY OBLIGATIONS TO CHECK (${obligations.length} obligations from ${regulationTitle}):
+${JSON.stringify(obligationList, null, 2)}${principleSection}${overviewSection}
+
+TERMS & CONDITIONS DOCUMENT:
+---
+${documentContent}
 ---
 
 Return a JSON object:
 {
-  "documentType": "${doc.documentType}",
-  "overallAssessment": "summary",
+  "overallAssessment": "assessment of compliance with ${regulationTitle}",
   "obligationFindings": [
     {
       "obligationId": "...",
@@ -196,10 +177,93 @@ Return a JSON object:
       "recommendation": "what to change"
     }
   ],
-  ${extraReturnSchema}
+  "missingClauses": ["obligation summary with no clause"],
+  "qualityConcerns": ["concern 1"]
 }`;
 
-  return askClaudeJSON<AnalysisResult>(systemPrompt, userMessage, 32000);
+  const maxTokens = Math.max(4096, obligations.length * 600);
+
+  return askClaudeJSON<PerRegulationResult>(
+    TC_SYSTEM + `\n\nYou are analysing obligations specifically from: ${regulationTitle}. Focus your analysis on the requirements of this regulation.`,
+    userMessage,
+    maxTokens,
+  );
+}
+
+// --- Core functions ---
+
+export async function analyseDocument(documentId: string): Promise<AnalysisResult> {
+  const doc = await prisma.productDocument.findUniqueOrThrow({
+    where: { id: documentId },
+    include: {
+      product: { include: { productType: true } },
+    },
+  });
+
+  if (doc.documentType !== "terms_and_conditions") {
+    throw new Error(`Only T&Cs are analysed — got: ${doc.documentType}`);
+  }
+
+  const obligations = await getApplicableObligations(doc.productId);
+  const regulationGroups = groupByRegulation(obligations);
+  const overviewContext = await getProductOverviewContext(doc.productId);
+
+  const productContext = `${doc.product.productType.name} product ("${doc.product.name}") aimed at ${doc.product.customerType} customers, distributed via ${doc.product.distributionChannel}, offered in ${doc.product.jurisdictions.join(", ")}`;
+
+  const regulationNames = Array.from(regulationGroups.keys());
+  console.log(`[Analysis] Splitting into ${regulationNames.length} regulation calls: ${regulationNames.join(", ")}`);
+  if (overviewContext) console.log(`[Analysis] Product overview context available (${overviewContext.length} chars)`);
+
+  const results = await Promise.allSettled(
+    regulationNames.map((regName) => {
+      const regObligations = regulationGroups.get(regName)!;
+      console.log(`[Analysis] Starting ${regName} (${regObligations.length} obligations)`);
+      return analyseRegulationGroup(
+        regName, regObligations, doc.content, productContext, overviewContext,
+      );
+    })
+  );
+
+  // Merge results
+  const allFindings: ObligationFinding[] = [];
+  const allMissingClauses: string[] = [];
+  const allQualityConcerns: string[] = [];
+  const overallAssessments: string[] = [];
+  const failures: string[] = [];
+
+  results.forEach((result, i) => {
+    const regName = regulationNames[i];
+    if (result.status === "fulfilled") {
+      const data = result.value;
+      console.log(`[Analysis] ${regName}: ${data.obligationFindings.length} findings`);
+      allFindings.push(...data.obligationFindings);
+      if (data.missingClauses) allMissingClauses.push(...data.missingClauses);
+      if (data.qualityConcerns) allQualityConcerns.push(...data.qualityConcerns);
+      if (data.overallAssessment) overallAssessments.push(`[${regName}] ${data.overallAssessment}`);
+    } else {
+      console.error(`[Analysis] ${regName} FAILED:`, result.reason);
+      failures.push(`${regName}: ${result.reason}`);
+    }
+  });
+
+  if (allFindings.length === 0) {
+    throw new Error(`All regulation analyses failed: ${failures.join("; ")}`);
+  }
+
+  if (failures.length > 0) {
+    console.warn(`[Analysis] Partial failure: ${failures.length}/${regulationNames.length} regulations failed`);
+  }
+
+  const overallAssessment = overallAssessments.join("\n\n")
+    + (failures.length > 0 ? `\n\n[WARNING: Analysis incomplete — failed for: ${failures.map((f) => f.split(":")[0]).join(", ")}]` : "");
+
+  return {
+    documentType: "terms_and_conditions",
+    overallAssessment,
+    obligationFindings: allFindings,
+    missingClauses: allMissingClauses,
+    qualityConcerns: allQualityConcerns,
+  };
 }
 
 export async function applyAnalysisToMatrix(documentId: string): Promise<void> {
@@ -243,15 +307,7 @@ export async function applyAnalysisToMatrix(documentId: string): Promise<void> {
     const suggestedStatus = deriveSuggestedStatus(mergedEvidence);
 
     const evidenceText = mergedEvidence
-      .map((e) => {
-        const label =
-          e.documentType === "terms_and_conditions"
-            ? "T&Cs"
-            : e.documentType === "fair_value_assessment"
-              ? "FVA"
-              : "TMA";
-        return `[${label}] ${e.evidence}`;
-      })
+      .map((e) => `[T&Cs] ${e.evidence}`)
       .join("\n\n");
 
     const isManuallyAssessed =

@@ -24,7 +24,7 @@
               "objectText": "Financial promotions of credit agreements including advertising, marketing materials and digital promotions",
               "conditionText": "When promoting or advertising credit agreements to consumers",
               "summary": "All credit product promotions must be clear, fair and not misleading. They must specify the type of credit and whether security is required (e.g. for secured loans).",
-              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
               "relevanceScore": 1.0
             }
           ]
@@ -40,12 +40,101 @@
               "objectText": "Representative APR and prescribed standard information in credit promotions that trigger the requirement",
               "conditionText": "When a credit promotion includes a rate of interest or cost of credit figure",
               "summary": "Credit promotions that mention interest rates or costs must include: representative APR, borrowing rate (fixed or variable), total credit amount, duration, total repayable and instalment amounts.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Representative APR Disclosure",
                 "templateText": "Representative example: If you borrow [amount] over [term] at a rate of [X]% per annum (fixed/variable), your monthly repayments would be [amount]. The total amount repayable would be [amount]. Representative [X]% APR. At least 51% of successful applicants will receive this rate or better.",
                 "guidance": "The representative APR must be offered to at least 51% of applicants. Ensure the representative example uses realistic borrowing amounts. For credit cards, include the assumed credit limit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CONC 4", "title": "Pre-contractual requirements", "level": 1 },
+      "rules": [
+        {
+          "reference": "CONC 4.2.1R",
+          "rawText": "A firm must provide adequate explanations to the borrower in order to place the borrower in a position to assess whether the credit agreement is adapted to the borrower's needs and financial situation. The explanations must include the pre-contractual information required to be provided, the essential characteristics of the products proposed, the specific effects the products may have on the borrower including the consequences of default, and where applicable the supplementary services bundled with the agreement.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must provide adequate explanations to enable the customer to assess whether the credit agreement suits their needs and financial situation",
+              "objectText": "Adequate explanations covering the pre-contractual information, essential product characteristics, specific effects on the borrower and consequences of default",
+              "conditionText": "Before or at the point of offering a credit agreement to a consumer",
+              "summary": "Lenders must give customers sufficient explanations about the credit product so they can make an informed decision about whether it is suitable for their needs and financial circumstances. This includes explaining key features, costs, and the consequences of non-payment.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Adequate Explanations",
+                "templateText": "Before you enter into this agreement, we will explain: (a) the key features of the credit product being offered to you; (b) the total cost of the credit including any interest, fees and charges; (c) how your repayments are structured and when they are due; (d) the consequences if you miss a repayment or default on the agreement; and (e) your right to withdraw from the agreement within 14 days. If you do not understand any aspect of this agreement, please ask us for further clarification before signing.",
+                "guidance": "CONC 4.2.1R requires explanations to be tailored to the individual customer. Generic scripts alone are unlikely to satisfy this requirement. Firms should ensure staff can explain products in plain language and adapt their approach to the customer's level of understanding. Consider how explanations are provided in online journeys where there is no face-to-face interaction."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 4.2.5R",
+          "rawText": "A firm must, before the credit agreement is made, provide the borrower with the pre-contract credit information required by the Consumer Credit (Disclosure of Information) Regulations 2010, in the form of the Standard European Consumer Credit Information (SECCI) form, in good time before the borrower is bound by the agreement. The information must be provided on paper or on another durable medium.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must provide pre-contract credit information in the prescribed SECCI form in good time before the agreement is made",
+              "objectText": "Standard European Consumer Credit Information (SECCI) form containing all prescribed pre-contract credit information",
+              "conditionText": "In good time before the customer becomes bound by a credit agreement",
+              "summary": "Customers must receive the SECCI form — a standardised document containing all key credit terms — in sufficient time before entering the agreement. This enables comparison shopping and informed decision-making.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Pre-Contract Credit Information",
+                "templateText": "We have provided you with a Pre-Contract Credit Information document (SECCI form) which sets out the key terms of this credit agreement in a standardised format. This document was provided to you on [date]. Please read it carefully and retain it for your records. The SECCI form contains important information including: the type of credit; the total amount of credit; the duration of the agreement; the borrowing rate and APR; the amount, number and frequency of repayments; the total amount payable; and details of any fees or charges.",
+                "guidance": "The SECCI form must be provided 'in good time' — this means giving the customer sufficient opportunity to review it before committing. In online journeys, consider providing the SECCI at application stage rather than only at the point of execution. Ensure the form is accessible and can be saved or printed."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 4.3.1R",
+          "rawText": "A firm must inform the borrower of the right to withdraw from the credit agreement without giving any reason, within a period of 14 days beginning with the day after the day on which the agreement is made, or if later, the day on which the borrower receives notification of the agreement being made. Where the borrower exercises the right to withdraw, the borrower must repay the credit and any accrued interest without delay and no later than 30 calendar days after sending notification of withdrawal to the firm.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must inform the customer of their right to withdraw from the credit agreement within 14 days without giving a reason",
+              "objectText": "Customer's statutory right to withdraw from the credit agreement within the 14-day cooling-off period",
+              "conditionText": "At the point of entering into a regulated credit agreement",
+              "summary": "Customers must be told about their 14-day right to withdraw from the agreement without needing to give a reason. If they withdraw, they must repay the credit plus any accrued interest within 30 days.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.90,
+              "clauseTemplate": {
+                "title": "Right to Withdraw",
+                "templateText": "You have the right to withdraw from this credit agreement at any time within 14 days of the agreement being made (or, if later, 14 days from when you receive your copy of the executed agreement). You do not need to give a reason. To exercise this right, you must notify us in writing within the 14-day period. If you withdraw, you must repay the credit advanced to you together with any interest accrued up to the date of repayment, without undue delay and in any event within 30 calendar days of your withdrawal notice.",
+                "guidance": "The 14-day withdrawal right is a statutory right under the Consumer Credit Act 1974 (as amended). Ensure the withdrawal process is straightforward and that customers are not discouraged from exercising this right. The firm may not charge any fee for withdrawal other than accrued daily interest."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 4.2.15R",
+          "rawText": "In respect of a credit card agreement, a firm must provide the borrower with a summary box containing the following key financial information in a clear and prominent format: (a) the annual interest rate for purchases, balance transfers and cash advances; (b) any annual or monthly fee; (c) the minimum repayment amount or how it is calculated; (d) a representative example showing the cost of borrowing; (e) any promotional interest rates and the period for which they apply; (f) the allocation of payments policy; and (g) the default charges that may apply.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Credit card issuers",
+              "actionText": "Must provide a summary box for credit card agreements containing key financial information including interest rates, fees, minimum payment details and a representative example",
+              "objectText": "Credit card summary box containing prescribed key financial information in a clear and prominent format",
+              "conditionText": "When entering into a credit card agreement with a consumer",
+              "summary": "Credit card agreements must include a prominent summary box showing the key costs at a glance — interest rates for different transaction types, any fees, minimum payment information, promotional rate details and default charges.",
+              "applicableProductTypes": ["Credit Card"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Credit Card Summary Box",
+                "templateText": "Summary of Key Information:\n- Purchase rate: [X]% p.a. (variable)\n- Balance transfer rate: [X]% p.a. for [X] months, then [X]% p.a.\n- Cash advance rate: [X]% p.a. (variable)\n- Annual fee: [£X / None]\n- Minimum payment: The greater of [£X] or [X]% of the outstanding balance plus interest and fees\n- Representative APR: [X]% APR (variable)\n- Allocation of payments: Payments above the minimum are allocated to balances attracting the highest interest rate first\n- Default charges: Late payment fee [£X]; Over-limit fee [£X]; Returned payment fee [£X]",
+                "guidance": "The summary box must be in a standardised format that is easy for consumers to read and compare across providers. Ensure promotional rates clearly state the duration and the rate that will apply after the promotional period ends. The FCA expects firms to be transparent about the allocation of payments policy."
               }
             }
           ]
@@ -66,7 +155,7 @@
               "objectText": "Creditworthiness assessment including ability to make repayments over the life of the agreement",
               "conditionText": "Before making a regulated credit agreement",
               "summary": "Lenders must assess creditworthiness before lending, considering the customer's ability to make all repayments over the full term. For open-ended credit like credit cards, this means ability to repay within a reasonable period.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Creditworthiness Assessment",
@@ -160,7 +249,7 @@
               "objectText": "Treatment of customers in default or arrears including forbearance options and repayment arrangements",
               "conditionText": "When a customer is in default or arrears on a consumer credit agreement",
               "summary": "Credit firms must treat customers in financial difficulty with forbearance, actively considering options including reducing interest, extending time to pay, accepting token payments and agreeing structured repayment plans.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Financial Difficulty and Forbearance",
@@ -181,12 +270,300 @@
               "objectText": "Charges applied to customers in default or arrears on consumer credit agreements",
               "conditionText": "When a customer is in default or arrears on a consumer credit agreement",
               "summary": "Default and arrears charges must be cost-reflective only. Firms cannot profit from customers who are in financial difficulty through excessive charges.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card"],
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Default Charges",
                 "templateText": "If you miss a payment or fall into arrears, we may apply a default charge to cover our additional administration costs. Any such charge will be a reasonable estimate of our actual costs — we do not use default charges as a penalty or revenue source. Our current default charges are set out in the tariff of charges which forms part of this agreement.",
                 "guidance": "Default charges must be genuinely cost-reflective per CONC 7.6.2R. This also aligns with the unfair terms provisions of the Consumer Rights Act 2015. Ensure the firm can evidence the cost basis for all default charges."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CONC 8", "title": "Debt advice", "level": 1 },
+      "rules": [
+        {
+          "reference": "CONC 8.3.1R",
+          "rawText": "A firm providing debt counselling to a customer must act in the best interests of the customer. The firm must not recommend a debt solution that is unsuitable for the customer's individual circumstances, and must have regard to the customer's income, essential expenditure, total indebtedness, the nature of the debts owed, and the customer's personal circumstances including any vulnerability.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "Debt advice firms",
+              "actionText": "Must act in the best interests of the customer when providing debt counselling and must not recommend unsuitable debt solutions",
+              "objectText": "Debt counselling recommendations and debt solutions proposed to customers in financial difficulty",
+              "conditionText": "When providing debt counselling or recommending a debt solution to a customer",
+              "summary": "Debt advice firms must always act in the customer's best interests and ensure any recommended debt solution is suitable for the customer's specific circumstances, taking into account their income, expenditure, total debts and personal situation.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Debt Advice Standards",
+                "templateText": "When we provide you with debt advice, we will: (a) act in your best interests at all times; (b) assess your full financial situation including your income, essential living costs, and all debts you owe; (c) consider your personal circumstances including any factors that may make you vulnerable; and (d) only recommend a debt solution that is suitable for your individual circumstances. We will explain the options available to you and the advantages and disadvantages of each option.",
+                "guidance": "CONC 8.3.1R is a broad best-interests duty. Firms must demonstrate through their processes and outcomes that advice is genuinely tailored. The FCA has taken enforcement action against firms that used formulaic advice processes leading to unsuitable debt solution recommendations."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 8.3.4R",
+          "rawText": "A firm providing debt counselling must consider all available debt solutions, including free-to-client debt solutions, and must not unfairly exclude or steer the customer away from a debt solution that is suitable for the customer merely because it generates no fee or a lower fee for the firm. The firm must make the customer aware of the availability of free debt advice services.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Debt advice firms",
+              "actionText": "Must consider all available debt solutions including free options and must not unfairly steer customers towards fee-paying solutions",
+              "objectText": "Range of debt solutions considered including free-to-client options such as those offered by charitable debt advice providers",
+              "conditionText": "When advising a customer on debt solutions",
+              "summary": "Debt advisers must consider the full range of solutions including free options and must not steer customers towards fee-charging products simply because they generate revenue. Customers must be made aware of free debt advice services.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Consideration of All Debt Solutions",
+                "templateText": "We will consider all debt solutions that may be suitable for you, including free-to-client solutions offered by charitable organisations. We will not steer you towards any particular solution because of the fees it generates. Free debt advice is available from organisations including StepChange Debt Charity (0800 138 1111), Citizens Advice (citizensadvice.org.uk), and National Debtline (0808 808 4000). You are under no obligation to use a fee-charging service.",
+                "guidance": "The FCA expects firms to demonstrate that free-to-client options are genuinely considered in every case. Firms should be able to evidence why, in cases where a fee-paying solution was recommended, free alternatives were not suitable. Consider recording rationale for each recommendation."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 8.5.1R",
+          "rawText": "A firm must, when it becomes aware that a customer is in financial difficulty, signpost the customer to sources of free and impartial debt advice. The firm must refer the customer to at least one source of free debt advice such as StepChange Debt Charity, Citizens Advice, National Debtline, or the Money Advice Service, and must provide the contact details for such services in a prominent manner.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Consumer credit firms",
+              "actionText": "Must signpost customers in financial difficulty to free debt advice services including providing contact details prominently",
+              "objectText": "Referrals and signposting to free debt advice services such as StepChange, Citizens Advice and National Debtline",
+              "conditionText": "When a firm becomes aware that a customer is in financial difficulty",
+              "summary": "When a customer is identified as being in financial difficulty, they must be actively signposted to free debt advice services with contact details provided prominently. This applies to all consumer credit firms, not just debt advice firms.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.90,
+              "clauseTemplate": {
+                "title": "Free Debt Advice Signposting",
+                "templateText": "If you are struggling with your repayments, free and impartial debt advice is available from the following organisations:\n- StepChange Debt Charity: 0800 138 1111 / stepchange.org\n- Citizens Advice: 0800 144 8848 / citizensadvice.org.uk\n- National Debtline: 0808 808 4000 / nationaldebtline.org\n- MoneyHelper: 0800 138 7777 / moneyhelper.org.uk\nThese services are free and can help you understand your options and create a plan to manage your debts.",
+                "guidance": "Signposting must be prominent and timely — it should appear at the point the customer is most likely to benefit from it, such as in arrears notices, default notices and collections correspondence. Ensure signposting is not buried in small print."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 8.3.7R",
+          "rawText": "A firm must ensure that any debt management plan it recommends or arranges for a customer is sustainable and affordable for the customer, having regard to the customer's essential living costs and reasonable domestic needs. The firm must not set repayment amounts at a level that would cause the customer to fall below a reasonable standard of living or to be unable to meet priority debts and essential expenditure.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Debt advice firms",
+              "actionText": "Must ensure any debt management plan is sustainable and affordable, accounting for the customer's essential living costs",
+              "objectText": "Debt management plans including repayment amounts and schedules arranged for customers in financial difficulty",
+              "conditionText": "When recommending or arranging a debt management plan for a customer",
+              "summary": "Debt management plans must be set at sustainable and affordable levels. Repayments must not leave the customer unable to meet essential living costs or priority debts. Plans must be realistic and achievable over their proposed duration.",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Sustainable Debt Management Plans",
+                "templateText": "Any debt management plan we arrange for you will be based on a thorough assessment of your financial situation. We will ensure that your agreed repayments are affordable and sustainable, taking into account: (a) your income from all sources; (b) your essential living costs including housing, utilities, food and transport; (c) priority debts such as council tax, rent/mortgage and utility arrears; and (d) your reasonable domestic needs. We will review your plan regularly and adjust it if your circumstances change.",
+                "guidance": "The FCA's Standard Financial Statement (SFS) or Common Financial Statement (CFS) should be used as a basis for assessing income and expenditure. Firms must allow for realistic living costs — not just bare minimum subsistence. Plans should be reviewed at least annually and adapted to changing circumstances."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CONC 10", "title": "BNPL and exempt agreements", "level": 1 },
+      "rules": [
+        {
+          "reference": "CONC 10.1.2R",
+          "rawText": "A firm entering into a buy-now pay-later agreement must ensure that the agreement includes clear information provided to the borrower about: (a) the repayment schedule including the amounts and dates of each repayment; (b) any interest, fees or charges that may apply if repayments are missed or the borrower fails to repay within the interest-free period; (c) the consequences of non-payment including any impact on the borrower's credit file; and (d) how to make a complaint or access the Financial Ombudsman Service.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "BNPL providers",
+              "actionText": "Must include clear information in BNPL agreements about repayment schedules, potential fees for missed repayments, consequences of non-payment and complaint procedures",
+              "objectText": "BNPL agreement terms including repayment schedule, fee information, consequences of non-payment and complaints process",
+              "conditionText": "When entering into a buy-now pay-later agreement with a consumer",
+              "summary": "BNPL agreements must clearly set out the repayment schedule, any fees or interest that may apply if repayments are missed, the consequences of non-payment (including credit file impact) and how to complain.",
+              "applicableProductTypes": ["BNPL / Deferred Payment"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "BNPL Agreement Transparency",
+                "templateText": "This Buy-Now Pay-Later agreement requires you to make [number] payments of [£X] on the following dates: [dates]. If you make all payments on time, no interest or additional fees will be charged. If you miss a payment: (a) a late payment fee of [£X] may be applied; (b) interest may be charged at [X]% per annum on the outstanding balance; (c) we may report the missed payment to credit reference agencies, which could affect your credit score; and (d) we may pass the debt to a debt collection agency. If you have any concerns or wish to make a complaint, please contact us at [details] or contact the Financial Ombudsman Service at financial-ombudsman.org.uk.",
+                "guidance": "CONC 10.1.2R requires BNPL firms to be transparent about the true cost of the product. Many consumers do not realise BNPL can have consequences for missed payments. Ensure the language is plain and prominent — not buried in lengthy terms and conditions. Consider how this information is presented in the checkout flow."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 10.1.5R",
+          "rawText": "A firm must carry out a creditworthiness assessment that is proportionate to the nature, size, duration and risks of the credit before entering into a buy-now pay-later agreement with the borrower. The assessment must have regard to the borrower's ability to make the repayments under the agreement as they fall due, the borrower's existing financial commitments including other BNPL commitments, and the potential for the borrower's financial situation to change during the term of the agreement.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "BNPL providers",
+              "actionText": "Must carry out a proportionate creditworthiness assessment before entering into a BNPL agreement, considering existing commitments including other BNPL debts",
+              "objectText": "Creditworthiness assessment proportionate to the nature, size, duration and risks of the BNPL credit",
+              "conditionText": "Before entering into a buy-now pay-later agreement with a consumer",
+              "summary": "BNPL providers must assess affordability before lending, proportionate to the credit risk. The assessment must consider the customer's ability to repay, their existing financial commitments — including other BNPL obligations — and the potential for their circumstances to change.",
+              "applicableProductTypes": ["BNPL / Deferred Payment"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "BNPL Creditworthiness Assessment",
+                "templateText": "Before approving this agreement, we assessed your ability to afford the repayments. This assessment considered your financial situation, including any existing credit commitments and other buy-now pay-later agreements you may have. We are required to ensure that the repayments under this agreement are affordable for you. If your financial situation changes and you are unable to make repayments, please contact us immediately so we can discuss your options.",
+                "guidance": "Proportionality means the depth of the assessment should reflect the risk. A low-value short-term BNPL agreement may require a lighter-touch assessment than a high-value or long-term one, but some form of assessment is always required. The FCA expects firms to consider the cumulative effect of multiple BNPL commitments across providers."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 10.1.8R",
+          "rawText": "A firm must not charge interest or fees during the initial interest-free period of a buy-now pay-later agreement. Where a deferred interest arrangement applies, the firm must clearly disclose to the borrower before the agreement is entered into: (a) the date on which the interest-free period ends; (b) the rate of interest that will apply after the interest-free period; and (c) whether interest will be applied retrospectively to the full original balance if the borrower does not repay in full by the end of the interest-free period.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "BNPL providers",
+              "actionText": "Must not charge interest or fees during the initial interest-free period and must clearly disclose any deferred interest arrangements including retrospective interest",
+              "objectText": "Interest and fee charges during BNPL interest-free periods, and disclosure of deferred interest terms",
+              "conditionText": "During the interest-free period of a BNPL agreement and at the point of sale",
+              "summary": "No interest or fees may be charged during the BNPL interest-free period. Where deferred interest applies, the end date, the post-promotional rate and whether interest will be backdated must all be clearly disclosed before the customer commits.",
+              "applicableProductTypes": ["BNPL / Deferred Payment"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Interest-Free Period and Deferred Interest",
+                "templateText": "This agreement includes an interest-free period ending on [date]. During this period, no interest or fees will be charged provided you make all scheduled repayments on time. [If deferred interest applies:] Important: If you do not repay the full balance by [date], interest will be charged at [X]% per annum [on the remaining balance / retrospectively on the full original purchase amount from the date of purchase]. To avoid incurring interest charges, please ensure the balance is repaid in full before the interest-free period ends.",
+                "guidance": "Deferred interest (where interest is backdated to the date of purchase if the balance is not cleared in time) is a particular area of concern for the FCA. Where retrospective interest applies, this must be disclosed very prominently — ideally with a specific monetary example showing the potential cost. Firms should consider whether deferred interest arrangements are compatible with Consumer Duty expectations."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 10.1.12R",
+          "rawText": "A firm must provide the borrower with ongoing information about the borrower's outstanding buy-now pay-later commitments with that firm, including: (a) the total amount currently outstanding across all BNPL agreements with the firm; (b) the dates and amounts of upcoming payments; (c) any payments that are overdue; and (d) a clear statement of any interest or charges that have accrued or may accrue. This information must be provided at least monthly and must be easily accessible by the borrower through the firm's app or website.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "BNPL providers",
+              "actionText": "Must provide ongoing monthly information about outstanding BNPL commitments including total amounts, upcoming payments and overdue amounts",
+              "objectText": "Ongoing statements and notifications showing outstanding BNPL balances, upcoming payment dates and any accrued charges",
+              "conditionText": "On an ongoing basis at least monthly while the customer has outstanding BNPL commitments",
+              "summary": "BNPL providers must give customers a regular view of all their outstanding BNPL commitments with that provider, including what is owed, what is due next, any overdue amounts and any charges. This must be accessible via the firm's app or website.",
+              "applicableProductTypes": ["BNPL / Deferred Payment"],
+              "relevanceScore": 0.90,
+              "clauseTemplate": {
+                "title": "Ongoing BNPL Commitment Information",
+                "templateText": "We will provide you with regular updates about your buy-now pay-later commitments with us. At least once a month, you will be able to see: (a) the total amount you currently owe across all your BNPL agreements with us; (b) the dates and amounts of your next payments; (c) details of any overdue payments; and (d) any interest or charges that have been applied or may be applied. This information is available at any time through our [app/website/account dashboard]. We may also send you reminders before payments are due.",
+                "guidance": "The FCA recognises that BNPL debt can accumulate across multiple purchases and become difficult for consumers to track. Firms should make it easy for customers to see their total exposure. Consider push notifications and payment reminders as best practice. Information should be presented in a dashboard format where possible."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "CONC 11", "title": "High-cost short-term credit", "level": 1 },
+      "rules": [
+        {
+          "reference": "CONC 11.1.1R",
+          "rawText": "The total cost of credit under a regulated high-cost short-term credit agreement, comprising the total of all interest, fees, charges and any other amounts that may be charged to the borrower in connection with the agreement, must not at any time exceed an amount equal to the amount of credit provided under the agreement. This means that a borrower must never be required to pay back more than twice the amount originally borrowed.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "HCSTC lenders",
+              "actionText": "Must not allow the total cost of credit (interest, fees and charges) to exceed the amount originally borrowed, meaning the customer never repays more than double the original amount",
+              "objectText": "Total cost of credit under HCSTC agreements including all interest, fees and charges",
+              "conditionText": "At any time during the life of a high-cost short-term credit agreement",
+              "summary": "The total cost cap ensures that a customer never repays more than twice what they borrowed. All interest, fees and charges combined cannot exceed 100% of the original loan amount. This is the overarching HCSTC price cap.",
+              "applicableProductTypes": ["High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Total Cost Cap",
+                "templateText": "The total amount you will ever have to repay under this agreement is capped by law. The total of all interest, fees and charges (including any default charges) will never exceed the amount you originally borrowed. This means that if you borrow [£X], you will never be required to repay more than [£2X] in total, regardless of how long the debt remains outstanding.",
+                "guidance": "The total cost cap is an absolute ceiling that applies at all times. Firms must have systems to ensure that the cumulative cost of credit never breaches this cap. This includes interest, arrangement fees, late payment fees and any other charges. Once the cap is reached, no further charges may be applied."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 11.1.2R",
+          "rawText": "A firm must not impose default charges exceeding £15 in total on a customer who has failed to make a repayment under a regulated high-cost short-term credit agreement on the date on which the repayment is due. For the avoidance of doubt, the £15 cap on default charges applies per missed repayment event, and these charges are also subject to the overall total cost of credit cap.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "HCSTC lenders",
+              "actionText": "Must not impose default charges exceeding £15 per missed repayment event on HCSTC agreements",
+              "objectText": "Default charges on high-cost short-term credit agreements capped at £15 per missed payment",
+              "conditionText": "When a customer fails to make a repayment on the due date under an HCSTC agreement",
+              "summary": "Default fees on payday loans and other HCSTC products are capped at £15 per missed payment. These charges also count towards the overall total cost cap, so they cannot cause the total repayable to exceed double the amount borrowed.",
+              "applicableProductTypes": ["High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Default Charge Cap",
+                "templateText": "If you miss a repayment on the date it is due, we may charge a default fee of up to £15. This is the maximum default charge permitted by law for this type of agreement. Any default charges are also subject to the total cost cap — meaning the total of all interest, fees and charges (including default charges) will never exceed the amount you originally borrowed.",
+                "guidance": "The £15 default charge cap applies per missed payment event, not per day. Firms must not attempt to circumvent this by labelling charges as something other than default charges. Ensure IT systems automatically cap default charges and integrate them with the total cost cap calculation."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 11.2.1R",
+          "rawText": "A firm must include a risk warning in a prominent position in all financial promotions for high-cost short-term credit. The risk warning must state: 'Warning: Late repayment can cause you serious money problems. For help, go to moneyhelper.org.uk'. The risk warning must be no less prominent than the most prominent information in the promotion relating to the cost of the credit.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "HCSTC lenders",
+              "actionText": "Must include a prominent risk warning in all HCSTC promotions stating 'Warning: Late repayment can cause you serious money problems. For help, go to moneyhelper.org.uk'",
+              "objectText": "Prescribed risk warning on all financial promotions for high-cost short-term credit products",
+              "conditionText": "In all financial promotions for high-cost short-term credit products",
+              "summary": "All HCSTC advertising and promotions must carry the prescribed risk warning about late repayment causing serious money problems, with a link to MoneyHelper. The warning must be at least as prominent as the cost information.",
+              "applicableProductTypes": ["High-Cost Short-Term Credit"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "HCSTC Risk Warning",
+                "templateText": "Warning: Late repayment can cause you serious money problems. For help, go to moneyhelper.org.uk",
+                "guidance": "The risk warning must appear in a prominent position — at least as prominent as the cost information. In digital promotions, it must not be hidden behind a click or scroll. For TV and radio advertisements, the warning must be spoken clearly and not rushed. The FCA monitors compliance with this requirement and has taken action against firms using insufficiently prominent warnings."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 11.3.1R",
+          "rawText": "A firm must not roll over a high-cost short-term credit agreement more than twice. Before each rollover, the firm must: (a) carry out a fresh affordability assessment; (b) inform the customer that free debt advice is available and provide details of at least one free debt advice provider; and (c) inform the customer that rolling over will increase the total cost of the credit. After two rollovers, the firm must not permit any further rollover and must signpost the customer to free debt advice.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "HCSTC lenders",
+              "actionText": "Must not roll over an HCSTC agreement more than twice, must reassess affordability before each rollover, and must inform the customer of free debt advice before any rollover",
+              "objectText": "Rollovers of high-cost short-term credit agreements limited to a maximum of two, with mandatory affordability checks and debt advice signposting",
+              "conditionText": "When a customer requests or the firm proposes to roll over an HCSTC agreement",
+              "summary": "HCSTC loans can be rolled over a maximum of twice. Before each rollover, the lender must reassess affordability, warn the customer that rolling over increases costs, and point them to free debt advice. After two rollovers, no further rollovers are permitted.",
+              "applicableProductTypes": ["High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Rollover Restrictions",
+                "templateText": "If you are unable to repay your loan on the agreed date, you may request to extend (roll over) the agreement. A maximum of two rollovers is permitted by law. Before each rollover, we will: (a) carry out a new affordability assessment to ensure the extended agreement remains affordable for you; (b) inform you that rolling over will increase the total cost of your borrowing; and (c) provide you with details of free debt advice services. After two rollovers, no further extensions are permitted. If you are still unable to repay, we will work with you to agree a repayment plan and signpost you to free debt advice services.",
+                "guidance": "The rollover cap was introduced to prevent the cycle of repeated refinancing that characterised payday lending. Firms must conduct a genuine affordability reassessment before each rollover — not a rubber-stamp exercise. If the rollover is not affordable, it must not be permitted. Consider whether a customer requesting a rollover should be treated as showing signs of financial difficulty."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CONC 11.4.1R",
+          "rawText": "A firm must not use a continuous payment authority to collect payment under a high-cost short-term credit agreement more than twice. If both attempts to collect the full amount due are unsuccessful, the firm must not make any further attempts to use the continuous payment authority to collect the full amount or any lesser amount. The firm must not use a continuous payment authority to collect a part-payment from the borrower's account.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "HCSTC lenders",
+              "actionText": "Must not use continuous payment authority (CPA) to collect repayment more than twice, and must not use CPA to collect part-payments",
+              "objectText": "Use of continuous payment authority to collect repayments under HCSTC agreements, limited to two attempts with no part-payment collection",
+              "conditionText": "When collecting repayments under a high-cost short-term credit agreement using continuous payment authority",
+              "summary": "Payday lenders are limited to two CPA attempts to collect the full amount due. If both fail, no further CPA attempts are allowed — neither for the full amount nor for any reduced amount. This prevents repeated failed payment attempts that can cause bank charges and financial distress.",
+              "applicableProductTypes": ["High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Continuous Payment Authority Restrictions",
+                "templateText": "We may use a continuous payment authority (CPA) to collect your repayment on the due date. If the first attempt is unsuccessful, we may make one further attempt to collect the full amount due. If both attempts fail, we will not make any further attempts to take payment using the CPA — either for the full amount or any lesser amount. We will then contact you to discuss alternative repayment arrangements. We will never use a CPA to collect a part-payment from your account.",
+                "guidance": "The CPA restrictions were a key part of the FCA's payday lending reforms. Two attempts means exactly two — firms must not circumvent this by using different payment references or amounts. The prohibition on part-payments prevents firms from draining a customer's account of whatever funds are available. Ensure payment systems enforce these limits automatically."
               }
             }
           ]

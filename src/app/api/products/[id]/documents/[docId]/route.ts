@@ -36,19 +36,14 @@ export async function POST(
   const { docId } = await params;
 
   // Reset status before re-running
-  await prisma.productDocument.update({
+  const doc = await prisma.productDocument.update({
     where: { id: docId },
     data: {
+      analysisStatus: "analysing",
       analysisResult: undefined,
       analysisError: null,
       analysisCompletedAt: null,
     },
-  });
-
-  runAnalysis(docId).catch(() => {});
-
-  const doc = await prisma.productDocument.findUnique({
-    where: { id: docId },
     select: {
       id: true,
       documentType: true,
@@ -58,6 +53,8 @@ export async function POST(
       createdAt: true,
     },
   });
+
+  runAnalysis(docId).catch(() => {});
 
   return NextResponse.json(doc);
 }

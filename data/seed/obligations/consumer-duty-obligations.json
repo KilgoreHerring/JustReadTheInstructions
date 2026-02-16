@@ -1,6 +1,10 @@
 [
   {
-    "section": { "number": "2A.1", "title": "Application and purpose", "level": 1 },
+    "section": {
+      "number": "2A.1",
+      "title": "Application and purpose",
+      "level": 1
+    },
     "rules": [
       {
         "reference": "PRIN 2A.1.1R",
@@ -15,15 +19,32 @@
             "summary": "The Consumer Duty applies to all regulated activities relating to retail customer products and services, covering the entire product lifecycle from design through to post-sale support.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Consumer Duty Scope and Application",
               "templateText": "We are authorised and regulated by the Financial Conduct Authority. We comply with the Consumer Duty set out in the FCA's Principles for Businesses (PRIN 2A) in respect of all products and services we provide to you as a retail customer. This means we are committed to acting to deliver good outcomes for you throughout your relationship with us.",
@@ -45,22 +66,43 @@
             "summary": "The overarching duty requires firms to actively deliver good outcomes for customers, not merely avoid causing harm. This is a positive obligation underpinning every other rule in PRIN 2A.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0
+            "relevanceScore": 1
           }
         ]
       }
     ]
   },
   {
-    "section": { "number": "2A.2", "title": "The Consumer Duty cross-cutting rules", "level": 1 },
+    "section": {
+      "number": "2A.2",
+      "title": "The Consumer Duty cross-cutting rules",
+      "level": 1
+    },
     "rules": [
       {
         "reference": "PRIN 2A.2.1R",
@@ -75,15 +117,32 @@
             "summary": "Firms must act in good faith in all dealings with retail customers. This requires honest, fair and open conduct, and prohibits exploiting customer vulnerabilities, knowledge gaps or behavioural biases.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0
+            "relevanceScore": 1
           }
         ]
       },
@@ -100,15 +159,32 @@
             "summary": "Firms are prohibited from causing foreseeable harm to retail customers through their actions or inaction. Where harm is identified or foreseeable, firms must take appropriate steps to mitigate it.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0
+            "relevanceScore": 1
           }
         ]
       },
@@ -125,22 +201,43 @@
             "summary": "Firms must actively enable and support customers in making informed decisions and pursuing their financial objectives. This goes beyond disclosure-based regulation and requires firms to positively help customers.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0
+            "relevanceScore": 1
           }
         ]
       }
     ]
   },
   {
-    "section": { "number": "2A.3", "title": "Products and services outcome", "level": 1 },
+    "section": {
+      "number": "2A.3",
+      "title": "Products and services outcome",
+      "level": 1
+    },
     "rules": [
       {
         "reference": "PRIN 2A.3.1R",
@@ -155,15 +252,32 @@
             "summary": "Manufacturers must ensure products are designed with a specific target market in mind and genuinely meet the needs of that market. Products must not be created speculatively without understanding who they are for.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Target Market and Product Design",
               "templateText": "This product has been designed to meet the needs of customers who [target market description]. Before entering into this agreement, we have assessed that the product is appropriate for customers with [relevant characteristics]. If your circumstances change such that this product may no longer be suitable for your needs, we encourage you to contact us to discuss alternative options.",
@@ -185,13 +299,30 @@
             "summary": "Firms must ensure their distribution strategy is appropriate for the target market and does not result in products reaching customers for whom they are not designed.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.9,
             "clauseTemplate": {
@@ -215,13 +346,30 @@
             "summary": "Manufacturers must regularly review their products to check they still deliver good outcomes for the target market, and must consider whether the target market definition itself needs updating.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.9,
             "clauseTemplate": {
@@ -245,15 +393,32 @@
             "summary": "Manufacturers are prohibited from designing products with features that could foreseeably harm the target market, including features that exploit behavioural biases (such as complex fee structures designed to generate revenue from customer inertia) or vulnerability.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Fair Product Design",
               "templateText": "This product has been designed to operate fairly and transparently. We have assessed the product features, charges and terms to ensure they do not cause foreseeable harm to customers in the target market. We do not include features designed to take advantage of customer inertia, behavioural tendencies or lack of familiarity with financial products. All charges and fees are clearly disclosed and serve a legitimate purpose.",
@@ -275,13 +440,30 @@
             "summary": "Distributors are prohibited from selling or distributing a product to a customer when the firm has information suggesting the customer falls outside the identified target market for that product.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.95,
             "clauseTemplate": {
@@ -295,7 +477,11 @@
     ]
   },
   {
-    "section": { "number": "2A.4", "title": "Price and value outcome", "level": 1 },
+    "section": {
+      "number": "2A.4",
+      "title": "Price and value outcome",
+      "level": 1
+    },
     "rules": [
       {
         "reference": "PRIN 2A.4.1R",
@@ -310,15 +496,32 @@
             "summary": "The price customers pay for a product must be reasonable in relation to the benefits they receive. This encompasses all elements of price including interest rates, fees and charges.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Fair Value Commitment",
               "templateText": "We are committed to ensuring this product provides fair value for money. The charges, interest rates and fees applicable to this product are set out in our tariff of charges and have been assessed to ensure they are reasonable in relation to the benefits the product provides. We regularly review our pricing to ensure it continues to represent fair value.",
@@ -340,13 +543,30 @@
             "summary": "Manufacturers must conduct a structured fair value assessment for every retail product, weighing the benefits customers receive against the total price they pay including all fees, charges and interest.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.9,
             "clauseTemplate": {
@@ -370,15 +590,32 @@
             "summary": "Fair value assessments must consider the total cost to the customer holistically, not just headline rates or individual charges. This includes all fees, interest, charges and costs payable to third parties.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Total Cost Transparency",
               "templateText": "The total cost of this product to you includes: [list all applicable cost components, e.g., interest, arrangement fees, annual fees, transaction fees, early repayment charges, third-party costs]. All charges are set out in the tariff of charges which forms part of this agreement. We have considered the total cost to you, including all these components, in assessing whether this product provides fair value. An illustration of the total cost over the expected life of the product is available on request.",
@@ -400,13 +637,30 @@
             "summary": "Fair value must be assessed not just on average but across different customer groups. Firms must identify whether some groups receive less value or are disproportionately affected by the pricing structure.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.9,
             "clauseTemplate": {
@@ -430,13 +684,30 @@
             "summary": "Where a product is found not to provide fair value, the firm must act: this could mean changing the price, adjusting features, providing remediation or withdrawing the product from sale.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.95,
             "clauseTemplate": {
@@ -450,7 +721,11 @@
     ]
   },
   {
-    "section": { "number": "2A.5", "title": "Consumer understanding outcome", "level": 1 },
+    "section": {
+      "number": "2A.5",
+      "title": "Consumer understanding outcome",
+      "level": 1
+    },
     "rules": [
       {
         "reference": "PRIN 2A.5.1R",
@@ -465,15 +740,32 @@
             "summary": "All customer communications must enable effective decision-making. Communications must give customers the information they need, when they need it, in a way they can understand, so they can make informed choices.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Informed Decision-Making",
               "templateText": "We will provide you with clear and relevant information to help you make informed decisions about this product. This includes information about how the product works, its costs and charges, the risks involved and your rights. We will provide this information at the right time and in a format that is accessible to you. If you do not understand any aspect of this product, please contact us and we will explain it in plain language.",
@@ -495,15 +787,32 @@
             "summary": "Communications must be clear, fair and not misleading, tailored to the understanding of the average member of the target market. Complex products require greater effort to ensure comprehension.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0
+            "relevanceScore": 1
           }
         ]
       },
@@ -520,13 +829,30 @@
             "summary": "Information must reach customers at the right time. Pre-contractual information must be provided early enough for meaningful consideration. Post-sale communications must be timely and relevant to the customer's current situation.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.95,
             "clauseTemplate": {
@@ -550,13 +876,30 @@
             "summary": "Communications must be tailored to the intended audience. Firms must consider the target market's characteristics and any known vulnerability when designing communications, and must adapt format, language and channel accordingly.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.95,
             "clauseTemplate": {
@@ -580,10 +923,19 @@
             "summary": "For complex or high-risk products, and where vulnerable customers are in the target market, firms must actively test whether their communications are understood and effective, not merely assume compliance.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "High-Cost Short-Term Credit",
               "Investment Product (Retail)",
-              "General Insurance"
+              "SIPP / Personal Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
+              "General Insurance",
+              "Protection Insurance"
             ],
             "relevanceScore": 0.85,
             "clauseTemplate": {
@@ -597,7 +949,11 @@
     ]
   },
   {
-    "section": { "number": "2A.6", "title": "Consumer support outcome", "level": 1 },
+    "section": {
+      "number": "2A.6",
+      "title": "Consumer support outcome",
+      "level": 1
+    },
     "rules": [
       {
         "reference": "PRIN 2A.6.1R",
@@ -612,15 +968,32 @@
             "summary": "Customer support must enable customers to actually benefit from their products. This is a positive obligation requiring firms to provide support that helps customers use products effectively, not merely a complaints-handling requirement.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Customer Support",
               "templateText": "We will provide you with the support you need to use this product effectively and to realise its benefits. Our support is available through [specify channels: telephone, online, in-branch, mobile app] during [specify hours]. Our support team can help you with: understanding how your product works; making changes to your product; dealing with any difficulties you experience; accessing additional features or benefits; and resolving complaints. We aim to respond to all enquiries within [specified timeframe].",
@@ -642,15 +1015,32 @@
             "summary": "Firms must ensure their support processes are accessible and effective for vulnerable customers, making reasonable adjustments as needed. This includes customers with health conditions, life events, low resilience or low capability.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Support for Vulnerable Customers",
               "templateText": "We recognise that some customers may need additional support due to their personal circumstances, including health conditions, significant life events, financial difficulties or other factors that may affect their ability to manage their finances. If you need additional support, or if your circumstances change in a way that may affect your ability to manage this product, please contact us. We will work with you to understand your needs and make reasonable adjustments to our services, which may include: (a) providing additional time to make decisions; (b) allowing a trusted third party to act on your behalf; (c) adapting our communication methods; (d) referring you to specialist support services; or (e) adjusting repayment arrangements where applicable.",
@@ -672,15 +1062,32 @@
             "summary": "Firms must not create unreasonable barriers that discourage or prevent customers from switching products, making changes, submitting claims, raising complaints or cancelling. The process for these actions should be as easy as the process for acquiring the product.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Switching, Changes and Cancellation",
               "templateText": "You have the right to switch, change or cancel this product at any time, subject to the specific terms set out below. We will not place unreasonable barriers in the way of you exercising these rights. To switch or cancel this product, you may [specify simple process: contact us by phone, online, in-branch or in writing]. We will process your request within [specified timeframe] of receiving it. Any applicable charges for early termination or switching are set out in our tariff of charges and will be clearly explained to you before you proceed. We will not require you to go through a more difficult process to cancel or switch than the process you went through to acquire this product.",
@@ -702,15 +1109,32 @@
             "summary": "Support quality must not decline after the point of sale. Customers seeking to cancel, switch or make changes must receive the same quality of service as customers acquiring a product.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
-            "relevanceScore": 1.0,
+            "relevanceScore": 1,
             "clauseTemplate": {
               "title": "Consistent Service Standards",
               "templateText": "We are committed to providing you with the same quality of service throughout your relationship with us. Whether you are taking out, managing, changing or closing this product, you can expect the same standard of support. Our service levels and response times apply equally at all stages. If you feel the quality of support you are receiving does not meet the standards we have committed to, please let us know through our complaints process.",
@@ -732,13 +1156,30 @@
             "summary": "Any friction in customer journeys must be justified as being in the customer's interest. Friction designed to discourage customers from acting in their own interest (e.g., making cancellation harder than purchase) is prohibited.",
             "applicableProductTypes": [
               "Residential Mortgage",
+              "Buy-to-Let Mortgage",
+              "Equity Release",
               "Personal Loan",
               "Credit Card",
+              "BNPL / Deferred Payment",
+              "High-Cost Short-Term Credit",
               "Current Account",
               "Savings Account",
+              "Business Current Account",
+              "Business Savings Account",
               "Investment Product (Retail)",
+              "SIPP / Personal Pension",
+              "Workplace Pension",
+              "Discretionary Portfolio",
+              "Advisory Investment Service",
+              "Structured Product",
+              "Retail Fund (UCITS/NURS)",
               "General Insurance",
-              "Payment Service"
+              "Protection Insurance",
+              "Travel Insurance",
+              "Payment Service",
+              "Commercial Mortgage",
+              "Invoice Finance",
+              "Trade Finance"
             ],
             "relevanceScore": 0.95,
             "clauseTemplate": {

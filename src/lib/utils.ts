@@ -32,8 +32,7 @@ export const OBLIGATION_TYPES = {
 
 export const DOCUMENT_TYPES = {
   terms_and_conditions: { label: "Product T&Cs", color: "bg-[var(--doc-tc-bg)] text-[var(--doc-tc-text)]" },
-  fair_value_assessment: { label: "Fair Value Assessment", color: "bg-[var(--doc-fva-bg)] text-[var(--doc-fva-text)]" },
-  target_market_assessment: { label: "Target Market Assessment", color: "bg-[var(--doc-tma-bg)] text-[var(--doc-tma-text)]" },
+  product_overview: { label: "Product Overview", color: "bg-[var(--doc-overview-bg)] text-[var(--doc-overview-text)]" },
 } as const;
 
 export const ANALYSIS_STATUSES = {

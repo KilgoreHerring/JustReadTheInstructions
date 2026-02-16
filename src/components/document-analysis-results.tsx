@@ -1,8 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { EVIDENCE_STATUSES } from "@/lib/utils";
-import { ChevronDown, ChevronRight, Check, X } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  AlertTriangle,
+  FileWarning,
+  ArrowRight,
+} from "lucide-react";
 
 interface ObligationFinding {
   obligationId: string;
@@ -14,40 +19,43 @@ interface ObligationFinding {
   recommendation: string;
 }
 
-interface RequiredElement {
-  element: string;
-  present: boolean;
-  quality: string;
-  notes: string;
-}
-
 interface AnalysisResult {
   documentType: string;
   overallAssessment: string;
   obligationFindings: ObligationFinding[];
   missingClauses?: string[];
   qualityConcerns?: string[];
-  requiredElements?: RequiredElement[];
 }
 
-const QUALITY_COLORS: Record<string, string> = {
-  good: "text-[var(--status-compliant-text)]",
-  adequate: "text-[var(--status-in-progress-text)]",
-  insufficient: "text-[var(--status-non-compliant-text)]",
-  missing: "text-[var(--status-non-compliant-text)] font-semibold",
-};
-
-export function DocumentAnalysisResults({
-  result,
-}: {
+interface Props {
   result: AnalysisResult;
-}) {
+  matrixUrl?: string;
+}
+
+function parseRegulationSections(text: string): { title: string; body: string }[] {
+  // overallAssessment is formatted as "[Regulation Name] assessment text\n\n[Next Regulation]..."
+  const parts = text.split(/\n\n(?=\[)/);
+  return parts
+    .map((part) => {
+      const match = part.match(/^\[([^\]]+)\]\s*([\s\S]*)/);
+      if (match) return { title: match[1], body: match[2].trim() };
+      return { title: "Summary", body: part.trim() };
+    })
+    .filter((s) => s.body.length > 0);
+}
+
+export function DocumentAnalysisResults({ result, matrixUrl }: Props) {
   const [expanded, setExpanded] = useState(false);
 
-  const addressed = result.obligationFindings.filter(
-    (f) => f.status === "addressed"
-  ).length;
+  const addressed = result.obligationFindings.filter((f) => f.status === "addressed").length;
+  const partial = result.obligationFindings.filter((f) => f.status === "partially_addressed").length;
+  const notAddressed = result.obligationFindings.filter((f) => f.status === "not_addressed").length;
+  const na = result.obligationFindings.filter((f) => f.status === "not_applicable").length;
   const total = result.obligationFindings.length;
+
+  const sections = parseRegulationSections(result.overallAssessment);
+  const missingCount = result.missingClauses?.length || 0;
+  const concernCount = result.qualityConcerns?.length || 0;
 
   return (
     <div className="mt-3 border border-[var(--border)] rounded-md overflow-hidden">
@@ -57,124 +65,131 @@ export function DocumentAnalysisResults({
       >
         <span className="flex items-center gap-2 font-medium">
           {expanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
-          Analysis: {addressed}/{total} obligations addressed
+          T&Cs Analysis
         </span>
-        <span className="text-xs text-[var(--muted-foreground)]">
-          {expanded ? "Hide" : "Show"} details
+        <span className="flex items-center gap-3 text-xs">
+          <StatusPill count={addressed} total={total} label="addressed" variant="good" />
+          {partial > 0 && <StatusPill count={partial} total={total} label="partial" variant="warn" />}
+          {notAddressed > 0 && <StatusPill count={notAddressed} total={total} label="gaps" variant="bad" />}
+          {na > 0 && <span className="text-[var(--muted-foreground)]">{na} n/a</span>}
         </span>
       </button>
 
       {expanded && (
         <div className="p-4 space-y-4 text-sm">
-          <div>
-            <p className="font-medium mb-1">Overall Assessment</p>
-            <p className="text-[var(--muted-foreground)]">
-              {result.overallAssessment}
-            </p>
-          </div>
+          {/* Per-regulation summaries */}
+          {sections.map((section, i) => (
+            <RegulationSection key={i} title={section.title} body={section.body} />
+          ))}
 
-          {result.requiredElements && result.requiredElements.length > 0 && (
-            <div>
-              <p className="font-medium mb-2">Required Elements</p>
-              <div className="space-y-1.5">
-                {result.requiredElements.map((el, i) => (
-                  <div key={i} className="flex items-start gap-2">
-                    <span className="mt-0.5 shrink-0">
-                      {el.present ? (
-                        <Check size={12} className="text-[var(--status-compliant-text)]" />
-                      ) : (
-                        <X size={12} className="text-[var(--status-non-compliant-text)]" />
-                      )}
-                    </span>
-                    <div>
-                      <span className={`text-xs font-medium ${QUALITY_COLORS[el.quality] || ""}`}>
-                        {el.element} — {el.quality}
-                      </span>
-                      {el.notes && (
-                        <p className="text-xs text-[var(--muted-foreground)]">
-                          {el.notes}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
+          {/* Missing clauses */}
+          {missingCount > 0 && (
+            <div className="border border-[var(--status-non-compliant-bg)] rounded-md p-3 bg-[var(--status-non-compliant-bg)]">
+              <div className="flex items-center gap-2 mb-2">
+                <FileWarning size={14} className="text-[var(--status-non-compliant-text)] shrink-0" />
+                <p className="font-medium text-[var(--status-non-compliant-text)]">
+                  Missing Clauses ({missingCount})
+                </p>
               </div>
-            </div>
-          )}
-
-          {result.missingClauses && result.missingClauses.length > 0 && (
-            <div>
-              <p className="font-medium mb-1 text-[var(--status-non-compliant-text)]">
-                Missing Clauses ({result.missingClauses.length})
-              </p>
-              <ul className="list-disc list-inside text-xs text-[var(--muted-foreground)]">
-                {result.missingClauses.map((c, i) => (
-                  <li key={i}>{c}</li>
+              <ul className="space-y-1 text-xs text-[var(--status-non-compliant-text)]">
+                {result.missingClauses!.map((c, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="shrink-0 mt-0.5">•</span>
+                    <span>{c}</span>
+                  </li>
                 ))}
               </ul>
             </div>
           )}
 
-          {result.qualityConcerns && result.qualityConcerns.length > 0 && (
-            <div>
-              <p className="font-medium mb-1 text-[var(--status-in-progress-text)]">
-                Quality Concerns
-              </p>
-              <ul className="list-disc list-inside text-xs text-[var(--muted-foreground)]">
-                {result.qualityConcerns.map((c, i) => (
-                  <li key={i}>{c}</li>
+          {/* Quality concerns */}
+          {concernCount > 0 && (
+            <div className="border border-[var(--status-in-progress-bg)] rounded-md p-3 bg-[var(--status-in-progress-bg)]">
+              <div className="flex items-center gap-2 mb-2">
+                <AlertTriangle size={14} className="text-[var(--status-in-progress-text)] shrink-0" />
+                <p className="font-medium text-[var(--status-in-progress-text)]">
+                  Quality Concerns ({concernCount})
+                </p>
+              </div>
+              <ul className="space-y-1 text-xs text-[var(--status-in-progress-text)]">
+                {result.qualityConcerns!.map((c, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="shrink-0 mt-0.5">•</span>
+                    <span>{c}</span>
+                  </li>
                 ))}
               </ul>
             </div>
           )}
 
-          <div>
-            <p className="font-medium mb-2">
-              Obligation Findings ({result.obligationFindings.length})
+          {/* Link to matrix */}
+          {matrixUrl && (
+            <a
+              href={matrixUrl}
+              className="flex items-center gap-2 text-xs text-[var(--accent)] hover:underline pt-1"
+            >
+              View per-obligation detail in Compliance Matrix
+              <ArrowRight size={12} />
+            </a>
+          )}
+          {!matrixUrl && (
+            <p className="text-xs text-[var(--muted-foreground)] pt-1">
+              Per-obligation findings are shown in the Compliance Matrix.
             </p>
-            <div className="space-y-2">
-              {result.obligationFindings.map((f) => {
-                const evStatus = EVIDENCE_STATUSES[f.status as keyof typeof EVIDENCE_STATUSES];
-                return (
-                  <div
-                    key={f.obligationId}
-                    className="border border-[var(--border)] rounded p-2.5"
-                  >
-                    <div className="flex items-center gap-2 mb-1">
-                      <span
-                        className={`px-1.5 py-0.5 rounded text-xs font-medium ${evStatus?.color || ""}`}
-                      >
-                        {evStatus?.label || f.status.replace("_", " ")}
-                      </span>
-                      {f.clauseReference && (
-                        <span className="text-xs text-[var(--muted-foreground)]">
-                          Clause: {f.clauseReference}
-                        </span>
-                      )}
-                      {f.qualityScore != null && (
-                        <span className="text-xs text-[var(--muted-foreground)]">
-                          Quality: {Math.round(f.qualityScore * 100)}%
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xs">{f.evidence}</p>
-                    {f.gaps.length > 0 && (
-                      <p className="text-xs text-[var(--status-non-compliant-text)] mt-1">
-                        Gaps: {f.gaps.join("; ")}
-                      </p>
-                    )}
-                    {f.recommendation && (
-                      <p className="text-xs text-[var(--muted-foreground)] mt-1 italic">
-                        {f.recommendation}
-                      </p>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          )}
         </div>
       )}
+    </div>
+  );
+}
+
+function StatusPill({
+  count,
+  total,
+  label,
+  variant,
+}: {
+  count: number;
+  total: number;
+  label: string;
+  variant: "good" | "warn" | "bad";
+}) {
+  const colors = {
+    good: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]",
+    warn: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]",
+    bad: "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]",
+  };
+  return (
+    <span className={`px-2 py-0.5 rounded-full font-medium ${colors[variant]}`}>
+      {count}/{total} {label}
+    </span>
+  );
+}
+
+function RegulationSection({ title, body }: { title: string; body: string }) {
+  const [open, setOpen] = useState(false);
+  // Truncate to first ~150 chars for preview
+  const preview = body.length > 150 ? body.slice(0, 150).trimEnd() + "…" : body;
+  const isLong = body.length > 150;
+
+  return (
+    <div className="border border-[var(--border)] rounded-md p-3">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left flex items-start gap-2"
+      >
+        <span className="mt-0.5 shrink-0">
+          {isLong ? (
+            open ? <ChevronDown size={12} /> : <ChevronRight size={12} />
+          ) : null}
+        </span>
+        <div className="min-w-0">
+          <p className="font-medium text-xs mb-1">{title}</p>
+          <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">
+            {open || !isLong ? body : preview}
+          </p>
+        </div>
+      </button>
     </div>
   );
 }

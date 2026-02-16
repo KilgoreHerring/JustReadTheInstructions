@@ -155,7 +155,7 @@ model ProductDocument {
   id                  String    @id @default(cuid())
   productId           String
   product             Product   @relation(fields: [productId], references: [id])
-  documentType        String    // "terms_and_conditions" | "fair_value_assessment" | "target_market_assessment"
+  documentType        String    // "terms_and_conditions" | "product_overview"
   fileName            String
   content             String    @db.Text
   analysisStatus      String    @default("pending") // "pending" | "analysing" | "complete" | "failed"

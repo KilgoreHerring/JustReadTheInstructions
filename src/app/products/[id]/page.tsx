@@ -163,15 +163,10 @@ export default async function ProductDetailPage({
           </p>
           <DocumentUpload productId={id} existingDocuments={existingDocs} />
 
-          {completedDocs.map((doc) => (
+          {completedDocs
+            .filter((doc) => doc.documentType === "terms_and_conditions")
+            .map((doc) => (
             <div key={doc.id} className="mt-4">
-              <h3 className="text-sm font-medium mb-1">
-                {doc.documentType === "terms_and_conditions"
-                  ? "T&Cs Analysis"
-                  : doc.documentType === "fair_value_assessment"
-                    ? "Fair Value Analysis"
-                    : "Target Market Analysis"}
-              </h3>
               <DocumentAnalysisResults
                 result={doc.analysisResult as unknown as {
                   documentType: string;
@@ -187,13 +182,8 @@ export default async function ProductDetailPage({
                   }[];
                   missingClauses?: string[];
                   qualityConcerns?: string[];
-                  requiredElements?: {
-                    element: string;
-                    present: boolean;
-                    quality: string;
-                    notes: string;
-                  }[];
                 }}
+                matrixUrl={`/products/${id}/matrix`}
               />
             </div>
           ))}

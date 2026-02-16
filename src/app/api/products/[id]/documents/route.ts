@@ -37,11 +37,7 @@ export async function POST(
     );
   }
 
-  const validTypes = [
-    "terms_and_conditions",
-    "fair_value_assessment",
-    "target_market_assessment",
-  ];
+  const validTypes = ["terms_and_conditions", "product_overview"];
   if (!validTypes.includes(documentType)) {
     return NextResponse.json(
       { error: `Invalid documentType. Must be one of: ${validTypes.join(", ")}` },
@@ -54,18 +50,22 @@ export async function POST(
     where: { productId: id, documentType },
   });
 
+  const isOverview = documentType === "product_overview";
+
   const doc = await prisma.productDocument.create({
     data: {
       productId: id,
       documentType,
       fileName,
       content,
-      analysisStatus: "pending",
+      analysisStatus: isOverview ? "complete" : "pending",
     },
   });
 
-  // Fire-and-forget async analysis
-  runAnalysis(doc.id).catch(() => {});
+  // Only analyse T&Cs — product overview is context-only
+  if (!isOverview) {
+    runAnalysis(doc.id).catch(() => {});
+  }
 
   return NextResponse.json(
     {

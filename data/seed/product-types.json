@@ -12,6 +12,30 @@
     ]
   },
   {
+    "id": "buy-to-let-mortgage",
+    "name": "Buy-to-Let Mortgage",
+    "category": "lending",
+    "description": "A mortgage secured against property purchased for rental income. Consumer buy-to-let regulated under MCOB; professional landlord BTL falls outside FCA regulation but Consumer Duty may still apply.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "MCOB" },
+      { "key": "secured", "value": "yes" }
+    ]
+  },
+  {
+    "id": "equity-release",
+    "name": "Equity Release",
+    "category": "lending",
+    "description": "A lifetime mortgage or home reversion plan allowing consumers aged 55+ to access property equity. Subject to MCOB Chapter 9 specialist requirements and enhanced Consumer Duty protections.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "MCOB" },
+      { "key": "secured", "value": "yes" }
+    ]
+  },
+  {
     "id": "personal-loan",
     "name": "Personal Loan",
     "category": "lending",
@@ -33,6 +57,30 @@
       { "key": "regulated_activity", "value": "yes" },
       { "key": "fca_sourcebook", "value": "CONC" },
       { "key": "revolving", "value": "yes" }
+    ]
+  },
+  {
+    "id": "bnpl",
+    "name": "BNPL / Deferred Payment",
+    "category": "lending",
+    "description": "Buy now pay later and deferred payment credit agreements, typically interest-free for short periods. Becoming FCA-regulated under CONC with specific disclosure and affordability requirements.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "CONC" },
+      { "key": "secured", "value": "no" }
+    ]
+  },
+  {
+    "id": "high-cost-short-term-credit",
+    "name": "High-Cost Short-Term Credit",
+    "category": "lending",
+    "description": "Short-term, high-interest consumer credit including payday loans. Subject to enhanced CONC requirements including price caps, affordability checks and specific risk warnings.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "CONC" },
+      { "key": "secured", "value": "no" }
     ]
   },
   {
@@ -59,10 +107,108 @@
     ]
   },
   {
+    "id": "business-current-account",
+    "name": "Business Current Account",
+    "category": "deposits",
+    "description": "A transactional bank account for SMEs and commercial entities. BCOBS applies to business banking customers; Consumer Duty applies where the firm deals with micro-enterprises or charities.",
+    "attributes": [
+      { "key": "customer_type", "value": "commercial" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "BCOBS" },
+      { "key": "payment_services", "value": "yes" }
+    ]
+  },
+  {
+    "id": "business-savings-account",
+    "name": "Business Savings Account",
+    "category": "deposits",
+    "description": "A deposit account for SME and commercial clients to hold reserves and earn interest. Subject to BCOBS banking conduct rules.",
+    "attributes": [
+      { "key": "customer_type", "value": "commercial" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "BCOBS" }
+    ]
+  },
+  {
     "id": "investment-product-retail",
     "name": "Investment Product (Retail)",
     "category": "investments",
     "description": "Investment products marketed to retail consumers including funds, structured deposits and portfolio management services. Subject to MiFID II requirements and COBS.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "COBS" },
+      { "key": "mifid", "value": "yes" }
+    ]
+  },
+  {
+    "id": "sipp-personal-pension",
+    "name": "SIPP / Personal Pension",
+    "category": "pensions",
+    "description": "Self-invested personal pension or standard personal pension scheme. Subject to COBS suitability and disclosure rules, with additional pension-specific requirements including transfer advice rules.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "COBS" },
+      { "key": "pension", "value": "yes" }
+    ]
+  },
+  {
+    "id": "workplace-pension",
+    "name": "Workplace Pension",
+    "category": "pensions",
+    "description": "An employer-sponsored pension scheme including auto-enrolment qualifying schemes. Subject to COBS communications and governance requirements, plus TPR oversight.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "COBS" },
+      { "key": "pension", "value": "yes" }
+    ]
+  },
+  {
+    "id": "discretionary-portfolio",
+    "name": "Discretionary Portfolio",
+    "category": "investments",
+    "description": "A managed investment portfolio where the firm makes investment decisions on behalf of the client. Subject to COBS suitability, best execution and reporting requirements. Available to retail and professional clients.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "COBS" },
+      { "key": "mifid", "value": "yes" },
+      { "key": "professional_eligible", "value": "yes" }
+    ]
+  },
+  {
+    "id": "advisory-investment-service",
+    "name": "Advisory Investment Service",
+    "category": "investments",
+    "description": "A service providing personal investment recommendations to clients. Subject to COBS suitability requirements, independence rules and disclosure obligations. Available to retail and professional clients.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "COBS" },
+      { "key": "mifid", "value": "yes" },
+      { "key": "professional_eligible", "value": "yes" }
+    ]
+  },
+  {
+    "id": "structured-product",
+    "name": "Structured Product",
+    "category": "investments",
+    "description": "A pre-packaged investment combining derivatives with traditional assets to provide defined risk-return profiles. Subject to enhanced COBS disclosure, appropriateness testing and PRIIPs KID requirements.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "COBS" },
+      { "key": "mifid", "value": "yes" },
+      { "key": "professional_eligible", "value": "yes" }
+    ]
+  },
+  {
+    "id": "retail-fund",
+    "name": "Retail Fund (UCITS/NURS)",
+    "category": "investments",
+    "description": "An authorised collective investment scheme (UCITS or non-UCITS retail scheme) marketed to retail investors. Subject to COBS communications, KIID/KID disclosure and distribution rules.",
     "attributes": [
       { "key": "customer_type", "value": "consumer" },
       { "key": "regulated_activity", "value": "yes" },
@@ -82,6 +228,28 @@
     ]
   },
   {
+    "id": "protection-insurance",
+    "name": "Protection Insurance",
+    "category": "insurance",
+    "description": "Life insurance, income protection, critical illness cover and payment protection insurance. Subject to ICOBS disclosure and claims handling rules, plus enhanced Consumer Duty vulnerability considerations.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "ICOBS" }
+    ]
+  },
+  {
+    "id": "travel-insurance",
+    "name": "Travel Insurance",
+    "category": "insurance",
+    "description": "Insurance covering risks associated with travel including medical expenses, cancellation, baggage and personal liability. Subject to ICOBS, with FCA focus on value, signposting and claims handling.",
+    "attributes": [
+      { "key": "customer_type", "value": "consumer" },
+      { "key": "regulated_activity", "value": "yes" },
+      { "key": "fca_sourcebook", "value": "ICOBS" }
+    ]
+  },
+  {
     "id": "payment-service",
     "name": "Payment Service",
     "category": "payments",
@@ -90,6 +258,39 @@
       { "key": "customer_type", "value": "consumer" },
       { "key": "regulated_activity", "value": "yes" },
       { "key": "psd2", "value": "yes" }
+    ]
+  },
+  {
+    "id": "commercial-mortgage",
+    "name": "Commercial Mortgage",
+    "category": "lending",
+    "description": "A loan secured against commercial property for business purposes. Outside FCA perimeter for most commercial borrowers but Consumer Duty applies where the borrower is a micro-enterprise or sole trader.",
+    "attributes": [
+      { "key": "customer_type", "value": "commercial" },
+      { "key": "regulated_activity", "value": "no" },
+      { "key": "secured", "value": "yes" }
+    ]
+  },
+  {
+    "id": "invoice-finance",
+    "name": "Invoice Finance",
+    "category": "lending",
+    "description": "A working capital facility where a business borrows against unpaid invoices, including factoring and invoice discounting. Generally outside FCA regulation but Consumer Duty applies where the borrower is a micro-enterprise or sole trader. CCA may apply to unincorporated businesses.",
+    "attributes": [
+      { "key": "customer_type", "value": "commercial" },
+      { "key": "regulated_activity", "value": "no" },
+      { "key": "secured", "value": "yes" }
+    ]
+  },
+  {
+    "id": "trade-finance",
+    "name": "Trade Finance",
+    "category": "lending",
+    "description": "Financial products supporting international and domestic trade, including letters of credit, documentary collections, trade loans and supply chain finance. Primarily commercial products outside FCA perimeter but Consumer Duty applies to micro-enterprise borrowers.",
+    "attributes": [
+      { "key": "customer_type", "value": "commercial" },
+      { "key": "regulated_activity", "value": "no" },
+      { "key": "secured", "value": "yes" }
     ]
   }
 ]

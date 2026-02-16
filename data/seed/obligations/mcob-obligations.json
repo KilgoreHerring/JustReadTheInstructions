@@ -24,7 +24,7 @@
               "objectText": "All regulated mortgage contracts and further advances",
               "conditionText": "Before entering into a regulated mortgage contract or making a further advance",
               "summary": "Lenders must not proceed with a mortgage unless they can demonstrate it is affordable for the customer. This requires a robust affordability assessment considering income, expenditure and stress testing.",
-              "applicableProductTypes": ["Residential Mortgage"],
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Affordability Requirement",
@@ -45,7 +45,7 @@
               "objectText": "The affordability assessment process including income verification, expenditure analysis and cost projections",
               "conditionText": "Before entering into a regulated mortgage contract",
               "summary": "The affordability assessment must consider net income (after tax and NI), committed and essential expenditure, and the full cost of the mortgage including interest rate stress scenarios.",
-              "applicableProductTypes": ["Residential Mortgage"],
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Affordability Assessment Methodology",
@@ -71,12 +71,80 @@
               "objectText": "A mortgage illustration (ESIS) complying with MCOB 5 requirements",
               "conditionText": "Before or at the point the customer submits a mortgage application",
               "summary": "A standardised mortgage illustration (European Standardised Information Sheet / ESIS) must be provided to the customer before or when they apply, showing key product details, costs and risks in a standard format.",
-              "applicableProductTypes": ["Residential Mortgage"],
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Mortgage Illustration",
                 "templateText": "Before you submitted your application, we provided you with a personalised mortgage illustration (European Standardised Information Sheet). This document sets out the key features of the mortgage, including: the total amount to borrow; the interest rate and type; monthly repayment amounts; the total cost over the mortgage term (APRC); and any fees and charges. This illustration forms the basis of your mortgage offer.",
                 "guidance": "The ESIS is a regulatory requirement under MCOB 5. Ensure the illustration is provided in the prescribed format and includes all mandated information. The illustration should be personalised to the customer's actual borrowing."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "MCOB 5A", "title": "Mortgage illustrations (ESIS)", "level": 1 },
+      "rules": [
+        {
+          "reference": "MCOB 5A.3.1R",
+          "rawText": "A firm must provide the customer with a European Standardised Information Sheet (ESIS) containing prescribed information about the regulated mortgage contract, including: the annual percentage rate of charge (APRC); the total cost of the mortgage over the full term; the amount of each repayment instalment; the frequency of repayments; the early repayment charge (if any); and any other costs or fees payable by the customer in connection with the mortgage.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders and brokers",
+              "actionText": "Must provide an ESIS containing APRC, total cost, repayment amounts, early repayment charges and all associated costs",
+              "objectText": "The European Standardised Information Sheet (ESIS) with all prescribed mortgage information",
+              "conditionText": "Before the customer is bound by a regulated mortgage contract or offer",
+              "summary": "The firm must provide an ESIS containing all prescribed information including the APRC, total cost of the mortgage, individual repayment amounts, frequency, any early repayment charges, and all other fees so the customer can compare products on a standardised basis.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "European Standardised Information Sheet (ESIS)",
+                "templateText": "Before you are bound by this mortgage offer, we will provide you with a European Standardised Information Sheet (ESIS). This document contains key information about the mortgage in a standardised format, including: (a) the Annual Percentage Rate of Charge (APRC), which represents the overall cost of the mortgage expressed as an annual percentage; (b) the total amount you will repay over the full term of the mortgage; (c) the amount and frequency of each repayment instalment; (d) any early repayment charges that may apply if you repay the mortgage early; and (e) all other fees and charges payable in connection with the mortgage. The ESIS is designed to help you compare mortgage products from different lenders on a like-for-like basis.",
+                "guidance": "The ESIS is the primary pre-contractual disclosure document under the Mortgage Credit Directive as implemented through MCOB 5A. It must be personalised to the customer's actual borrowing and presented in the prescribed format. Ensure all cost elements are captured accurately including fees that may be added to the loan."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 5A.4.1R",
+          "rawText": "A firm must provide the ESIS to the customer in a durable medium, and the ESIS must follow the prescribed format and sequence set out in MCOB 5A Annex 1. The ESIS must be clearly and accurately completed and must not contain any additional information other than that permitted or required by the rules.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders and brokers",
+              "actionText": "Must provide the ESIS in a durable medium, in the prescribed format and sequence, without additional unpermitted information",
+              "objectText": "The format, medium and content restrictions applicable to the ESIS",
+              "conditionText": "When providing the ESIS to the customer",
+              "summary": "The ESIS must be provided on a durable medium (paper or electronic format the customer can store and retrieve), must follow the exact prescribed format and sequence, and must not include any extraneous information beyond what is required or permitted.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "ESIS Format and Delivery",
+                "templateText": "Your ESIS will be provided to you in a durable medium — either as a paper document or in an electronic format that you can save and retrieve for future reference (such as a PDF sent by email or made available through our secure online portal). The ESIS follows a standardised format prescribed by the FCA to ensure consistency across all mortgage providers. It will contain only the information required or permitted by the regulations, presented in the prescribed order, to enable straightforward comparison between mortgage products.",
+                "guidance": "A durable medium means the customer must be able to store and access the information for future reference for an adequate period. Email with a PDF attachment qualifies; a webpage that can be changed does not (unless the customer can download or print). The prescribed format in MCOB 5A Annex 1 must be followed exactly."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 5A.5.1R",
+          "rawText": "Where the regulated mortgage contract is subject to a variable interest rate, or where the mortgage is denominated in a currency other than the currency in which the customer receives their income, the ESIS must include appropriate warnings about the risks, including: for variable rate mortgages, a warning that the customer's repayments may increase and an illustration of the effect of a rate increase; and for foreign currency mortgages, a warning that the amount owed may change due to exchange rate movements and an illustration of the potential impact.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders and brokers",
+              "actionText": "Must include warnings in the ESIS about variable rate risk and foreign currency risk with illustrative examples where applicable",
+              "objectText": "Risk warnings for variable rate and foreign currency mortgages within the ESIS",
+              "conditionText": "Where the mortgage has a variable interest rate or is denominated in a foreign currency",
+              "summary": "Where the mortgage is on a variable rate, the ESIS must warn that repayments may increase and illustrate the impact of a rate rise. Where the mortgage involves a foreign currency, the ESIS must warn about exchange rate risk and illustrate the potential effect on the amount owed.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Variable Rate and Foreign Currency Risk Warnings",
+                "templateText": "If your mortgage has a variable interest rate: Please be aware that your interest rate, and therefore your monthly repayments, can go up as well as down. The ESIS includes an illustration showing the effect on your monthly payments if interest rates were to increase. You should ensure you could afford higher repayments before proceeding. If your mortgage is denominated in a currency other than the currency in which you receive your income: Please be aware that the amount you owe and/or your repayments may change as a result of movements in exchange rates. The ESIS includes an illustration showing the potential impact of exchange rate changes on the total amount you would owe. You should consider whether you are comfortable with this level of currency risk.",
+                "guidance": "Variable rate warnings must include a concrete illustration of the effect of a rate increase on monthly payments, typically using a standardised stress rate. Foreign currency risk warnings must show the potential impact on the total debt. These warnings are particularly important for consumer understanding and should be prominent within the ESIS."
               }
             }
           ]
@@ -97,7 +165,7 @@
               "objectText": "The mortgage offer document containing all key contract terms",
               "conditionText": "At least 7 business days before the mortgage completion date",
               "summary": "The formal mortgage offer must be sent at least 7 business days before completion, giving the customer time to review the terms including amount, rate, term, repayment method and fees.",
-              "applicableProductTypes": ["Residential Mortgage"],
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Mortgage Offer",
@@ -118,7 +186,7 @@
               "objectText": "Annual mortgage statement with prescribed information",
               "conditionText": "For each regulated mortgage contract, on an annual basis",
               "summary": "Lenders must send annual statements showing the outstanding balance, current rate, payment amounts, remaining instalments and total paid during the year.",
-              "applicableProductTypes": ["Residential Mortgage"],
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Annual Mortgage Statement",
@@ -144,12 +212,211 @@
               "objectText": "Notification of rate expiry, the rate that will apply thereafter and available product transfer options",
               "conditionText": "When a fixed or discounted rate period on a mortgage is due to expire",
               "summary": "Lenders must notify customers at least 3 months before their fixed or discount rate ends, telling them what rate they will revert to and what alternative products they can switch to.",
-              "applicableProductTypes": ["Residential Mortgage"],
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Rate Expiry Notification",
                 "templateText": "If your current fixed or discounted interest rate is due to expire, we will write to you at least 3 months before the expiry date to let you know: (a) the interest rate that will apply to your mortgage after the current rate expires (typically our Standard Variable Rate); (b) what your new monthly payment will be; and (c) the alternative products available to you, including new fixed or discounted rates. You can switch to a new rate without a full re-application in most cases.",
                 "guidance": "The 3-month notice requirement is critical for preventing customers from falling onto SVR unaware. Ensure the communication is clear about the financial impact of reversion and makes switching easy."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "MCOB 9", "title": "Equity release: lifetime mortgages and home reversion plans", "level": 1 },
+      "rules": [
+        {
+          "reference": "MCOB 9.3.1R",
+          "rawText": "Before advising a customer on an equity release transaction, a firm must take reasonable steps to assess the suitability of the transaction for the customer, having regard to the customer's needs, objectives and circumstances, including whether the customer is a vulnerable person, the availability of alternative options, and the impact of the transaction on the customer's entitlement to means-tested benefits and on the customer's estate.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Equity release advisers",
+              "actionText": "Must assess suitability before advising on equity release, considering needs, vulnerability, alternatives and impact on benefits and estate",
+              "objectText": "The suitability assessment for equity release transactions including lifetime mortgages and home reversion plans",
+              "conditionText": "Before advising a customer on an equity release transaction",
+              "summary": "Before providing advice on equity release, the firm must carry out a thorough suitability assessment considering the customer's needs, whether they are vulnerable, available alternatives (such as downsizing, local authority grants or other borrowing), and the impact on means-tested benefits and inheritance.",
+              "applicableProductTypes": ["Equity Release"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Equity Release Suitability Assessment",
+                "templateText": "Before recommending an equity release product, we will carry out a comprehensive suitability assessment to ensure the product is appropriate for your circumstances. This assessment will consider: (a) your financial needs and objectives for releasing equity; (b) your personal circumstances including age, health and any vulnerabilities; (c) whether alternative options may be more suitable (such as downsizing, local authority grants, other forms of borrowing or benefits entitlements); (d) the impact on your entitlement to means-tested benefits; and (e) the effect on the value of your estate and any planned inheritance. We will provide you with a written suitability report explaining why we believe the recommended product is suitable for you.",
+                "guidance": "The suitability assessment for equity release must be particularly thorough given the long-term and largely irreversible nature of the transaction. Advisers should be specifically trained in equity release advice and vulnerability. The suitability report should be detailed and address all factors considered. Consider referrals to specialist services where vulnerability is identified."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 9.4.1R",
+          "rawText": "A firm must provide the customer with a written disclosure document before the customer commits to an equity release transaction, setting out the key features of the product including: the interest rate and how it is applied; the no-negative-equity guarantee (for lifetime mortgages); the proportion of the property value the customer will receive (for home reversion plans); the impact on the customer's estate and on any entitlement to means-tested benefits; and the risks associated with the transaction.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Equity release providers and advisers",
+              "actionText": "Must provide written disclosure of key features and risks before the customer commits to an equity release transaction",
+              "objectText": "A written disclosure document covering interest rate, no-negative-equity guarantee, estate impact, benefits impact and risks",
+              "conditionText": "Before the customer commits to an equity release transaction",
+              "summary": "A detailed written disclosure must be given before commitment, covering key features including the no-negative-equity guarantee (lifetime mortgages), property value share (home reversions), impact on inheritance and means-tested benefits, and all material risks.",
+              "applicableProductTypes": ["Equity Release"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Equity Release Key Features Disclosure",
+                "templateText": "Before you commit to this equity release product, we will provide you with a comprehensive disclosure document setting out: (a) the interest rate and how it is calculated and applied (including whether it is fixed or variable and the effect of compound interest); (b) where applicable, the no-negative-equity guarantee, meaning you will never owe more than the value of your property; (c) for home reversion plans, the proportion of your property value you will receive and the share of the property being sold; (d) the impact on the value of your estate and any inheritance you may wish to leave; (e) the potential effect on your entitlement to means-tested benefits such as pension credit and council tax reduction; and (f) the key risks, including the effect of compound interest on the amount owed over time.",
+                "guidance": "Equity release disclosure must be clear, fair and not misleading. Given the complexity of these products and the typical age of customers, consider using worked examples showing the effect of compound interest over time. Ensure the disclosure covers all scenarios including what happens on death, entry into long-term care, or if the customer wishes to move home."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 9.4.8R",
+          "rawText": "A firm must not enter into a home reversion plan with a customer unless the customer has received independent legal advice on the terms and implications of the home reversion plan, including the transfer of ownership of the property or a share of the property to the home reversion provider.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Home reversion plan providers",
+              "actionText": "Must not enter into a home reversion plan unless the customer has received independent legal advice on the terms and implications",
+              "objectText": "The requirement for independent legal advice before entering a home reversion plan",
+              "conditionText": "Before entering into a home reversion plan with a customer",
+              "summary": "A home reversion plan must not proceed unless the customer has obtained independent legal advice on the terms and implications, particularly regarding the transfer of ownership (or a share) of the property to the provider.",
+              "applicableProductTypes": ["Equity Release"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Independent Legal Advice for Home Reversion Plans",
+                "templateText": "Before we can proceed with a home reversion plan, you must obtain independent legal advice from a qualified solicitor who is not connected with us. The solicitor will advise you on the terms and implications of the plan, including: (a) the transfer of ownership (or a share of ownership) of your property to us; (b) your right to remain in the property; (c) the implications for your estate; and (d) any other legal matters arising from the plan. We will require written confirmation from your solicitor that this advice has been provided before the plan can be completed.",
+                "guidance": "The independent legal advice requirement is mandatory and cannot be waived. The firm should maintain a process to verify that legal advice has been obtained and should not proceed until written confirmation is received. The solicitor must be genuinely independent of the firm."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 9.7.1R",
+          "rawText": "A firm entering into a lifetime mortgage must ensure that the contract contains a no-negative-equity guarantee, under which the amount the borrower will owe on redemption of the mortgage (whether as a result of sale of the property, death of the borrower, or otherwise) will never exceed the net sale proceeds of the property.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Lifetime mortgage providers",
+              "actionText": "Must include a no-negative-equity guarantee in every lifetime mortgage contract ensuring the borrower never owes more than the property sale proceeds",
+              "objectText": "The no-negative-equity guarantee clause in lifetime mortgage contracts",
+              "conditionText": "When entering into a lifetime mortgage contract",
+              "summary": "Every lifetime mortgage must include a no-negative-equity guarantee ensuring that on redemption (whether through sale, death or otherwise) the borrower or their estate will never owe more than the net sale proceeds of the property.",
+              "applicableProductTypes": ["Equity Release"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "No-Negative-Equity Guarantee",
+                "templateText": "This lifetime mortgage includes a no-negative-equity guarantee. This means that when the mortgage is repaid — whether on sale of the property, on your death, or when you move into long-term care — the amount you or your estate will owe will never exceed the net proceeds received from the sale of the property. If the sale proceeds are less than the amount outstanding on the mortgage, neither you nor your estate will be required to make up the shortfall. This guarantee applies provided the property has been sold at the best price reasonably obtainable and in accordance with the terms of the mortgage.",
+                "guidance": "The no-negative-equity guarantee is a fundamental consumer protection for lifetime mortgages and is required by MCOB 9.7.1R. The guarantee must be clearly stated in the contract and disclosed prominently before the customer commits. Ensure the conditions for the guarantee (e.g., sale at best price) are clearly explained."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 9.4.19R",
+          "rawText": "A firm must explain to the customer that, in relation to a lifetime mortgage, the customer has the right to remain in the property for the remainder of the customer's lifetime provided the customer complies with the terms of the mortgage contract, and must explain the circumstances in which the right to remain may be affected.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Lifetime mortgage providers and advisers",
+              "actionText": "Must explain the customer's right to remain in the property for life and the circumstances that may affect that right",
+              "objectText": "Disclosure of the right to remain in the property under a lifetime mortgage",
+              "conditionText": "When advising on or offering a lifetime mortgage",
+              "summary": "The firm must explain that the customer can remain in the property for life provided they comply with the mortgage terms, and must clearly explain any circumstances that could affect this right (such as failure to maintain the property or breach of other terms).",
+              "applicableProductTypes": ["Equity Release"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Right to Remain in the Property",
+                "templateText": "Under this lifetime mortgage, you have the right to remain living in the property for the rest of your lifetime, provided you comply with the terms of the mortgage. The key conditions you must meet include: (a) maintaining the property in a reasonable state of repair; (b) keeping the property insured; (c) using the property as your main residence; and (d) not letting or subletting the property without our consent. If you wish to move to another property, you may be able to transfer the mortgage to a new property, subject to the new property meeting our lending criteria. We will explain the full terms that apply to your right to remain.",
+                "guidance": "The right to remain is a key feature of lifetime mortgages. The explanation must cover both the right and the conditions that could affect it. Advisers should ensure customers understand what could cause the right to be affected and what happens if the customer needs to move (e.g., into care or to a different property)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "MCOB 12", "title": "Charges", "level": 1 },
+      "rules": [
+        {
+          "reference": "MCOB 12.1.1R",
+          "rawText": "A firm must not impose a charge on a customer under a regulated mortgage contract, or vary a charge to increase it, or impose a new charge on a customer, unless the charge, or the basis for determining it, is set out in the regulated mortgage contract or in a tariff of charges provided to the customer.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must not impose or increase a charge unless the charge or its basis is set out in the mortgage contract or tariff of charges",
+              "objectText": "All charges imposed on customers under regulated mortgage contracts",
+              "conditionText": "When imposing or varying any charge under a regulated mortgage contract",
+              "summary": "Lenders cannot impose new charges or increase existing ones unless the charge (or the basis for determining it) is clearly set out in the mortgage contract or in a tariff of charges that has been provided to the customer.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Charges Under the Mortgage Contract",
+                "templateText": "We will only charge you fees that are set out in your mortgage contract or in our published tariff of charges. We will not introduce new charges or increase existing charges unless the basis for doing so is provided for in your contract or tariff. Our current tariff of charges is provided with your mortgage documentation and is available on our website or on request at any time. If we make changes to our tariff, we will give you reasonable notice before any change takes effect.",
+                "guidance": "MCOB 12.1.1R prevents the imposition of hidden or unexpected charges. Ensure the mortgage contract or tariff clearly sets out either the specific charges or the methodology for determining them. Any change to charges must be communicated in advance."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 12.4.1R",
+          "rawText": "A firm must ensure that any early repayment charge imposed on a customer is a reasonable pre-estimate of the costs to the firm that are attributable to the early repayment of the regulated mortgage contract. The firm must disclose the early repayment charge or the basis for calculating it to the customer before the customer enters into the regulated mortgage contract.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must ensure early repayment charges are a reasonable pre-estimate of costs and must disclose them before the contract is entered into",
+              "objectText": "Early repayment charges imposed under regulated mortgage contracts",
+              "conditionText": "When including early repayment charges in a regulated mortgage contract",
+              "summary": "Early repayment charges must genuinely reflect the firm's costs of early repayment (not be punitive or excessive) and must be fully disclosed to the customer before they commit to the mortgage.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Early Repayment Charges",
+                "templateText": "If you repay all or part of your mortgage before the end of the early repayment charge period, an early repayment charge (ERC) may apply. The ERC is calculated as a reasonable pre-estimate of the costs we incur as a result of early repayment. The applicable ERC rates are set out in your mortgage offer and are: [insert ERC schedule]. For example, if you repay the full balance during the [first/second/third] year, a charge of [X]% of the amount repaid will apply. You may be able to make limited overpayments each year without incurring an ERC — please refer to your mortgage terms for details.",
+                "guidance": "Early repayment charges must be cost-reflective under MCOB 12.4.1R. Firms should be able to demonstrate the cost basis and methodology. The ERC schedule must be clearly disclosed in the illustration and offer. Consider providing worked examples of the charge at different points."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 12.3.1R",
+          "rawText": "A firm must provide the customer with a tariff of charges, setting out all charges that may be imposed under the regulated mortgage contract, before the customer enters into the contract. The firm must make the tariff of charges available to the customer on request at any time during the life of the mortgage.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must provide a tariff of charges before the contract is entered into and make it available on request at any time",
+              "objectText": "The tariff of charges listing all charges that may be imposed under the mortgage contract",
+              "conditionText": "Before the customer enters into the regulated mortgage contract and on request during the mortgage term",
+              "summary": "A complete tariff of all possible charges must be provided before the mortgage is entered into, and the firm must make this available on request at any point during the life of the mortgage.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Tariff of Charges",
+                "templateText": "Before you enter into this mortgage, we will provide you with a tariff of charges setting out all the charges that may apply during the life of your mortgage. This includes charges for: (a) account administration; (b) late or missed payments; (c) early repayment; (d) changes to the mortgage (such as adding or removing a borrower); (e) property-related matters (such as additional valuations); and (f) any other applicable charges. You can request a copy of the current tariff of charges at any time by contacting us or visiting our website.",
+                "guidance": "The tariff must be comprehensive and clearly set out all charges. Ensure the tariff is kept up to date and is easily accessible to customers. Changes to the tariff should be communicated proactively. The tariff should be written in plain language."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "MCOB 12.6.1R",
+          "rawText": "A firm must ensure that any charge imposed on a customer who is in arrears or has a payment shortfall on a regulated mortgage contract is reasonable, and in particular the firm must not use charges to customers in arrears as a means of generating income or making a profit from those customers' financial difficulties.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "Mortgage lenders",
+              "actionText": "Must not use arrears charges to generate income or profit from customers in financial difficulty, and must ensure all such charges are reasonable",
+              "objectText": "Charges applied to customers who are in arrears or have a payment shortfall",
+              "conditionText": "When a customer is in arrears or has a payment shortfall on a regulated mortgage contract",
+              "summary": "Charges applied to borrowers in arrears must be reasonable and must not be used as a revenue source. The firm must not profit from customers' financial difficulties through excessive or punitive charges.",
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Arrears and Payment Shortfall Charges",
+                "templateText": "If your account falls into arrears or you have a payment shortfall, we may apply charges to cover the reasonable additional costs of managing your account. These charges will be: (a) reasonable in amount; (b) clearly explained to you in advance where possible; and (c) set out in our tariff of charges. We will not use charges as a means of generating income from your financial difficulty. We will always consider your circumstances, and if you are experiencing financial hardship, we encourage you to contact us as early as possible so we can explore ways to help.",
+                "guidance": "MCOB 12.6.1R is a key consumer protection that prevents profiteering from customers in difficulty. This should be read alongside MCOB 13 (arrears handling) and the Consumer Duty outcomes on fair value. Charges must be cost-reflective and the firm should be able to evidence this. Consider waiving or reducing charges where the customer is in genuine financial hardship."
               }
             }
           ]
@@ -170,7 +437,7 @@
               "objectText": "Treatment of customers in arrears or payment difficulty, including forbearance options and repossession policy",
               "conditionText": "When a customer falls into payment difficulty on a regulated mortgage contract",
               "summary": "Lenders must treat customers in financial difficulty fairly, explore all forbearance options and treat repossession only as a last resort after all other reasonable attempts to resolve the position have failed.",
-              "applicableProductTypes": ["Residential Mortgage"],
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Payment Difficulty and Forbearance",
@@ -191,7 +458,7 @@
               "objectText": "Charges applied to customers in arrears on regulated mortgage contracts",
               "conditionText": "When a customer is in arrears on a regulated mortgage contract",
               "summary": "Arrears charges must be cost-reflective only — they cannot include a profit element or be punitive. The charge must reasonably reflect the actual additional administrative cost of managing the arrears.",
-              "applicableProductTypes": ["Residential Mortgage"],
+              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Arrears Charges",

@@ -33,8 +33,9 @@ export async function askClaudeJSON<T>(
     maxTokens
   );
   text = text.trim();
-  const fenceMatch = text.match(/^```(?:json)?\s*\n([\s\S]*?)\n```\s*$/i);
-  if (fenceMatch) text = fenceMatch[1];
+  // Strip markdown fences — greedy match between first opening and last closing fence
+  const fenceMatch = text.match(/^```(?:json)?\s*\n([\s\S]*)\n```/i);
+  if (fenceMatch) text = fenceMatch[1].trim();
   return JSON.parse(text) as T;
 }
 

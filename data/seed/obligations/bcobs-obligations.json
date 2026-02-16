@@ -24,7 +24,7 @@
               "objectText": "All communications and financial promotions relating to retail banking products and services",
               "conditionText": "When communicating with or promoting to banking customers",
               "summary": "All banking product communications and promotions must be clear, fair and not misleading. This applies to advertising, product literature, terms and conditions, and all customer correspondence.",
-              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "applicableProductTypes": ["Current Account", "Savings Account", "Business Current Account", "Business Savings Account"],
               "relevanceScore": 1.0
             }
           ]
@@ -45,7 +45,7 @@
               "objectText": "Full terms and conditions of the distance contract for the retail banking service",
               "conditionText": "When concluding a distance contract for a retail banking service",
               "summary": "When banking products are sold at a distance (online, phone), full terms must be provided in a durable medium either before or immediately after the contract is made.",
-              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "applicableProductTypes": ["Current Account", "Savings Account", "Business Current Account", "Business Savings Account"],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Distance Contract Terms",
@@ -71,7 +71,7 @@
               "objectText": "Appropriate information about the retail banking product, its features and any charges",
               "conditionText": "Before, during and after the customer has entered into the banking contract",
               "summary": "Banks must provide customers with appropriate product and charges information at all stages: pre-sale, at point of sale, and on an ongoing basis throughout the life of the account.",
-              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "applicableProductTypes": ["Current Account", "Savings Account", "Business Current Account", "Business Savings Account"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Ongoing Information Provision",
@@ -92,7 +92,7 @@
               "objectText": "Interest rate information including current rate, basis of rate and reference to any base rate or reference rate",
               "conditionText": "When providing product information to banking customers",
               "summary": "Banks should clearly disclose the current interest rate, how it is determined, and what will happen if it changes, including reference to any base rate that the product rate follows.",
-              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "applicableProductTypes": ["Current Account", "Savings Account", "Business Current Account", "Business Savings Account"],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Interest Rate Disclosure",
@@ -118,7 +118,7 @@
               "objectText": "Account statements for retail banking products",
               "conditionText": "On an ongoing basis, at least annually",
               "summary": "Banks must provide account statements at least once a year in a durable medium. More frequent statements may be required by the product terms or customer agreement.",
-              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "applicableProductTypes": ["Current Account", "Savings Account", "Business Current Account", "Business Savings Account"],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Account Statements",
@@ -139,7 +139,7 @@
               "objectText": "Notification of changes to retail banking product terms and conditions",
               "conditionText": "When varying contract terms to the significant disadvantage of the banking customer",
               "summary": "Changes to banking product terms that significantly disadvantage the customer require at least 60 days' advance notice. This includes rate reductions on savings and increases to charges.",
-              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "applicableProductTypes": ["Current Account", "Savings Account", "Business Current Account", "Business Savings Account"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Notice of Adverse Changes",
@@ -160,7 +160,7 @@
               "objectText": "Customer switching processes between products and between providers",
               "conditionText": "When a banking customer wishes to switch products or providers",
               "summary": "Banks must not create unreasonable barriers to switching, whether the customer is moving to another product at the same bank or switching to a different provider entirely.",
-              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "applicableProductTypes": ["Current Account", "Savings Account", "Business Current Account", "Business Savings Account"],
               "relevanceScore": 1.0,
               "clauseTemplate": {
                 "title": "Switching and Account Closure",
@@ -186,12 +186,174 @@
               "objectText": "The right to cancel a distance contract within 14 days",
               "conditionText": "When a retail banking product is sold via a distance channel",
               "summary": "Customers who open banking products at a distance (online, phone) have a 14-day cooling-off period during which they can cancel the contract.",
-              "applicableProductTypes": ["Current Account", "Savings Account"],
+              "applicableProductTypes": ["Current Account", "Savings Account", "Business Current Account", "Business Savings Account"],
               "relevanceScore": 0.85,
               "clauseTemplate": {
                 "title": "14-Day Cancellation Right",
                 "templateText": "If you opened this account online, by telephone or through another distance channel, you have the right to cancel within 14 days of opening the account. To cancel, contact us by [phone/online/in writing]. If you cancel, we will return any money in the account to you or to your nominated account. You will receive any interest earned up to the date of cancellation.",
                 "guidance": "The 14-day right applies to distance contracts only. Ensure the cancellation process is simple and that interest is calculated fairly up to the cancellation date."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "BCOBS 2A", "title": "Business banking communications and information", "level": 1 },
+      "rules": [
+        {
+          "reference": "BCOBS 2A.1.1R",
+          "rawText": "A firm providing banking services to business customers, including micro-enterprises, must ensure that communications are appropriate to the nature and complexity of the business customer's banking arrangements.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks providing business banking services",
+              "actionText": "Must ensure business banking communications are appropriate to the nature and complexity of the customer's banking arrangements",
+              "objectText": "All communications with business banking customers including account correspondence, product information and regulatory notices",
+              "conditionText": "When communicating with business banking customers including micro-enterprises and SMEs",
+              "summary": "Business banking communications must be tailored to the customer's level of sophistication. Micro-enterprises and smaller SMEs may need simpler language comparable to retail customers, while larger businesses may receive more technical communications.",
+              "applicableProductTypes": ["Business Current Account", "Business Savings Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Business Banking Communications Standard",
+                "templateText": "We will communicate with you in a way that is clear and appropriate to your business banking needs. Important information about your account, charges and terms will be provided in plain language. If your business is a micro-enterprise (fewer than 10 employees and turnover/balance sheet under €2 million), you will receive the same communication protections as personal banking customers.",
+                "guidance": "FCA expects firms to assess whether business customers are micro-enterprises and to provide appropriate protections. The definition of micro-enterprise follows EU Recommendation 2003/361/EC."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "BCOBS 2A.1.2G",
+          "rawText": "When providing information about business banking charges, a firm should present charges information in a standardised format that enables the business customer to compare the cost of banking across providers.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks providing business banking services",
+              "actionText": "Should present business banking charges in a standardised format enabling comparison across providers",
+              "objectText": "Charges information for business banking products including account fees, transaction charges and overdraft costs",
+              "conditionText": "When disclosing charges to business banking customers",
+              "summary": "Business banking charges should be presented in a format that allows customers to compare costs between banks. This supports the CMA remedies requiring standardised business banking tariff information.",
+              "applicableProductTypes": ["Business Current Account", "Business Savings Account"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Business Banking Charges Disclosure",
+                "templateText": "Our charges for this business account are set out in our Business Tariff, which is available on our website and on request. The tariff covers: (a) monthly account maintenance fees; (b) transaction charges for payments, cash handling and other services; (c) overdraft interest rates and fees; (d) charges for additional services such as international payments and foreign currency transactions. We present our charges in the standardised industry format to help you compare costs with other providers.",
+                "guidance": "The CMA's Retail Banking Market Investigation Order 2017 requires publication of standardised business current account charges. Ensure compliance with both BCOBS and CMA requirements."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "BCOBS 5A", "title": "Business current account switching", "level": 1 },
+      "rules": [
+        {
+          "reference": "BCOBS 5A.1.1R",
+          "rawText": "A firm must not create unreasonable barriers to a business banking customer switching their business current account to another provider, and must participate in the Current Account Switch Service where applicable.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks providing business current accounts",
+              "actionText": "Must not create unreasonable barriers to business current account switching and must participate in CASS where applicable",
+              "objectText": "Business current account switching processes and participation in the Current Account Switch Service",
+              "conditionText": "When a business customer wishes to switch their business current account",
+              "summary": "Banks must facilitate business current account switching without unreasonable barriers. The Current Account Switch Service (CASS) covers business accounts with a turnover up to £6.5 million. Banks must complete switches within the CASS guarantee timescales.",
+              "applicableProductTypes": ["Business Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Business Account Switching",
+                "templateText": "You can switch your business current account to another bank at any time using the Current Account Switch Service (CASS), provided your business has an annual turnover of up to £6.5 million. The switch will be completed within 7 working days. We will transfer your incoming and outgoing payments to your new account and redirect any payments sent to your old account for 36 months. There is no charge for using the switching service.",
+                "guidance": "CASS is mandatory for eligible business accounts. The £6.5m turnover threshold covers the vast majority of SMEs. Ensure the process is genuinely barrier-free and that closing processes do not delay switching."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "BCOBS 5A.1.2R",
+          "rawText": "Where a business banking customer gives notice of closure of a business current account, the firm must complete the closure process within a reasonable period and must not charge unreasonable exit fees.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks providing business current accounts",
+              "actionText": "Must complete business account closure within a reasonable period and must not charge unreasonable exit fees",
+              "objectText": "The account closure process for business current accounts",
+              "conditionText": "When a business customer gives notice of closure",
+              "summary": "Business account closure must be completed promptly without unreasonable exit charges. This prevents banks from using procedural delays or punitive fees to discourage switching.",
+              "applicableProductTypes": ["Business Current Account", "Business Savings Account"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Business Account Closure",
+                "templateText": "You may close this account at any time by giving us [30 days'] written notice. We will process the closure within [X] working days of receiving your notice and transfer any remaining balance to your nominated account. There is no charge for closing your account. Any accrued interest will be paid up to the date of closure.",
+                "guidance": "Closure periods should be genuinely reasonable. The FCA takes a dim view of unreasonable delays or complex closure processes that effectively trap business customers."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "BCOBS 7", "title": "Overdraft and lending to business banking customers", "level": 1 },
+      "rules": [
+        {
+          "reference": "BCOBS 7.1.1R",
+          "rawText": "A firm providing an overdraft facility to a business banking customer must provide clear information about the overdraft terms, including the interest rate, any fees, the overdraft limit, and the consequences of exceeding the limit.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks providing business overdraft facilities",
+              "actionText": "Must provide clear information about business overdraft terms including rate, fees, limit and consequences of exceeding the limit",
+              "objectText": "Overdraft terms information including interest rate, fees, limit and excess charges",
+              "conditionText": "When providing an overdraft facility to a business banking customer",
+              "summary": "Business overdraft terms must be clearly disclosed upfront, including the interest rate (EAR), any arrangement or renewal fees, the agreed limit, and what happens if the business goes over the limit. Unarranged overdraft charges must also be clearly stated.",
+              "applicableProductTypes": ["Business Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Business Overdraft Terms",
+                "templateText": "Your business overdraft facility has the following terms: (a) Agreed limit: £[X]; (b) Interest rate: [X]% EAR (variable, linked to [base rate/our reference rate]); (c) Arrangement fee: £[X]; (d) Annual renewal fee: £[X] (if applicable). If you exceed your agreed overdraft limit, additional charges will apply: (i) unarranged overdraft interest at [X]% EAR; (ii) an excess fee of £[X] per [day/month]. We will contact you if your account goes into an unarranged overdraft to discuss your options.",
+                "guidance": "Business overdraft disclosure should mirror the transparency expected for consumer overdrafts. The FCA's 2019 overdraft reforms primarily target personal accounts, but Consumer Duty requires similar fair treatment principles for micro-enterprise customers."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "BCOBS 7.1.2R",
+          "rawText": "A firm must give a business banking customer reasonable notice before reducing or withdrawing an overdraft facility, except where there are exceptional circumstances such as fraud or serious breach of terms.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks providing business overdraft facilities",
+              "actionText": "Must give reasonable notice before reducing or withdrawing a business overdraft, except in exceptional circumstances",
+              "objectText": "Notification of changes to or withdrawal of business overdraft facilities",
+              "conditionText": "When a firm decides to reduce or withdraw a business customer's overdraft facility",
+              "summary": "Banks must not suddenly reduce or withdraw business overdraft facilities without reasonable notice. This protects businesses from sudden cash flow disruption. Exceptions apply only for fraud or serious terms breaches.",
+              "applicableProductTypes": ["Business Current Account"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Changes to Business Overdraft Facility",
+                "templateText": "If we need to reduce or withdraw your overdraft facility, we will give you at least [60/90] days' written notice so you can make alternative arrangements. This notice requirement does not apply if: (a) there has been fraud on your account; (b) you are in serious breach of the overdraft terms; or (c) we are required by law or regulation to act immediately. During the notice period, your existing overdraft limit will remain available to you.",
+                "guidance": "The FCA's Principles for Business (Principle 6 — treating customers fairly) and Consumer Duty require that businesses are given adequate time to arrange alternative funding. The Lending Standards Board's Standards of Lending Practice for business customers provide sector guidance."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "BCOBS 7.1.3G",
+          "rawText": "Where a firm provides lending products to business banking customers, including term loans and asset finance, the firm should ensure that key terms are presented clearly and that the total cost of borrowing is disclosed.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Banks providing business lending",
+              "actionText": "Should present business lending key terms clearly and disclose the total cost of borrowing",
+              "objectText": "Key terms and total cost of borrowing for business lending products including term loans and asset finance",
+              "conditionText": "When providing lending products to business banking customers",
+              "summary": "Business lending terms should be presented transparently, including the total cost of credit, any fees, the repayment schedule, and early repayment terms. This applies to term loans, asset finance and other commercial lending.",
+              "applicableProductTypes": ["Business Current Account", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Business Lending Terms Disclosure",
+                "templateText": "The key terms of this business lending facility are: (a) Facility amount: £[X]; (b) Term: [X] months/years; (c) Interest rate: [X]% per annum [fixed/variable]; (d) Total cost of credit: £[X] (total interest and fees payable over the term); (e) Repayment: [monthly/quarterly] instalments of £[X]; (f) Arrangement fee: £[X]; (g) Early repayment: [subject to an early repayment charge of X% / no early repayment charge]. Security required: [details of any security or guarantee required].",
+                "guidance": "While commercial lending to incorporated businesses may not be CCA-regulated, Consumer Duty expects transparent terms for micro-enterprise borrowers. The Lending Standards Board's Standards apply to business lending. Total cost of credit disclosure helps SMEs make informed borrowing decisions."
               }
             }
           ]

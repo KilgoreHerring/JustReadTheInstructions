@@ -6,6 +6,12 @@ import psrData from "../data/seed/obligations/psr-2017-obligations.json";
 import bcobsData from "../data/seed/obligations/bcobs-obligations.json";
 import mcobData from "../data/seed/obligations/mcob-obligations.json";
 import concData from "../data/seed/obligations/conc-obligations.json";
+import cobsData from "../data/seed/obligations/cobs-obligations.json";
+import icobsData from "../data/seed/obligations/icobs-obligations.json";
+import dispData from "../data/seed/obligations/disp-obligations.json";
+import syscData from "../data/seed/obligations/sysc-obligations.json";
+import cassData from "../data/seed/obligations/cass-obligations.json";
+import prodData from "../data/seed/obligations/prod-obligations.json";
 
 const prisma = new PrismaClient();
 
@@ -285,9 +291,112 @@ async function main() {
   totalObligations += conc.obligationCount;
   totalClauses += conc.clauseCount;
 
+  // COBS
+  console.log("\nSeeding COBS...");
+  const cobs = await seedRegulation(
+    cobsData.regulation.id,
+    regulators[cobsData.regulation.regulatorId],
+    cobsData.regulation.title,
+    cobsData.regulation.citation,
+    cobsData.regulation.type,
+    cobsData.regulation.status,
+    cobsData.regulation.effectiveDate,
+    cobsData.regulation.url,
+    cobsData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += cobs.obligationCount;
+  totalClauses += cobs.clauseCount;
+
+  // ICOBS
+  console.log("\nSeeding ICOBS...");
+  const icobs = await seedRegulation(
+    icobsData.regulation.id,
+    regulators[icobsData.regulation.regulatorId],
+    icobsData.regulation.title,
+    icobsData.regulation.citation,
+    icobsData.regulation.type,
+    icobsData.regulation.status,
+    icobsData.regulation.effectiveDate,
+    icobsData.regulation.url,
+    icobsData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += icobs.obligationCount;
+  totalClauses += icobs.clauseCount;
+
+  // DISP
+  console.log("\nSeeding DISP...");
+  const disp = await seedRegulation(
+    dispData.regulation.id,
+    regulators[dispData.regulation.regulatorId],
+    dispData.regulation.title,
+    dispData.regulation.citation,
+    dispData.regulation.type,
+    dispData.regulation.status,
+    dispData.regulation.effectiveDate,
+    dispData.regulation.url,
+    dispData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += disp.obligationCount;
+  totalClauses += disp.clauseCount;
+
+  // SYSC
+  console.log("\nSeeding SYSC...");
+  const sysc = await seedRegulation(
+    syscData.regulation.id,
+    regulators[syscData.regulation.regulatorId],
+    syscData.regulation.title,
+    syscData.regulation.citation,
+    syscData.regulation.type,
+    syscData.regulation.status,
+    syscData.regulation.effectiveDate,
+    syscData.regulation.url,
+    syscData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += sysc.obligationCount;
+  totalClauses += sysc.clauseCount;
+
+  // CASS
+  console.log("\nSeeding CASS...");
+  const cass = await seedRegulation(
+    cassData.regulation.id,
+    regulators[cassData.regulation.regulatorId],
+    cassData.regulation.title,
+    cassData.regulation.citation,
+    cassData.regulation.type,
+    cassData.regulation.status,
+    cassData.regulation.effectiveDate,
+    cassData.regulation.url,
+    cassData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += cass.obligationCount;
+  totalClauses += cass.clauseCount;
+
+  // PROD
+  console.log("\nSeeding PROD...");
+  const prod = await seedRegulation(
+    prodData.regulation.id,
+    regulators[prodData.regulation.regulatorId],
+    prodData.regulation.title,
+    prodData.regulation.citation,
+    prodData.regulation.type,
+    prodData.regulation.status,
+    prodData.regulation.effectiveDate,
+    prodData.regulation.url,
+    prodData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += prod.obligationCount;
+  totalClauses += prod.clauseCount;
+
+  const regulationCount = 11;
   console.log(`\nSeed complete:`);
   console.log(`  Regulators: ${Object.keys(regulators).length}`);
-  console.log(`  Regulations: 5 (Consumer Duty, PSR 2017, BCOBS, MCOB, CONC)`);
+  console.log(`  Regulations: ${regulationCount} (Consumer Duty, PSR 2017, BCOBS, MCOB, CONC, COBS, ICOBS, DISP, SYSC, CASS, PROD)`);
   console.log(`  Product types: ${Object.keys(productTypeMap).length}`);
   console.log(`  Obligations: ${totalObligations}`);
   console.log(`  Clause templates: ${totalClauses}`);
