@@ -162,6 +162,7 @@ model ProductDocument {
   analysisResult      Json?
   analysisError       String?   @db.Text
   analysisCompletedAt DateTime?
+  readabilityScore    Json?
   createdAt           DateTime  @default(now())
   updatedAt           DateTime  @updatedAt
 

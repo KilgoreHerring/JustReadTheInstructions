@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { runAnalysis } from "@/lib/document-analyser";
+import { calculateReadability } from "@/lib/readability-scorer";
 
 export async function GET(
   _request: NextRequest,
@@ -52,6 +53,16 @@ export async function POST(
 
   const isOverview = documentType === "product_overview";
 
+  // Compute readability scores (fast, pure computation — no API call)
+  let readabilityScore = null;
+  try {
+    if (content.trim().length >= 100) {
+      readabilityScore = calculateReadability(content) as unknown as undefined;
+    }
+  } catch {
+    // Non-critical — don't fail the upload if readability scoring errors
+  }
+
   const doc = await prisma.productDocument.create({
     data: {
       productId: id,
@@ -59,6 +70,7 @@ export async function POST(
       fileName,
       content,
       analysisStatus: isOverview ? "complete" : "pending",
+      readabilityScore: readabilityScore ?? undefined,
     },
   });
 

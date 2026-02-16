@@ -49,6 +49,12 @@ export const EVIDENCE_STATUSES = {
   not_applicable: { label: "N/A", color: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]" },
 } as const;
 
+export const READABILITY_RATINGS = {
+  good: { label: "Good", color: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]" },
+  acceptable: { label: "Acceptable", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
+  concerning: { label: "Concerning", color: "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]" },
+} as const;
+
 const PRINCIPLE_LABELS: Record<string, string> = {
   compliant: "Embedded",
   non_compliant: "Not Embedded",

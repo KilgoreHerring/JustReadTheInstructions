@@ -4,6 +4,7 @@ import { formatDate, COMPLIANCE_STATUSES } from "@/lib/utils";
 import { DocumentUpload } from "@/components/document-upload";
 import { DocumentAnalysisResults } from "@/components/document-analysis-results";
 import { ClauseGenerationCard } from "@/components/clause-generation-card";
+import { ReadabilityResultsServer } from "@/components/readability-results-server";
 
 export const dynamic = "force-dynamic";
 
@@ -187,6 +188,19 @@ export default async function ProductDetailPage({
               />
             </div>
           ))}
+
+          {/* Readability scores for all documents */}
+          {product.documents
+            .filter((doc) => doc.readabilityScore)
+            .map((doc) => (
+              <div key={`readability-${doc.id}`} className="mt-4">
+                <ReadabilityResultsServer
+                  result={doc.readabilityScore as Record<string, unknown>}
+                  documentType={doc.documentType}
+                  fileName={doc.fileName}
+                />
+              </div>
+            ))}
         </div>
       </div>
     </div>

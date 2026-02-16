@@ -163,7 +163,7 @@ TERMS & CONDITIONS DOCUMENT:
 ${documentContent}
 ---
 
-Return a JSON object:
+Respond with ONLY a JSON object (no markdown fences, no commentary). Use this exact structure:
 {
   "overallAssessment": "assessment of compliance with ${regulationTitle}",
   "obligationFindings": [
@@ -187,6 +187,7 @@ Return a JSON object:
     TC_SYSTEM + `\n\nYou are analysing obligations specifically from: ${regulationTitle}. Focus your analysis on the requirements of this regulation.`,
     userMessage,
     maxTokens,
+    regulationTitle,
   );
 }
 

@@ -6,6 +6,7 @@ import {
   Package,
   Scale,
   BookOpen,
+  BookType,
   Telescope,
 } from "lucide-react";
 
@@ -14,6 +15,7 @@ const navItems = [
   { href: "/products", label: "Products", icon: Package },
   { href: "/regulations", label: "Regulations", icon: Scale },
   { href: "/obligations", label: "Obligations", icon: BookOpen },
+  { href: "/readability", label: "Readability", icon: BookType },
   { href: "/horizon", label: "Horizon Scanning", icon: Telescope },
 ];
 
