@@ -11,7 +11,11 @@
   },
   "sections": [
     {
-      "section": { "number": "PROD 1", "title": "Product governance: general", "level": 1 },
+      "section": {
+        "number": "PROD 1",
+        "title": "Product governance: general",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "PROD 1.3.1R",
@@ -24,6 +28,7 @@
               "objectText": "Products and services offered to retail clients, including the product approval process, distribution arrangements and ongoing product review",
               "conditionText": "When the firm acts as a manufacturer or distributor of products and services to retail clients",
               "summary": "PROD applies to all firms that manufacture or distribute financial products and services to retail clients. It establishes a product governance framework requiring manufacturers to design products that meet identified customer needs and distributors to ensure products reach appropriate target markets.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -51,7 +56,7 @@
                 "Invoice Finance",
                 "Trade Finance"
               ],
-              "relevanceScore": 1.0,
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Product Governance Application",
                 "templateText": "As a manufacturer and/or distributor of financial products and services, we comply with the FCA's product governance requirements under PROD. This means we maintain robust processes for designing, approving, distributing and reviewing the products and services we offer to ensure they meet the needs of the customers for whom they are intended.",
@@ -63,7 +68,11 @@
       ]
     },
     {
-      "section": { "number": "PROD 3", "title": "Product governance: product manufacturer requirements", "level": 1 },
+      "section": {
+        "number": "PROD 3",
+        "title": "Product governance: product manufacturer requirements",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "PROD 3.2.1R",
@@ -76,6 +85,7 @@
               "objectText": "Product approval process for each manufactured product, including target market identification",
               "conditionText": "For each product the firm manufactures, including new products and significant adaptations of existing products",
               "summary": "Manufacturers must have a formal product approval process that applies to every product they create or significantly adapt. The process must identify a specific target market of end customers, ensuring products are designed with a defined group of customers in mind rather than developed speculatively.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -103,7 +113,7 @@
                 "Invoice Finance",
                 "Trade Finance"
               ],
-              "relevanceScore": 1.0,
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Product Design and Target Market",
                 "templateText": "Each product we manufacture is subject to a formal product approval process. Before a product is brought to market, we identify a target market of end customers whose needs, characteristics and objectives the product is designed to meet. We assess whether the product's features, risk profile and cost structure are compatible with the interests and needs of the target market. Products are only approved for distribution once this process is complete.",
@@ -123,6 +133,7 @@
               "objectText": "Target market definition at an appropriate level of granularity for each product",
               "conditionText": "When defining the target market as part of the product approval process",
               "summary": "The target market must be defined with sufficient specificity. A vague or overly broad target market definition is insufficient. The granularity should reflect the product's complexity and risk: more complex or higher-risk products require more detailed target market definitions to ensure they reach appropriate customers.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -150,7 +161,7 @@
                 "Invoice Finance",
                 "Trade Finance"
               ],
-              "relevanceScore": 1.0,
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Product Design and Target Market",
                 "templateText": "Our target market assessment considers the characteristics, risk profile, complexity and nature of each product. We define the target market with sufficient granularity to ensure the product is compatible with the needs, objectives and characteristics of the intended end customers. For more complex or higher-risk products, we apply a more detailed and specific target market definition.",
@@ -170,6 +181,7 @@
               "objectText": "Scenario analysis and product testing covering normal and stressed market conditions and foreseeable adverse scenarios",
               "conditionText": "As part of the product approval process before bringing a product to market",
               "summary": "Manufacturers must stress-test products before launch. This includes modelling how the product performs under various market conditions, including adverse scenarios, to identify whether it could cause customer detriment. Products that perform poorly for the target market under foreseeable stressed conditions may need to be redesigned or withdrawn.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -217,6 +229,7 @@
               "objectText": "Ongoing product review covering target market alignment and distribution strategy appropriateness",
               "conditionText": "On a regular basis after each product has been brought to market",
               "summary": "Product governance is not a one-off exercise at launch. Manufacturers must conduct ongoing reviews to confirm products still meet target market needs and the distribution strategy remains appropriate. Where issues are found — such as mis-selling, customer complaints, or market changes — the manufacturer must act, which could include amending the product, changing distribution channels, or withdrawing the product.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -264,6 +277,7 @@
               "objectText": "Product information, target market details and distribution channel guidance provided to distributors",
               "conditionText": "When making products available to distributors for distribution to end customers",
               "summary": "Manufacturers must equip distributors with comprehensive product information, including target market details and appropriate distribution channels. This ensures distributors can make informed decisions about which customers the product is suitable for and through which channels it should be sold.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -303,7 +317,11 @@
       ]
     },
     {
-      "section": { "number": "PROD 3.3", "title": "Product governance: distribution", "level": 1 },
+      "section": {
+        "number": "PROD 3.3",
+        "title": "Product governance: distribution",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "PROD 3.3.1R",
@@ -316,6 +334,7 @@
               "objectText": "Product understanding, client needs assessment and target market alignment for all distributed products",
               "conditionText": "When distributing, offering or recommending products to clients",
               "summary": "Distributors bear their own product governance responsibilities. They must understand the products they sell, assess whether individual clients' needs are compatible with the product, and only offer products to customers within the identified target market. Distributing products to customers outside the target market is a breach.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -363,6 +382,7 @@
               "objectText": "Product governance and distribution arrangements ensuring target market compatibility",
               "conditionText": "In respect of all products and services the distributor intends to offer or recommend",
               "summary": "Distributors must have formal product governance arrangements — not just ad hoc processes. These arrangements must ensure products are only distributed to customers within the target market and that the distribution strategy (channels, sales processes, marketing) is aligned with the target market definition.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -410,6 +430,7 @@
               "objectText": "Sales data, product review information and other relevant information shared with the manufacturer",
               "conditionText": "On request from the manufacturer and as appropriate on an ongoing basis",
               "summary": "Distributors must support manufacturers' product review processes by sharing relevant information, including sales data, feedback from product reviews, complaints data, and other insights. This feedback loop is essential for manufacturers to assess whether products continue to meet target market needs and whether distribution strategies are working as intended.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -449,7 +470,11 @@
       ]
     },
     {
-      "section": { "number": "PROD 4", "title": "Insurance-specific product governance (IDD)", "level": 1 },
+      "section": {
+        "number": "PROD 4",
+        "title": "Insurance-specific product governance (IDD)",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "PROD 4.2.1R",
@@ -462,6 +487,7 @@
               "objectText": "IDD-compliant product approval process for each insurance product, including target market identification",
               "conditionText": "For each insurance product the firm manufactures",
               "summary": "Insurance manufacturers must have a product approval process that complies with the Insurance Distribution Directive. This process must identify a target market for each insurance product and ensure the product is designed to meet the needs of that market. This is the insurance-specific equivalent of PROD 3.2.1R, with additional IDD requirements.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",
@@ -487,6 +513,7 @@
               "objectText": "Pre-market product testing of insurance products for target market consistency and absence of customer detriment",
               "conditionText": "Before bringing an insurance product to market or significantly adapting an existing insurance product",
               "summary": "Insurance manufacturers must test products before launch to verify they meet the target market's needs and will not cause customer harm. Testing should assess product features, coverage, exclusions, pricing and claims processes against the target market's characteristics and objectives.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",
@@ -512,6 +539,7 @@
               "objectText": "Regular review (at least annual) of insurance products and distribution strategies for target market alignment",
               "conditionText": "On a regular basis and at least annually for each insurance product brought to market",
               "summary": "Insurance products must be reviewed at least annually. The review must assess whether the product and its distribution strategy remain consistent with the identified target market. Where the review identifies issues, the manufacturer must take corrective action. This is more prescriptive than the general PROD 3 review requirement, specifying a minimum annual frequency.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",
@@ -537,6 +565,7 @@
               "objectText": "Insurance product understanding and distribution arrangements ensuring target market appropriateness",
               "conditionText": "When distributing, offering or recommending insurance products to customers",
               "summary": "Insurance distributors must understand the products they distribute, including the manufacturer-defined target market, and must have distribution arrangements that ensure products reach the right customers. This mirrors the general distributor obligation in PROD 3.3.1R but applies specifically in the insurance context with IDD requirements.",
+              "evidenceScope": "internal_governance",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",

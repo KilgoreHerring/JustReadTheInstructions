@@ -11,7 +11,11 @@
   },
   "sections": [
     {
-      "section": { "number": "CASS 6", "title": "Custody rules", "level": 1 },
+      "section": {
+        "number": "CASS 6",
+        "title": "Custody rules",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CASS 6.1.1R",
@@ -24,8 +28,16 @@
               "objectText": "Financial instruments belonging to clients held by the firm",
               "conditionText": "When holding financial instruments belonging to clients",
               "summary": "Firms holding client financial instruments must put in place adequate safeguarding arrangements to protect clients' ownership rights, particularly in the event of the firm's insolvency, and must not use those instruments for the firm's own account without explicit client consent.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Custody and Safekeeping of Your Assets",
                 "templateText": "When we hold financial instruments on your behalf, we make adequate arrangements to safeguard your ownership rights. Your assets are held separately from our own and will not be used for our own account. In the unlikely event of our insolvency, your assets would be identifiable and returned to you in accordance with the FCA's Client Assets Sourcebook (CASS) rules.",
@@ -45,7 +57,15 @@
               "objectText": "Records and accounts for client financial instruments",
               "conditionText": "At all times when holding client assets",
               "summary": "Firms must maintain accurate records and accounts that allow immediate identification and separation of each client's assets from those of other clients and from the firm's own assets. This supports the orderly return of assets in the event of insolvency.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Custody and Safekeeping of Your Assets",
@@ -66,8 +86,16 @@
               "objectText": "Client financial instruments deposited with third party custodians",
               "conditionText": "When holding financial instruments on behalf of clients",
               "summary": "Client financial instruments must be held with a third party custodian in separately designated accounts. The firm must exercise due skill, care and diligence in choosing, appointing and periodically reviewing the custodian and the safekeeping arrangements.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Custody and Safekeeping of Your Assets",
                 "templateText": "Your financial instruments are held with a third party custodian selected by us with due skill, care and diligence. We conduct periodic reviews of our custodian arrangements to ensure ongoing suitability. Your assets are held in accounts that are clearly identified and separate from our own assets. The custodian(s) we use are: [Custodian Name(s)].",
@@ -87,7 +115,15 @@
               "objectText": "Internal records and accounts of client financial instrument holdings reconciled against third party custodian records",
               "conditionText": "At regular intervals, at least monthly",
               "summary": "Firms must perform regular reconciliations — at minimum monthly — comparing their internal records of client financial instruments with the records held by the third party custodian. Discrepancies must be investigated and resolved promptly.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Custody and Safekeeping of Your Assets",
@@ -100,7 +136,11 @@
       ]
     },
     {
-      "section": { "number": "CASS 7", "title": "Client money rules", "level": 1 },
+      "section": {
+        "number": "CASS 7",
+        "title": "Client money rules",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CASS 7.2.1R",
@@ -113,8 +153,16 @@
               "objectText": "Client money received by the firm",
               "conditionText": "On receiving any client money",
               "summary": "Upon receiving client money, firms must promptly deposit it into one or more accounts at an approved institution — a central bank, CRD credit institution, authorised third country bank, or qualifying money market fund. Delay in segregation exposes client money to firm insolvency risk.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Client Money Protection",
                 "templateText": "Any money we receive on your behalf is promptly deposited into a designated client bank account held with an approved bank, separate from our own funds. We select the banks with which your money is held with due skill, care and diligence, and we periodically review those arrangements.",
@@ -134,8 +182,16 @@
               "objectText": "Client money held under statutory trust in designated client accounts",
               "conditionText": "At all times when holding client money",
               "summary": "Client money is held on statutory trust (or as agent in Scotland) for clients according to their respective interests. This means it is legally separated from the firm's own money. In the event of the firm's insolvency, client money is not available to the firm's general creditors.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Client Money Protection",
                 "templateText": "Money held on your behalf is held on trust (statutory trust under the FCA's Client Money Rules). This means your money is held separately from our own funds and, in the event of our insolvency, is not available to our general creditors. Your money will be returned to you in priority to the claims of our unsecured creditors.",
@@ -155,7 +211,15 @@
               "objectText": "Client money balances compared against internal records",
               "conditionText": "Each business day",
               "summary": "Firms must perform a daily internal reconciliation comparing the total client money obligation (what the firm should be holding) against the actual balances in client bank accounts and client transaction accounts. Any shortfall must be corrected promptly.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Client Money Protection",
@@ -176,7 +240,15 @@
               "objectText": "Client money in client bank accounts reconciled against bank statements and third party records",
               "conditionText": "As often as necessary and at least monthly",
               "summary": "Firms must reconcile each client bank account and client transaction account against the bank's or third party's own records, at least monthly. This external check validates that the amounts held externally match the firm's internal records.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Client Money Protection",
@@ -197,8 +269,16 @@
               "objectText": "Internal records identifying each client's entitlement in pooled client bank accounts",
               "conditionText": "Where client money is held in a pooled client bank account",
               "summary": "When using pooled client bank accounts (where multiple clients' money is held together), the firm must keep internal records that allow it to identify each individual client's share at any time and without delay. This is essential for an orderly distribution in insolvency.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Client Money Protection",
                 "templateText": "Your money may be pooled with money belonging to other clients in a single client bank account. We maintain detailed internal records that identify your individual entitlement at all times. This means we can distinguish your money from that of other clients without delay, including in the event of our insolvency.",
@@ -210,7 +290,11 @@
       ]
     },
     {
-      "section": { "number": "CASS 7.10", "title": "Client money distribution", "level": 1 },
+      "section": {
+        "number": "CASS 7.10",
+        "title": "Client money distribution",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CASS 7.10.1R",
@@ -223,7 +307,15 @@
               "objectText": "Client money pool distributed to clients based on their individual entitlements",
               "conditionText": "If a primary pooling event occurs (e.g., the firm enters administration or insolvency proceedings)",
               "summary": "If a primary pooling event occurs — such as the firm entering administration, receivership, or winding-up — client money is pooled and distributed to clients in proportion to their individual entitlements as shown in the firm's records. Clients share in any shortfall pro rata.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "What happens to your money if we become insolvent",
@@ -236,7 +328,11 @@
       ]
     },
     {
-      "section": { "number": "CASS 9", "title": "CASS resolution pack", "level": 1 },
+      "section": {
+        "number": "CASS 9",
+        "title": "CASS resolution pack",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CASS 9.2.1R",
@@ -249,7 +345,15 @@
               "objectText": "CASS resolution pack containing information for the orderly return of client assets and money",
               "conditionText": "At all times when the firm holds client assets or client money",
               "summary": "Firms holding client assets or client money must maintain a CASS resolution pack — a comprehensive information package designed to enable an insolvency practitioner to quickly understand the firm's client asset and money arrangements and facilitate an orderly return to clients.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "What happens to your money if we become insolvent",
@@ -270,7 +374,15 @@
               "objectText": "CASS resolution pack produced within 48 hours",
               "conditionText": "Upon request from the FCA, the firm's auditor, or an insolvency practitioner",
               "summary": "The CASS resolution pack must be capable of being produced within 48 hours of a request from the FCA, the firm's auditor, or an insolvency practitioner. This ensures rapid availability of critical information in a crisis scenario.",
-              "applicableProductTypes": ["Investment Product (Retail)", "SIPP / Personal Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "What happens to your money if we become insolvent",

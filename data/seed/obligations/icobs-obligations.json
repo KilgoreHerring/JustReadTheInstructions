@@ -11,7 +11,11 @@
   },
   "sections": [
     {
-      "section": { "number": "ICOBS 2", "title": "General matters", "level": 1 },
+      "section": {
+        "number": "ICOBS 2",
+        "title": "General matters",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "ICOBS 2.2.2R",
@@ -24,8 +28,13 @@
               "objectText": "All conduct in relation to insurance distribution activities",
               "conditionText": "At all times when carrying on insurance distribution activities",
               "summary": "Overarching conduct standard for insurance distribution. Firms must act honestly, fairly and professionally in the customer's best interests throughout the insurance lifecycle, from initial contact through to claims and renewal.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Customer Best Interests",
                 "templateText": "We are committed to acting honestly, fairly and professionally in your best interests at all times. This means we will provide you with clear and accurate information, recommend products that meet your needs, and treat you fairly throughout the life of your policy.",
@@ -45,8 +54,13 @@
               "objectText": "All information and marketing communications addressed to customers or potential customers",
               "conditionText": "When providing any information or marketing communications relating to insurance products",
               "summary": "All customer-facing information, including advertising, product literature, quotations and correspondence, must be fair, clear and not misleading. This covers both content and presentation.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Fair and Clear Communications",
                 "templateText": "All information we provide to you about our insurance products and services will be presented in a way that is fair, clear and not misleading. Where technical terms are used, we will explain their meaning. Key exclusions, limitations and conditions will be drawn to your attention prominently.",
@@ -58,7 +72,11 @@
       ]
     },
     {
-      "section": { "number": "ICOBS 4", "title": "Information about the firm, its services and remuneration", "level": 1 },
+      "section": {
+        "number": "ICOBS 4",
+        "title": "Information about the firm, its services and remuneration",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "ICOBS 4.1.1R",
@@ -71,7 +89,12 @@
               "objectText": "Pre-sale status disclosure including firm identity, nature of service, complaints process and registration details",
               "conditionText": "Prior to the conclusion of an initial insurance contract",
               "summary": "Before a customer buys an insurance policy, the intermediary must disclose key information about itself: identity and address, whether advice is given, how to complain, and how to verify its FCA registration. This ensures the customer knows who they are dealing with.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Intermediary Status Disclosure",
@@ -92,7 +115,12 @@
               "objectText": "Disclosure of the scope of the intermediary's service — fair analysis, restricted panel, or single insurer",
               "conditionText": "Prior to the conclusion of an initial insurance contract",
               "summary": "Intermediaries must tell customers whether they search the whole market (fair and personal analysis), are tied to one or more named insurers, or select from a limited panel. This enables customers to understand whether they are getting a broad market comparison or a restricted recommendation.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Scope of Service Disclosure",
@@ -113,8 +141,13 @@
               "objectText": "Information on the nature and basis of remuneration, including whether the intermediary works on the basis of a fee, commission, or other type of remuneration",
               "conditionText": "In good time before the conclusion of an initial insurance contract or upon making a personal recommendation",
               "summary": "Intermediaries must tell customers how they are paid — whether by commission from the insurer, by fee from the customer, or by other remuneration. The customer must know this before buying so they can assess potential conflicts of interest.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 0.90,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Remuneration Disclosure",
                 "templateText": "We are remunerated for arranging your insurance as follows: [Option A:] We receive a commission from the insurer, which is a percentage of the premium you pay. This is already included in the price quoted to you. [Option B:] We charge you a fee for our services. The amount of this fee is [amount/basis]. [Option C:] We receive both a commission from the insurer and charge you an arrangement fee of [amount]. You are entitled to request further information about our remuneration at any time.",
@@ -126,7 +159,11 @@
       ]
     },
     {
-      "section": { "number": "ICOBS 5", "title": "Identifying client needs and advising", "level": 1 },
+      "section": {
+        "number": "ICOBS 5",
+        "title": "Identifying client needs and advising",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "ICOBS 5.1.1R",
@@ -139,8 +176,13 @@
               "objectText": "The customer's insurance demands and needs as identified from information obtained from them",
               "conditionText": "Prior to the conclusion of any contract of insurance",
               "summary": "Before selling an insurance policy, the firm must gather enough information from the customer to identify what they need (demands and needs), and must only propose products consistent with those identified needs. This applies to both advised and non-advised sales.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Demands and Needs Statement",
                 "templateText": "Before arranging your insurance, we will ask you questions to understand your insurance requirements (your 'demands and needs'). Based on your answers, we will [advise you on / offer you] a product that is consistent with your needs. A statement of your demands and needs will be provided to you before you enter into the contract. It is important that you check this statement carefully and tell us if anything is incorrect or has changed.",
@@ -160,7 +202,12 @@
               "objectText": "Personal recommendations on non-investment insurance contracts, based on fair and personal analysis",
               "conditionText": "When providing a personal recommendation on a non-investment insurance contract",
               "summary": "Where an intermediary advises a customer (gives a personal recommendation), that recommendation must be based on a fair and personal analysis — meaning a sufficiently broad market review. The recommended product must be adequate for the customer's needs.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Advised Sale — Fair and Personal Analysis",
@@ -181,7 +228,12 @@
               "objectText": "A personalised suitability explanation linked to the specific product recommended and the individual customer's demands and needs",
               "conditionText": "When providing a personal recommendation on a non-investment insurance contract",
               "summary": "When advising on insurance, the firm must explain in personalised terms why the specific product recommended is the best match for that customer's needs. A generic product description is insufficient; the explanation must link the product features to the customer's individual circumstances.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Personalised Suitability Explanation",
@@ -194,7 +246,11 @@
       ]
     },
     {
-      "section": { "number": "ICOBS 6", "title": "Product information", "level": 1 },
+      "section": {
+        "number": "ICOBS 6",
+        "title": "Product information",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "ICOBS 6.1.5R",
@@ -207,8 +263,12 @@
               "objectText": "The standardised Insurance Product Information Document (IPID) for the general insurance product",
               "conditionText": "Prior to the conclusion of a general insurance contract",
               "summary": "Before a general insurance policy is purchased, the customer must receive the standardised IPID. This document is prepared by the product manufacturer (insurer) and follows a prescribed format covering key features, exclusions, and obligations in a concise, standardised way.",
-              "applicableProductTypes": ["General Insurance", "Travel Insurance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Insurance Product Information Document",
                 "templateText": "Before you purchase this insurance, we will provide you with an Insurance Product Information Document (IPID). This is a standardised summary that gives you key information about the product, including: what is and is not insured, the main exclusions, your obligations, and how to make a claim. Please read the IPID carefully alongside the full policy terms and conditions before making your decision.",
@@ -228,8 +288,13 @@
               "objectText": "Pre-contract product information covering insurer identity, coverage, exclusions, policyholder obligations, duration and termination",
               "conditionText": "In good time before the conclusion of a non-investment insurance contract",
               "summary": "Before buying insurance, customers must receive comprehensive product information: who the insurer is, what is covered, what is excluded, their obligations as policyholder, how long the policy lasts, and how to cancel. This enables an informed purchasing decision.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Pre-Contract Product Information",
                 "templateText": "Before you enter into this insurance contract, we will provide you with the following information: (1) the name and address of the insurer underwriting your policy; (2) the key features and benefits of the cover, including the sums insured; (3) the significant exclusions and limitations that apply; (4) your obligations — including to provide accurate information, to take reasonable care, and to notify claims promptly; (5) the policy period; and (6) your rights to cancel the policy and how to do so.",
@@ -249,8 +314,13 @@
               "objectText": "Signposting to full policy terms and conditions and other relevant detailed information",
               "conditionText": "When providing pre-contract information to a customer",
               "summary": "Beyond the key pre-contract disclosures, firms must direct customers to where they can access the full policy terms and conditions. This ensures customers know detailed information exists and how to obtain it, even if summary information is provided first.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 0.90,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Signposting to Full Terms",
                 "templateText": "The information provided before you purchase is a summary of the key features and exclusions. The full policy terms, conditions and exclusions are set out in the policy document, which you can: (a) view online at [URL]; (b) request a copy from us at any time by contacting [details]; and (c) will receive automatically upon conclusion of the contract. We strongly recommend that you read the full terms and conditions before purchasing.",
@@ -270,8 +340,13 @@
               "objectText": "Insurance quotations including the premium amount or calculation basis",
               "conditionText": "When providing a quotation for a non-investment insurance contract",
               "summary": "Insurance quotations must clearly state the premium (or how it is calculated), be accurate, and not mislead customers. Charges, taxes, and any additional fees must be transparent.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 0.90,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Clear Quotation Requirements",
                 "templateText": "The quotation we provide will clearly set out: (a) the total premium payable, including Insurance Premium Tax (IPT) where applicable; (b) any additional fees or charges, including administration fees, broker fees and instalment charges; (c) the basis on which the premium has been calculated, including the assumptions we have made; and (d) the payment options available to you. All prices are based on the information you have provided.",
@@ -283,7 +358,11 @@
       ]
     },
     {
-      "section": { "number": "ICOBS 6A", "title": "Value measures reporting", "level": 1 },
+      "section": {
+        "number": "ICOBS 6A",
+        "title": "Value measures reporting",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "ICOBS 6A.1.1R",
@@ -296,7 +375,12 @@
               "objectText": "Product value assessment considering total price paid relative to benefits provided",
               "conditionText": "For each non-investment insurance product manufactured by the firm, on an ongoing basis",
               "summary": "Manufacturers must conduct and maintain fair value assessments for each insurance product, considering whether the total price customers pay is proportionate to the benefits, coverage and service they receive. This is a continuing obligation, not a one-off exercise.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Product Fair Value Assessment",
@@ -317,8 +401,13 @@
               "objectText": "Claims frequency data and average claims amounts (value measures data) for non-investment insurance products",
               "conditionText": "On an ongoing basis for each non-investment insurance product manufactured",
               "summary": "Manufacturers must maintain data on how often claims are made and the average amounts paid out. This data underpins the fair value assessment and enables the FCA to compare value across the market.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 0.90
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.9
             }
           ]
         },
@@ -333,7 +422,12 @@
               "objectText": "Value measures data reports submitted to the FCA",
               "conditionText": "At such intervals and in such form as directed by the FCA",
               "summary": "Manufacturers must submit their value measures data (claims frequencies, amounts, etc.) to the FCA as required. This enables the FCA to conduct market-wide comparisons and identify products or firms that may not be delivering fair value.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.85
             }
           ]
@@ -341,7 +435,11 @@
       ]
     },
     {
-      "section": { "number": "ICOBS 6B", "title": "GI Pricing Practices", "level": 1 },
+      "section": {
+        "number": "ICOBS 6B",
+        "title": "GI Pricing Practices",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "ICOBS 6B.2.2R",
@@ -354,8 +452,11 @@
               "objectText": "Renewal pricing for home insurance and motor insurance contracts",
               "conditionText": "At each renewal of a home insurance contract or motor insurance contract",
               "summary": "The 'price walking' ban: firms cannot charge renewing customers more than they would charge a new customer with the same risk profile and cover. This ended the practice of gradually increasing premiums for loyal customers while offering discounts to attract new business.",
-              "applicableProductTypes": ["General Insurance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Renewal Pricing — No Price Walking",
                 "templateText": "When your policy comes up for renewal, the price we offer you will not be higher than the price we would offer to a new customer with the same insurance needs and risk profile for the same level of cover. This means your loyalty to us will not result in you paying more than a new customer.",
@@ -375,8 +476,11 @@
               "objectText": "Evidence and documentation of pricing practices compliance and equivalent new business price methodology",
               "conditionText": "At any time upon FCA request, in relation to home and motor insurance pricing",
               "summary": "Firms must maintain sufficient records and evidence to demonstrate to the FCA on demand that their renewal pricing complies with the price walking ban. This includes being able to show how the equivalent new business price is determined.",
-              "applicableProductTypes": ["General Insurance"],
-              "relevanceScore": 0.90
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "General Insurance"
+              ],
+              "relevanceScore": 0.9
             }
           ]
         },
@@ -391,7 +495,11 @@
               "objectText": "Renewal notices containing the renewal price, prior year premium, and encouragement to review cover and shop around",
               "conditionText": "When issuing a renewal notice for a general insurance contract",
               "summary": "Renewal notices must prominently display both the renewal price and last year's premium, enabling customers to compare. Firms must also include a statement encouraging the customer to check their cover is still suitable and to consider alternatives.",
-              "applicableProductTypes": ["General Insurance", "Travel Insurance"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Renewal Notice Transparency",
@@ -404,7 +512,11 @@
       ]
     },
     {
-      "section": { "number": "ICOBS 7", "title": "Cancellation", "level": 1 },
+      "section": {
+        "number": "ICOBS 7",
+        "title": "Cancellation",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "ICOBS 7.1.1R",
@@ -417,7 +529,11 @@
               "objectText": "The right to cancel a general insurance or pure protection contract within 14 days without penalty",
               "conditionText": "From the later of (a) the day the customer is informed the contract is concluded, or (b) receipt of contractual terms and pre-contractual information",
               "summary": "Customers have 14 days to cancel a general insurance or pure protection contract without penalty. The period runs from the later of being told the contract is concluded or receiving the terms. For long-term protection contracts (life, critical illness), a 30-day cancellation period applies under separate rules.",
-              "applicableProductTypes": ["General Insurance", "Travel Insurance"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "14-Day Cooling-Off Period — General Insurance",
@@ -438,7 +554,10 @@
               "objectText": "The right to cancel a long-term or pure protection distance contract within 30 days without penalty",
               "conditionText": "When a long-term insurance contract or pure protection contract is sold at a distance, from the later of conclusion or receipt of terms",
               "summary": "For long-term insurance products (life assurance, critical illness, income protection) sold at a distance, customers have an extended 30-day cancellation period. This reflects the complexity and long-term commitment involved in protection products.",
-              "applicableProductTypes": ["Protection Insurance"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Protection Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "30-Day Cooling-Off Period — Protection Insurance",
@@ -459,8 +578,13 @@
               "objectText": "Refund of premium on cancellation, with permitted pro-rata deduction for cover already provided",
               "conditionText": "When a customer exercises their right to cancel within the cooling-off period",
               "summary": "On cancellation within the cooling-off period, the customer is entitled to a refund. The firm may only deduct a proportionate amount for the days of cover already provided, and only if the customer was told about this deduction before buying the policy.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 0.90,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Premium Refund on Cancellation",
                 "templateText": "If you cancel this policy during the cooling-off period, we will refund the premium you have paid. We may deduct an amount proportionate to the number of days for which you have been covered. For example, if you cancel after 7 days of a 365-day policy, we may deduct 7/365ths of the annual premium. No cancellation fee or penalty will be charged during the cooling-off period.",
@@ -472,7 +596,11 @@
       ]
     },
     {
-      "section": { "number": "ICOBS 8", "title": "Claims handling", "level": 1 },
+      "section": {
+        "number": "ICOBS 8",
+        "title": "Claims handling",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "ICOBS 8.1.1R",
@@ -485,8 +613,13 @@
               "objectText": "The handling of insurance claims including guidance to claimants, progress updates and claim decisions",
               "conditionText": "When a policyholder or claimant makes a claim under an insurance contract",
               "summary": "The core claims handling obligation: insurers must process claims promptly and fairly, help policyholders through the claims process, keep them informed of progress, and must not reject claims without reasonable grounds. This is one of the most heavily enforced ICOBS provisions.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Claims Handling Standards",
                 "templateText": "When you make a claim, we will: (a) handle it promptly and fairly; (b) provide you with reasonable guidance on how to make your claim and what information you need to provide; (c) keep you informed of the progress of your claim; (d) tell you the outcome of your claim and explain the reasons for our decision; and (e) not reject your claim without reasonable grounds. If your claim is complex, we will explain the process and likely timescale.",
@@ -506,8 +639,13 @@
               "objectText": "Decisions to reject or decline insurance claims",
               "conditionText": "When assessing and deciding on an insurance claim",
               "summary": "Claim rejections must be reasonable. An insurer cannot decline a claim by misapplying exclusions, failing to consider all relevant evidence, or interpreting policy terms in a way that defeats the customer's reasonable expectations. Where terms are ambiguous, the interpretation most favourable to the customer should generally apply.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Fair Claim Decisions",
                 "templateText": "We will assess every claim on its merits, considering all the evidence available. We will not reject your claim unless there are clear grounds under the policy terms. If we do decline a claim, we will: (a) explain clearly which policy term or condition applies; (b) provide the evidence we have relied upon; and (c) tell you how to challenge our decision, including your right to complain to us and, if necessary, to the Financial Ombudsman Service.",
@@ -527,8 +665,13 @@
               "objectText": "Claims decisions in light of statutory protections under CIDRA 2012 and the Insurance Act 2015",
               "conditionText": "When determining whether to reject a claim or apply a remedy for non-disclosure or misrepresentation",
               "summary": "Claims decisions must take account of the consumer protection legislation. Under CIDRA 2012, an insurer's remedy for consumer non-disclosure depends on whether the misrepresentation was deliberate, careless, or innocent. Under the Insurance Act 2015, similar proportionate remedies apply. Insurers cannot simply void policies for innocent errors.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
-              "relevanceScore": 0.90,
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
+              "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Proportionate Remedies for Non-Disclosure",
                 "templateText": "If we discover that the information you provided when taking out this policy was inaccurate, our response will depend on the circumstances: (a) if the inaccuracy was deliberate or reckless, we may void the policy from inception and decline all claims; (b) if the inaccuracy was careless, we will consider what we would have done had we known the correct information — we may adjust the terms, apply a proportionate settlement, or in some cases still pay the claim in full; (c) if the inaccuracy was innocent and you took reasonable care, we will not take any adverse action.",
@@ -548,7 +691,12 @@
               "objectText": "Payment of agreed or decided insurance claims",
               "conditionText": "Once settlement terms have been agreed with the claimant or a decision to pay has been made",
               "summary": "Once a claim has been accepted and the settlement amount agreed, the insurer must pay promptly. Undue delay in payment after a decision has been reached is a breach of ICOBS and can cause significant consumer harm, particularly for policyholders in financial difficulty.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Prompt Claims Settlement",
@@ -569,7 +717,12 @@
               "objectText": "Systems and controls for delegated claims handling arrangements",
               "conditionText": "When managing claims on behalf of an insurer under a delegated authority arrangement",
               "summary": "Where claims handling is outsourced or delegated to intermediaries, managing general agents, or third-party administrators, those firms must have adequate systems and controls to ensure claims are handled to the same standard as if the insurer handled them directly.",
-              "applicableProductTypes": ["General Insurance", "Protection Insurance", "Travel Insurance"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance"
+              ],
               "relevanceScore": 0.85
             }
           ]

@@ -12,6 +12,7 @@ export interface MatchedObligation {
   relevanceScore: number;
   rationale: string | null;
   hasClauseTemplate: boolean;
+  evidenceScope: string;
 }
 
 export async function getApplicableObligations(
@@ -59,6 +60,7 @@ export async function getApplicableObligations(
     relevanceScore: a.relevanceScore,
     rationale: a.rationale,
     hasClauseTemplate: a.obligation.clauseTemplates.length > 0,
+    evidenceScope: a.obligation.evidenceScope,
   }));
 }
 

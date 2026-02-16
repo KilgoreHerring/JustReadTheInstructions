@@ -11,7 +11,11 @@
   },
   "sections": [
     {
-      "section": { "number": "CONC 3", "title": "Financial promotions and communications", "level": 1 },
+      "section": {
+        "number": "CONC 3",
+        "title": "Financial promotions and communications",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CONC 3.3.1R",
@@ -24,8 +28,14 @@
               "objectText": "Financial promotions of credit agreements including advertising, marketing materials and digital promotions",
               "conditionText": "When promoting or advertising credit agreements to consumers",
               "summary": "All credit product promotions must be clear, fair and not misleading. They must specify the type of credit and whether security is required (e.g. for secured loans).",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1
             }
           ]
         },
@@ -40,7 +50,13 @@
               "objectText": "Representative APR and prescribed standard information in credit promotions that trigger the requirement",
               "conditionText": "When a credit promotion includes a rate of interest or cost of credit figure",
               "summary": "Credit promotions that mention interest rates or costs must include: representative APR, borrowing rate (fixed or variable), total credit amount, duration, total repayable and instalment amounts.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Representative APR Disclosure",
@@ -53,7 +69,11 @@
       ]
     },
     {
-      "section": { "number": "CONC 4", "title": "Pre-contractual requirements", "level": 1 },
+      "section": {
+        "number": "CONC 4",
+        "title": "Pre-contractual requirements",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CONC 4.2.1R",
@@ -66,8 +86,14 @@
               "objectText": "Adequate explanations covering the pre-contractual information, essential product characteristics, specific effects on the borrower and consequences of default",
               "conditionText": "Before or at the point of offering a credit agreement to a consumer",
               "summary": "Lenders must give customers sufficient explanations about the credit product so they can make an informed decision about whether it is suitable for their needs and financial circumstances. This includes explaining key features, costs, and the consequences of non-payment.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Adequate Explanations",
                 "templateText": "Before you enter into this agreement, we will explain: (a) the key features of the credit product being offered to you; (b) the total cost of the credit including any interest, fees and charges; (c) how your repayments are structured and when they are due; (d) the consequences if you miss a repayment or default on the agreement; and (e) your right to withdraw from the agreement within 14 days. If you do not understand any aspect of this agreement, please ask us for further clarification before signing.",
@@ -87,7 +113,13 @@
               "objectText": "Standard European Consumer Credit Information (SECCI) form containing all prescribed pre-contract credit information",
               "conditionText": "In good time before the customer becomes bound by a credit agreement",
               "summary": "Customers must receive the SECCI form — a standardised document containing all key credit terms — in sufficient time before entering the agreement. This enables comparison shopping and informed decision-making.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Pre-Contract Credit Information",
@@ -108,8 +140,14 @@
               "objectText": "Customer's statutory right to withdraw from the credit agreement within the 14-day cooling-off period",
               "conditionText": "At the point of entering into a regulated credit agreement",
               "summary": "Customers must be told about their 14-day right to withdraw from the agreement without needing to give a reason. If they withdraw, they must repay the credit plus any accrued interest within 30 days.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
-              "relevanceScore": 0.90,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Right to Withdraw",
                 "templateText": "You have the right to withdraw from this credit agreement at any time within 14 days of the agreement being made (or, if later, 14 days from when you receive your copy of the executed agreement). You do not need to give a reason. To exercise this right, you must notify us in writing within the 14-day period. If you withdraw, you must repay the credit advanced to you together with any interest accrued up to the date of repayment, without undue delay and in any event within 30 calendar days of your withdrawal notice.",
@@ -129,7 +167,10 @@
               "objectText": "Credit card summary box containing prescribed key financial information in a clear and prominent format",
               "conditionText": "When entering into a credit card agreement with a consumer",
               "summary": "Credit card agreements must include a prominent summary box showing the key costs at a glance — interest rates for different transaction types, any fees, minimum payment information, promotional rate details and default charges.",
-              "applicableProductTypes": ["Credit Card"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Credit Card"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Credit Card Summary Box",
@@ -142,7 +183,11 @@
       ]
     },
     {
-      "section": { "number": "CONC 5", "title": "Responsible lending", "level": 1 },
+      "section": {
+        "number": "CONC 5",
+        "title": "Responsible lending",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CONC 5.2.1R",
@@ -155,8 +200,14 @@
               "objectText": "Creditworthiness assessment including ability to make repayments over the life of the agreement",
               "conditionText": "Before making a regulated credit agreement",
               "summary": "Lenders must assess creditworthiness before lending, considering the customer's ability to make all repayments over the full term. For open-ended credit like credit cards, this means ability to repay within a reasonable period.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Creditworthiness Assessment",
                 "templateText": "Before agreeing to lend to you, we assessed your creditworthiness to ensure that the repayments are affordable for you. This assessment considered your income, existing financial commitments and credit history. We used information from credit reference agencies and the information you provided to us. If your financial circumstances change and you are struggling to make repayments, please contact us as soon as possible.",
@@ -176,8 +227,11 @@
               "objectText": "Credit limit increases on credit cards and store cards",
               "conditionText": "When considering whether to increase a credit limit",
               "summary": "Credit limit increases must be affordable. Lenders must reassess affordability before increasing a customer's credit limit and must not increase it if the higher limit would be unaffordable.",
-              "applicableProductTypes": ["Credit Card"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Credit Card"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Credit Limit Increases",
                 "templateText": "We may offer to increase your credit limit from time to time. Before doing so, we will assess whether the higher limit is affordable for you based on the information available to us. We will not increase your limit if we believe it would not be affordable. You have the right to decline any credit limit increase or to request a lower limit at any time. You can also opt out of receiving credit limit increase offers.",
@@ -189,7 +243,11 @@
       ]
     },
     {
-      "section": { "number": "CONC 6", "title": "Post-contractual requirements", "level": 1 },
+      "section": {
+        "number": "CONC 6",
+        "title": "Post-contractual requirements",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CONC 6.7.2R",
@@ -202,8 +260,11 @@
               "objectText": "Customer repayment records on credit cards and store cards, including persistent debt patterns",
               "conditionText": "On an ongoing basis throughout the life of the credit card agreement",
               "summary": "Card issuers must actively monitor repayment patterns and intervene when customers show signs of difficulty, including making only minimum repayments over a sustained period (persistent debt).",
-              "applicableProductTypes": ["Credit Card"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Credit Card"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Repayment Monitoring and Persistent Debt",
                 "templateText": "We monitor your repayment patterns to identify if you may be in financial difficulty. If you have been making only minimum repayments or are consistently not reducing your balance, we will contact you to: (a) help you understand the cost of minimum repayments; (b) encourage you to repay more where possible; and (c) offer support if you are struggling. If after 36 months you are still in persistent debt (paying more in interest and charges than you have repaid of the amount borrowed), we may offer you a repayment plan or reduce or waive interest to help you repay.",
@@ -223,7 +284,10 @@
               "objectText": "Annual summary statement comparing interest/charges paid with principal repayment",
               "conditionText": "Annually for each credit card and store card account",
               "summary": "Card issuers must provide an annual summary showing total interest and fees paid versus how much of the actual balance was repaid, giving customers a clear picture of the true cost of their borrowing.",
-              "applicableProductTypes": ["Credit Card"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Credit Card"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Annual Credit Card Summary",
@@ -236,7 +300,11 @@
       ]
     },
     {
-      "section": { "number": "CONC 7", "title": "Arrears, default and recovery", "level": 1 },
+      "section": {
+        "number": "CONC 7",
+        "title": "Arrears, default and recovery",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CONC 7.3.4R",
@@ -249,8 +317,14 @@
               "objectText": "Treatment of customers in default or arrears including forbearance options and repayment arrangements",
               "conditionText": "When a customer is in default or arrears on a consumer credit agreement",
               "summary": "Credit firms must treat customers in financial difficulty with forbearance, actively considering options including reducing interest, extending time to pay, accepting token payments and agreeing structured repayment plans.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Financial Difficulty and Forbearance",
                 "templateText": "If you are having difficulty making your repayments, please contact us as soon as possible. We will treat you fairly and with understanding. Options we may consider include: (a) reducing or waiving interest and charges; (b) giving you more time to repay; (c) accepting reduced or token repayments for a period; (d) agreeing a structured repayment plan. We will also signpost you to free debt advice services such as StepChange, Citizens Advice and the Money Advice Service.",
@@ -270,7 +344,13 @@
               "objectText": "Charges applied to customers in default or arrears on consumer credit agreements",
               "conditionText": "When a customer is in default or arrears on a consumer credit agreement",
               "summary": "Default and arrears charges must be cost-reflective only. Firms cannot profit from customers who are in financial difficulty through excessive charges.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Default Charges",
@@ -283,7 +363,11 @@
       ]
     },
     {
-      "section": { "number": "CONC 8", "title": "Debt advice", "level": 1 },
+      "section": {
+        "number": "CONC 8",
+        "title": "Debt advice",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CONC 8.3.1R",
@@ -296,8 +380,14 @@
               "objectText": "Debt counselling recommendations and debt solutions proposed to customers in financial difficulty",
               "conditionText": "When providing debt counselling or recommending a debt solution to a customer",
               "summary": "Debt advice firms must always act in the customer's best interests and ensure any recommended debt solution is suitable for the customer's specific circumstances, taking into account their income, expenditure, total debts and personal situation.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Debt Advice Standards",
                 "templateText": "When we provide you with debt advice, we will: (a) act in your best interests at all times; (b) assess your full financial situation including your income, essential living costs, and all debts you owe; (c) consider your personal circumstances including any factors that may make you vulnerable; and (d) only recommend a debt solution that is suitable for your individual circumstances. We will explain the options available to you and the advantages and disadvantages of each option.",
@@ -317,7 +407,13 @@
               "objectText": "Range of debt solutions considered including free-to-client options such as those offered by charitable debt advice providers",
               "conditionText": "When advising a customer on debt solutions",
               "summary": "Debt advisers must consider the full range of solutions including free options and must not steer customers towards fee-charging products simply because they generate revenue. Customers must be made aware of free debt advice services.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Consideration of All Debt Solutions",
@@ -338,8 +434,14 @@
               "objectText": "Referrals and signposting to free debt advice services such as StepChange, Citizens Advice and National Debtline",
               "conditionText": "When a firm becomes aware that a customer is in financial difficulty",
               "summary": "When a customer is identified as being in financial difficulty, they must be actively signposted to free debt advice services with contact details provided prominently. This applies to all consumer credit firms, not just debt advice firms.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
-              "relevanceScore": 0.90,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Free Debt Advice Signposting",
                 "templateText": "If you are struggling with your repayments, free and impartial debt advice is available from the following organisations:\n- StepChange Debt Charity: 0800 138 1111 / stepchange.org\n- Citizens Advice: 0800 144 8848 / citizensadvice.org.uk\n- National Debtline: 0808 808 4000 / nationaldebtline.org\n- MoneyHelper: 0800 138 7777 / moneyhelper.org.uk\nThese services are free and can help you understand your options and create a plan to manage your debts.",
@@ -359,7 +461,13 @@
               "objectText": "Debt management plans including repayment amounts and schedules arranged for customers in financial difficulty",
               "conditionText": "When recommending or arranging a debt management plan for a customer",
               "summary": "Debt management plans must be set at sustainable and affordable levels. Repayments must not leave the customer unable to meet essential living costs or priority debts. Plans must be realistic and achievable over their proposed duration.",
-              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Sustainable Debt Management Plans",
@@ -372,7 +480,11 @@
       ]
     },
     {
-      "section": { "number": "CONC 10", "title": "BNPL and exempt agreements", "level": 1 },
+      "section": {
+        "number": "CONC 10",
+        "title": "BNPL and exempt agreements",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CONC 10.1.2R",
@@ -385,8 +497,11 @@
               "objectText": "BNPL agreement terms including repayment schedule, fee information, consequences of non-payment and complaints process",
               "conditionText": "When entering into a buy-now pay-later agreement with a consumer",
               "summary": "BNPL agreements must clearly set out the repayment schedule, any fees or interest that may apply if repayments are missed, the consequences of non-payment (including credit file impact) and how to complain.",
-              "applicableProductTypes": ["BNPL / Deferred Payment"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "BNPL / Deferred Payment"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "BNPL Agreement Transparency",
                 "templateText": "This Buy-Now Pay-Later agreement requires you to make [number] payments of [£X] on the following dates: [dates]. If you make all payments on time, no interest or additional fees will be charged. If you miss a payment: (a) a late payment fee of [£X] may be applied; (b) interest may be charged at [X]% per annum on the outstanding balance; (c) we may report the missed payment to credit reference agencies, which could affect your credit score; and (d) we may pass the debt to a debt collection agency. If you have any concerns or wish to make a complaint, please contact us at [details] or contact the Financial Ombudsman Service at financial-ombudsman.org.uk.",
@@ -406,8 +521,11 @@
               "objectText": "Creditworthiness assessment proportionate to the nature, size, duration and risks of the BNPL credit",
               "conditionText": "Before entering into a buy-now pay-later agreement with a consumer",
               "summary": "BNPL providers must assess affordability before lending, proportionate to the credit risk. The assessment must consider the customer's ability to repay, their existing financial commitments — including other BNPL obligations — and the potential for their circumstances to change.",
-              "applicableProductTypes": ["BNPL / Deferred Payment"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "BNPL / Deferred Payment"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "BNPL Creditworthiness Assessment",
                 "templateText": "Before approving this agreement, we assessed your ability to afford the repayments. This assessment considered your financial situation, including any existing credit commitments and other buy-now pay-later agreements you may have. We are required to ensure that the repayments under this agreement are affordable for you. If your financial situation changes and you are unable to make repayments, please contact us immediately so we can discuss your options.",
@@ -427,7 +545,10 @@
               "objectText": "Interest and fee charges during BNPL interest-free periods, and disclosure of deferred interest terms",
               "conditionText": "During the interest-free period of a BNPL agreement and at the point of sale",
               "summary": "No interest or fees may be charged during the BNPL interest-free period. Where deferred interest applies, the end date, the post-promotional rate and whether interest will be backdated must all be clearly disclosed before the customer commits.",
-              "applicableProductTypes": ["BNPL / Deferred Payment"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "BNPL / Deferred Payment"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Interest-Free Period and Deferred Interest",
@@ -448,8 +569,11 @@
               "objectText": "Ongoing statements and notifications showing outstanding BNPL balances, upcoming payment dates and any accrued charges",
               "conditionText": "On an ongoing basis at least monthly while the customer has outstanding BNPL commitments",
               "summary": "BNPL providers must give customers a regular view of all their outstanding BNPL commitments with that provider, including what is owed, what is due next, any overdue amounts and any charges. This must be accessible via the firm's app or website.",
-              "applicableProductTypes": ["BNPL / Deferred Payment"],
-              "relevanceScore": 0.90,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "BNPL / Deferred Payment"
+              ],
+              "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Ongoing BNPL Commitment Information",
                 "templateText": "We will provide you with regular updates about your buy-now pay-later commitments with us. At least once a month, you will be able to see: (a) the total amount you currently owe across all your BNPL agreements with us; (b) the dates and amounts of your next payments; (c) details of any overdue payments; and (d) any interest or charges that have been applied or may be applied. This information is available at any time through our [app/website/account dashboard]. We may also send you reminders before payments are due.",
@@ -461,7 +585,11 @@
       ]
     },
     {
-      "section": { "number": "CONC 11", "title": "High-cost short-term credit", "level": 1 },
+      "section": {
+        "number": "CONC 11",
+        "title": "High-cost short-term credit",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "CONC 11.1.1R",
@@ -474,8 +602,11 @@
               "objectText": "Total cost of credit under HCSTC agreements including all interest, fees and charges",
               "conditionText": "At any time during the life of a high-cost short-term credit agreement",
               "summary": "The total cost cap ensures that a customer never repays more than twice what they borrowed. All interest, fees and charges combined cannot exceed 100% of the original loan amount. This is the overarching HCSTC price cap.",
-              "applicableProductTypes": ["High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Total Cost Cap",
                 "templateText": "The total amount you will ever have to repay under this agreement is capped by law. The total of all interest, fees and charges (including any default charges) will never exceed the amount you originally borrowed. This means that if you borrow [£X], you will never be required to repay more than [£2X] in total, regardless of how long the debt remains outstanding.",
@@ -495,8 +626,11 @@
               "objectText": "Default charges on high-cost short-term credit agreements capped at £15 per missed payment",
               "conditionText": "When a customer fails to make a repayment on the due date under an HCSTC agreement",
               "summary": "Default fees on payday loans and other HCSTC products are capped at £15 per missed payment. These charges also count towards the overall total cost cap, so they cannot cause the total repayable to exceed double the amount borrowed.",
-              "applicableProductTypes": ["High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Default Charge Cap",
                 "templateText": "If you miss a repayment on the date it is due, we may charge a default fee of up to £15. This is the maximum default charge permitted by law for this type of agreement. Any default charges are also subject to the total cost cap — meaning the total of all interest, fees and charges (including default charges) will never exceed the amount you originally borrowed.",
@@ -516,7 +650,10 @@
               "objectText": "Prescribed risk warning on all financial promotions for high-cost short-term credit products",
               "conditionText": "In all financial promotions for high-cost short-term credit products",
               "summary": "All HCSTC advertising and promotions must carry the prescribed risk warning about late repayment causing serious money problems, with a link to MoneyHelper. The warning must be at least as prominent as the cost information.",
-              "applicableProductTypes": ["High-Cost Short-Term Credit"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "High-Cost Short-Term Credit"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "HCSTC Risk Warning",
@@ -537,8 +674,11 @@
               "objectText": "Rollovers of high-cost short-term credit agreements limited to a maximum of two, with mandatory affordability checks and debt advice signposting",
               "conditionText": "When a customer requests or the firm proposes to roll over an HCSTC agreement",
               "summary": "HCSTC loans can be rolled over a maximum of twice. Before each rollover, the lender must reassess affordability, warn the customer that rolling over increases costs, and point them to free debt advice. After two rollovers, no further rollovers are permitted.",
-              "applicableProductTypes": ["High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Rollover Restrictions",
                 "templateText": "If you are unable to repay your loan on the agreed date, you may request to extend (roll over) the agreement. A maximum of two rollovers is permitted by law. Before each rollover, we will: (a) carry out a new affordability assessment to ensure the extended agreement remains affordable for you; (b) inform you that rolling over will increase the total cost of your borrowing; and (c) provide you with details of free debt advice services. After two rollovers, no further extensions are permitted. If you are still unable to repay, we will work with you to agree a repayment plan and signpost you to free debt advice services.",
@@ -558,8 +698,11 @@
               "objectText": "Use of continuous payment authority to collect repayments under HCSTC agreements, limited to two attempts with no part-payment collection",
               "conditionText": "When collecting repayments under a high-cost short-term credit agreement using continuous payment authority",
               "summary": "Payday lenders are limited to two CPA attempts to collect the full amount due. If both fail, no further CPA attempts are allowed — neither for the full amount nor for any reduced amount. This prevents repeated failed payment attempts that can cause bank charges and financial distress.",
-              "applicableProductTypes": ["High-Cost Short-Term Credit"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "High-Cost Short-Term Credit"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Continuous Payment Authority Restrictions",
                 "templateText": "We may use a continuous payment authority (CPA) to collect your repayment on the due date. If the first attempt is unsuccessful, we may make one further attempt to collect the full amount due. If both attempts fail, we will not make any further attempts to take payment using the CPA — either for the full amount or any lesser amount. We will then contact you to discuss alternative repayment arrangements. We will never use a CPA to collect a part-payment from your account.",

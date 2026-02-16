@@ -26,8 +26,10 @@ async function getDashboardData() {
         select: {
           productId: true,
           complianceStatus: true,
+          evidenceSource: true,
           obligation: {
             select: {
+              evidenceScope: true,
               rule: {
                 select: {
                   section: {
@@ -44,7 +46,13 @@ async function getDashboardData() {
       prisma.product.findMany({
         include: {
           productType: true,
-          matrixEntries: { select: { complianceStatus: true } },
+          matrixEntries: {
+            select: {
+              complianceStatus: true,
+              evidenceSource: true,
+              obligation: { select: { evidenceScope: true } },
+            },
+          },
           documents: {
             select: {
               analysisStatus: true,
@@ -153,7 +161,13 @@ export default async function Dashboard() {
       not_applicable: 0,
     };
     for (const e of p.matrixEntries) {
-      const key = e.complianceStatus as keyof typeof breakdown;
+      // Internal governance obligations that are non_compliant from doc analysis only → treat as not_assessed
+      const isInternalFalsePositive =
+        e.obligation.evidenceScope === "internal_governance" &&
+        e.complianceStatus === "non_compliant" &&
+        e.evidenceSource === "document_analysis";
+      const effectiveStatus = isInternalFalsePositive ? "not_assessed" : e.complianceStatus;
+      const key = effectiveStatus as keyof typeof breakdown;
       if (key in breakdown) breakdown[key]++;
     }
     const total = p.matrixEntries.length;
@@ -293,8 +307,14 @@ export default async function Dashboard() {
       cells[entry.productId][reg.id] = { compliant: 0, non_compliant: 0, in_progress: 0, not_assessed: 0, not_applicable: 0, total: 0 };
     }
     const bucket = cells[entry.productId][reg.id];
-    const status = entry.complianceStatus as keyof typeof bucket;
-    if (status in bucket && status !== "total") bucket[status]++;
+    // Internal governance obligations: don't count non_compliant from doc analysis as actual non_compliant
+    const isInternalFalsePositive =
+      entry.obligation.evidenceScope === "internal_governance" &&
+      entry.complianceStatus === "non_compliant" &&
+      entry.evidenceSource === "document_analysis";
+    const effectiveStatus = isInternalFalsePositive ? "not_assessed" : entry.complianceStatus;
+    const statusKey = effectiveStatus as keyof typeof bucket;
+    if (statusKey in bucket && statusKey !== "total") bucket[statusKey]++;
     bucket.total++;
   }
 

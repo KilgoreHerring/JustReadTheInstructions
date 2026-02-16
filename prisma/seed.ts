@@ -27,6 +27,7 @@ interface SectionData {
       objectText?: string;
       conditionText?: string;
       summary: string;
+      evidenceScope?: string;
       applicableProductTypes: string[];
       relevanceScore: number;
       clauseTemplate?: {
@@ -100,6 +101,7 @@ async function seedRegulation(
             objectText: obData.objectText || null,
             conditionText: obData.conditionText || null,
             summary: obData.summary,
+            evidenceScope: obData.evidenceScope || "term_required",
             extractedBy: "manual",
             confidenceScore: 1.0,
             verifiedBy: "seed",

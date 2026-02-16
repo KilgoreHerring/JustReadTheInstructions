@@ -17,6 +17,7 @@
             "objectText": "Products and services offered to retail customers including prospective retail customers",
             "conditionText": "When the firm carries on regulated activities in relation to retail customer products and services",
             "summary": "The Consumer Duty applies to all regulated activities relating to retail customer products and services, covering the entire product lifecycle from design through to post-sale support.",
+            "evidenceScope": "guidance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -64,6 +65,7 @@
             "objectText": "All dealings with retail customers across all four outcome areas",
             "conditionText": "At all times when engaged in regulated activities relating to retail customer products",
             "summary": "The overarching duty requires firms to actively deliver good outcomes for customers, not merely avoid causing harm. This is a positive obligation underpinning every other rule in PRIN 2A.",
+            "evidenceScope": "guidance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -115,6 +117,7 @@
             "objectText": "All interactions with retail customers including marketing, sales, servicing and complaints",
             "conditionText": "At all times throughout the customer relationship",
             "summary": "Firms must act in good faith in all dealings with retail customers. This requires honest, fair and open conduct, and prohibits exploiting customer vulnerabilities, knowledge gaps or behavioural biases.",
+            "evidenceScope": "guidance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -157,6 +160,7 @@
             "objectText": "The firm's conduct, products and services in relation to retail customers",
             "conditionText": "Applies at all times; remedial action required when actual or foreseeable harm is identified",
             "summary": "Firms are prohibited from causing foreseeable harm to retail customers through their actions or inaction. Where harm is identified or foreseeable, firms must take appropriate steps to mitigate it.",
+            "evidenceScope": "guidance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -199,6 +203,7 @@
             "objectText": "Retail customers' ability to make informed decisions, act in their own interests and pursue financial objectives",
             "conditionText": "In relation to the firm's products and services throughout the customer relationship",
             "summary": "Firms must actively enable and support customers in making informed decisions and pursuing their financial objectives. This goes beyond disclosure-based regulation and requires firms to positively help customers.",
+            "evidenceScope": "guidance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -250,6 +255,7 @@
             "objectText": "All retail customer products and services manufactured by the firm",
             "conditionText": "At the point of product design and development",
             "summary": "Manufacturers must ensure products are designed with a specific target market in mind and genuinely meet the needs of that market. Products must not be created speculatively without understanding who they are for.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -297,6 +303,7 @@
             "objectText": "Distribution channels and strategies for retail products and services",
             "conditionText": "When distributing or arranging distribution of retail customer products",
             "summary": "Firms must ensure their distribution strategy is appropriate for the target market and does not result in products reaching customers for whom they are not designed.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -344,6 +351,7 @@
             "objectText": "Existing products and services, including assessment of whether the target market remains appropriate",
             "conditionText": "On an ongoing basis throughout the product lifecycle",
             "summary": "Manufacturers must regularly review their products to check they still deliver good outcomes for the target market, and must consider whether the target market definition itself needs updating.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -391,6 +399,7 @@
             "objectText": "Product design features, terms and conditions, pricing structures and operational processes",
             "conditionText": "At the point of product design, development and subsequent modification",
             "summary": "Manufacturers are prohibited from designing products with features that could foreseeably harm the target market, including features that exploit behavioural biases (such as complex fee structures designed to generate revenue from customer inertia) or vulnerability.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -438,6 +447,7 @@
             "objectText": "Distribution decisions for retail customer products and services",
             "conditionText": "When the firm has information indicating the customer is not in the target market",
             "summary": "Distributors are prohibited from selling or distributing a product to a customer when the firm has information suggesting the customer falls outside the identified target market for that product.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -494,6 +504,7 @@
             "objectText": "Pricing of all retail customer products and services, including the relationship between cost and benefit",
             "conditionText": "At the point of product launch and on an ongoing basis",
             "summary": "The price customers pay for a product must be reasonable in relation to the benefits they receive. This encompasses all elements of price including interest rates, fees and charges.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -541,6 +552,7 @@
             "objectText": "Each retail product or service manufactured by the firm, assessed for fair value",
             "conditionText": "Before launching a product and at regular intervals thereafter",
             "summary": "Manufacturers must conduct a structured fair value assessment for every retail product, weighing the benefits customers receive against the total price they pay including all fees, charges and interest.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -588,6 +600,7 @@
             "objectText": "All components of cost to the retail customer, including fees, charges, interest and third-party costs",
             "conditionText": "When carrying out fair value assessments",
             "summary": "Fair value assessments must consider the total cost to the customer holistically, not just headline rates or individual charges. This includes all fees, interest, charges and costs payable to third parties.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -635,6 +648,7 @@
             "objectText": "The value received by different segments of the customer base, particularly disadvantaged groups",
             "conditionText": "When carrying out fair value assessments",
             "summary": "Fair value must be assessed not just on average but across different customer groups. Firms must identify whether some groups receive less value or are disproportionately affected by the pricing structure.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -682,6 +696,7 @@
             "objectText": "Products or services identified as failing the fair value requirement",
             "conditionText": "When the firm's fair value assessment identifies that a product does not provide fair value",
             "summary": "Where a product is found not to provide fair value, the firm must act: this could mean changing the price, adjusting features, providing remediation or withdrawing the product from sale.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -738,6 +753,7 @@
             "objectText": "All communications to retail customers about products and services, including marketing, pre-sale, point-of-sale and post-sale communications",
             "conditionText": "Whenever the firm communicates with retail customers about its products or services",
             "summary": "All customer communications must enable effective decision-making. Communications must give customers the information they need, when they need it, in a way they can understand, so they can make informed choices.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -785,6 +801,7 @@
             "objectText": "All customer communications including terms and conditions, marketing materials, correspondence and digital content",
             "conditionText": "For all communications to retail customers, having regard to the nature and complexity of the product",
             "summary": "Communications must be clear, fair and not misleading, tailored to the understanding of the average member of the target market. Complex products require greater effort to ensure comprehension.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -827,6 +844,7 @@
             "objectText": "The timing and sequencing of information provision throughout the customer journey",
             "conditionText": "At each stage of the customer journey from pre-sale through to post-sale and renewal",
             "summary": "Information must reach customers at the right time. Pre-contractual information must be provided early enough for meaningful consideration. Post-sale communications must be timely and relevant to the customer's current situation.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -874,6 +892,7 @@
             "objectText": "All communications to retail customers, adapted for target market and vulnerability characteristics",
             "conditionText": "When communicating with retail customers, taking into account known or reasonably foreseeable vulnerability",
             "summary": "Communications must be tailored to the intended audience. Firms must consider the target market's characteristics and any known vulnerability when designing communications, and must adapt format, language and channel accordingly.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -921,6 +940,7 @@
             "objectText": "Communications relating to complex or high-risk products, or products aimed at potentially vulnerable customer groups",
             "conditionText": "For complex or high-risk products, or where the target market includes customers with characteristics of vulnerability",
             "summary": "For complex or high-risk products, and where vulnerable customers are in the target market, firms must actively test whether their communications are understood and effective, not merely assume compliance.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -966,6 +986,7 @@
             "objectText": "The level and quality of customer support for all retail products and services",
             "conditionText": "Throughout the customer relationship from onboarding to product closure",
             "summary": "Customer support must enable customers to actually benefit from their products. This is a positive obligation requiring firms to provide support that helps customers use products effectively, not merely a complaints-handling requirement.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -1013,6 +1034,7 @@
             "objectText": "Customer support processes and services, adapted for customers with characteristics of vulnerability",
             "conditionText": "When dealing with customers who have, or may have, characteristics of vulnerability",
             "summary": "Firms must ensure their support processes are accessible and effective for vulnerable customers, making reasonable adjustments as needed. This includes customers with health conditions, life events, low resilience or low capability.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -1060,6 +1082,7 @@
             "objectText": "Customer journeys for switching, product changes, claims, complaints and cancellation or termination",
             "conditionText": "When a retail customer wishes to switch, change, claim, complain, cancel or terminate",
             "summary": "Firms must not create unreasonable barriers that discourage or prevent customers from switching products, making changes, submitting claims, raising complaints or cancelling. The process for these actions should be as easy as the process for acquiring the product.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -1107,6 +1130,7 @@
             "objectText": "The standard and quality of support at all stages: sale, during term, switching, changes and cancellation",
             "conditionText": "At all stages of the product lifecycle from acquisition to termination",
             "summary": "Support quality must not decline after the point of sale. Customers seeking to cancel, switch or make changes must receive the same quality of service as customers acquiring a product.",
+            "evidenceScope": "term_required",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",
@@ -1154,6 +1178,7 @@
             "objectText": "Friction points in customer journeys including additional steps, delays, requirements and processes",
             "conditionText": "Where any friction exists in customer journeys, whether introduced or pre-existing",
             "summary": "Any friction in customer journeys must be justified as being in the customer's interest. Friction designed to discourage customers from acting in their own interest (e.g., making cancellation harder than purchase) is prohibited.",
+            "evidenceScope": "internal_governance",
             "applicableProductTypes": [
               "Residential Mortgage",
               "Buy-to-Let Mortgage",

@@ -42,6 +42,14 @@
   --type-principle-text: #166534;
   --type-principle-border: #D1FAE5;
 
+  /* Evidence scopes */
+  --scope-term-bg: #EEF2F7;
+  --scope-term-text: #1E3A5F;
+  --scope-internal-bg: #F3F0F8;
+  --scope-internal-text: #5B4A7A;
+  --scope-guidance-bg: #FDF8EE;
+  --scope-guidance-text: #7A6B3A;
+
   /* Document types */
   --doc-tc-bg: #EEF2F7;
   --doc-tc-text: #1E3A5F;
@@ -98,6 +106,13 @@
     --type-principle-bg: #1A3A2E;
     --type-principle-text: #86EFAC;
     --type-principle-border: #2D5A44;
+
+    --scope-term-bg: #1E2A3A;
+    --scope-term-text: #6B9BD2;
+    --scope-internal-bg: #2E2440;
+    --scope-internal-text: #B8A0D4;
+    --scope-guidance-bg: #3A3024;
+    --scope-guidance-text: #D4C49C;
 
     --doc-tc-bg: #1E2A3A;
     --doc-tc-text: #6B9BD2;

@@ -79,6 +79,7 @@ model Obligation {
   objectText           String?                         @db.Text
   conditionText        String?                         @db.Text
   summary              String                          @db.Text
+  evidenceScope        String                          @default("term_required")
   isActive             Boolean                         @default(true)
   extractedBy          String
   confidenceScore      Float?
@@ -94,6 +95,7 @@ model Obligation {
 
   @@index([ruleId])
   @@index([obligationType])
+  @@index([evidenceScope])
 }
 
 model ProductType {

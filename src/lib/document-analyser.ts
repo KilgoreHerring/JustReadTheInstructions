@@ -80,7 +80,14 @@ Use this rubric consistently:
 - 0.3–0.4: Clause touches on the obligation but is inadequate or misleading
 - 0.0–0.2: No meaningful attempt to address the obligation
 
-Be precise about clause references. Quote relevant T&C text when identifying evidence.`;
+Be precise about clause references. Quote relevant T&C text when identifying evidence.
+
+## Evidence Scope
+
+Each obligation has an evidenceScope field indicating where compliance evidence is expected:
+- "term_required": This obligation SHOULD be addressed in customer T&Cs. Mark "not_addressed" if no relevant clause is found.
+- "internal_governance": This is an internal governance/process requirement (e.g. reconciliations, governance structures, record-keeping, staffing, internal controls). Mark as "not_applicable" for T&C analysis — these are never evidenced in customer terms. Do NOT mark "not_addressed" simply because T&Cs don't cover an internal process.
+- "guidance": Best practice and guidance. Assess holistically — absence from T&Cs is not a hard compliance failure. Use "partially_addressed" rather than "not_addressed" if the document doesn't explicitly cover this but doesn't contradict it either.`;
 
 // --- Helpers ---
 
@@ -127,6 +134,7 @@ async function analyseRegulationGroup(
     actionText: o.actionText,
     obligationType: o.obligationType,
     reference: o.ruleReference,
+    evidenceScope: o.evidenceScope,
   }));
 
   const principleSection = principles.length > 0
@@ -137,6 +145,7 @@ ${JSON.stringify(principles.map((o) => ({
   actionText: o.actionText,
   obligationType: o.obligationType,
   reference: o.ruleReference,
+  evidenceScope: o.evidenceScope,
 })), null, 2)}
 
 These are overarching principles. Do NOT look for a single specific clause.
@@ -284,6 +293,14 @@ export async function applyAnalysisToMatrix(documentId: string): Promise<void> {
     where: { productId: doc.productId },
   });
 
+  // Fetch obligation evidence scopes for status derivation
+  const obligationIds = findings.map((f) => f.obligationId);
+  const obligations = await prisma.obligation.findMany({
+    where: { id: { in: obligationIds } },
+    select: { id: true, evidenceScope: true },
+  });
+  const scopeMap = new Map(obligations.map((o) => [o.id, o.evidenceScope]));
+
   for (const finding of findings) {
     const entry = matrixEntries.find((e) => e.obligationId === finding.obligationId);
     if (!entry) continue;
@@ -305,7 +322,7 @@ export async function applyAnalysisToMatrix(documentId: string): Promise<void> {
     );
     const mergedEvidence = [...existingEvidence, newEvidence];
 
-    const suggestedStatus = deriveSuggestedStatus(mergedEvidence);
+    const suggestedStatus = deriveSuggestedStatus(mergedEvidence, scopeMap.get(finding.obligationId));
 
     const evidenceText = mergedEvidence
       .map((e) => `[T&Cs] ${e.evidence}`)
@@ -335,11 +352,17 @@ export async function applyAnalysisToMatrix(documentId: string): Promise<void> {
   }
 }
 
-function deriveSuggestedStatus(evidence: Record<string, unknown>[]): string {
+function deriveSuggestedStatus(evidence: Record<string, unknown>[], evidenceScope?: string): string {
   const statuses = evidence.map((e) => e.status as string);
   if (statuses.every((s) => s === "addressed")) return "compliant";
   if (statuses.every((s) => s === "not_applicable")) return "not_applicable";
-  if (statuses.some((s) => s === "not_addressed")) return "non_compliant";
+  if (statuses.some((s) => s === "not_addressed")) {
+    // Internal governance obligations shouldn't be non_compliant from T&C analysis
+    if (evidenceScope === "internal_governance") return "not_assessed";
+    // Guidance obligations get a softer signal
+    if (evidenceScope === "guidance") return "in_progress";
+    return "non_compliant";
+  }
   if (statuses.some((s) => s === "partially_addressed")) return "in_progress";
   return "not_assessed";
 }

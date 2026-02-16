@@ -11,7 +11,11 @@
   },
   "sections": [
     {
-      "section": { "number": "Part 6", "title": "Information requirements for payment services", "level": 1 },
+      "section": {
+        "number": "Part 6",
+        "title": "Information requirements for payment services",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "PSR Reg 48",
@@ -24,8 +28,13 @@
               "objectText": "Pre-contractual information including identifier requirements, execution times, charges breakdown and exchange rates",
               "conditionText": "Before the payment service user is bound by any single payment service contract",
               "summary": "Payment service providers must disclose key transaction information before execution: what data the user needs to provide, how long the transaction will take, all charges with a breakdown, and applicable exchange rates.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Pre-Transaction Information",
                 "templateText": "Before you make a payment, we will provide you with the following information: (a) the details you need to provide for the payment to be made (e.g. sort code, account number or IBAN); (b) the maximum time the payment will take to reach the payee; (c) all charges payable by you, with a breakdown of each charge; and (d) where applicable, the exchange rate that will be used and the amount the payee will receive.",
@@ -45,8 +54,13 @@
               "objectText": "Full framework contract terms including provider details, services covered, consent procedures, execution times, spending limits, charges, rates and communication methods",
               "conditionText": "Before the payment service user is bound by a framework contract",
               "summary": "Before entering into an ongoing payment services relationship (framework contract), providers must give users comprehensive information about the service, charges, consent procedures, execution times and communication methods.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Framework Contract Pre-Contractual Disclosure",
                 "templateText": "Before you open this account/service, we will provide you with the following: our full contact details; the payment services covered by this agreement; how to give and withdraw consent for payments; when a payment order is considered received; maximum execution times for payments; any spending limits that apply; all charges including how they are calculated; any interest or exchange rates that apply; and how we will communicate with you about the service.",
@@ -66,7 +80,12 @@
               "objectText": "Charges for providing statutory payment services information to users",
               "conditionText": "When providing information required by Part 6 of the PSRs",
               "summary": "Providers cannot charge for mandatory information provision. Additional information requested by the user may be charged for, but only at a rate reasonable to actual costs.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account"
+              ],
               "relevanceScore": 0.85,
               "clauseTemplate": {
                 "title": "Free Information Provision",
@@ -79,7 +98,11 @@
       ]
     },
     {
-      "section": { "number": "Part 7", "title": "Rights and obligations in relation to payment services", "level": 1 },
+      "section": {
+        "number": "Part 7",
+        "title": "Rights and obligations in relation to payment services",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "PSR Reg 67",
@@ -92,8 +115,13 @@
               "objectText": "Changes to framework contract conditions including terms, charges and service features",
               "conditionText": "When proposing changes to the conditions of a framework contract",
               "summary": "Changes to ongoing payment service contracts require 2 months' advance notice. Users must be able to accept or reject changes and terminate without charge before the new terms take effect.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Changes to Terms",
                 "templateText": "We may change the terms of this agreement by giving you at least 2 months' written notice before the proposed change takes effect. We will inform you of any changes in a clear and understandable way. If you do not agree with the proposed changes, you may terminate this agreement at no cost before the changes take effect. If we do not hear from you before the proposed date of application, you will be deemed to have accepted the changes.",
@@ -113,8 +141,13 @@
               "objectText": "Termination rights for framework contracts and associated charges",
               "conditionText": "When a payment service user wishes to terminate a framework contract",
               "summary": "Users can exit payment service agreements at any time with max one month's notice. Termination must be free unless the contract has been in place for less than 6 months.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Termination Rights",
                 "templateText": "You may close your account at any time by giving us [one month / no] notice. Closing your account is free of charge, provided the account has been open for at least 6 months. If you close your account within the first 6 months, we may charge a reasonable fee to cover our costs of setting up the account. We will return any remaining balance to you within a reasonable timeframe.",
@@ -134,8 +167,13 @@
               "objectText": "Consent for execution of payment transactions",
               "conditionText": "Before executing any payment transaction",
               "summary": "Every payment must be explicitly authorised by the payer. The form of consent must be agreed between provider and user. An unauthorised payment is one executed without valid consent.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Payment Authorisation",
                 "templateText": "We will only execute a payment from your account if you have given us your consent. You can authorise payments in the following ways: [online banking, mobile app, card transaction, verbal instruction, written instruction]. You may withdraw your consent at any time before the payment has been executed. Once a payment has been executed, it cannot be revoked except in the circumstances described in these terms.",
@@ -155,8 +193,14 @@
               "objectText": "Evidence of authentication, accurate recording and proper execution of disputed payment transactions",
               "conditionText": "When a payment service user denies authorising a transaction or claims incorrect execution",
               "summary": "The provider bears the burden of proof in disputed transactions. They must prove the payment was authenticated, accurately recorded and not affected by technical failure. The mere use of a payment instrument does not necessarily prove authorisation.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account", "Credit Card"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account",
+                "Credit Card"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Disputed Transactions",
                 "templateText": "If you tell us that you did not authorise a payment from your account, or that a payment was not carried out correctly, we will investigate. The burden is on us to prove that the payment was properly authenticated and correctly processed. We will not assume that a payment was authorised simply because your payment instrument (card, login credentials etc.) was used. While we investigate, we will refund the amount of the disputed transaction unless we have reasonable grounds to suspect fraud.",
@@ -176,8 +220,14 @@
               "objectText": "Refund of the full amount of unauthorised payment transactions to the payment service user's account",
               "conditionText": "When the user denies authorising a transaction and fraud is not reasonably suspected",
               "summary": "Unauthorised payments must be refunded immediately, by the end of the next business day at the latest. The only exception is where the provider has reasonable grounds to suspect fraud by the user.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account", "Credit Card"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account",
+                "Credit Card"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Refund of Unauthorised Transactions",
                 "templateText": "If a payment is made from your account without your authorisation, we will refund the full amount to your account immediately, and in any event by the end of the next business day after we become aware of the unauthorised transaction. We will also restore your account to the state it would have been in had the unauthorised transaction not taken place, including any charges or interest. We may withhold the refund only if we have reasonable grounds to suspect that you acted fraudulently.",
@@ -197,8 +247,14 @@
               "objectText": "Payer's maximum liability for losses from unauthorised payment transactions",
               "conditionText": "When an unauthorised payment results from a lost, stolen or misappropriated payment instrument",
               "summary": "User liability for unauthorised payments is capped at £35 where strong customer authentication (SCA) was used and the instrument was lost/stolen. Where SCA was not applied by the provider, the user has zero liability.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account", "Credit Card"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account",
+                "Credit Card"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Your Liability for Unauthorised Payments",
                 "templateText": "If an unauthorised payment is made using your lost, stolen or misappropriated payment instrument and we applied strong customer authentication, your liability is limited to a maximum of £35. If we did not apply strong customer authentication, you will not be liable for any losses from the unauthorised payment. You will not be liable for any losses arising after you have notified us that your payment instrument has been lost, stolen or compromised, unless you acted fraudulently.",
@@ -218,7 +274,12 @@
               "objectText": "Execution time for payment transactions received before the cut-off time",
               "conditionText": "Where a payment order is received on or before the cut-off time on a business day",
               "summary": "Payments must reach the payee's bank by the end of the next business day. This is a maximum execution time — many payments will settle faster via Faster Payments.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Payment Execution Times",
@@ -239,8 +300,13 @@
               "objectText": "Refund and account restoration for failed, defective or late payments",
               "conditionText": "Where the payment service provider is liable for non-execution, defective or late execution",
               "summary": "When the provider is at fault for a failed, defective or late payment, they must refund without undue delay and restore the account to the state it would have been in had the error not occurred.",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Liability for Failed or Late Payments",
                 "templateText": "If we fail to execute a payment you have instructed, execute it incorrectly or execute it late, and we are responsible, we will: (a) refund the payment amount to your account without undue delay; (b) restore your account to the state it would have been in had the error not occurred, including reversing any charges or interest; and (c) make reasonable efforts to trace the payment and notify you of the outcome. We will also refund any charges we applied in connection with the failed or defective payment.",
@@ -252,7 +318,11 @@
       ]
     },
     {
-      "section": { "number": "Part 8", "title": "Strong customer authentication and secure communication", "level": 1 },
+      "section": {
+        "number": "Part 8",
+        "title": "Strong customer authentication and secure communication",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "PSR Reg 100",
@@ -265,8 +335,14 @@
               "objectText": "Strong customer authentication (two or more factors from knowledge, possession and inherence) for specified actions",
               "conditionText": "When the payer accesses their account online, initiates an electronic payment or acts through a remote channel with fraud risk",
               "summary": "Strong Customer Authentication (SCA) is mandatory for online account access, electronic payments and high-risk remote actions. SCA requires two or more factors from: knowledge (e.g. password), possession (e.g. phone) and inherence (e.g. fingerprint).",
-              "applicableProductTypes": ["Payment Service", "Current Account", "Business Current Account", "Credit Card"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Payment Service",
+                "Current Account",
+                "Business Current Account",
+                "Credit Card"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Strong Customer Authentication",
                 "templateText": "To protect your account, we apply Strong Customer Authentication (SCA) when you: access your account online or via our app; make an electronic payment; or take any action through a remote channel that may carry a risk of fraud. SCA requires you to verify your identity using two or more of the following: something you know (e.g. password or PIN); something you have (e.g. your phone or card); or something you are (e.g. fingerprint or face recognition). We may be unable to process certain transactions if SCA cannot be completed.",

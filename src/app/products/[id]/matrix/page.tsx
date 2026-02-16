@@ -38,6 +38,7 @@ export default async function MatrixPage({
     obligation: {
       id: entry.obligation.id,
       obligationType: entry.obligation.obligationType,
+      evidenceScope: entry.obligation.evidenceScope,
       summary: entry.obligation.summary,
       addressee: entry.obligation.addressee,
       actionText: entry.obligation.actionText,

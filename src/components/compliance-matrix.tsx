@@ -6,10 +6,11 @@ import {
   OBLIGATION_TYPES,
   DOCUMENT_TYPES,
   EVIDENCE_STATUSES,
+  EVIDENCE_SCOPES,
   getComplianceLabel,
 } from "@/lib/utils";
 import { useContextPanel } from "./context-panel-provider";
-import { AlertTriangle, AlertCircle, CheckCircle2, Sparkles, HelpCircle, ChevronDown, ChevronRight } from "lucide-react";
+import { AlertTriangle, AlertCircle, CheckCircle2, Sparkles, HelpCircle, ChevronDown, ChevronRight, Building2 } from "lucide-react";
 
 interface MatrixEntry {
   id: string;
@@ -29,6 +30,7 @@ interface MatrixEntry {
   obligation: {
     id: string;
     obligationType: string;
+    evidenceScope: string;
     summary: string;
     addressee: string;
     actionText: string;
@@ -82,6 +84,7 @@ const TRIAGE_GROUPS = {
   gaps: { label: "Gaps — No Matching Clause", icon: AlertTriangle, color: "text-[var(--status-non-compliant-text)]" },
   weak: { label: "Weak — Needs Redrafting", icon: AlertCircle, color: "text-[var(--status-in-progress-text)]" },
   covered: { label: "Covered — Clause Found", icon: CheckCircle2, color: "text-[var(--status-compliant-text)]" },
+  internal: { label: "Internal Governance — Policy Review Needed", icon: Building2, color: "text-[var(--scope-internal-text)]" },
   principles: { label: "Principles — Holistic Assessment", icon: Sparkles, color: "text-[var(--type-principle-text)]" },
   unanalysed: { label: "Unanalysed — Awaiting Document Review", icon: HelpCircle, color: "text-[var(--muted-foreground)]" },
 } as const;
@@ -90,6 +93,8 @@ type TriageGroup = keyof typeof TRIAGE_GROUPS;
 
 function getTriageGroup(entry: MatrixEntry): TriageGroup {
   if (entry.obligation.obligationType === "principle") return "principles";
+  // Internal governance obligations go to their own group
+  if (entry.obligation.evidenceScope === "internal_governance") return "internal";
   if (!entry.documentEvidence || entry.documentEvidence.length === 0) return "unanalysed";
 
   // Use the worst evidence status across all documents
@@ -216,6 +221,24 @@ export function ComplianceMatrix({ productId, productName, entries: initialEntri
               <p className="text-xs font-semibold mb-0.5">General Principle</p>
               <p className="text-[11px] leading-relaxed">
                 This is a general principle assessed through the overall quality of documents, policies and processes — not through a specific clause.
+              </p>
+            </div>
+          )}
+
+          {/* Evidence scope banners */}
+          {ob.evidenceScope === "internal_governance" && (
+            <div className="rounded-md p-2.5 bg-[var(--scope-internal-bg)] text-[var(--scope-internal-text)]">
+              <p className="text-xs font-semibold mb-0.5">Internal Governance Requirement</p>
+              <p className="text-[11px] leading-relaxed">
+                This obligation is evidenced through internal policies and processes, not customer-facing terms. It will not appear as a gap in T&C analysis.
+              </p>
+            </div>
+          )}
+          {ob.evidenceScope === "guidance" && (
+            <div className="rounded-md p-2.5 bg-[var(--scope-guidance-bg)] text-[var(--scope-guidance-text)]">
+              <p className="text-xs font-semibold mb-0.5">Guidance &amp; Best Practice</p>
+              <p className="text-[11px] leading-relaxed">
+                This is guidance and best practice. Absence from T&Cs is not a hard compliance failure — assess holistically against the spirit of the regulation.
               </p>
             </div>
           )}
@@ -363,7 +386,7 @@ export function ComplianceMatrix({ productId, productName, entries: initialEntri
 
       {/* Triage summary bar */}
       {viewMode === "triage" && (() => {
-        const counts: Record<TriageGroup, number> = { gaps: 0, weak: 0, covered: 0, principles: 0, unanalysed: 0 };
+        const counts: Record<TriageGroup, number> = { gaps: 0, weak: 0, covered: 0, internal: 0, principles: 0, unanalysed: 0 };
         for (const e of filtered) counts[getTriageGroup(e)]++;
         return (
           <div className="flex items-center gap-4 mb-4 px-4 py-3 rounded-lg bg-[var(--muted)] border border-[var(--border)]">
@@ -484,6 +507,14 @@ function ObligationRow({
             >
               {obType?.label || ob.obligationType}
             </span>
+            {ob.evidenceScope !== "term_required" && (() => {
+              const scope = EVIDENCE_SCOPES[ob.evidenceScope as keyof typeof EVIDENCE_SCOPES];
+              return scope ? (
+                <span className={`px-1.5 py-0.5 rounded text-[11px] font-medium ${scope.color}`}>
+                  {scope.label}
+                </span>
+              ) : null;
+            })()}
             {hasDocEvidence && !showEvidence && (
               <span className="px-1.5 py-0.5 rounded text-[11px] font-medium bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]">
                 {entry.documentEvidence!.length} doc{entry.documentEvidence!.length > 1 ? "s" : ""}
@@ -601,7 +632,7 @@ function groupEntries(
   }
 
   // triage view: group by document evidence analysis status
-  const triageOrder: TriageGroup[] = ["gaps", "weak", "covered", "principles", "unanalysed"];
+  const triageOrder: TriageGroup[] = ["gaps", "weak", "covered", "internal", "principles", "unanalysed"];
   const result: Record<string, MatrixEntry[]> = {};
   for (const group of triageOrder) {
     const matching = entries.filter((e) => getTriageGroup(e) === group);

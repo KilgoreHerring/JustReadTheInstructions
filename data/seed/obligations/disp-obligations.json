@@ -11,7 +11,11 @@
   },
   "sections": [
     {
-      "section": { "number": "DISP 1.2", "title": "Consumer awareness rules", "level": 1 },
+      "section": {
+        "number": "DISP 1.2",
+        "title": "Consumer awareness rules",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "DISP 1.2.1R",
@@ -24,7 +28,34 @@
               "objectText": "Summary details of internal complaints handling procedures, including complaint submission methods and FOS referral rights",
               "conditionText": "At all times; must be made available to eligible complainants",
               "summary": "Firms must publish a summary of their complaints process so consumers know how to complain and are aware of their right to escalate to the Financial Ombudsman Service if the complaint is not resolved within eight weeks.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "How to Complain",
@@ -37,7 +68,11 @@
       ]
     },
     {
-      "section": { "number": "DISP 1.3", "title": "Complaints handling rules", "level": 1 },
+      "section": {
+        "number": "DISP 1.3",
+        "title": "Complaints handling rules",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "DISP 1.3.1R",
@@ -50,8 +85,35 @@
               "objectText": "Effective and transparent internal complaints handling procedures",
               "conditionText": "At all times; procedures must be in place and operational",
               "summary": "Firms must have robust, transparent procedures for handling complaints fairly and promptly. Complaints must be accepted free of charge through any reasonable communication method, and firms cannot require use of a specific channel.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Complaints Handling Procedure",
                 "templateText": "We have established internal procedures for handling complaints fairly, effectively and promptly. You may make a complaint at no cost using any reasonable method of communication, including by telephone, email, letter or in person. We will not require you to submit your complaint in a particular format or through a specific channel. Our aim is to resolve all complaints as quickly as possible and to your satisfaction.",
@@ -71,8 +133,35 @@
               "objectText": "Management controls and root cause analysis processes for complaints",
               "conditionText": "On an ongoing basis when handling complaints",
               "summary": "Firms must analyse complaint root causes to identify recurring or systemic issues. Where root causes are found, firms must consider whether other products or processes are affected and take reasonable steps to correct the underlying problems.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Continuous Improvement from Complaints",
                 "templateText": "We use complaints as an opportunity to improve our products and services. We analyse complaint trends and root causes to identify any recurring or systemic issues, and where we find them, we take steps to put things right — not only for the individual complainant but for all affected customers.",
@@ -84,7 +173,11 @@
       ]
     },
     {
-      "section": { "number": "DISP 1.4", "title": "Complaints time limit rules", "level": 1 },
+      "section": {
+        "number": "DISP 1.4",
+        "title": "Complaints time limit rules",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "DISP 1.4.1R",
@@ -97,8 +190,35 @@
               "objectText": "Written acknowledgement of complaint receipt, including details of the complaints handling procedure",
               "conditionText": "Upon receipt of a complaint from an eligible complainant",
               "summary": "Firms must promptly acknowledge receipt of every complaint in writing, reassuring the complainant that the matter is being handled, and providing information about the firm's complaints process.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Complaint Acknowledgement",
                 "templateText": "When we receive your complaint, we will send you a written acknowledgement promptly, usually within five business days. Our acknowledgement will confirm the details of your complaint, provide the name or reference of the person handling it, and explain the next steps in our complaints process, including the expected timeframe for our response.",
@@ -118,8 +238,35 @@
               "objectText": "Written holding response explaining delay, expected resolution timeframe, and FOS referral rights with the FOS standard explanatory leaflet",
               "conditionText": "Where the firm has not provided a final response within eight weeks of receiving the complaint",
               "summary": "If a complaint cannot be resolved within eight weeks, the firm must send a holding letter by the eight-week deadline explaining why, indicating when a final response is expected, and informing the complainant of their right to refer the matter to the Financial Ombudsman Service.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Complaints Timeframe",
                 "templateText": "We aim to resolve your complaint as quickly as possible. If we are unable to provide you with a final response within eight weeks of receiving your complaint, we will write to you explaining why and let you know when you can expect a final response. At that point, you will also have the right to refer your complaint to the Financial Ombudsman Service without waiting for our final response. We will provide you with the Financial Ombudsman Service's contact details and explanatory leaflet.",
@@ -131,7 +278,11 @@
       ]
     },
     {
-      "section": { "number": "DISP 1.6", "title": "Complaints resolution rules", "level": 1 },
+      "section": {
+        "number": "DISP 1.6",
+        "title": "Complaints resolution rules",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "DISP 1.6.1R",
@@ -144,8 +295,35 @@
               "objectText": "Written final response including decision, reasons, any redress offered, FOS explanatory leaflet, and FOS referral information",
               "conditionText": "Within eight weeks of receipt of a complaint",
               "summary": "Firms must issue a final written response within eight weeks of receiving a complaint. The response must clearly accept or reject the complaint (with reasons), offer redress where appropriate, and inform the complainant of their right to escalate to the Financial Ombudsman Service.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Final Response to Complaints",
                 "templateText": "We will provide you with a final written response to your complaint within eight weeks of receiving it. Our final response will clearly set out: (a) whether we uphold your complaint, in full or in part; (b) where we uphold the complaint, the redress or remedial action we are offering; (c) where we do not uphold the complaint, the reasons for our decision; and (d) your right to refer the complaint to the Financial Ombudsman Service if you remain dissatisfied, together with the Financial Ombudsman Service's explanatory leaflet and contact details.",
@@ -165,8 +343,35 @@
               "objectText": "Fair redress appropriate to the complaint, including compensation for financial loss, distress and inconvenience where relevant",
               "conditionText": "When upholding a complaint and offering redress",
               "summary": "When a firm upholds a complaint and offers redress, the compensation must be fair and proportionate to the harm suffered. It must account for any financial loss, and also for material distress or inconvenience caused to the complainant.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Complaints Redress",
                 "templateText": "Where we uphold your complaint, we will offer you fair compensation. This will take into account: (a) any financial loss you have suffered as a result of our error or failing; (b) any material distress or inconvenience caused to you; and (c) the nature and severity of the issue. We aim to put you back in the position you would have been in had the problem not occurred.",
@@ -178,7 +383,11 @@
       ]
     },
     {
-      "section": { "number": "DISP 1.9", "title": "Complaints record rule", "level": 1 },
+      "section": {
+        "number": "DISP 1.9",
+        "title": "Complaints record rule",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "DISP 1.9.1R",
@@ -191,7 +400,34 @@
               "objectText": "Records of each complaint and the steps taken to resolve it",
               "conditionText": "For every complaint received; records retained for a minimum of three years",
               "summary": "Firms must maintain comprehensive records of all complaints received and the actions taken to resolve them. These records must be retained for at least three years from the date the complaint was received.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Complaints Records",
@@ -204,7 +440,11 @@
       ]
     },
     {
-      "section": { "number": "DISP 1.10", "title": "Complaints data publication rules", "level": 1 },
+      "section": {
+        "number": "DISP 1.10",
+        "title": "Complaints data publication rules",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "DISP 1.10.1R",
@@ -217,7 +457,34 @@
               "objectText": "Published summary of complaints data including volume and closure rates by product/service category",
               "conditionText": "Where 500 or more reportable complaints are received in a reporting period",
               "summary": "Firms receiving 500 or more complaints in a six-month reporting period must publicly publish a summary showing the number of complaints and the proportion closed within eight weeks, broken down by product or service type.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
               "relevanceScore": 0.85
             }
           ]
@@ -225,7 +492,11 @@
       ]
     },
     {
-      "section": { "number": "DISP 1.10A", "title": "Complaints reporting rules", "level": 1 },
+      "section": {
+        "number": "DISP 1.10A",
+        "title": "Complaints reporting rules",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "DISP 1.10A.1R",
@@ -238,7 +509,34 @@
               "objectText": "Biannual complaints data report in the FCA's prescribed format",
               "conditionText": "Twice yearly in respect of each six-month reporting period",
               "summary": "All firms must report complaints data to the FCA on a biannual basis, covering each six-month reporting period, using the FCA's prescribed reporting format. This applies regardless of complaint volume.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release", "Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit", "Current Account", "Savings Account", "Business Current Account", "Business Savings Account", "Investment Product (Retail)", "SIPP / Personal Pension", "Workplace Pension", "Discretionary Portfolio", "Advisory Investment Service", "Structured Product", "Retail Fund (UCITS/NURS)", "General Insurance", "Protection Insurance", "Travel Insurance", "Payment Service", "Commercial Mortgage", "Invoice Finance", "Trade Finance"],
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
               "relevanceScore": 0.85
             }
           ]

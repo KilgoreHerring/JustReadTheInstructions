@@ -11,7 +11,11 @@
   },
   "sections": [
     {
-      "section": { "number": "MCOB 4", "title": "Advising and selling standards", "level": 1 },
+      "section": {
+        "number": "MCOB 4",
+        "title": "Advising and selling standards",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "MCOB 4.4A.1R",
@@ -24,8 +28,13 @@
               "objectText": "All regulated mortgage contracts and further advances",
               "conditionText": "Before entering into a regulated mortgage contract or making a further advance",
               "summary": "Lenders must not proceed with a mortgage unless they can demonstrate it is affordable for the customer. This requires a robust affordability assessment considering income, expenditure and stress testing.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Affordability Requirement",
                 "templateText": "Before offering you this mortgage, we carried out an affordability assessment to ensure the repayments are affordable for you based on the information you provided about your income and outgoings. We stress-tested the repayments against possible future interest rate increases. If your circumstances change and you have difficulty making repayments, please contact us immediately so we can discuss options to help you.",
@@ -45,8 +54,13 @@
               "objectText": "The affordability assessment process including income verification, expenditure analysis and cost projections",
               "conditionText": "Before entering into a regulated mortgage contract",
               "summary": "The affordability assessment must consider net income (after tax and NI), committed and essential expenditure, and the full cost of the mortgage including interest rate stress scenarios.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Affordability Assessment Methodology",
                 "templateText": "Our affordability assessment considers: (a) your income after tax and national insurance; (b) your regular committed expenditure (such as other loans, credit commitments and essential living costs); (c) the mortgage repayments at the current rate and at a stressed higher rate; and (d) any other costs associated with the mortgage. We may verify the information you provide using credit reference agencies and other sources.",
@@ -58,7 +72,11 @@
       ]
     },
     {
-      "section": { "number": "MCOB 5", "title": "Pre-application disclosure", "level": 1 },
+      "section": {
+        "number": "MCOB 5",
+        "title": "Pre-application disclosure",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "MCOB 5.4.1R",
@@ -71,8 +89,13 @@
               "objectText": "A mortgage illustration (ESIS) complying with MCOB 5 requirements",
               "conditionText": "Before or at the point the customer submits a mortgage application",
               "summary": "A standardised mortgage illustration (European Standardised Information Sheet / ESIS) must be provided to the customer before or when they apply, showing key product details, costs and risks in a standard format.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Mortgage Illustration",
                 "templateText": "Before you submitted your application, we provided you with a personalised mortgage illustration (European Standardised Information Sheet). This document sets out the key features of the mortgage, including: the total amount to borrow; the interest rate and type; monthly repayment amounts; the total cost over the mortgage term (APRC); and any fees and charges. This illustration forms the basis of your mortgage offer.",
@@ -84,7 +107,11 @@
       ]
     },
     {
-      "section": { "number": "MCOB 5A", "title": "Mortgage illustrations (ESIS)", "level": 1 },
+      "section": {
+        "number": "MCOB 5A",
+        "title": "Mortgage illustrations (ESIS)",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "MCOB 5A.3.1R",
@@ -97,8 +124,13 @@
               "objectText": "The European Standardised Information Sheet (ESIS) with all prescribed mortgage information",
               "conditionText": "Before the customer is bound by a regulated mortgage contract or offer",
               "summary": "The firm must provide an ESIS containing all prescribed information including the APRC, total cost of the mortgage, individual repayment amounts, frequency, any early repayment charges, and all other fees so the customer can compare products on a standardised basis.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "European Standardised Information Sheet (ESIS)",
                 "templateText": "Before you are bound by this mortgage offer, we will provide you with a European Standardised Information Sheet (ESIS). This document contains key information about the mortgage in a standardised format, including: (a) the Annual Percentage Rate of Charge (APRC), which represents the overall cost of the mortgage expressed as an annual percentage; (b) the total amount you will repay over the full term of the mortgage; (c) the amount and frequency of each repayment instalment; (d) any early repayment charges that may apply if you repay the mortgage early; and (e) all other fees and charges payable in connection with the mortgage. The ESIS is designed to help you compare mortgage products from different lenders on a like-for-like basis.",
@@ -118,7 +150,12 @@
               "objectText": "The format, medium and content restrictions applicable to the ESIS",
               "conditionText": "When providing the ESIS to the customer",
               "summary": "The ESIS must be provided on a durable medium (paper or electronic format the customer can store and retrieve), must follow the exact prescribed format and sequence, and must not include any extraneous information beyond what is required or permitted.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "ESIS Format and Delivery",
@@ -139,7 +176,11 @@
               "objectText": "Risk warnings for variable rate and foreign currency mortgages within the ESIS",
               "conditionText": "Where the mortgage has a variable interest rate or is denominated in a foreign currency",
               "summary": "Where the mortgage is on a variable rate, the ESIS must warn that repayments may increase and illustrate the impact of a rate rise. Where the mortgage involves a foreign currency, the ESIS must warn about exchange rate risk and illustrate the potential effect on the amount owed.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage"
+              ],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Variable Rate and Foreign Currency Risk Warnings",
@@ -152,7 +193,11 @@
       ]
     },
     {
-      "section": { "number": "MCOB 7", "title": "Disclosure at start of contract and after sale", "level": 1 },
+      "section": {
+        "number": "MCOB 7",
+        "title": "Disclosure at start of contract and after sale",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "MCOB 7.4.1R",
@@ -165,7 +210,12 @@
               "objectText": "The mortgage offer document containing all key contract terms",
               "conditionText": "At least 7 business days before the mortgage completion date",
               "summary": "The formal mortgage offer must be sent at least 7 business days before completion, giving the customer time to review the terms including amount, rate, term, repayment method and fees.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Mortgage Offer",
@@ -186,7 +236,12 @@
               "objectText": "Annual mortgage statement with prescribed information",
               "conditionText": "For each regulated mortgage contract, on an annual basis",
               "summary": "Lenders must send annual statements showing the outstanding balance, current rate, payment amounts, remaining instalments and total paid during the year.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
               "relevanceScore": 0.9,
               "clauseTemplate": {
                 "title": "Annual Mortgage Statement",
@@ -199,7 +254,11 @@
       ]
     },
     {
-      "section": { "number": "MCOB 7A", "title": "Rate switches and product transfers", "level": 1 },
+      "section": {
+        "number": "MCOB 7A",
+        "title": "Rate switches and product transfers",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "MCOB 7A.2.1R",
@@ -212,8 +271,13 @@
               "objectText": "Notification of rate expiry, the rate that will apply thereafter and available product transfer options",
               "conditionText": "When a fixed or discounted rate period on a mortgage is due to expire",
               "summary": "Lenders must notify customers at least 3 months before their fixed or discount rate ends, telling them what rate they will revert to and what alternative products they can switch to.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Rate Expiry Notification",
                 "templateText": "If your current fixed or discounted interest rate is due to expire, we will write to you at least 3 months before the expiry date to let you know: (a) the interest rate that will apply to your mortgage after the current rate expires (typically our Standard Variable Rate); (b) what your new monthly payment will be; and (c) the alternative products available to you, including new fixed or discounted rates. You can switch to a new rate without a full re-application in most cases.",
@@ -225,7 +289,11 @@
       ]
     },
     {
-      "section": { "number": "MCOB 9", "title": "Equity release: lifetime mortgages and home reversion plans", "level": 1 },
+      "section": {
+        "number": "MCOB 9",
+        "title": "Equity release: lifetime mortgages and home reversion plans",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "MCOB 9.3.1R",
@@ -238,8 +306,11 @@
               "objectText": "The suitability assessment for equity release transactions including lifetime mortgages and home reversion plans",
               "conditionText": "Before advising a customer on an equity release transaction",
               "summary": "Before providing advice on equity release, the firm must carry out a thorough suitability assessment considering the customer's needs, whether they are vulnerable, available alternatives (such as downsizing, local authority grants or other borrowing), and the impact on means-tested benefits and inheritance.",
-              "applicableProductTypes": ["Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "internal_governance",
+              "applicableProductTypes": [
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Equity Release Suitability Assessment",
                 "templateText": "Before recommending an equity release product, we will carry out a comprehensive suitability assessment to ensure the product is appropriate for your circumstances. This assessment will consider: (a) your financial needs and objectives for releasing equity; (b) your personal circumstances including age, health and any vulnerabilities; (c) whether alternative options may be more suitable (such as downsizing, local authority grants, other forms of borrowing or benefits entitlements); (d) the impact on your entitlement to means-tested benefits; and (e) the effect on the value of your estate and any planned inheritance. We will provide you with a written suitability report explaining why we believe the recommended product is suitable for you.",
@@ -259,8 +330,11 @@
               "objectText": "A written disclosure document covering interest rate, no-negative-equity guarantee, estate impact, benefits impact and risks",
               "conditionText": "Before the customer commits to an equity release transaction",
               "summary": "A detailed written disclosure must be given before commitment, covering key features including the no-negative-equity guarantee (lifetime mortgages), property value share (home reversions), impact on inheritance and means-tested benefits, and all material risks.",
-              "applicableProductTypes": ["Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Equity Release Key Features Disclosure",
                 "templateText": "Before you commit to this equity release product, we will provide you with a comprehensive disclosure document setting out: (a) the interest rate and how it is calculated and applied (including whether it is fixed or variable and the effect of compound interest); (b) where applicable, the no-negative-equity guarantee, meaning you will never owe more than the value of your property; (c) for home reversion plans, the proportion of your property value you will receive and the share of the property being sold; (d) the impact on the value of your estate and any inheritance you may wish to leave; (e) the potential effect on your entitlement to means-tested benefits such as pension credit and council tax reduction; and (f) the key risks, including the effect of compound interest on the amount owed over time.",
@@ -280,7 +354,10 @@
               "objectText": "The requirement for independent legal advice before entering a home reversion plan",
               "conditionText": "Before entering into a home reversion plan with a customer",
               "summary": "A home reversion plan must not proceed unless the customer has obtained independent legal advice on the terms and implications, particularly regarding the transfer of ownership (or a share) of the property to the provider.",
-              "applicableProductTypes": ["Equity Release"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Equity Release"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Independent Legal Advice for Home Reversion Plans",
@@ -301,8 +378,11 @@
               "objectText": "The no-negative-equity guarantee clause in lifetime mortgage contracts",
               "conditionText": "When entering into a lifetime mortgage contract",
               "summary": "Every lifetime mortgage must include a no-negative-equity guarantee ensuring that on redemption (whether through sale, death or otherwise) the borrower or their estate will never owe more than the net sale proceeds of the property.",
-              "applicableProductTypes": ["Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "No-Negative-Equity Guarantee",
                 "templateText": "This lifetime mortgage includes a no-negative-equity guarantee. This means that when the mortgage is repaid — whether on sale of the property, on your death, or when you move into long-term care — the amount you or your estate will owe will never exceed the net proceeds received from the sale of the property. If the sale proceeds are less than the amount outstanding on the mortgage, neither you nor your estate will be required to make up the shortfall. This guarantee applies provided the property has been sold at the best price reasonably obtainable and in accordance with the terms of the mortgage.",
@@ -322,7 +402,10 @@
               "objectText": "Disclosure of the right to remain in the property under a lifetime mortgage",
               "conditionText": "When advising on or offering a lifetime mortgage",
               "summary": "The firm must explain that the customer can remain in the property for life provided they comply with the mortgage terms, and must clearly explain any circumstances that could affect this right (such as failure to maintain the property or breach of other terms).",
-              "applicableProductTypes": ["Equity Release"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Equity Release"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Right to Remain in the Property",
@@ -335,7 +418,11 @@
       ]
     },
     {
-      "section": { "number": "MCOB 12", "title": "Charges", "level": 1 },
+      "section": {
+        "number": "MCOB 12",
+        "title": "Charges",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "MCOB 12.1.1R",
@@ -348,8 +435,13 @@
               "objectText": "All charges imposed on customers under regulated mortgage contracts",
               "conditionText": "When imposing or varying any charge under a regulated mortgage contract",
               "summary": "Lenders cannot impose new charges or increase existing ones unless the charge (or the basis for determining it) is clearly set out in the mortgage contract or in a tariff of charges that has been provided to the customer.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Charges Under the Mortgage Contract",
                 "templateText": "We will only charge you fees that are set out in your mortgage contract or in our published tariff of charges. We will not introduce new charges or increase existing charges unless the basis for doing so is provided for in your contract or tariff. Our current tariff of charges is provided with your mortgage documentation and is available on our website or on request at any time. If we make changes to our tariff, we will give you reasonable notice before any change takes effect.",
@@ -369,8 +461,13 @@
               "objectText": "Early repayment charges imposed under regulated mortgage contracts",
               "conditionText": "When including early repayment charges in a regulated mortgage contract",
               "summary": "Early repayment charges must genuinely reflect the firm's costs of early repayment (not be punitive or excessive) and must be fully disclosed to the customer before they commit to the mortgage.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Early Repayment Charges",
                 "templateText": "If you repay all or part of your mortgage before the end of the early repayment charge period, an early repayment charge (ERC) may apply. The ERC is calculated as a reasonable pre-estimate of the costs we incur as a result of early repayment. The applicable ERC rates are set out in your mortgage offer and are: [insert ERC schedule]. For example, if you repay the full balance during the [first/second/third] year, a charge of [X]% of the amount repaid will apply. You may be able to make limited overpayments each year without incurring an ERC — please refer to your mortgage terms for details.",
@@ -390,7 +487,12 @@
               "objectText": "The tariff of charges listing all charges that may be imposed under the mortgage contract",
               "conditionText": "Before the customer enters into the regulated mortgage contract and on request during the mortgage term",
               "summary": "A complete tariff of all possible charges must be provided before the mortgage is entered into, and the firm must make this available on request at any point during the life of the mortgage.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Tariff of Charges",
@@ -411,8 +513,13 @@
               "objectText": "Charges applied to customers who are in arrears or have a payment shortfall",
               "conditionText": "When a customer is in arrears or has a payment shortfall on a regulated mortgage contract",
               "summary": "Charges applied to borrowers in arrears must be reasonable and must not be used as a revenue source. The firm must not profit from customers' financial difficulties through excessive or punitive charges.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Arrears and Payment Shortfall Charges",
                 "templateText": "If your account falls into arrears or you have a payment shortfall, we may apply charges to cover the reasonable additional costs of managing your account. These charges will be: (a) reasonable in amount; (b) clearly explained to you in advance where possible; and (c) set out in our tariff of charges. We will not use charges as a means of generating income from your financial difficulty. We will always consider your circumstances, and if you are experiencing financial hardship, we encourage you to contact us as early as possible so we can explore ways to help.",
@@ -424,7 +531,11 @@
       ]
     },
     {
-      "section": { "number": "MCOB 13", "title": "Arrears, payment shortfalls and repossessions", "level": 1 },
+      "section": {
+        "number": "MCOB 13",
+        "title": "Arrears, payment shortfalls and repossessions",
+        "level": 1
+      },
       "rules": [
         {
           "reference": "MCOB 13.3.1R",
@@ -437,8 +548,13 @@
               "objectText": "Treatment of customers in arrears or payment difficulty, including forbearance options and repossession policy",
               "conditionText": "When a customer falls into payment difficulty on a regulated mortgage contract",
               "summary": "Lenders must treat customers in financial difficulty fairly, explore all forbearance options and treat repossession only as a last resort after all other reasonable attempts to resolve the position have failed.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
-              "relevanceScore": 1.0,
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
+              "relevanceScore": 1,
               "clauseTemplate": {
                 "title": "Payment Difficulty and Forbearance",
                 "templateText": "If you have difficulty making your mortgage payments, please contact us as soon as possible. We will treat you fairly and work with you to find a solution. Options we may consider include: (a) extending the mortgage term to reduce payments; (b) a temporary payment holiday or reduced payment arrangement; (c) switching to an interest-only basis for a period; (d) capitalising arrears in appropriate circumstances. Repossession of your home is always a last resort and will only be considered after all other reasonable options have been explored. We will also direct you to free independent debt advice services.",
@@ -458,7 +574,12 @@
               "objectText": "Charges applied to customers in arrears on regulated mortgage contracts",
               "conditionText": "When a customer is in arrears on a regulated mortgage contract",
               "summary": "Arrears charges must be cost-reflective only — they cannot include a profit element or be punitive. The charge must reasonably reflect the actual additional administrative cost of managing the arrears.",
-              "applicableProductTypes": ["Residential Mortgage", "Buy-to-Let Mortgage", "Equity Release"],
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release"
+              ],
               "relevanceScore": 0.95,
               "clauseTemplate": {
                 "title": "Arrears Charges",

@@ -49,6 +49,12 @@ export const EVIDENCE_STATUSES = {
   not_applicable: { label: "N/A", color: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]" },
 } as const;
 
+export const EVIDENCE_SCOPES = {
+  term_required: { label: "Term Required", color: "bg-[var(--scope-term-bg)] text-[var(--scope-term-text)]" },
+  internal_governance: { label: "Internal Governance", color: "bg-[var(--scope-internal-bg)] text-[var(--scope-internal-text)]" },
+  guidance: { label: "Guidance & Best Practice", color: "bg-[var(--scope-guidance-bg)] text-[var(--scope-guidance-text)]" },
+} as const;
+
 export const READABILITY_RATINGS = {
   good: { label: "Good", color: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]" },
   acceptable: { label: "Acceptable", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
