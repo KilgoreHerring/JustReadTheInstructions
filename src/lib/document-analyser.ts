@@ -98,7 +98,7 @@ interface PerRegulationResult {
   qualityConcerns?: string[];
 }
 
-function groupByRegulation(obligations: MatchedObligation[]): Map<string, MatchedObligation[]> {
+export function groupByRegulation(obligations: MatchedObligation[]): Map<string, MatchedObligation[]> {
   const groups = new Map<string, MatchedObligation[]>();
   for (const o of obligations) {
     const key = o.regulationTitle;
@@ -108,7 +108,7 @@ function groupByRegulation(obligations: MatchedObligation[]): Map<string, Matche
   return groups;
 }
 
-async function getProductOverviewContext(productId: string): Promise<string | null> {
+export async function getProductOverviewContext(productId: string): Promise<string | null> {
   const overview = await prisma.productDocument.findFirst({
     where: { productId, documentType: "product_overview" },
     select: { content: true },
@@ -116,15 +116,21 @@ async function getProductOverviewContext(productId: string): Promise<string | nu
   return overview?.content || null;
 }
 
-// --- Per-regulation analysis ---
+// --- Prompt building (shared with batch-analyser) ---
 
-async function analyseRegulationGroup(
+export interface RegulationPrompt {
+  system: string;
+  userMessage: string;
+  maxTokens: number;
+}
+
+export function buildRegulationPrompt(
   regulationTitle: string,
   obligations: MatchedObligation[],
   documentContent: string,
   productContext: string,
   overviewContext: string | null,
-): Promise<PerRegulationResult> {
+): RegulationPrompt {
   const specific = obligations.filter((o) => o.obligationType !== "principle");
   const principles = obligations.filter((o) => o.obligationType === "principle");
 
@@ -190,14 +196,23 @@ Respond with ONLY a JSON object (no markdown fences, no commentary). Use this ex
   "qualityConcerns": ["concern 1"]
 }`;
 
+  const system = TC_SYSTEM + `\n\nYou are analysing obligations specifically from: ${regulationTitle}. Focus your analysis on the requirements of this regulation.`;
   const maxTokens = Math.max(4096, obligations.length * 600);
 
-  return askClaudeJSON<PerRegulationResult>(
-    TC_SYSTEM + `\n\nYou are analysing obligations specifically from: ${regulationTitle}. Focus your analysis on the requirements of this regulation.`,
-    userMessage,
-    maxTokens,
-    regulationTitle,
-  );
+  return { system, userMessage, maxTokens };
+}
+
+// --- Per-regulation analysis ---
+
+async function analyseRegulationGroup(
+  regulationTitle: string,
+  obligations: MatchedObligation[],
+  documentContent: string,
+  productContext: string,
+  overviewContext: string | null,
+): Promise<PerRegulationResult> {
+  const prompt = buildRegulationPrompt(regulationTitle, obligations, documentContent, productContext, overviewContext);
+  return askClaudeJSON<PerRegulationResult>(prompt.system, prompt.userMessage, prompt.maxTokens, regulationTitle);
 }
 
 // --- Core functions ---

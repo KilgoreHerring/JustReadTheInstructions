@@ -37,6 +37,7 @@ export const DOCUMENT_TYPES = {
 
 export const ANALYSIS_STATUSES = {
   pending: { label: "Pending", color: "bg-[var(--analysis-pending-bg)] text-[var(--analysis-pending-text)]" },
+  queued: { label: "Queued for Batch", color: "bg-[var(--analysis-queued-bg)] text-[var(--analysis-queued-text)]" },
   analysing: { label: "Analysing...", color: "bg-[var(--analysis-analysing-bg)] text-[var(--analysis-analysing-text)]" },
   complete: { label: "Complete", color: "bg-[var(--analysis-complete-bg)] text-[var(--analysis-complete-text)]" },
   failed: { label: "Failed", color: "bg-[var(--analysis-failed-bg)] text-[var(--analysis-failed-text)]" },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { ChevronDown } from "lucide-react";
 import { DOCUMENT_TYPES, ANALYSIS_STATUSES, formatDate } from "@/lib/utils";
 
 type DocType = keyof typeof DOCUMENT_TYPES;
@@ -38,6 +39,61 @@ export function DocumentUpload({ productId, existingDocuments }: Props) {
   );
 }
 
+function AnalyseDropdown({
+  onAnalyse,
+  disabled,
+  statusLabel,
+}: {
+  onAnalyse: (mode: "realtime" | "batch") => void;
+  disabled?: boolean;
+  statusLabel?: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  if (statusLabel) {
+    return <span className="text-xs text-[var(--muted-foreground)]">{statusLabel}</span>;
+  }
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        disabled={disabled}
+        className="flex items-center gap-1 text-xs text-[var(--accent)] hover:underline disabled:opacity-50"
+      >
+        Re-analyse <ChevronDown size={12} />
+      </button>
+      {open && (
+        <div className="absolute right-0 top-6 z-10 bg-[var(--background)] border border-[var(--border)] rounded-md shadow-lg py-1 min-w-[200px]">
+          <button
+            onClick={() => { onAnalyse("realtime"); setOpen(false); }}
+            className="w-full text-left px-3 py-2 text-xs hover:bg-[var(--muted)] transition-colors"
+          >
+            <span className="font-medium">Analyse Now</span>
+            <span className="block text-[var(--muted-foreground)]">Real-time · full price</span>
+          </button>
+          <button
+            onClick={() => { onAnalyse("batch"); setOpen(false); }}
+            className="w-full text-left px-3 py-2 text-xs hover:bg-[var(--muted)] transition-colors"
+          >
+            <span className="font-medium">Queue for Batch</span>
+            <span className="block text-[var(--muted-foreground)]">Async · 50% cheaper</span>
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function DocumentSlot({
   productId,
   documentType,
@@ -58,8 +114,11 @@ function DocumentSlot({
   const [showInput, setShowInput] = useState(!existing);
   const pollRef = useRef<NodeJS.Timeout | null>(null);
 
+  const isPolling = doc && (doc.analysisStatus === "pending" || doc.analysisStatus === "analysing" || doc.analysisStatus === "queued");
+
   useEffect(() => {
-    if (doc && (doc.analysisStatus === "pending" || doc.analysisStatus === "analysing")) {
+    if (isPolling && doc) {
+      const interval = doc.analysisStatus === "queued" ? 10000 : 3000;
       pollRef.current = setInterval(async () => {
         const res = await fetch(`/api/products/${productId}/documents/${doc.id}`);
         if (res.ok) {
@@ -69,12 +128,12 @@ function DocumentSlot({
             if (pollRef.current) clearInterval(pollRef.current);
           }
         }
-      }, 3000);
+      }, interval);
     }
     return () => {
       if (pollRef.current) clearInterval(pollRef.current);
     };
-  }, [doc?.id, doc?.analysisStatus, productId]);
+  }, [doc?.id, doc?.analysisStatus, productId, isPolling]);
 
   async function handleUpload() {
     if (!content.trim()) return;
@@ -114,7 +173,6 @@ function DocumentSlot({
 
     const ext = file.name.toLowerCase().split(".").pop();
     if (ext === "pdf" || ext === "docx") {
-      // Send binary files to server for text extraction
       setUploading(true);
       setError(null);
       try {
@@ -142,12 +200,14 @@ function DocumentSlot({
     }
   }
 
-  async function handleReanalyse() {
+  async function handleReanalyse(mode: "realtime" | "batch") {
     if (!doc) return;
     setError(null);
     try {
       const res = await fetch(`/api/products/${productId}/documents/${doc.id}`, {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode }),
       });
       if (res.ok) {
         const updated = await res.json();
@@ -161,6 +221,8 @@ function DocumentSlot({
   const statusMeta = doc
     ? ANALYSIS_STATUSES[doc.analysisStatus as keyof typeof ANALYSIS_STATUSES]
     : null;
+
+  const isActive = doc && (doc.analysisStatus === "analysing" || doc.analysisStatus === "queued");
 
   return (
     <div className="border border-[var(--border)] rounded-lg p-4">
@@ -176,7 +238,7 @@ function DocumentSlot({
           )}
         </div>
         {doc && !showInput && (
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setShowInput(true)}
               className="text-xs text-[var(--accent)] hover:underline"
@@ -184,16 +246,15 @@ function DocumentSlot({
               Replace
             </button>
             {doc.analysisStatus !== "pending" && (
-              <button
-                onClick={handleReanalyse}
-                className="text-xs text-[var(--accent)] hover:underline"
-              >
-                {doc.analysisStatus === "failed"
-                  ? "Retry Analysis"
-                  : doc.analysisStatus === "analysing"
-                    ? "Restart Analysis"
-                    : "Re-analyse"}
-              </button>
+              <AnalyseDropdown
+                onAnalyse={handleReanalyse}
+                disabled={!!isActive}
+                statusLabel={
+                  doc.analysisStatus === "analysing" ? "Analysing..." :
+                  doc.analysisStatus === "queued" ? "Queued..." :
+                  undefined
+                }
+              />
             )}
           </div>
         )}

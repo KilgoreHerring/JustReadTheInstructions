@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db";
-import { OBLIGATION_TYPES } from "@/lib/utils";
+import ObligationsList from "@/components/obligations-list";
 
 export const dynamic = "force-dynamic";
 
@@ -26,10 +26,33 @@ export default async function ObligationsPage() {
     (acc, ob) => {
       const reg = ob.rule.section.regulation.title;
       if (!acc[reg]) acc[reg] = [];
-      acc[reg].push(ob);
+      acc[reg].push({
+        id: ob.id,
+        summary: ob.summary,
+        obligationType: ob.obligationType,
+        addressee: ob.addressee,
+        extractedBy: ob.extractedBy,
+        verifiedBy: ob.verifiedBy,
+        evidenceScope: ob.evidenceScope,
+        rule: {
+          reference: ob.rule.reference,
+          regulation: reg,
+        },
+        productTypes: ob.productApplicability.map((pa) => pa.productType.name),
+      });
       return acc;
     },
-    {} as Record<string, typeof obligations>
+    {} as Record<string, Array<{
+      id: string;
+      summary: string;
+      obligationType: string;
+      addressee: string;
+      extractedBy: string;
+      verifiedBy: string | null;
+      evidenceScope: string;
+      rule: { reference: string; regulation: string };
+      productTypes: string[];
+    }>>
   );
 
   return (
@@ -40,64 +63,14 @@ export default async function ObligationsPage() {
             Obligations
           </h1>
           <p className="text-sm text-[var(--muted-foreground)] mt-1">
-            {obligations.length} active obligations across all regulations
+            {obligations.length} active obligations across {Object.keys(byRegulation).length} regulations
           </p>
         </div>
       </div>
 
-      {Object.entries(byRegulation).map(([regulation, obs]) => (
-        <div key={regulation} className="mb-8">
-          <h2 className="text-lg font-semibold mb-3" style={{ fontFamily: "var(--font-heading), Georgia, serif" }}>
-            {regulation} ({obs.length})
-          </h2>
-          <div className="border border-[var(--border)] rounded-lg divide-y divide-[var(--border)]">
-            {obs.map((ob) => {
-              const obType =
-                OBLIGATION_TYPES[
-                  ob.obligationType as keyof typeof OBLIGATION_TYPES
-                ];
-              return (
-                <div key={ob.id} className="p-4">
-                  <div className="flex items-start gap-3">
-                    <span
-                      className={`px-1.5 py-0.5 rounded text-xs font-medium shrink-0 mt-0.5 ${obType?.color || ""}`}
-                    >
-                      {obType?.label || ob.obligationType}
-                    </span>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium">{ob.summary}</p>
-                      <p className="text-xs text-[var(--muted-foreground)] mt-1">
-                        <span style={{ fontFamily: "var(--font-mono), ui-monospace, monospace" }}>
-                          {ob.rule.reference}
-                        </span>
-                        {" "}&middot; {ob.addressee}
-                        {ob.verifiedBy && " · Verified"}
-                        {!ob.verifiedBy &&
-                          ob.extractedBy === "llm" &&
-                          " · Pending verification"}
-                      </p>
-                      {ob.productApplicability.length > 0 && (
-                        <div className="flex gap-1 mt-2 flex-wrap">
-                          {ob.productApplicability.map((pa) => (
-                            <span
-                              key={pa.id}
-                              className="text-xs px-2 py-0.5 border border-current/30 rounded-full text-[var(--muted-foreground)]"
-                            >
-                              {pa.productType.name}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ))}
-
-      {obligations.length === 0 && (
+      {obligations.length > 0 ? (
+        <ObligationsList byRegulation={byRegulation} />
+      ) : (
         <div className="border border-[var(--border)] rounded-lg p-12 text-center">
           <p className="text-[var(--muted-foreground)]">
             No obligations extracted yet. Seed the database or use the

@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db";
 import { formatDate } from "@/lib/utils";
+import { BulkAnalyseButton } from "@/components/bulk-analyse-button";
 
 export const dynamic = "force-dynamic";
 
@@ -8,9 +9,12 @@ export default async function ProductsPage() {
     include: {
       productType: true,
       matrixEntries: { select: { complianceStatus: true } },
+      documents: { select: { id: true, documentType: true }, where: { documentType: "terms_and_conditions" } },
     },
     orderBy: { createdAt: "desc" },
   });
+
+  const productsWithDocs = products.filter((p) => p.documents.length > 0);
 
   return (
     <div className="prose-column">
@@ -18,12 +22,18 @@ export default async function ProductsPage() {
         <h1 className="text-2xl font-semibold tracking-tight" style={{ fontFamily: "var(--font-heading), Georgia, serif" }}>
           Products
         </h1>
-        <a
-          href="/products/new"
-          className="px-4 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-md text-sm font-medium hover:opacity-90"
-        >
-          Upload Product
-        </a>
+        <div className="flex items-center gap-3">
+          <BulkAnalyseButton
+            productIds={productsWithDocs.map((p) => p.id)}
+            documentCount={productsWithDocs.length}
+          />
+          <a
+            href="/products/new"
+            className="px-4 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-md text-sm font-medium hover:opacity-90"
+          >
+            Upload Product
+          </a>
+        </div>
       </div>
 
       {products.length === 0 ? (

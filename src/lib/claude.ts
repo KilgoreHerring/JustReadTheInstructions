@@ -38,7 +38,7 @@ export async function askClaude(
   throw new Error("Unexpected response type");
 }
 
-function stripFences(text: string): string {
+export function stripFences(text: string): string {
   text = text.trim();
   const fenceMatch = text.match(/^```\s*(?:json)?\s*\r?\n?([\s\S]*?)\r?\n?\s*```\s*$/i);
   if (fenceMatch) return fenceMatch[1].trim();
@@ -48,7 +48,7 @@ function stripFences(text: string): string {
   return text;
 }
 
-const JSON_INSTRUCTION = `
+export const JSON_INSTRUCTION = `
 
 CRITICAL RESPONSE FORMAT RULES:
 - Your entire response must be a single valid JSON object.

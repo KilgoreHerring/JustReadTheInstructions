@@ -160,7 +160,7 @@ model ProductDocument {
   documentType        String    // "terms_and_conditions" | "product_overview"
   fileName            String
   content             String    @db.Text
-  analysisStatus      String    @default("pending") // "pending" | "analysing" | "complete" | "failed"
+  analysisStatus      String    @default("pending") // "pending" | "analysing" | "queued" | "complete" | "failed"
   analysisResult      Json?
   analysisError       String?   @db.Text
   analysisCompletedAt DateTime?
@@ -249,6 +249,33 @@ model ObligationChange {
   detectedAt    DateTime   @default(now())
 
   @@index([obligationId])
+}
+
+model BatchJob {
+  id               String         @id @default(cuid())
+  anthropicBatchId String         @unique
+  status           String         @default("submitted") // submitted | processing | completed | failed | cancelled
+  totalRequests    Int
+  succeededCount   Int            @default(0)
+  failedCount      Int            @default(0)
+  createdAt        DateTime       @default(now())
+  completedAt      DateTime?
+  error            String?        @db.Text
+  items            BatchJobItem[]
+}
+
+model BatchJobItem {
+  id              String   @id @default(cuid())
+  batchJobId      String
+  batchJob        BatchJob @relation(fields: [batchJobId], references: [id])
+  customId        String
+  documentId      String
+  regulationTitle String
+  status          String   @default("pending") // pending | succeeded | errored | expired | cancelled
+  result          Json?
+
+  @@index([batchJobId])
+  @@index([documentId])
 }
 
 model AuditLog {

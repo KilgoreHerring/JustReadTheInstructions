@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { runAnalysis } from "@/lib/document-analyser";
+import { createBatchForDocuments } from "@/lib/batch-analyser";
 
 export async function GET(
   _request: NextRequest,
@@ -28,14 +29,41 @@ export async function GET(
   return NextResponse.json(doc);
 }
 
-// Re-trigger analysis
+// Re-trigger analysis — supports mode: "batch" | "realtime" (default)
 export async function POST(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string; docId: string }> }
 ) {
   const { docId } = await params;
 
-  // Reset status before re-running
+  let mode = "realtime";
+  try {
+    const body = await request.json();
+    if (body.mode === "batch") mode = "batch";
+  } catch {
+    // No body or invalid JSON — default to realtime
+  }
+
+  if (mode === "batch") {
+    try {
+      const batchJobId = await createBatchForDocuments([docId]);
+      const doc = await prisma.productDocument.findUniqueOrThrow({
+        where: { id: docId },
+        select: {
+          id: true, documentType: true, fileName: true,
+          analysisStatus: true, analysisCompletedAt: true, createdAt: true,
+        },
+      });
+      return NextResponse.json({ ...doc, batchJobId });
+    } catch (error) {
+      return NextResponse.json(
+        { error: error instanceof Error ? error.message : "Batch creation failed" },
+        { status: 500 }
+      );
+    }
+  }
+
+  // Real-time: reset and re-run
   const doc = await prisma.productDocument.update({
     where: { id: docId },
     data: {
@@ -45,12 +73,8 @@ export async function POST(
       analysisCompletedAt: null,
     },
     select: {
-      id: true,
-      documentType: true,
-      fileName: true,
-      analysisStatus: true,
-      analysisCompletedAt: true,
-      createdAt: true,
+      id: true, documentType: true, fileName: true,
+      analysisStatus: true, analysisCompletedAt: true, createdAt: true,
     },
   });
 

@@ -59,6 +59,8 @@
   /* Analysis statuses */
   --analysis-pending-bg: #F3F4F6;
   --analysis-pending-text: #4B5563;
+  --analysis-queued-bg: #EEF2FA;
+  --analysis-queued-text: #3A5082;
   --analysis-analysing-bg: #FDF6EE;
   --analysis-analysing-text: #7A5B3A;
   --analysis-complete-bg: #F0F4EC;
@@ -121,6 +123,8 @@
 
     --analysis-pending-bg: #2A2C30;
     --analysis-pending-text: #9CA3AF;
+    --analysis-queued-bg: #242A3A;
+    --analysis-queued-text: #9CB8D4;
     --analysis-analysing-bg: #3A3024;
     --analysis-analysing-text: #D4BC9C;
     --analysis-complete-bg: #2A3A24;
