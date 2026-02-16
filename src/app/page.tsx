@@ -68,6 +68,7 @@ async function getDashboardData() {
         where: {
           analysisStatus: "complete",
           analysisCompletedAt: { not: null },
+          documentType: "terms_and_conditions",
         },
         include: {
           product: { select: { id: true, name: true } },

@@ -20,8 +20,10 @@ interface PerRegulationResult {
   qualityConcerns?: string[];
 }
 
-function slugify(text: string): string {
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+// custom_id must be ≤64 chars — use short index-based IDs
+let batchCounter = 0;
+function nextCustomId(): string {
+  return `r_${Date.now().toString(36)}_${(batchCounter++).toString(36)}`;
 }
 
 function parseJSON<T>(text: string, label: string): T {
@@ -70,7 +72,7 @@ export async function createBatchForDocuments(documentIds: string[]): Promise<st
 
     for (const [regTitle, regObligations] of regulationGroups) {
       const prompt = buildRegulationPrompt(regTitle, regObligations, doc.content, productContext, overviewContext);
-      const customId = `doc_${docId}__reg_${slugify(regTitle)}`;
+      const customId = nextCustomId();
 
       requests.push({
         custom_id: customId,
