@@ -17,7 +17,7 @@ export function formatDate(date: Date | string | null): string {
 export const COMPLIANCE_STATUSES = {
   compliant: { label: "Compliant", color: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]" },
   non_compliant: { label: "Non-Compliant", color: "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]" },
-  not_evidenced: { label: "Applicable — Not Evidenced", color: "bg-[var(--status-not-evidenced-bg)] text-[var(--status-not-evidenced-text)]" },
+  not_evidenced: { label: "Not Evidenced", color: "bg-[var(--status-not-evidenced-bg)] text-[var(--status-not-evidenced-text)]" },
   in_progress: { label: "In Progress", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
   not_assessed: { label: "Not Assessed", color: "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]" },
   not_applicable: { label: "N/A", color: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]" },
