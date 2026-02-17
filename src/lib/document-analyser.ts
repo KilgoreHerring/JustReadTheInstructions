@@ -92,7 +92,7 @@ Each obligation has an evidenceScope field indicating where compliance evidence 
 
 // --- Helpers ---
 
-interface PerRegulationResult {
+export interface PerRegulationResult {
   obligationFindings: ObligationFinding[];
   overallAssessment?: string;
   missingClauses?: string[];

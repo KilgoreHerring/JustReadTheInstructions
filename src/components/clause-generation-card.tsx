@@ -1,14 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-interface GeneratedClause {
-  obligationId: string;
-  title: string;
-  clauseText: string;
-  guidance: string;
-  confidence: number;
-}
+import { type GeneratedClause } from "@/lib/clause-generator";
 
 export function ClauseGenerationCard({ productId }: { productId: string }) {
   const [generating, setGenerating] = useState(false);

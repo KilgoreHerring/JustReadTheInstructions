@@ -1,7 +1,7 @@
 import { prisma } from "./db";
 import { askClaudeJSON } from "./claude";
 
-interface GeneratedClause {
+export interface GeneratedClause {
   obligationId: string;
   title: string;
   clauseText: string;

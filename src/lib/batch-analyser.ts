@@ -8,17 +8,9 @@ import {
   applyAnalysisToMatrix,
   type AnalysisResult,
   type ObligationFinding,
+  type PerRegulationResult,
 } from "./document-analyser";
 import { jsonrepair } from "jsonrepair";
-
-// --- Types ---
-
-interface PerRegulationResult {
-  obligationFindings: ObligationFinding[];
-  overallAssessment?: string;
-  missingClauses?: string[];
-  qualityConcerns?: string[];
-}
 
 // custom_id must be ≤64 chars — use short index-based IDs
 let batchCounter = 0;
