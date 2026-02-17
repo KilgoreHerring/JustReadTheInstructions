@@ -1,0 +1,396 @@
+{
+  "regulation": {
+    "id": "gen",
+    "regulatorId": "fca",
+    "title": "General Provisions (GEN)",
+    "citation": "FCA GEN",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2001-12-01",
+    "url": "https://www.handbook.fca.org.uk/handbook/GEN/"
+  },
+  "sections": [
+    {
+      "section": {
+        "number": "GEN 4",
+        "title": "Statutory status disclosure",
+        "level": 1
+      },
+      "rules": [
+        {
+          "reference": "GEN 4.1.1R",
+          "rawText": "FCA Authorisation Status",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must disclose its FCA authorisation status using prescribed wording on all customer-facing documents",
+              "objectText": "The firm's regulatory status including whether authorised and regulated by the FCA, or authorised by the PRA and regulated by both the FCA and PRA",
+              "conditionText": "On all letters, emails, terms and conditions, and other written communications with retail clients",
+              "summary": "Every FCA-authorised firm must include prescribed regulatory status wording on customer-facing documents. For FCA-only firms: 'Authorised and regulated by the Financial Conduct Authority'. For dual-regulated firms: 'Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority'.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "FCA Authorisation Status Disclosure",
+                "templateText": "[Firm Name] is authorised and regulated by the Financial Conduct Authority (FCA). Our FCA registration number is [XXXXXX]. You can verify our registration on the FCA Register at www.fca.org.uk/register.",
+                "guidance": "This prescribed disclosure must appear on all customer-facing documentation including terms and conditions, letterheads, websites and key communications. Dual-regulated firms must reference both the PRA and FCA."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "GEN 4.3.1R",
+          "rawText": "Business Name Disclosure",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must include its business name on letters, emails and other written communications with retail clients",
+              "objectText": "The firm's registered name or trading name as it appears on the FCA Register",
+              "conditionText": "On all written communications including terms and conditions, websites and electronic communications",
+              "summary": "Firms must ensure their business name as registered with the FCA appears on all customer communications. If the firm uses a trading name that differs from the registered name, both should be disclosed so customers can verify the firm's identity on the FCA Register.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Business Name and Identity",
+                "templateText": "[Trading Name] is a trading name of [Registered Company Name], registered in England and Wales (company number [XXXXXXXX]). Our registered office is [address].",
+                "guidance": "If the firm trades under a name different from its registered name, both names must be disclosed. This enables customers to verify the firm's identity and authorisation status on the FCA Register."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "GEN 4.4.1R",
+          "rawText": "FCA Registration Number",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must include its FCA firm reference number on websites and electronic communications",
+              "objectText": "The firm's FCA firm reference number (FRN)",
+              "conditionText": "On websites and in electronic communications with retail clients",
+              "summary": "The firm's FCA registration number (FRN) must be included on websites and electronic communications. This enables customers to verify the firm's authorised status directly on the FCA Register and is a requirement under both GEN and the Electronic Commerce Regulations.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "FCA Registration Number Disclosure",
+                "templateText": "Our Financial Conduct Authority firm reference number is [XXXXXX]. You can check this on the Financial Services Register at www.fca.org.uk/register or by calling the FCA on 0800 111 6768.",
+                "guidance": "The FRN should be prominently displayed and easily findable. Including it in T&Cs as well as website footers ensures customers can always verify the firm's status."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "GEN 4.3.5R",
+          "rawText": "Appointed Representative Disclosure",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Appointed representatives and their principal firms",
+              "actionText": "Must disclose appointed representative status using prescribed wording identifying both the AR and the principal firm",
+              "objectText": "The appointed representative relationship, naming both the AR and the principal firm with the principal's FCA authorisation status",
+              "conditionText": "Where a firm acts through an appointed representative, on all customer-facing communications from the AR",
+              "summary": "Where a firm operates through an appointed representative, the prescribed wording must identify the AR and the principal firm: '[AR name] is an appointed representative of [firm name] which is authorised and regulated by the Financial Conduct Authority'. This ensures customers know which entity is responsible.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.85,
+              "clauseTemplate": {
+                "title": "Appointed Representative Status",
+                "templateText": "[AR Name] is an appointed representative of [Principal Firm Name], which is authorised and regulated by the Financial Conduct Authority (FCA firm reference number [XXXXXX]). [Principal Firm Name] has accepted responsibility for the activities of [AR Name].",
+                "guidance": "This disclosure is only required where the firm operates through an appointed representative arrangement. If the firm is directly authorised, this clause is not needed."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "GEN 4.5.1R",
+          "rawText": "Prohibition on Misleading Regulatory Status",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must not indicate or imply that it is authorised by the FCA in respect of business for which it is not authorised",
+              "objectText": "Any statement, representation or implication about the scope of the firm's FCA authorisation",
+              "conditionText": "In all communications, terms and conditions, and marketing materials",
+              "summary": "A firm must not overstate or misrepresent the scope of its FCA authorisation. T&Cs must not imply that unregulated products or services are covered by FCA regulation when they are not. This is particularly relevant for firms offering both regulated and unregulated products.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "GEN 4.5.4R",
+          "rawText": "Misleading FOS/FSCS Claims",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must not state or imply that a client has recourse to the Financial Ombudsman Service or FSCS where this is not the case",
+              "objectText": "Statements about Financial Ombudsman Service or Financial Services Compensation Scheme eligibility",
+              "conditionText": "In all terms and conditions, product literature, and customer communications",
+              "summary": "Firms must not claim or imply that customers have access to the Financial Ombudsman Service or FSCS compensation where this does not apply. T&Cs referencing complaint or compensation scheme access must accurately reflect the product's eligibility.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": {
+        "number": "GEN 5",
+        "title": "Use of FCA logo and key facts documents",
+        "level": 1
+      },
+      "rules": [
+        {
+          "reference": "GEN 4.5.8G",
+          "rawText": "Distinguishing Regulated from Unregulated Business",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All FCA-authorised firms conducting both regulated and unregulated business",
+              "actionText": "Should clearly distinguish between regulated and unregulated business to avoid misleading customers",
+              "objectText": "The distinction between the firm's regulated activities and any unregulated activities it also conducts",
+              "conditionText": "Where a firm conducts both regulated and non-regulated business",
+              "summary": "If a firm conducts both FCA-regulated and non-regulated business, it should clearly explain this distinction to customers. T&Cs covering mixed activities should delineate what is and is not regulated to prevent customer confusion about their protections.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.85
+            }
+          ]
+        },
+        {
+          "reference": "GEN 5.1.2R",
+          "rawText": "Key Facts Logo Restrictions",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must not use the Key Facts logo or keyfacts mark other than as and when required or permitted by FCA rules",
+              "objectText": "The FCA Key Facts logo and associated marks",
+              "conditionText": "In all documents, terms and conditions, and marketing materials",
+              "summary": "Firms must not misuse the FCA or Key Facts logos on their documents. The Key Facts logo may only be used where specifically required or permitted by FCA rules. Unauthorised use could mislead customers about the regulatory status of a document.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

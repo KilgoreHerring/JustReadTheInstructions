@@ -1,0 +1,268 @@
+{
+  "regulation": {
+    "id": "ccd2",
+    "regulatorId": "ec",
+    "title": "Consumer Credit Directive (EU) 2023/2225",
+    "citation": "Directive (EU) 2023/2225",
+    "type": "legislation",
+    "status": "active",
+    "effectiveDate": "2026-11-20",
+    "url": "https://eur-lex.europa.eu/eli/dir/2023/2225/oj/eng"
+  },
+  "sections": [
+    {
+      "section": { "number": "Chapter II", "title": "Information and practices prior to the credit agreement", "level": 1 },
+      "rules": [
+        {
+          "reference": "CCD2 Art 8",
+          "rawText": "Any advertising concerning credit agreements that indicates an interest rate or any figures relating to the cost of the credit to the consumer shall include standard information specifying the borrowing rate, fixed or variable or both, together with particulars of any charges included in the total cost of the credit, the total amount of credit, the annual percentage rate of charge, the duration of the credit agreement, the total amount payable by the consumer, the amount of the instalments, and where applicable the obligation to take out an ancillary service.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors and credit intermediaries",
+              "actionText": "Must include standard information in any advertising for credit agreements that indicates an interest rate or figures relating to the cost of credit",
+              "objectText": "Standard information including the borrowing rate, total amount of credit, APR, duration, total amount payable, amount of instalments, and any required ancillary services",
+              "conditionText": "In all advertising for consumer credit agreements that references interest rates or cost figures",
+              "summary": "Any credit advertising that mentions an interest rate or cost figure must include standardised information: the borrowing rate (fixed or variable), total credit amount, APR with a representative example, duration, total amount payable, and instalment amounts. This ensures consumers can compare credit offers on a like-for-like basis.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.85
+            }
+          ]
+        },
+        {
+          "reference": "CCD2 Art 10",
+          "rawText": "The creditor and, where applicable, the credit intermediary shall, in good time before the consumer is bound by any credit agreement or offer, provide the consumer with the pre-contractual information needed to compare different offers in order to take an informed decision on whether to conclude a credit agreement. That information shall be provided on paper or on another durable medium by means of the Standard European Consumer Credit Information form set out in Annex I, containing the type of credit, identity of the creditor, total amount of credit, duration, borrowing rate, APR, total amount payable, amount and periodicity of instalments, all charges, consequences of missed payments, right of withdrawal, and early repayment rights.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors and credit intermediaries",
+              "actionText": "Must provide pre-contractual information using the Standard European Consumer Credit Information (SECCI) form in good time before the consumer is bound by the credit agreement",
+              "objectText": "The SECCI form containing: type of credit, identity of creditor, total amount of credit, duration, borrowing rate, APR, total amount payable, amount and frequency of instalments, all charges, consequences of missed payments, right of withdrawal, and early repayment rights",
+              "conditionText": "Before the consumer enters into or accepts a credit agreement",
+              "summary": "Creditors must provide consumers with pre-contractual information using the standardised SECCI form (Annex I) in good time before the consumer is bound. The form must include all key credit terms: identity of creditor, credit amount, duration, borrowing rate, APR, total cost, instalment schedule, all fees, and information about withdrawal and early repayment rights.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "SECCI Pre-Contractual Information",
+                "templateText": "Before entering into this credit agreement, you will receive a Standard European Consumer Credit Information (SECCI) form containing all key terms of the credit, including: the total amount of credit, borrowing rate, annual percentage rate of charge (APR), total amount payable, instalment amounts and frequency, all applicable fees and charges, your right to withdraw within 14 days, and your right to repay early.",
+                "guidance": "The SECCI must be provided on paper or another durable medium in good time before the consumer is bound. The form must follow the standardised format in Annex I of CCD2."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CCD2 Art 11",
+          "rawText": "For overdraft facilities, credit agreements where the credit has to be repaid within three months and only insignificant charges are payable, and other specific agreement types, a simplified set of pre-contractual information may be provided instead of the full SECCI form. The simplified disclosure shall include the type of credit, identity and geographical address of the creditor, total amount of credit, duration of the credit agreement, borrowing rate and the conditions governing its application, applicable charges, the APR illustrated by means of representative examples, and conditions and procedure for terminating the credit agreement.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors and credit intermediaries",
+              "actionText": "Must provide simplified pre-contractual information for overdraft facilities, credit agreements for less than three months, and other specific agreement types",
+              "objectText": "Simplified pre-contractual disclosure including: type of credit, identity of creditor, total amount, duration, borrowing rate, applicable charges, and APR",
+              "conditionText": "For overdraft facilities, credit of less than three months duration, and other specified agreement types",
+              "summary": "For certain specific credit types — including overdraft facilities and short-term credit under three months — a simplified set of pre-contractual information may be provided instead of the full SECCI form. The simplified disclosure must still include the type of credit, creditor identity, total amount, borrowing rate, charges, and APR.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": ["Credit Card", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.85
+            }
+          ]
+        },
+        {
+          "reference": "CCD2 Art 12",
+          "rawText": "Member States shall ensure that creditors and, where applicable, credit intermediaries provide adequate explanations to the consumer, in order to place the consumer in a position enabling them to assess whether the proposed credit agreement is adapted to their needs and to their financial situation. Those explanations shall include the pre-contractual information to be provided, the essential characteristics of the products proposed, the specific effects the products may have on the consumer including the consequences of default in payment, and where applicable ancillary services bundled with the credit agreement.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors and credit intermediaries",
+              "actionText": "Must provide adequate explanations to the consumer to enable them to assess whether the proposed credit agreement is adapted to their needs and financial situation",
+              "objectText": "Personalised explanations covering: the pre-contractual information, the essential characteristics of the products proposed, the specific effects the products may have on the consumer, and the consequences of default",
+              "conditionText": "Before the consumer is bound by a credit agreement or offer",
+              "summary": "Creditors must provide adequate explanations enabling the consumer to assess whether the credit agreement suits their needs and financial situation. Explanations must cover the pre-contractual information provided, essential product characteristics, specific effects on the consumer including consequences of default, and where applicable, information about ancillary services.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.85
+            }
+          ]
+        },
+        {
+          "reference": "CCD2 Art 13",
+          "rawText": "Member States shall ensure that where a creditor or credit intermediary presents a personalised offer to a consumer on the basis of automated processing, including profiling, the creditor or credit intermediary informs the consumer thereof and provides the consumer with the right to obtain human intervention to review the offer.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors and credit intermediaries",
+              "actionText": "Must inform the consumer where a personalised offer is based on automated processing, including profiling, and must provide the consumer with the right to obtain human intervention",
+              "objectText": "Disclosure that automated processing or profiling has been used to generate a personalised credit offer, and the consumer's right to human review",
+              "conditionText": "Where personalised credit offers are generated using automated processing including profiling",
+              "summary": "Where a creditor presents a personalised credit offer based on automated processing or profiling, the consumer must be clearly informed of this. The consumer must have the right to request human intervention to review the offer. This requirement addresses the growing use of algorithmic credit scoring and personalised pricing in digital lending.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "Chapter III", "title": "Credit agreement", "level": 1 },
+      "rules": [
+        {
+          "reference": "CCD2 Art 20",
+          "rawText": "Credit agreements shall specify in a clear, concise and prominent manner the type of credit, the identities and geographical addresses of the contracting parties and of the credit intermediary, the duration of the credit agreement, the total amount of credit and conditions governing the drawdown, the borrowing rate and the conditions governing its application and any index or reference rate applicable, the APR and the total amount payable by the consumer, the amount, number and frequency of payments, a statement of account details, all charges including those related to late payment, the rate of interest applicable in the case of late payments, a warning regarding the consequences of missing payments, the existence of the right of withdrawal and conditions for exercising it, information concerning the right of early repayment, and the out-of-court complaint and redress procedures available to the consumer.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors",
+              "actionText": "Must include specified mandatory information in the credit agreement in a clear, concise and prominent manner",
+              "objectText": "Mandatory agreement content including: type of credit, identities and addresses of parties, duration, total amount and drawdown conditions, borrowing rate and conditions for changes, APR and total amount payable, amount/number/frequency of instalments, account details, all charges, default interest rate, warnings about consequences of missed payments, right of withdrawal, early repayment rights, and complaint/redress procedures",
+              "conditionText": "In every consumer credit agreement",
+              "summary": "Every consumer credit agreement must contain specified mandatory information presented clearly and prominently. This includes: the credit type, party identities, duration, total credit amount, borrowing rate (and how it may change), APR, total cost, instalment schedule, all charges, default interest, consequences of missed payments, withdrawal rights, early repayment rights, and how to complain.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Mandatory Credit Agreement Information",
+                "templateText": "This agreement sets out the following information as required by law: the type of credit facility, the identities and contact details of both parties, the duration of the agreement, the total amount of credit and conditions for drawdown, the borrowing rate [fixed/variable] and how it may change, the annual percentage rate of charge (APR), the total amount payable, the amount, number and frequency of repayments, all applicable charges, the rate of interest on late payments, the consequences of missed payments, your right to withdraw within 14 days, your right to repay early at any time, and how to make a complaint.",
+                "guidance": "All information must be presented clearly, concisely and prominently. Where the borrowing rate is variable, the agreement must specify how the rate is determined and under what conditions it may change."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CCD2 Art 21",
+          "rawText": "Any change in the borrowing rate shall be communicated to the consumer before the change takes effect. The information shall include the amount of the payments to be made after the new borrowing rate takes effect and, where the number or frequency of the payments changes, particulars thereof. However, the parties may agree in the credit agreement that the information referred to shall be given to the consumer periodically where the change in the borrowing rate is caused by a change in a reference rate, the new reference rate is made publicly available, and the information concerning the new reference rate is kept available in the premises of the creditor.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors",
+              "actionText": "Must inform the consumer of any change in the borrowing rate before the change takes effect, or periodically where the rate varies with a reference rate",
+              "objectText": "Notification of borrowing rate changes including the new rate, the new instalment amount, and any change to the number or frequency of instalments",
+              "conditionText": "Before any change to the borrowing rate takes effect, or at agreed periodic intervals for reference-rate-linked products",
+              "summary": "Consumers must be notified of any change to the borrowing rate before it takes effect. The notification must state the new rate, the new instalment amount, and any changes to the number or frequency of payments. For rates linked to a reference rate, periodic notification is permitted at agreed intervals.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Borrowing Rate Change Notification",
+                "templateText": "We will notify you before any change to your borrowing rate takes effect. The notification will include: the new borrowing rate, your new instalment amount, and any changes to the number or frequency of your repayments. Where your rate is linked to a reference rate, we will notify you periodically as agreed.",
+                "guidance": "Notification must be given before the change takes effect. For variable rates linked to published reference rates, periodic notification at agreed intervals (e.g. with each statement) is sufficient."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "Chapter IV", "title": "Consumer rights", "level": 1 },
+      "rules": [
+        {
+          "reference": "CCD2 Art 26",
+          "rawText": "The consumer shall have a period of 14 calendar days in which to withdraw from the credit agreement without giving any reason. That period of withdrawal shall begin either on the day of the conclusion of the credit agreement, or on the day on which the consumer receives the contractual terms and conditions and information in accordance with Article 20, where that day is later than the date of the conclusion of the credit agreement. Where pre-contractual information was provided less than one day before the consumer is bound, the creditor shall send a reminder of the possibility of withdrawing and the procedure for withdrawing, on a durable medium, between one and seven days after the conclusion of the credit agreement.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors",
+              "actionText": "Must provide the consumer with a 14 calendar day right to withdraw from the credit agreement without giving any reason",
+              "objectText": "The consumer's right to withdraw from the credit agreement within 14 calendar days of conclusion or receipt of contractual terms, whichever is later",
+              "conditionText": "For all consumer credit agreements",
+              "summary": "Consumers have an unconditional right to withdraw from a credit agreement within 14 calendar days without giving any reason. The period runs from the date the agreement is concluded or from when the consumer receives the contractual terms, whichever is later. If pre-contractual information was provided less than one day before, the creditor must send a reminder about the withdrawal right within 1-7 days.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Right of Withdrawal",
+                "templateText": "You have the right to withdraw from this credit agreement within 14 calendar days without giving any reason. The withdrawal period begins on the date this agreement is concluded or the date you receive the contractual terms, whichever is later. To exercise your right of withdrawal, you must notify us in writing before the end of the 14-day period. You must then repay the credit and any accrued interest within 30 days of sending the withdrawal notification.",
+                "guidance": "The withdrawal right cannot be waived by the consumer. If the consumer exercises it, they must repay the capital and interest accrued from drawdown to repayment, but no other compensation is payable."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CCD2 Art 29",
+          "rawText": "The consumer shall be entitled at any time to discharge fully or partially his or her obligations under a credit agreement. In such cases, the consumer shall be entitled to a reduction in the total cost of the credit, consisting of the interest and the costs for the remaining duration of the agreement. The creditor shall be entitled to fair and objectively justified compensation for possible costs directly linked to early repayment of credit, provided the early repayment falls within a period for which the borrowing rate is fixed.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors",
+              "actionText": "Must allow the consumer to discharge their obligations under a credit agreement early, in full or in part, at any time, with a right to a reduction in the total cost of credit",
+              "objectText": "The consumer's right to repay early at any time with a proportionate reduction in the total cost of credit, and any compensation the creditor may claim",
+              "conditionText": "For all consumer credit agreements",
+              "summary": "Consumers have the right to repay a credit agreement early at any time, in full or in part. On early repayment, the consumer is entitled to a reduction in the total cost of credit covering the interest and costs for the remaining duration. The creditor may claim fair and objectively justified compensation for costs directly linked to early repayment, subject to caps.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.95,
+              "clauseTemplate": {
+                "title": "Early Repayment Rights",
+                "templateText": "You have the right to repay all or part of the credit early at any time. If you repay early, you are entitled to a reduction in the total cost of credit, consisting of the interest and charges for the remaining period of the agreement. [Where applicable: We may charge compensation for early repayment, which shall not exceed [X]% of the amount repaid early.]",
+                "guidance": "Early repayment compensation is capped and can only cover costs directly linked to early repayment. No compensation may be charged where repayment is made under an insurance policy, or in certain other circumstances specified in CCD2 Art 29."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "CCD2 Art 30",
+          "rawText": "Member States shall require creditors to take reasonable and proportionate steps, including where appropriate considering forbearance measures, before initiating enforcement or foreclosure proceedings. Charges imposed on consumers in the event of default or non-compliance with any of the obligations set out in the credit agreement shall not exceed the costs actually incurred by the creditor as a consequence of the default or non-compliance. Member States may in addition allow creditors to impose on consumers determined charges in the event of default, provided the total amount of such charges does not exceed specified caps.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors",
+              "actionText": "Must take reasonable and proportionate steps before initiating foreclosure proceedings, and must not impose charges on consumers in payment difficulties that exceed the cost actually incurred",
+              "objectText": "Requirements for forbearance before foreclosure, and limitations on charges for consumers in arrears or financial difficulty",
+              "conditionText": "Where a consumer falls into arrears or payment difficulty",
+              "summary": "Before initiating foreclosure or enforcement proceedings, creditors must take reasonable and proportionate steps to resolve the situation, including considering forbearance measures. Charges imposed on consumers in payment difficulty must not exceed the creditor's actual costs. Member States may introduce additional measures such as interest rate caps on arrears.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": { "number": "Chapter V", "title": "Creditworthiness assessment and access to databases", "level": 1 },
+      "rules": [
+        {
+          "reference": "CCD2 Art 18",
+          "rawText": "Member States shall ensure that, before the conclusion of a credit agreement, the creditor carries out a thorough assessment of the consumer's creditworthiness. That assessment shall be carried out in the interest of the consumer, in order to prevent irresponsible lending practices and over-indebtedness, and shall take appropriate account of factors relevant to verifying the prospect that the consumer will be able to meet their obligations under the credit agreement. The assessment of creditworthiness shall be carried out on the basis of relevant and accurate information on the consumer's income and expenses and other financial and economic circumstances.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors",
+              "actionText": "Must carry out a thorough creditworthiness assessment in the interest of the consumer before entering into a credit agreement, based on relevant and accurate information",
+              "objectText": "A thorough assessment of the consumer's creditworthiness using relevant information on income, expenses, financial circumstances, and credit history, conducted in the consumer's interest to prevent irresponsible lending",
+              "conditionText": "Before concluding a consumer credit agreement or significantly increasing the credit amount",
+              "summary": "Creditors must assess the consumer's creditworthiness thoroughly before granting credit, using relevant and accurate information about income, expenses, and financial circumstances. The assessment must be carried out in the consumer's interest to prevent irresponsible lending and over-indebtedness. Credit should not be granted where the assessment indicates the consumer is unlikely to be able to repay.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "CCD2 Art 18(6)",
+          "rawText": "Member States shall ensure that where the creditworthiness assessment involves automated processing, including profiling, the consumer has the right to: (a) request and obtain human intervention on the part of the creditor to review the assessment; (b) request and obtain from the creditor a meaningful explanation of the assessment made, including on the logic involved in the automated processing and its significance and the envisaged consequences for the consumer; (c) express his or her point of view; and (d) contest the assessment.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "Creditors",
+              "actionText": "Must provide the consumer with the right to request human intervention, obtain a meaningful explanation, express their point of view, and contest the assessment where creditworthiness is assessed using automated processing",
+              "objectText": "Consumer rights where creditworthiness assessment involves solely automated decision-making, including the right to human intervention, explanation, and contestation",
+              "conditionText": "Where the creditworthiness assessment is based on automated processing, including profiling",
+              "summary": "Where creditworthiness is assessed using automated processing or profiling, the consumer has the right to: request and obtain human intervention, receive a meaningful explanation of the assessment and its outcome, express their point of view, and contest the assessment. This protects consumers from opaque algorithmic lending decisions.",
+              "evidenceScope": "mandatory_clause",
+              "applicableProductTypes": ["Personal Loan", "Credit Card", "BNPL / Deferred Payment", "High-Cost Short-Term Credit"],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Automated Creditworthiness Assessment Rights",
+                "templateText": "Your application may be assessed using automated processing including credit scoring models. Where this is the case, you have the right to: (a) request human review of the automated decision; (b) receive a meaningful explanation of how the assessment was made and its outcome; (c) express your point of view; and (d) contest the assessment.",
+                "guidance": "This right applies where the creditworthiness assessment involves solely automated decision-making. The explanation must be meaningful — not just stating the outcome but providing insight into the factors that influenced the decision."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

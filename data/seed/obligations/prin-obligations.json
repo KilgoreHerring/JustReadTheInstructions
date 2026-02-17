@@ -1,0 +1,354 @@
+{
+  "regulation": {
+    "id": "prin",
+    "regulatorId": "fca",
+    "title": "Principles for Businesses (PRIN)",
+    "citation": "FCA PRIN",
+    "type": "regulatory_rules",
+    "status": "active",
+    "effectiveDate": "2001-12-01",
+    "url": "https://www.handbook.fca.org.uk/handbook/PRIN/"
+  },
+  "sections": [
+    {
+      "section": { "number": "PRIN 2", "title": "The Principles", "level": 1 },
+      "rules": [
+        {
+          "reference": "PRIN 2.1.1R - Principle 1",
+          "rawText": "A firm must conduct its business with integrity.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must conduct its business with integrity",
+              "objectText": "All business activities and dealings with customers, counterparties and regulators",
+              "conditionText": "At all times when carrying on regulated activities or ancillary activities",
+              "summary": "Firms must act with integrity in all aspects of their business. This principle underpins the expectation that firms will be honest, fair and straightforward in their conduct, avoiding any behaviour that could be considered dishonest, deceitful or lacking in good faith.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "PRIN 2.1.1R - Principle 2",
+          "rawText": "A firm must conduct its business with due skill, care and diligence.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must conduct its business with due skill, care and diligence",
+              "objectText": "All business operations, service delivery and customer interactions",
+              "conditionText": "At all times when carrying on regulated activities and providing services to customers",
+              "summary": "Firms must demonstrate competence and professionalism in all their business activities. This principle requires firms to maintain appropriate standards of skill, care and diligence throughout their operations, ensuring that staff are adequately trained and that processes are fit for purpose.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "PRIN 2.1.1R - Principle 3",
+          "rawText": "A firm must take reasonable care to organise and control its affairs responsibly and effectively, with adequate risk management systems.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must take reasonable care to organise and control its affairs responsibly and effectively",
+              "objectText": "Internal organisation, governance structures and risk management systems",
+              "conditionText": "On an ongoing basis, ensuring adequate systems and controls are maintained proportionate to the nature, scale and complexity of the firm's activities",
+              "summary": "Firms must maintain robust organisational structures, governance frameworks and risk management systems. This principle requires firms to take reasonable care in how they are organised and controlled, ensuring that responsibilities are clearly allocated, systems and controls are adequate, and risk management is effective and proportionate to the business undertaken.",
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.8
+            }
+          ]
+        },
+        {
+          "reference": "PRIN 2.1.1R - Principle 6",
+          "rawText": "A firm must pay due regard to the interests of its customers and treat them fairly.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must pay due regard to the interests of its customers and treat them fairly",
+              "objectText": "Customer interests across all product design, distribution, servicing and complaint handling activities",
+              "conditionText": "Throughout the entire customer lifecycle, from product design and marketing through to post-sale servicing and complaints resolution",
+              "summary": "Firms must place customers' interests at the heart of their business and treat them fairly at every stage of the relationship. This is the most frequently cited FCA Principle in enforcement actions and underpins the Treating Customers Fairly initiative, requiring firms to demonstrate fair outcomes across product design, sales, servicing and complaints handling.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Fair Treatment Commitment",
+                "templateText": "We are committed to treating all our customers fairly. Our products and services are designed with your interests in mind, and our terms are intended to provide a fair balance of rights and responsibilities between you and us.",
+                "guidance": "Principle 6 is the most commonly cited FCA Principle in enforcement actions. T&Cs should not contain terms that are contrary to customers' interests or that facilitate unfair treatment."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PRIN 2.1.1R - Principle 7",
+          "rawText": "A firm must pay due regard to the information needs of its clients, and communicate information to them in a way which is clear, fair and not misleading.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must communicate information to clients in a way which is clear, fair and not misleading",
+              "objectText": "All communications with clients including terms and conditions, marketing materials, disclosures and ongoing correspondence",
+              "conditionText": "Whenever communicating information to clients, whether in writing, verbally or through digital channels, and at all stages of the customer relationship",
+              "summary": "Firms must ensure that all communications with clients are clear, fair and not misleading. This principle directly governs the quality and transparency of terms and conditions, product documentation and all client-facing materials, requiring that information is presented in plain language and enables informed decision-making.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Clear Communications Standard",
+                "templateText": "We aim to communicate with you in plain English that is clear, fair and not misleading. If any part of these terms is unclear, please contact us and we will be happy to explain.",
+                "guidance": "Principle 7 directly governs the quality of T&C drafting. Terms should use plain language, avoid unnecessary jargon, and present information in a way that enables customers to make informed decisions."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PRIN 2.1.1R - Principle 8",
+          "rawText": "A firm must manage conflicts of interest fairly, both between itself and its customers and between a customer and another client.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must manage conflicts of interest fairly between itself and its customers",
+              "objectText": "All actual and potential conflicts of interest arising between the firm and its customers, or between different customers of the firm",
+              "conditionText": "Whenever conflicts of interest arise or may arise in the course of business, including in relation to fee structures, cross-selling, discretionary powers and allocation of opportunities",
+              "summary": "Firms must identify, manage and, where necessary, disclose conflicts of interest fairly. This principle requires firms to have adequate policies and procedures to prevent conflicts from adversely affecting customers, and to ensure that terms and conditions do not systematically embed provisions that favour the firm at the customer's expense.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9,
+              "clauseTemplate": {
+                "title": "Conflicts of Interest Disclosure",
+                "templateText": "We have policies and procedures in place to identify and manage any conflicts of interest that may arise between us and you, or between you and our other customers. Where a conflict cannot be managed, we will disclose this to you before proceeding.",
+                "guidance": "T&Cs should not embed terms that systematically favour the firm at the expense of the customer. Any fee structures, cross-selling provisions or discretionary powers should be balanced."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PRIN 2.1.1R - Principle 9",
+          "rawText": "A firm must take reasonable care to ensure the suitability of its advice and discretionary decisions for any customer who is entitled to rely upon its judgment.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must take reasonable care to ensure the suitability of its advice and discretionary decisions",
+              "objectText": "All advice given to customers and all discretionary decisions made on their behalf, including investment recommendations, product selections and portfolio management decisions",
+              "conditionText": "When providing personal recommendations, advice or exercising discretion on behalf of any customer who is entitled to rely upon the firm's judgment",
+              "summary": "Firms must ensure that any advice or discretionary decisions are suitable for the individual customer based on their circumstances, objectives and risk tolerance. This principle requires firms to gather sufficient information about their customers and to ensure that terms and conditions do not contain disclaimers that effectively negate the firm's suitability obligations or limit liability for suitability failures.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "Equity Release",
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage"
+              ],
+              "relevanceScore": 1.0,
+              "clauseTemplate": {
+                "title": "Suitability of Advice",
+                "templateText": "Where we provide you with advice or make discretionary decisions on your behalf, we will take reasonable care to ensure that our recommendations are suitable for you based on the information you have provided about your circumstances, objectives and attitude to risk.",
+                "guidance": "T&Cs for advised and discretionary products must not contain disclaimers that effectively negate the firm's suitability obligations. Limitation of liability clauses must not extend to suitability failures."
+              }
+            }
+          ]
+        },
+        {
+          "reference": "PRIN 2.1.1R - Principle 10",
+          "rawText": "A firm must arrange adequate protection for clients' assets when it is responsible for them.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All FCA-authorised firms",
+              "actionText": "Must arrange adequate protection for clients' assets when responsible for them",
+              "objectText": "All client assets held or controlled by the firm, including client money, custody assets, and any other property belonging to clients",
+              "conditionText": "Whenever the firm holds, controls or is otherwise responsible for safeguarding clients' money, investments or other assets",
+              "summary": "Firms must ensure adequate protection for any client assets they hold or are responsible for. This principle requires firms to have robust arrangements for the segregation, safeguarding and reconciliation of client assets, and to ensure that terms and conditions clearly set out the basis on which client assets are held and the protections that apply.",
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "Payment Service",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account"
+              ],
+              "relevanceScore": 0.8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

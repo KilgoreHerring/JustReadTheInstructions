@@ -1,0 +1,883 @@
+{
+  "regulation": {
+    "id": "cra-2015",
+    "regulatorId": "uk-parliament",
+    "title": "Consumer Rights Act 2015",
+    "citation": "Consumer Rights Act 2015 c.15",
+    "type": "legislation",
+    "status": "active",
+    "effectiveDate": "2015-10-01",
+    "url": "https://www.legislation.gov.uk/ukpga/2015/15/contents"
+  },
+  "sections": [
+    {
+      "section": {
+        "number": "Part 2",
+        "title": "Unfair terms",
+        "level": 1
+      },
+      "rules": [
+        {
+          "reference": "CRA s.62(1)",
+          "rawText": "An unfair term of a consumer contract is not binding on the consumer. A term is unfair if, contrary to the requirement of good faith, it causes a significant imbalance in the parties' rights and obligations under the contract to the detriment of the consumer.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must ensure that contract terms are fair, meaning they do not cause a significant imbalance in the parties' rights and obligations to the detriment of the consumer contrary to good faith",
+              "objectText": "Every term in the consumer contract, assessed individually and in the context of the contract as a whole",
+              "conditionText": "For all consumer contracts including financial products and services",
+              "summary": "A term in a consumer contract is unfair if, contrary to the requirement of good faith, it causes a significant imbalance in the parties' rights and obligations to the detriment of the consumer. The unfairness test applies to all terms in financial product T&Cs except core terms that meet the transparency and prominence conditions.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0
+            }
+          ]
+        },
+        {
+          "reference": "CRA s.64(1)-(4)",
+          "rawText": "A term of a consumer contract may not be assessed for fairness to the extent that it specifies the main subject matter of the contract or the assessment is of the appropriateness of the price payable under the contract, but only if the term is transparent and prominent.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must ensure that core terms specifying the main subject matter or price are both transparent and prominent to benefit from the exemption from the fairness assessment",
+              "objectText": "Terms that define the main subject matter of the contract or the adequacy of the price",
+              "conditionText": "Where the firm relies on core terms being exempt from the unfairness assessment",
+              "summary": "Terms defining the main subject matter or price adequacy are exempt from the fairness test ONLY if they are transparent (plain, intelligible language) and prominent (brought to the consumer's attention so they would be aware of them). In financial services, this means key pricing terms like interest rates, fees and charges must be clear and prominent to avoid being challenged for fairness.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0
+            }
+          ]
+        },
+        {
+          "reference": "CRA s.68(1)",
+          "rawText": "A trader must ensure that a written term of a consumer contract, or a consumer notice in writing, is transparent. A term is transparent if it is expressed in plain and intelligible language and it is legible.",
+          "obligations": [
+            {
+              "obligationType": "obligation",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must ensure that every written term of a consumer contract is transparent — expressed in plain and intelligible language and legible",
+              "objectText": "Every written term in the consumer contract",
+              "conditionText": "For all written consumer contracts",
+              "summary": "Every written term in a consumer contract must be transparent: expressed in plain and intelligible language and legible. This applies to ALL terms, not just those assessed for fairness. Financial product T&Cs must use clear language that an average consumer can understand.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0
+            }
+          ]
+        },
+        {
+          "reference": "CRA s.69(1)",
+          "rawText": "If a term in a consumer contract, or a consumer notice, could have different meanings, the meaning that is most favourable to the consumer is to prevail.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must accept that where a term could reasonably be given different meanings, the interpretation most favourable to the consumer will prevail",
+              "objectText": "Any ambiguous term in a consumer contract",
+              "conditionText": "Where a written term of a consumer contract is capable of bearing more than one meaning",
+              "summary": "If a term in a consumer contract could have different meanings, the meaning most favourable to the consumer prevails. This means that ambiguous T&C drafting will be construed against the firm. Financial services firms should ensure all terms have a single clear meaning.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        },
+        {
+          "reference": "CRA s.62(4)-(5)",
+          "rawText": "The Secretary of State may by order made by statutory instrument amend Schedule 2 so as to add or remove an indicative term. Schedule 2 contains an indicative and non-exhaustive list of terms of consumer contracts that may be regarded as unfair for the purposes of this Part.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must have regard to the indicative list of potentially unfair terms in Schedule 2 when assessing the fairness of contract terms",
+              "objectText": "The Schedule 2 grey list of term types that may be regarded as unfair",
+              "conditionText": "When drafting or reviewing consumer contract terms",
+              "summary": "Schedule 2 of the CRA 2015 contains an indicative and non-exhaustive list of terms which may be regarded as unfair. While inclusion on the list does not automatically make a term unfair, it creates a rebuttable presumption. Financial product T&Cs should be reviewed against each item on this list.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        },
+        {
+          "reference": "CRA s.67",
+          "rawText": "The relevant terms are not binding on the consumer. Where a term is not binding on the consumer, the contract continues, so far as practicable, to have effect in every other respect.",
+          "obligations": [
+            {
+              "obligationType": "principle",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must accept that an unfair term is not binding on the consumer, while the rest of the contract continues to have effect if it is capable of continuing without the unfair term",
+              "objectText": "The severability of unfair terms from the remainder of the consumer contract",
+              "conditionText": "Where a term is found to be unfair",
+              "summary": "An unfair term is not binding on the consumer. However, the rest of the contract continues in effect so far as it is capable of doing so without the unfair term. T&Cs should not contain provisions that make the entire contract fall if one term is struck out.",
+              "evidenceScope": "guidance",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": {
+        "number": "Schedule 2 Part 1",
+        "title": "Grey list of potentially unfair terms",
+        "level": 1
+      },
+      "rules": [
+        {
+          "reference": "CRA Sch.2 para.1",
+          "rawText": "A term which has the object or effect of excluding or limiting the trader's liability in the event of the death of or personal injury to the consumer resulting from an act or omission of the trader.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that have the object or effect of excluding or limiting the trader's liability for death or personal injury caused to the consumer through an act or omission of the trader",
+              "objectText": "Terms purporting to exclude or limit liability for death or personal injury",
+              "conditionText": "In consumer contracts for financial products and services",
+              "summary": "Terms that exclude or limit a firm's liability for death or personal injury are presumed unfair. While this is more relevant to physical services, financial services T&Cs should not contain broad liability exclusions that could extend to cover such situations.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.8
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.4",
+          "rawText": "A term which has the object or effect of permitting the trader to retain sums paid by the consumer where the consumer decides not to conclude or perform the contract, without providing for the consumer to receive compensation of an equivalent amount from the trader where the trader is the party cancelling the contract.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that permit the trader to retain sums paid by the consumer where the trader cancels the contract, without providing for equivalent compensation to the consumer",
+              "objectText": "Terms allowing the firm to keep customer payments if the firm cancels, without equivalent customer compensation",
+              "conditionText": "In consumer contracts for financial products and services",
+              "summary": "A term allowing the firm to retain customer payments when the firm cancels the contract — without offering equivalent compensation — is presumed unfair. Financial product T&Cs that permit the firm to close accounts and retain fees or premiums paid must include fair refund provisions.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.5",
+          "rawText": "A term which has the object or effect of requiring that, where the consumer decides not to conclude or perform the contract, the consumer must pay the trader a disproportionately high sum in compensation or for services which have not been supplied.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that require the consumer to pay a disproportionately high sum in compensation or for services which have not been supplied when the consumer fails to fulfil their obligations",
+              "objectText": "Default charges, penalty fees, and compensation provisions that are disproportionately high relative to the loss suffered by the firm",
+              "conditionText": "In consumer contracts for financial products and services",
+              "summary": "Terms requiring disproportionately high default charges or penalties are presumed unfair. In financial services, this is highly relevant to: unauthorised overdraft fees, late payment charges on credit cards and loans, early repayment charges, and exit fees. The charge must be proportionate to the firm's actual cost or loss.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.6",
+          "rawText": "A term which has the object or effect of requiring that, where the consumer decides not to conclude or perform the contract, the consumer must pay the trader a disproportionately high sum for services which have not been supplied.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that require the consumer who fails to fulfil their obligations or who terminates early to pay a disproportionately high sum for services not yet supplied",
+              "objectText": "Early termination charges, exit fees and cancellation charges imposed on the consumer",
+              "conditionText": "Where the consumer terminates the contract before its natural end",
+              "summary": "Early termination charges imposed on consumers who end a contract early are presumed unfair if disproportionately high. In financial services, this applies to mortgage early repayment charges, fixed-term savings breakage fees, insurance cancellation fees, and investment exit charges.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.7",
+          "rawText": "A term which has the object or effect of enabling the trader to dissolve the contract on a discretionary basis where the same facility is not granted to the consumer, or permitting the trader to retain the sums paid for services not yet supplied by the trader where it is the trader who dissolves the contract.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that enable the trader to dissolve the contract on a discretionary basis where the same facility is not granted to the consumer",
+              "objectText": "Unequal termination rights where only the firm can end the contract at will",
+              "conditionText": "In consumer contracts where the firm reserves discretionary termination rights",
+              "summary": "Terms that allow the firm to terminate the contract at will without giving the consumer the same right are presumed unfair. Financial product T&Cs commonly grant the firm broad termination powers (e.g. closing accounts). These must be balanced with equivalent consumer termination rights.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.8",
+          "rawText": "A term which has the object or effect of enabling the trader to terminate a contract of indeterminate duration without reasonable notice except where there are serious grounds for doing so.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that enable the trader to terminate a contract of indeterminate duration without reasonable notice except where there are serious grounds for doing so",
+              "objectText": "The notice period for termination of open-ended contracts",
+              "conditionText": "For contracts of indeterminate duration such as current accounts, savings accounts and revolving credit",
+              "summary": "For open-ended contracts (current accounts, credit cards, ongoing insurance), the firm must give reasonable notice before termination. Immediate termination is only permitted where there are serious grounds (e.g. fraud, insolvency). T&Cs should specify a reasonable notice period.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.10",
+          "rawText": "A term which has the object or effect of irrevocably binding the consumer to terms with which the consumer had no real opportunity of becoming acquainted before the conclusion of the contract.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that irrevocably bind the consumer to terms with which the consumer had no real opportunity of becoming acquainted before conclusion of the contract",
+              "objectText": "Terms that the consumer was not given adequate opportunity to review before agreeing to the contract",
+              "conditionText": "At the point of contract conclusion",
+              "summary": "A term that irrevocably binds the consumer to conditions they had no real chance to review before agreeing is presumed unfair. In financial services, this means all material terms must be available and accessible before the customer commits. Terms incorporated by reference (e.g. 'see our website') must be readily accessible.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.11",
+          "rawText": "A term which has the object or effect of enabling the trader to alter the terms of the contract unilaterally without a valid reason which is specified in the contract.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that enable the trader to alter the terms of the contract unilaterally without a valid reason which is specified in the contract",
+              "objectText": "Variation clauses that allow the firm to change contract terms at its sole discretion",
+              "conditionText": "For variation clauses in consumer contracts",
+              "summary": "Unilateral variation clauses are presumed unfair unless they specify valid reasons for variation that are linked to events outside the firm's control. This is central to financial services: interest rate changes, fee changes, and T&C amendments must have clear, specific grounds. The FCA's FG18/7 guidance provides detailed expectations for fair variation terms.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 1.0
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.14",
+          "rawText": "A term which has the object or effect of allowing the trader to determine the price after the consumer has become bound by the contract, where no price or method of determining the price was agreed when the consumer became bound.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that allow the trader to determine the price after the consumer has become bound, where no price or method of calculation was agreed at the outset",
+              "objectText": "Pricing terms where the final price is determined at the trader's discretion after the consumer is committed",
+              "conditionText": "Where the consumer has already entered into the contract",
+              "summary": "Terms that let the firm decide the price after the consumer has committed are presumed unfair unless the method of price determination was agreed upfront. In financial services, this is relevant to variable-rate products, where the mechanism for determining rate changes must be specified in advance.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.15",
+          "rawText": "A term which has the object or effect of permitting the trader to increase the price without giving the consumer the right to cancel if the final price is too high in relation to the price agreed when the contract was concluded.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that permit the trader to increase the price without giving the consumer the right to cancel if the final price is too high in relation to the price agreed at conclusion",
+              "objectText": "Price increase terms that do not provide a corresponding consumer right to cancel",
+              "conditionText": "Where the trader's terms allow for price increases during the contract",
+              "summary": "Terms allowing price increases without giving the consumer the right to cancel are presumed unfair if the final price is too high relative to what was originally agreed. In financial services, fee increases and interest rate changes should be accompanied by a right to exit without penalty.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.20",
+          "rawText": "A term which has the object or effect of excluding or hindering the consumer's right to take legal action or exercise any other legal remedy, particularly by requiring the consumer to take disputes exclusively to arbitration not covered by legal provisions.",
+          "obligations": [
+            {
+              "obligationType": "prohibition",
+              "addressee": "All firms contracting with consumers",
+              "actionText": "Must not include terms that exclude or hinder the consumer's right to take legal action or exercise any other legal remedy, including mandatory arbitration clauses",
+              "objectText": "Terms that restrict the consumer's access to courts, arbitration, or other legal remedies",
+              "conditionText": "In consumer contracts for financial products and services",
+              "summary": "Terms that exclude, hinder or restrict the consumer's right to take legal action are presumed unfair. This includes mandatory arbitration clauses, clauses unduly restricting the evidence available to the consumer, and clauses imposing the burden of proof on the consumer. Financial product T&Cs must preserve the consumer's right to seek legal redress.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": {
+        "number": "Schedule 2 Part 2",
+        "title": "Financial services exceptions",
+        "level": 1
+      },
+      "rules": [
+        {
+          "reference": "CRA Sch.2 para.22",
+          "rawText": "Paragraph 11 (trader's right to alter terms unilaterally) and paragraph 15 (right to increase price) do not include a term by which a supplier of financial services reserves the right to alter the rate of interest payable by or due to the consumer, or the amount of other charges for financial services without notice where there is a valid reason, provided that the supplier is required to inform the consumer at the earliest opportunity and the consumer is free to dissolve the contract immediately.",
+          "obligations": [
+            {
+              "obligationType": "permission",
+              "addressee": "Financial services firms",
+              "actionText": "May alter the rate of interest or amount of charges for financial services provided the change is for a valid reason, the consumer is informed at the earliest opportunity, and the consumer has the right to dissolve the contract immediately",
+              "objectText": "The exception to the unilateral variation grey list for financial services interest rates and charges",
+              "conditionText": "For terms in financial services contracts that allow variation of interest rates or charges",
+              "summary": "Financial services firms are permitted to include terms allowing variation of interest rates and charges, which would otherwise be caught by the grey list (paras 11 and 15). However, the variation must be for a valid reason, the consumer must be notified at the earliest opportunity, and the consumer must be given the right to exit the contract immediately and without penalty.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.95
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.24",
+          "rawText": "Paragraphs 11, 13 and 15 do not apply to transactions in transferable securities, financial instruments and other products or services where the price is linked to fluctuations in a stock exchange quotation or index or a financial market rate that the trader does not control.",
+          "obligations": [
+            {
+              "obligationType": "permission",
+              "addressee": "Financial services firms",
+              "actionText": "May include terms where the price relates to fluctuations in stock exchange quotations, indices, or financial market rates not controlled by the trader",
+              "objectText": "The exception for price terms linked to financial market fluctuations",
+              "conditionText": "For contracts relating to transferable securities, financial instruments, or products whose price depends on financial market fluctuations",
+              "summary": "The grey list provisions on unilateral variation and price increases (paras 11, 13, and 15) do not apply to transactions in transferable securities, financial instruments, or products where the price depends on market fluctuations outside the firm's control. This covers investment products, market-linked savings, and variable-rate financial instruments.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        },
+        {
+          "reference": "CRA Sch.2 para.25",
+          "rawText": "Paragraphs 14 and 15 do not include a term under which a trader reserves the right to alter the charges where the method of determining the variation is described explicitly in the contract.",
+          "obligations": [
+            {
+              "obligationType": "permission",
+              "addressee": "Financial services firms",
+              "actionText": "May include terms where the method of price variation is explicitly described in the contract",
+              "objectText": "The exception for price terms where a clear variation mechanism is contractually specified",
+              "conditionText": "Where the contract includes a fully described method for determining price changes",
+              "summary": "The grey list provisions on post-binding price determination and price increases (paras 14 and 15) do not apply where the contract explicitly describes the method by which prices will vary. In financial services, this means clearly specifying how interest rates, fees or premiums are calculated and what triggers changes.",
+              "evidenceScope": "term_required",
+              "applicableProductTypes": [
+                "Residential Mortgage",
+                "Buy-to-Let Mortgage",
+                "Equity Release",
+                "Personal Loan",
+                "Credit Card",
+                "BNPL / Deferred Payment",
+                "High-Cost Short-Term Credit",
+                "Current Account",
+                "Savings Account",
+                "Business Current Account",
+                "Business Savings Account",
+                "Investment Product (Retail)",
+                "SIPP / Personal Pension",
+                "Workplace Pension",
+                "Discretionary Portfolio",
+                "Advisory Investment Service",
+                "Structured Product",
+                "Retail Fund (UCITS/NURS)",
+                "General Insurance",
+                "Protection Insurance",
+                "Travel Insurance",
+                "Payment Service",
+                "Commercial Mortgage",
+                "Invoice Finance",
+                "Trade Finance"
+              ],
+              "relevanceScore": 0.9
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

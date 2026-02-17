@@ -12,6 +12,11 @@ import dispData from "../data/seed/obligations/disp-obligations.json";
 import syscData from "../data/seed/obligations/sysc-obligations.json";
 import cassData from "../data/seed/obligations/cass-obligations.json";
 import prodData from "../data/seed/obligations/prod-obligations.json";
+import prinData from "../data/seed/obligations/prin-obligations.json";
+import genData from "../data/seed/obligations/gen-obligations.json";
+import ukGdprData from "../data/seed/obligations/uk-gdpr-obligations.json";
+import cra2015Data from "../data/seed/obligations/cra-2015-obligations.json";
+import ccd2Data from "../data/seed/obligations/ccd2-obligations.json";
 
 const prisma = new PrismaClient();
 
@@ -395,10 +400,95 @@ async function main() {
   totalObligations += prod.obligationCount;
   totalClauses += prod.clauseCount;
 
-  const regulationCount = 11;
+  // PRIN
+  console.log("\nSeeding PRIN...");
+  const prin = await seedRegulation(
+    prinData.regulation.id,
+    regulators[prinData.regulation.regulatorId],
+    prinData.regulation.title,
+    prinData.regulation.citation,
+    prinData.regulation.type,
+    prinData.regulation.status,
+    prinData.regulation.effectiveDate,
+    prinData.regulation.url,
+    prinData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += prin.obligationCount;
+  totalClauses += prin.clauseCount;
+
+  // GEN
+  console.log("\nSeeding GEN...");
+  const gen = await seedRegulation(
+    genData.regulation.id,
+    regulators[genData.regulation.regulatorId],
+    genData.regulation.title,
+    genData.regulation.citation,
+    genData.regulation.type,
+    genData.regulation.status,
+    genData.regulation.effectiveDate,
+    genData.regulation.url,
+    genData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += gen.obligationCount;
+  totalClauses += gen.clauseCount;
+
+  // UK GDPR
+  console.log("\nSeeding UK GDPR / DPA 2018...");
+  const ukGdpr = await seedRegulation(
+    ukGdprData.regulation.id,
+    regulators[ukGdprData.regulation.regulatorId],
+    ukGdprData.regulation.title,
+    ukGdprData.regulation.citation,
+    ukGdprData.regulation.type,
+    ukGdprData.regulation.status,
+    ukGdprData.regulation.effectiveDate,
+    ukGdprData.regulation.url,
+    ukGdprData.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += ukGdpr.obligationCount;
+  totalClauses += ukGdpr.clauseCount;
+
+  // CRA 2015
+  console.log("\nSeeding Consumer Rights Act 2015...");
+  const cra = await seedRegulation(
+    cra2015Data.regulation.id,
+    regulators[cra2015Data.regulation.regulatorId],
+    cra2015Data.regulation.title,
+    cra2015Data.regulation.citation,
+    cra2015Data.regulation.type,
+    cra2015Data.regulation.status,
+    cra2015Data.regulation.effectiveDate,
+    cra2015Data.regulation.url,
+    cra2015Data.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += cra.obligationCount;
+  totalClauses += cra.clauseCount;
+
+  // CCD2 (EU Consumer Credit Directive)
+  console.log("\nSeeding CCD2 (EU Consumer Credit Directive)...");
+  const ccd2 = await seedRegulation(
+    ccd2Data.regulation.id,
+    regulators[ccd2Data.regulation.regulatorId],
+    ccd2Data.regulation.title,
+    ccd2Data.regulation.citation,
+    ccd2Data.regulation.type,
+    ccd2Data.regulation.status,
+    ccd2Data.regulation.effectiveDate,
+    ccd2Data.regulation.url,
+    ccd2Data.sections as SectionData[],
+    productTypeMap
+  );
+  totalObligations += ccd2.obligationCount;
+  totalClauses += ccd2.clauseCount;
+
+  const regulationCount = 16;
   console.log(`\nSeed complete:`);
   console.log(`  Regulators: ${Object.keys(regulators).length}`);
-  console.log(`  Regulations: ${regulationCount} (Consumer Duty, PSR 2017, BCOBS, MCOB, CONC, COBS, ICOBS, DISP, SYSC, CASS, PROD)`);
+  console.log(`  Regulations: ${regulationCount} (Consumer Duty, PSR 2017, BCOBS, MCOB, CONC, COBS, ICOBS, DISP, SYSC, CASS, PROD, PRIN, GEN, UK GDPR, CRA 2015, CCD2)`);
   console.log(`  Product types: ${Object.keys(productTypeMap).length}`);
   console.log(`  Obligations: ${totalObligations}`);
   console.log(`  Clause templates: ${totalClauses}`);
