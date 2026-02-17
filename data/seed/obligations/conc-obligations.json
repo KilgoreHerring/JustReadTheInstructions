@@ -50,7 +50,7 @@
               "objectText": "Representative APR and prescribed standard information in credit promotions that trigger the requirement",
               "conditionText": "When a credit promotion includes a rate of interest or cost of credit figure",
               "summary": "Credit promotions that mention interest rates or costs must include: representative APR, borrowing rate (fixed or variable), total credit amount, duration, total repayable and instalment amounts.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Personal Loan",
                 "Credit Card",
@@ -113,7 +113,7 @@
               "objectText": "Standard European Consumer Credit Information (SECCI) form containing all prescribed pre-contract credit information",
               "conditionText": "In good time before the customer becomes bound by a credit agreement",
               "summary": "Customers must receive the SECCI form — a standardised document containing all key credit terms — in sufficient time before entering the agreement. This enables comparison shopping and informed decision-making.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Personal Loan",
                 "Credit Card",
@@ -140,7 +140,7 @@
               "objectText": "Customer's statutory right to withdraw from the credit agreement within the 14-day cooling-off period",
               "conditionText": "At the point of entering into a regulated credit agreement",
               "summary": "Customers must be told about their 14-day right to withdraw from the agreement without needing to give a reason. If they withdraw, they must repay the credit plus any accrued interest within 30 days.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Personal Loan",
                 "Credit Card",
@@ -167,7 +167,7 @@
               "objectText": "Credit card summary box containing prescribed key financial information in a clear and prominent format",
               "conditionText": "When entering into a credit card agreement with a consumer",
               "summary": "Credit card agreements must include a prominent summary box showing the key costs at a glance — interest rates for different transaction types, any fees, minimum payment information, promotional rate details and default charges.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Credit Card"
               ],
@@ -434,7 +434,7 @@
               "objectText": "Referrals and signposting to free debt advice services such as StepChange, Citizens Advice and National Debtline",
               "conditionText": "When a firm becomes aware that a customer is in financial difficulty",
               "summary": "When a customer is identified as being in financial difficulty, they must be actively signposted to free debt advice services with contact details provided prominently. This applies to all consumer credit firms, not just debt advice firms.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Personal Loan",
                 "Credit Card",
@@ -497,7 +497,7 @@
               "objectText": "BNPL agreement terms including repayment schedule, fee information, consequences of non-payment and complaints process",
               "conditionText": "When entering into a buy-now pay-later agreement with a consumer",
               "summary": "BNPL agreements must clearly set out the repayment schedule, any fees or interest that may apply if repayments are missed, the consequences of non-payment (including credit file impact) and how to complain.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "BNPL / Deferred Payment"
               ],
@@ -545,7 +545,7 @@
               "objectText": "Interest and fee charges during BNPL interest-free periods, and disclosure of deferred interest terms",
               "conditionText": "During the interest-free period of a BNPL agreement and at the point of sale",
               "summary": "No interest or fees may be charged during the BNPL interest-free period. Where deferred interest applies, the end date, the post-promotional rate and whether interest will be backdated must all be clearly disclosed before the customer commits.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "BNPL / Deferred Payment"
               ],
@@ -602,7 +602,7 @@
               "objectText": "Total cost of credit under HCSTC agreements including all interest, fees and charges",
               "conditionText": "At any time during the life of a high-cost short-term credit agreement",
               "summary": "The total cost cap ensures that a customer never repays more than twice what they borrowed. All interest, fees and charges combined cannot exceed 100% of the original loan amount. This is the overarching HCSTC price cap.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "High-Cost Short-Term Credit"
               ],
@@ -626,7 +626,7 @@
               "objectText": "Default charges on high-cost short-term credit agreements capped at £15 per missed payment",
               "conditionText": "When a customer fails to make a repayment on the due date under an HCSTC agreement",
               "summary": "Default fees on payday loans and other HCSTC products are capped at £15 per missed payment. These charges also count towards the overall total cost cap, so they cannot cause the total repayable to exceed double the amount borrowed.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "High-Cost Short-Term Credit"
               ],
@@ -650,7 +650,7 @@
               "objectText": "Prescribed risk warning on all financial promotions for high-cost short-term credit products",
               "conditionText": "In all financial promotions for high-cost short-term credit products",
               "summary": "All HCSTC advertising and promotions must carry the prescribed risk warning about late repayment causing serious money problems, with a link to MoneyHelper. The warning must be at least as prominent as the cost information.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "High-Cost Short-Term Credit"
               ],
@@ -674,7 +674,7 @@
               "objectText": "Rollovers of high-cost short-term credit agreements limited to a maximum of two, with mandatory affordability checks and debt advice signposting",
               "conditionText": "When a customer requests or the firm proposes to roll over an HCSTC agreement",
               "summary": "HCSTC loans can be rolled over a maximum of twice. Before each rollover, the lender must reassess affordability, warn the customer that rolling over increases costs, and point them to free debt advice. After two rollovers, no further rollovers are permitted.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "High-Cost Short-Term Credit"
               ],
@@ -698,7 +698,7 @@
               "objectText": "Use of continuous payment authority to collect repayments under HCSTC agreements, limited to two attempts with no part-payment collection",
               "conditionText": "When collecting repayments under a high-cost short-term credit agreement using continuous payment authority",
               "summary": "Payday lenders are limited to two CPA attempts to collect the full amount due. If both fail, no further CPA attempts are allowed — neither for the full amount nor for any reduced amount. This prevents repeated failed payment attempts that can cause bank charges and financial distress.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "High-Cost Short-Term Credit"
               ],

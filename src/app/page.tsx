@@ -157,28 +157,40 @@ export default async function Dashboard() {
   }
 
   // Process product data for grid and attention queue
+  // Dashboard scores are based ONLY on mandatory_clause obligations
   const productRows = data.products.map((p) => {
     const breakdown = {
       compliant: 0,
       non_compliant: 0,
+      not_evidenced: 0,
       in_progress: 0,
       not_assessed: 0,
       not_applicable: 0,
     };
+    // Count all statuses for display
     for (const e of p.matrixEntries) {
-      // Internal governance obligations that are non_compliant from doc analysis only → treat as not_assessed
-      const isInternalFalsePositive =
-        e.obligation.evidenceScope === "internal_governance" &&
-        e.complianceStatus === "non_compliant" &&
-        e.evidenceSource === "document_analysis";
-      const effectiveStatus = isInternalFalsePositive ? "not_assessed" : e.complianceStatus;
-      const key = effectiveStatus as keyof typeof breakdown;
+      const key = e.complianceStatus as keyof typeof breakdown;
       if (key in breakdown) breakdown[key]++;
     }
-    const total = p.matrixEntries.length;
-    const applicable = total - breakdown.not_applicable;
-    const score = applicable > 0 ? Math.round((breakdown.compliant / applicable) * 100) : 0;
+    // Score based on mandatory_clause obligations only
+    const mandatoryEntries = p.matrixEntries.filter(
+      (e) => e.obligation.evidenceScope === "mandatory_clause"
+    );
+    const mandatoryTotal = mandatoryEntries.length;
+    const mandatoryCompliant = mandatoryEntries.filter(
+      (e) => e.complianceStatus === "compliant"
+    ).length;
+    const mandatoryNA = mandatoryEntries.filter(
+      (e) => e.complianceStatus === "not_applicable"
+    ).length;
+    const mandatoryApplicable = mandatoryTotal - mandatoryNA;
+    const score = mandatoryApplicable > 0
+      ? Math.round((mandatoryCompliant / mandatoryApplicable) * 100)
+      : mandatoryTotal === 0 ? -1 : 0; // -1 signals "no mandatory obligations"
     const lastDoc = p.documents[0];
+    const mandatoryNonCompliant = mandatoryEntries.filter(
+      (e) => e.complianceStatus === "non_compliant"
+    ).length;
 
     return {
       id: p.id,
@@ -186,11 +198,12 @@ export default async function Dashboard() {
       productTypeName: p.productType.name,
       status: p.status,
       statusBreakdown: breakdown,
-      totalObligations: total,
+      totalObligations: p.matrixEntries.length,
+      mandatoryTotal,
       complianceScore: score,
       lastAnalysis: lastDoc?.analysisCompletedAt || null,
       hasAnalysing: p.documents.some((d) => d.analysisStatus === "analysing"),
-      nonCompliantCount: breakdown.non_compliant,
+      nonCompliantCount: mandatoryNonCompliant,
     };
   });
 
@@ -210,7 +223,7 @@ export default async function Dashboard() {
       attentionItems.push({
         productId: p.id,
         productName: p.name,
-        reason: `${p.nonCompliantCount} non-compliant obligation${p.nonCompliantCount !== 1 ? "s" : ""}`,
+        reason: `${p.nonCompliantCount} non-compliant mandatory obligation${p.nonCompliantCount !== 1 ? "s" : ""}`,
         severity: "critical",
       });
     }
@@ -299,26 +312,25 @@ export default async function Dashboard() {
     .slice(0, 5)
     .map(([text, count]) => ({ text, count }));
 
-  // Build heatmap data: products × regulations
+  // Build heatmap data: products × regulations (mandatory_clause obligations only)
   const regMap = new Map<string, { id: string; title: string; citation: string }>();
-  const cells: Record<string, Record<string, { compliant: number; non_compliant: number; in_progress: number; not_assessed: number; not_applicable: number; total: number }>> = {};
+  const cells: Record<string, Record<string, { compliant: number; non_compliant: number; not_evidenced: number; in_progress: number; not_assessed: number; not_applicable: number; total: number }>> = {};
 
-  for (const entry of data.heatmapEntries) {
+  // Heatmap shows only mandatory_clause obligations for a clear compliance picture
+  const mandatoryHeatmapEntries = data.heatmapEntries.filter(
+    (entry) => entry.obligation.evidenceScope === "mandatory_clause"
+  );
+
+  for (const entry of mandatoryHeatmapEntries) {
     const reg = entry.obligation.rule.section.regulation;
     regMap.set(reg.id, reg);
 
     if (!cells[entry.productId]) cells[entry.productId] = {};
     if (!cells[entry.productId][reg.id]) {
-      cells[entry.productId][reg.id] = { compliant: 0, non_compliant: 0, in_progress: 0, not_assessed: 0, not_applicable: 0, total: 0 };
+      cells[entry.productId][reg.id] = { compliant: 0, non_compliant: 0, not_evidenced: 0, in_progress: 0, not_assessed: 0, not_applicable: 0, total: 0 };
     }
     const bucket = cells[entry.productId][reg.id];
-    // Internal governance obligations: don't count non_compliant from doc analysis as actual non_compliant
-    const isInternalFalsePositive =
-      entry.obligation.evidenceScope === "internal_governance" &&
-      entry.complianceStatus === "non_compliant" &&
-      entry.evidenceSource === "document_analysis";
-    const effectiveStatus = isInternalFalsePositive ? "not_assessed" : entry.complianceStatus;
-    const statusKey = effectiveStatus as keyof typeof bucket;
+    const statusKey = entry.complianceStatus as keyof typeof bucket;
     if (statusKey in bucket && statusKey !== "total") bucket[statusKey]++;
     bucket.total++;
   }

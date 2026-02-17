@@ -28,7 +28,7 @@
               "objectText": "Pre-contractual information including identifier requirements, execution times, charges breakdown and exchange rates",
               "conditionText": "Before the payment service user is bound by any single payment service contract",
               "summary": "Payment service providers must disclose key transaction information before execution: what data the user needs to provide, how long the transaction will take, all charges with a breakdown, and applicable exchange rates.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -54,7 +54,7 @@
               "objectText": "Full framework contract terms including provider details, services covered, consent procedures, execution times, spending limits, charges, rates and communication methods",
               "conditionText": "Before the payment service user is bound by a framework contract",
               "summary": "Before entering into an ongoing payment services relationship (framework contract), providers must give users comprehensive information about the service, charges, consent procedures, execution times and communication methods.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -80,7 +80,7 @@
               "objectText": "Charges for providing statutory payment services information to users",
               "conditionText": "When providing information required by Part 6 of the PSRs",
               "summary": "Providers cannot charge for mandatory information provision. Additional information requested by the user may be charged for, but only at a rate reasonable to actual costs.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -115,7 +115,7 @@
               "objectText": "Changes to framework contract conditions including terms, charges and service features",
               "conditionText": "When proposing changes to the conditions of a framework contract",
               "summary": "Changes to ongoing payment service contracts require 2 months' advance notice. Users must be able to accept or reject changes and terminate without charge before the new terms take effect.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -141,7 +141,7 @@
               "objectText": "Termination rights for framework contracts and associated charges",
               "conditionText": "When a payment service user wishes to terminate a framework contract",
               "summary": "Users can exit payment service agreements at any time with max one month's notice. Termination must be free unless the contract has been in place for less than 6 months.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -167,7 +167,7 @@
               "objectText": "Consent for execution of payment transactions",
               "conditionText": "Before executing any payment transaction",
               "summary": "Every payment must be explicitly authorised by the payer. The form of consent must be agreed between provider and user. An unauthorised payment is one executed without valid consent.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -220,7 +220,7 @@
               "objectText": "Refund of the full amount of unauthorised payment transactions to the payment service user's account",
               "conditionText": "When the user denies authorising a transaction and fraud is not reasonably suspected",
               "summary": "Unauthorised payments must be refunded immediately, by the end of the next business day at the latest. The only exception is where the provider has reasonable grounds to suspect fraud by the user.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -247,7 +247,7 @@
               "objectText": "Payer's maximum liability for losses from unauthorised payment transactions",
               "conditionText": "When an unauthorised payment results from a lost, stolen or misappropriated payment instrument",
               "summary": "User liability for unauthorised payments is capped at £35 where strong customer authentication (SCA) was used and the instrument was lost/stolen. Where SCA was not applied by the provider, the user has zero liability.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -274,7 +274,7 @@
               "objectText": "Execution time for payment transactions received before the cut-off time",
               "conditionText": "Where a payment order is received on or before the cut-off time on a business day",
               "summary": "Payments must reach the payee's bank by the end of the next business day. This is a maximum execution time — many payments will settle faster via Faster Payments.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",
@@ -300,7 +300,7 @@
               "objectText": "Refund and account restoration for failed, defective or late payments",
               "conditionText": "Where the payment service provider is liable for non-execution, defective or late execution",
               "summary": "When the provider is at fault for a failed, defective or late payment, they must refund without undue delay and restore the account to the state it would have been in had the error not occurred.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Payment Service",
                 "Current Account",

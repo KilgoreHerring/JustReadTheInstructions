@@ -43,12 +43,18 @@
   --type-principle-border: #D1FAE5;
 
   /* Evidence scopes */
+  --scope-mandatory-bg: #E8F4F0;
+  --scope-mandatory-text: #1A5E4A;
   --scope-term-bg: #EEF2F7;
   --scope-term-text: #1E3A5F;
   --scope-internal-bg: #F3F0F8;
   --scope-internal-text: #5B4A7A;
   --scope-guidance-bg: #FDF8EE;
   --scope-guidance-text: #7A6B3A;
+
+  /* Not-evidenced status (neutral, advisory) */
+  --status-not-evidenced-bg: #EEF2F7;
+  --status-not-evidenced-text: #4A6A8A;
 
   /* Document types */
   --doc-tc-bg: #EEF2F7;
@@ -109,12 +115,17 @@
     --type-principle-text: #86EFAC;
     --type-principle-border: #2D5A44;
 
+    --scope-mandatory-bg: #1A3A30;
+    --scope-mandatory-text: #7ECBB0;
     --scope-term-bg: #1E2A3A;
     --scope-term-text: #6B9BD2;
     --scope-internal-bg: #2E2440;
     --scope-internal-text: #B8A0D4;
     --scope-guidance-bg: #3A3024;
     --scope-guidance-text: #D4C49C;
+
+    --status-not-evidenced-bg: #1E2A3A;
+    --status-not-evidenced-text: #8AACC8;
 
     --doc-tc-bg: #1E2A3A;
     --doc-tc-text: #6B9BD2;

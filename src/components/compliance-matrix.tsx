@@ -10,7 +10,7 @@ import {
   getComplianceLabel,
 } from "@/lib/utils";
 import { useContextPanel } from "./context-panel-provider";
-import { AlertTriangle, AlertCircle, CheckCircle2, Sparkles, HelpCircle, ChevronDown, ChevronRight, Building2 } from "lucide-react";
+import { AlertTriangle, AlertCircle, CheckCircle2, Sparkles, HelpCircle, ChevronDown, ChevronRight, Building2, Info } from "lucide-react";
 
 interface MatrixEntry {
   id: string;
@@ -81,9 +81,10 @@ function getTheme(entry: MatrixEntry): string {
 
 // Triage groups: ordered by urgency based on document evidence analysis
 const TRIAGE_GROUPS = {
-  gaps: { label: "Gaps — No Matching Clause", icon: AlertTriangle, color: "text-[var(--status-non-compliant-text)]" },
+  gaps: { label: "Gaps — Mandatory Clause Missing", icon: AlertTriangle, color: "text-[var(--status-non-compliant-text)]" },
   weak: { label: "Weak — Needs Redrafting", icon: AlertCircle, color: "text-[var(--status-in-progress-text)]" },
   covered: { label: "Covered — Clause Found", icon: CheckCircle2, color: "text-[var(--status-compliant-text)]" },
+  advisory: { label: "Regulatory Expectation — Not Evidenced in T&Cs", icon: Info, color: "text-[var(--status-not-evidenced-text)]" },
   internal: { label: "Internal Governance — Policy Review Needed", icon: Building2, color: "text-[var(--scope-internal-text)]" },
   principles: { label: "Principles — Holistic Assessment", icon: Sparkles, color: "text-[var(--type-principle-text)]" },
   unanalysed: { label: "Unanalysed — Awaiting Document Review", icon: HelpCircle, color: "text-[var(--muted-foreground)]" },
@@ -95,11 +96,24 @@ function getTriageGroup(entry: MatrixEntry): TriageGroup {
   if (entry.obligation.obligationType === "principle") return "principles";
   // Internal governance obligations go to their own group
   if (entry.obligation.evidenceScope === "internal_governance") return "internal";
+  // Guidance obligations without evidence go to advisory
+  if (entry.obligation.evidenceScope === "guidance") {
+    if (!entry.documentEvidence || entry.documentEvidence.length === 0) return "unanalysed";
+    const statuses = entry.documentEvidence.map((de) => de.status);
+    if (statuses.some((s) => s === "not_addressed")) return "advisory";
+    if (statuses.some((s) => s === "partially_addressed")) return "weak";
+    return "covered";
+  }
   if (!entry.documentEvidence || entry.documentEvidence.length === 0) return "unanalysed";
 
   // Use the worst evidence status across all documents
   const statuses = entry.documentEvidence.map((de) => de.status);
-  if (statuses.some((s) => s === "not_addressed")) return "gaps";
+  if (statuses.some((s) => s === "not_addressed")) {
+    // Only mandatory_clause obligations go to "gaps" (red)
+    // Regulatory expectations go to "advisory" (neutral)
+    if (entry.obligation.evidenceScope === "mandatory_clause") return "gaps";
+    return "advisory";
+  }
   if (statuses.some((s) => s === "partially_addressed")) return "weak";
   return "covered";
 }
@@ -226,6 +240,22 @@ export function ComplianceMatrix({ productId, productName, entries: initialEntri
           )}
 
           {/* Evidence scope banners */}
+          {ob.evidenceScope === "mandatory_clause" && (
+            <div className="rounded-md p-2.5 bg-[var(--scope-mandatory-bg)] text-[var(--scope-mandatory-text)]">
+              <p className="text-xs font-semibold mb-0.5">Mandatory Clause</p>
+              <p className="text-[11px] leading-relaxed">
+                This obligation must be evidenced in customer T&Cs by law. Missing clauses are flagged as non-compliant.
+              </p>
+            </div>
+          )}
+          {ob.evidenceScope === "term_required" && (
+            <div className="rounded-md p-2.5 bg-[var(--status-not-evidenced-bg)] text-[var(--status-not-evidenced-text)]">
+              <p className="text-xs font-semibold mb-0.5">Regulatory Expectation</p>
+              <p className="text-[11px] leading-relaxed">
+                This regulation applies to the product and may be relevant to T&Cs, but absence is not a compliance failure. The obligation may be addressed through other means.
+              </p>
+            </div>
+          )}
           {ob.evidenceScope === "internal_governance" && (
             <div className="rounded-md p-2.5 bg-[var(--scope-internal-bg)] text-[var(--scope-internal-text)]">
               <p className="text-xs font-semibold mb-0.5">Internal Governance Requirement</p>
@@ -386,7 +416,7 @@ export function ComplianceMatrix({ productId, productName, entries: initialEntri
 
       {/* Triage summary bar */}
       {viewMode === "triage" && (() => {
-        const counts: Record<TriageGroup, number> = { gaps: 0, weak: 0, covered: 0, internal: 0, principles: 0, unanalysed: 0 };
+        const counts: Record<TriageGroup, number> = { gaps: 0, weak: 0, covered: 0, advisory: 0, internal: 0, principles: 0, unanalysed: 0 };
         for (const e of filtered) counts[getTriageGroup(e)]++;
         return (
           <div className="flex items-center gap-4 mb-4 px-4 py-3 rounded-lg bg-[var(--muted)] border border-[var(--border)]">
@@ -507,7 +537,9 @@ function ObligationRow({
             >
               {obType?.label || ob.obligationType}
             </span>
-            {ob.evidenceScope !== "term_required" && (() => {
+            {(() => {
+              // Show scope badge for all scopes except term_required (the default/most common)
+              if (ob.evidenceScope === "term_required") return null;
               const scope = EVIDENCE_SCOPES[ob.evidenceScope as keyof typeof EVIDENCE_SCOPES];
               return scope ? (
                 <span className={`px-1.5 py-0.5 rounded text-[11px] font-medium ${scope.color}`}>

@@ -182,7 +182,7 @@
               "objectText": "Client money held under statutory trust in designated client accounts",
               "conditionText": "At all times when holding client money",
               "summary": "Client money is held on statutory trust (or as agent in Scotland) for clients according to their respective interests. This means it is legally separated from the firm's own money. In the event of the firm's insolvency, client money is not available to the firm's general creditors.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "SIPP / Personal Pension",

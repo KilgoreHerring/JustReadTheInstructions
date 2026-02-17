@@ -5,6 +5,7 @@ import { useState } from "react";
 interface StatusBreakdown {
   compliant: number;
   non_compliant: number;
+  not_evidenced: number;
   in_progress: number;
   not_assessed: number;
   not_applicable: number;
@@ -13,6 +14,7 @@ interface StatusBreakdown {
 const STATUS_CONFIG = [
   { key: "compliant", label: "Compliant", bg: "var(--status-compliant-bg)", text: "var(--status-compliant-text)" },
   { key: "non_compliant", label: "Non-Compliant", bg: "var(--status-non-compliant-bg)", text: "var(--status-non-compliant-text)" },
+  { key: "not_evidenced", label: "Not Evidenced", bg: "var(--status-not-evidenced-bg)", text: "var(--status-not-evidenced-text)" },
   { key: "in_progress", label: "In Progress", bg: "var(--status-in-progress-bg)", text: "var(--status-in-progress-text)" },
   { key: "not_assessed", label: "Not Assessed", bg: "var(--status-not-assessed-bg)", text: "var(--status-not-assessed-text)" },
   { key: "not_applicable", label: "N/A", bg: "var(--status-na-bg)", text: "var(--status-na-text)" },

@@ -89,7 +89,7 @@
               "objectText": "Pre-sale status disclosure including firm identity, nature of service, complaints process and registration details",
               "conditionText": "Prior to the conclusion of an initial insurance contract",
               "summary": "Before a customer buys an insurance policy, the intermediary must disclose key information about itself: identity and address, whether advice is given, how to complain, and how to verify its FCA registration. This ensures the customer knows who they are dealing with.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",
@@ -115,7 +115,7 @@
               "objectText": "Disclosure of the scope of the intermediary's service — fair analysis, restricted panel, or single insurer",
               "conditionText": "Prior to the conclusion of an initial insurance contract",
               "summary": "Intermediaries must tell customers whether they search the whole market (fair and personal analysis), are tied to one or more named insurers, or select from a limited panel. This enables customers to understand whether they are getting a broad market comparison or a restricted recommendation.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",
@@ -141,7 +141,7 @@
               "objectText": "Information on the nature and basis of remuneration, including whether the intermediary works on the basis of a fee, commission, or other type of remuneration",
               "conditionText": "In good time before the conclusion of an initial insurance contract or upon making a personal recommendation",
               "summary": "Intermediaries must tell customers how they are paid — whether by commission from the insurer, by fee from the customer, or by other remuneration. The customer must know this before buying so they can assess potential conflicts of interest.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",
@@ -263,7 +263,7 @@
               "objectText": "The standardised Insurance Product Information Document (IPID) for the general insurance product",
               "conditionText": "Prior to the conclusion of a general insurance contract",
               "summary": "Before a general insurance policy is purchased, the customer must receive the standardised IPID. This document is prepared by the product manufacturer (insurer) and follows a prescribed format covering key features, exclusions, and obligations in a concise, standardised way.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Travel Insurance"
@@ -288,7 +288,7 @@
               "objectText": "Pre-contract product information covering insurer identity, coverage, exclusions, policyholder obligations, duration and termination",
               "conditionText": "In good time before the conclusion of a non-investment insurance contract",
               "summary": "Before buying insurance, customers must receive comprehensive product information: who the insurer is, what is covered, what is excluded, their obligations as policyholder, how long the policy lasts, and how to cancel. This enables an informed purchasing decision.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",
@@ -340,7 +340,7 @@
               "objectText": "Insurance quotations including the premium amount or calculation basis",
               "conditionText": "When providing a quotation for a non-investment insurance contract",
               "summary": "Insurance quotations must clearly state the premium (or how it is calculated), be accurate, and not mislead customers. Charges, taxes, and any additional fees must be transparent.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",
@@ -495,7 +495,7 @@
               "objectText": "Renewal notices containing the renewal price, prior year premium, and encouragement to review cover and shop around",
               "conditionText": "When issuing a renewal notice for a general insurance contract",
               "summary": "Renewal notices must prominently display both the renewal price and last year's premium, enabling customers to compare. Firms must also include a statement encouraging the customer to check their cover is still suitable and to consider alternatives.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Travel Insurance"
@@ -529,7 +529,7 @@
               "objectText": "The right to cancel a general insurance or pure protection contract within 14 days without penalty",
               "conditionText": "From the later of (a) the day the customer is informed the contract is concluded, or (b) receipt of contractual terms and pre-contractual information",
               "summary": "Customers have 14 days to cancel a general insurance or pure protection contract without penalty. The period runs from the later of being told the contract is concluded or receiving the terms. For long-term protection contracts (life, critical illness), a 30-day cancellation period applies under separate rules.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Travel Insurance"
@@ -554,7 +554,7 @@
               "objectText": "The right to cancel a long-term or pure protection distance contract within 30 days without penalty",
               "conditionText": "When a long-term insurance contract or pure protection contract is sold at a distance, from the later of conclusion or receipt of terms",
               "summary": "For long-term insurance products (life assurance, critical illness, income protection) sold at a distance, customers have an extended 30-day cancellation period. This reflects the complexity and long-term commitment involved in protection products.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Protection Insurance"
               ],
@@ -578,7 +578,7 @@
               "objectText": "Refund of premium on cancellation, with permitted pro-rata deduction for cover already provided",
               "conditionText": "When a customer exercises their right to cancel within the cooling-off period",
               "summary": "On cancellation within the cooling-off period, the customer is entitled to a refund. The firm may only deduct a proportionate amount for the days of cover already provided, and only if the customer was told about this deduction before buying the policy.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "General Insurance",
                 "Protection Insurance",

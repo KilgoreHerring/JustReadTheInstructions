@@ -28,7 +28,7 @@
               "objectText": "Summary details of internal complaints handling procedures, including complaint submission methods and FOS referral rights",
               "conditionText": "At all times; must be made available to eligible complainants",
               "summary": "Firms must publish a summary of their complaints process so consumers know how to complain and are aware of their right to escalate to the Financial Ombudsman Service if the complaint is not resolved within eight weeks.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",

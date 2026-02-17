@@ -17,6 +17,7 @@ export function formatDate(date: Date | string | null): string {
 export const COMPLIANCE_STATUSES = {
   compliant: { label: "Compliant", color: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]" },
   non_compliant: { label: "Non-Compliant", color: "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]" },
+  not_evidenced: { label: "Applicable — Not Evidenced", color: "bg-[var(--status-not-evidenced-bg)] text-[var(--status-not-evidenced-text)]" },
   in_progress: { label: "In Progress", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
   not_assessed: { label: "Not Assessed", color: "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]" },
   not_applicable: { label: "N/A", color: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]" },
@@ -51,7 +52,8 @@ export const EVIDENCE_STATUSES = {
 } as const;
 
 export const EVIDENCE_SCOPES = {
-  term_required: { label: "Term Required", color: "bg-[var(--scope-term-bg)] text-[var(--scope-term-text)]" },
+  mandatory_clause: { label: "Mandatory Clause", color: "bg-[var(--scope-mandatory-bg)] text-[var(--scope-mandatory-text)]" },
+  term_required: { label: "Regulatory Expectation", color: "bg-[var(--scope-term-bg)] text-[var(--scope-term-text)]" },
   internal_governance: { label: "Internal Governance", color: "bg-[var(--scope-internal-bg)] text-[var(--scope-internal-text)]" },
   guidance: { label: "Guidance & Best Practice", color: "bg-[var(--scope-guidance-bg)] text-[var(--scope-guidance-text)]" },
 } as const;
@@ -65,6 +67,7 @@ export const READABILITY_RATINGS = {
 const PRINCIPLE_LABELS: Record<string, string> = {
   compliant: "Embedded",
   non_compliant: "Not Embedded",
+  not_evidenced: "Not Evidenced",
   in_progress: "Partially Embedded",
   not_assessed: "Not Assessed",
   not_applicable: "N/A",

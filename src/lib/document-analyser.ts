@@ -85,7 +85,8 @@ Be precise about clause references. Quote relevant T&C text when identifying evi
 ## Evidence Scope
 
 Each obligation has an evidenceScope field indicating where compliance evidence is expected:
-- "term_required": This obligation SHOULD be addressed in customer T&Cs. Mark "not_addressed" if no relevant clause is found.
+- "mandatory_clause": This obligation MUST be evidenced in customer T&Cs by law — it requires a specific disclosure, prescribed information, or statutory right to be communicated. If no relevant clause is found, mark "not_addressed" — this is a hard compliance failure.
+- "term_required": This regulation applies to the product and may be relevant to T&Cs, but absence from T&Cs is not necessarily a compliance failure. The obligation may be addressed through other means (internal policies, product design, separate disclosures). If no clause is found, mark "not_addressed" — but note this is an advisory finding, not a compliance failure. Still assess quality if a relevant clause IS found.
 - "internal_governance": This is an internal governance/process requirement (e.g. reconciliations, governance structures, record-keeping, staffing, internal controls). Mark as "not_applicable" for T&C analysis — these are never evidenced in customer terms. Do NOT mark "not_addressed" simply because T&Cs don't cover an internal process.
 - "guidance": Best practice and guidance. Assess holistically — absence from T&Cs is not a hard compliance failure. Use "partially_addressed" rather than "not_addressed" if the document doesn't explicitly cover this but doesn't contradict it either.`;
 
@@ -372,11 +373,16 @@ function deriveSuggestedStatus(evidence: Record<string, unknown>[], evidenceScop
   if (statuses.every((s) => s === "addressed")) return "compliant";
   if (statuses.every((s) => s === "not_applicable")) return "not_applicable";
   if (statuses.some((s) => s === "not_addressed")) {
+    // Only mandatory clauses can be non-compliant from T&C analysis
+    if (evidenceScope === "mandatory_clause") return "non_compliant";
+    // Regulatory expectations: neutral advisory status — not a compliance failure
+    if (evidenceScope === "term_required") return "not_evidenced";
     // Internal governance obligations shouldn't be non_compliant from T&C analysis
     if (evidenceScope === "internal_governance") return "not_assessed";
     // Guidance obligations get a softer signal
     if (evidenceScope === "guidance") return "in_progress";
-    return "non_compliant";
+    // Fallback for unknown scope: advisory rather than non-compliant
+    return "not_evidenced";
   }
   if (statuses.some((s) => s === "partially_addressed")) return "in_progress";
   return "not_assessed";

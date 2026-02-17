@@ -89,7 +89,7 @@
               "objectText": "A mortgage illustration (ESIS) complying with MCOB 5 requirements",
               "conditionText": "Before or at the point the customer submits a mortgage application",
               "summary": "A standardised mortgage illustration (European Standardised Information Sheet / ESIS) must be provided to the customer before or when they apply, showing key product details, costs and risks in a standard format.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -124,7 +124,7 @@
               "objectText": "The European Standardised Information Sheet (ESIS) with all prescribed mortgage information",
               "conditionText": "Before the customer is bound by a regulated mortgage contract or offer",
               "summary": "The firm must provide an ESIS containing all prescribed information including the APRC, total cost of the mortgage, individual repayment amounts, frequency, any early repayment charges, and all other fees so the customer can compare products on a standardised basis.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -176,7 +176,7 @@
               "objectText": "Risk warnings for variable rate and foreign currency mortgages within the ESIS",
               "conditionText": "Where the mortgage has a variable interest rate or is denominated in a foreign currency",
               "summary": "Where the mortgage is on a variable rate, the ESIS must warn that repayments may increase and illustrate the impact of a rate rise. Where the mortgage involves a foreign currency, the ESIS must warn about exchange rate risk and illustrate the potential effect on the amount owed.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage"
@@ -210,7 +210,7 @@
               "objectText": "The mortgage offer document containing all key contract terms",
               "conditionText": "At least 7 business days before the mortgage completion date",
               "summary": "The formal mortgage offer must be sent at least 7 business days before completion, giving the customer time to review the terms including amount, rate, term, repayment method and fees.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -271,7 +271,7 @@
               "objectText": "Notification of rate expiry, the rate that will apply thereafter and available product transfer options",
               "conditionText": "When a fixed or discounted rate period on a mortgage is due to expire",
               "summary": "Lenders must notify customers at least 3 months before their fixed or discount rate ends, telling them what rate they will revert to and what alternative products they can switch to.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -330,7 +330,7 @@
               "objectText": "A written disclosure document covering interest rate, no-negative-equity guarantee, estate impact, benefits impact and risks",
               "conditionText": "Before the customer commits to an equity release transaction",
               "summary": "A detailed written disclosure must be given before commitment, covering key features including the no-negative-equity guarantee (lifetime mortgages), property value share (home reversions), impact on inheritance and means-tested benefits, and all material risks.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Equity Release"
               ],
@@ -378,7 +378,7 @@
               "objectText": "The no-negative-equity guarantee clause in lifetime mortgage contracts",
               "conditionText": "When entering into a lifetime mortgage contract",
               "summary": "Every lifetime mortgage must include a no-negative-equity guarantee ensuring that on redemption (whether through sale, death or otherwise) the borrower or their estate will never owe more than the net sale proceeds of the property.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Equity Release"
               ],
@@ -402,7 +402,7 @@
               "objectText": "Disclosure of the right to remain in the property under a lifetime mortgage",
               "conditionText": "When advising on or offering a lifetime mortgage",
               "summary": "The firm must explain that the customer can remain in the property for life provided they comply with the mortgage terms, and must clearly explain any circumstances that could affect this right (such as failure to maintain the property or breach of other terms).",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Equity Release"
               ],
@@ -435,7 +435,7 @@
               "objectText": "All charges imposed on customers under regulated mortgage contracts",
               "conditionText": "When imposing or varying any charge under a regulated mortgage contract",
               "summary": "Lenders cannot impose new charges or increase existing ones unless the charge (or the basis for determining it) is clearly set out in the mortgage contract or in a tariff of charges that has been provided to the customer.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -461,7 +461,7 @@
               "objectText": "Early repayment charges imposed under regulated mortgage contracts",
               "conditionText": "When including early repayment charges in a regulated mortgage contract",
               "summary": "Early repayment charges must genuinely reflect the firm's costs of early repayment (not be punitive or excessive) and must be fully disclosed to the customer before they commit to the mortgage.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",
@@ -487,7 +487,7 @@
               "objectText": "The tariff of charges listing all charges that may be imposed under the mortgage contract",
               "conditionText": "Before the customer enters into the regulated mortgage contract and on request during the mortgage term",
               "summary": "A complete tariff of all possible charges must be provided before the mortgage is entered into, and the firm must make this available on request at any point during the life of the mortgage.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Residential Mortgage",
                 "Buy-to-Let Mortgage",

@@ -111,7 +111,7 @@
               "objectText": "Disclosure of all third-party payments and benefits received in connection with investment services",
               "conditionText": "Before providing the relevant investment service to the client",
               "summary": "Pre-service disclosure of all third-party inducements is mandatory. Clients must know the existence, nature and amount of any payments or benefits the firm receives from third parties before the service is provided.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "SIPP / Personal Pension",
@@ -174,7 +174,7 @@
               "objectText": "All information and financial promotions addressed to or likely to be received by retail clients",
               "conditionText": "When communicating with retail clients or issuing promotions likely to be received by retail clients",
               "summary": "Retail client communications must identify the firm, be accurate, balance benefits with a fair and prominent indication of risks, and be understandable to the average target audience member. Prominence of benefits must not exceed prominence of risks.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "SIPP / Personal Pension",
@@ -202,7 +202,7 @@
               "objectText": "All communications containing past performance data for financial instruments, indices or investment services",
               "conditionText": "When including any indication of past performance in a communication or financial promotion",
               "summary": "Past performance data must cover at least five years (or the whole period if shorter), must not dominate the communication, and must carry a prominent warning about the limitations of past performance as a predictor. Currency risks must also be flagged where relevant.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "Discretionary Portfolio",
@@ -238,7 +238,7 @@
               "objectText": "Firm identification, authorisation status, contact details, methods of communication, and reporting arrangements",
               "conditionText": "In good time before the provision of investment services or ancillary services to the client",
               "summary": "Firms must provide comprehensive pre-service information including: firm name and address, authorisation status and regulator, communication methods, languages, reporting arrangements, and the nature of services offered. This derives from MiFID II Article 24(4).",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "SIPP / Personal Pension",
@@ -267,7 +267,7 @@
               "objectText": "All costs and charges including: cost of advice, cost of the financial instrument, third-party payments, entry and exit charges, ongoing charges, transaction costs, performance fees and incidental costs",
               "conditionText": "Before providing investment services, and on an ongoing basis at least annually thereafter",
               "summary": "Comprehensive ex-ante and ex-post costs and charges disclosure is required. All costs must be aggregated to show the total cost and its cumulative effect on investment returns. This includes advice fees, product charges, platform costs and transaction charges. An itemised breakdown must be available on request.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "SIPP / Personal Pension",
@@ -296,7 +296,7 @@
               "objectText": "Foreign currency costs, conversion rates and currency-related charges",
               "conditionText": "Where any part of the total costs and charges is payable in or represents a foreign currency amount",
               "summary": "Where investment costs involve foreign currency, the firm must disclose the currency, conversion rates used and any costs associated with currency conversion.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "Discretionary Portfolio",
@@ -488,7 +488,7 @@
               "objectText": "A warning to the client that the product or service is not appropriate based on the information provided",
               "conditionText": "When the firm's appropriateness assessment concludes that the product or service is not appropriate for the client",
               "summary": "Where the appropriateness assessment indicates a product is not appropriate for the client, the firm must issue a warning. The warning may be standardised but must be clear. The client may still proceed after receiving the warning.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "Structured Product",
@@ -514,7 +514,7 @@
               "objectText": "A warning that the firm cannot assess appropriateness due to insufficient client information",
               "conditionText": "When the client does not provide, or provides insufficient, knowledge and experience information",
               "summary": "Where a client declines to provide information for the appropriateness assessment or provides insufficient information, the firm must warn them that it cannot determine whether the product is appropriate.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "Structured Product",
@@ -535,7 +535,7 @@
               "objectText": "Execution-only transactions in non-complex financial instruments including listed shares, money market instruments, non-complex bonds and UCITS",
               "conditionText": "When the service is execution-only, relates to non-complex instruments, and is initiated by the client",
               "summary": "The execution-only exemption allows firms to execute client-initiated orders in non-complex instruments (shares, UCITS, simple bonds) without conducting an appropriateness assessment. The firm must warn the client that no assessment has been carried out. Complex products such as structured products and derivatives do not qualify.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "Retail Fund (UCITS/NURS)"
@@ -708,7 +708,7 @@
               "objectText": "A periodic statement of the composition and valuation of the managed portfolio including: the details and value of each holding, cash balance, total value, overall performance and costs incurred during the period",
               "conditionText": "On a periodic basis, at least quarterly for retail clients (half-yearly if agreed and the portfolio has no leveraged instruments)",
               "summary": "Portfolio managers must provide quarterly (or half-yearly if agreed and no leverage) reports to retail clients showing portfolio composition, valuations, performance and costs. The statement must be on a durable medium and enable the client to understand and verify the management of their portfolio.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Discretionary Portfolio"
               ],
@@ -732,7 +732,7 @@
               "objectText": "Notification of portfolio losses exceeding the agreed threshold for portfolios containing leveraged or contingent liability positions",
               "conditionText": "When an open position in a leveraged or contingent liability transaction causes portfolio losses to exceed the agreed threshold",
               "summary": "For managed portfolios containing leveraged or contingent liability positions, losses exceeding a pre-agreed threshold must be reported to the retail client by close of the business day on which the breach occurs. This is an important investor protection for higher-risk portfolios.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Discretionary Portfolio"
               ],
@@ -751,7 +751,7 @@
               "objectText": "A trade confirmation notice containing essential information about the executed order including the instrument, quantity, price, venue, date and time, total consideration and any charges",
               "conditionText": "After executing an order on behalf of a client",
               "summary": "Firms must promptly confirm order execution to clients. For retail clients, the confirmation must be sent by the first business day after execution. The notice must include essential details: instrument, quantity, price, venue, date and time, total consideration and charges.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Investment Product (Retail)",
                 "Advisory Investment Service",
@@ -862,7 +862,7 @@
               "objectText": "Pension transfer risk warnings addressing: guaranteed income, value of benefits given up, transfer risks, and loss of safeguarded benefits such as guaranteed annuity rates",
               "conditionText": "When advising a retail client on a pension transfer from a defined benefit or safeguarded benefits scheme",
               "summary": "Specific risk warnings must be given in pension transfer advice, covering: the guaranteed nature of the DB income, the value of what is being given up, the investment and longevity risks of transferring, and the loss of any safeguarded benefits such as guaranteed annuity rates.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "SIPP / Personal Pension",
                 "Workplace Pension"

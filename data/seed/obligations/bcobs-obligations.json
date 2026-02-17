@@ -59,7 +59,7 @@
               "objectText": "Full terms and conditions of the distance contract for the retail banking service",
               "conditionText": "When concluding a distance contract for a retail banking service",
               "summary": "When banking products are sold at a distance (online, phone), full terms must be provided in a durable medium either before or immediately after the contract is made.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Current Account",
                 "Savings Account",
@@ -122,7 +122,7 @@
               "objectText": "Interest rate information including current rate, basis of rate and reference to any base rate or reference rate",
               "conditionText": "When providing product information to banking customers",
               "summary": "Banks should clearly disclose the current interest rate, how it is determined, and what will happen if it changes, including reference to any base rate that the product rate follows.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Current Account",
                 "Savings Account",
@@ -185,7 +185,7 @@
               "objectText": "Notification of changes to retail banking product terms and conditions",
               "conditionText": "When varying contract terms to the significant disadvantage of the banking customer",
               "summary": "Changes to banking product terms that significantly disadvantage the customer require at least 60 days' advance notice. This includes rate reductions on savings and increases to charges.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Current Account",
                 "Savings Account",
@@ -248,7 +248,7 @@
               "objectText": "The right to cancel a distance contract within 14 days",
               "conditionText": "When a retail banking product is sold via a distance channel",
               "summary": "Customers who open banking products at a distance (online, phone) have a 14-day cooling-off period during which they can cancel the contract.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Current Account",
                 "Savings Account",
@@ -401,7 +401,7 @@
               "objectText": "Overdraft terms information including interest rate, fees, limit and excess charges",
               "conditionText": "When providing an overdraft facility to a business banking customer",
               "summary": "Business overdraft terms must be clearly disclosed upfront, including the interest rate (EAR), any arrangement or renewal fees, the agreed limit, and what happens if the business goes over the limit. Unarranged overdraft charges must also be clearly stated.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Business Current Account"
               ],
@@ -425,7 +425,7 @@
               "objectText": "Notification of changes to or withdrawal of business overdraft facilities",
               "conditionText": "When a firm decides to reduce or withdraw a business customer's overdraft facility",
               "summary": "Banks must not suddenly reduce or withdraw business overdraft facilities without reasonable notice. This protects businesses from sudden cash flow disruption. Exceptions apply only for fraud or serious terms breaches.",
-              "evidenceScope": "term_required",
+              "evidenceScope": "mandatory_clause",
               "applicableProductTypes": [
                 "Business Current Account"
               ],

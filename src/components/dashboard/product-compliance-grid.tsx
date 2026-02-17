@@ -8,12 +8,14 @@ interface ProductRow {
   statusBreakdown: {
     compliant: number;
     non_compliant: number;
+    not_evidenced: number;
     in_progress: number;
     not_assessed: number;
     not_applicable: number;
   };
   totalObligations: number;
-  complianceScore: number;
+  mandatoryTotal: number;
+  complianceScore: number; // -1 means no mandatory obligations
   lastAnalysis: Date | string | null;
 }
 
@@ -57,7 +59,9 @@ export function ProductComplianceGrid({ products }: { products: ProductRow[] }) 
                   <MiniComplianceBar breakdown={p.statusBreakdown} total={p.totalObligations} />
                 </td>
                 <td className="px-4 py-2.5 text-right">
-                  {p.totalObligations > 0 ? (
+                  {p.complianceScore === -1 ? (
+                    <span className="text-xs text-[var(--muted-foreground)]" title="No mandatory clause obligations">N/A</span>
+                  ) : p.totalObligations > 0 ? (
                     <span className={`text-xs font-medium ${p.complianceScore >= 80 ? "text-[var(--status-compliant-text)]" : p.complianceScore >= 50 ? "text-[var(--status-in-progress-text)]" : "text-[var(--status-non-compliant-text)]"}`}>
                       {p.complianceScore}%
                     </span>

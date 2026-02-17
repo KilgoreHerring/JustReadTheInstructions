@@ -5,6 +5,7 @@ import { useState } from "react";
 interface StatusCounts {
   compliant: number;
   non_compliant: number;
+  not_evidenced: number;
   in_progress: number;
   not_assessed: number;
   not_applicable: number;
@@ -21,7 +22,7 @@ function getCellColor(counts: StatusCounts | undefined): { bg: string; text: str
   if (!counts || counts.total === 0) return { bg: "transparent", text: "var(--muted-foreground)" };
   if (counts.non_compliant > 0) return { bg: "var(--status-non-compliant-bg)", text: "var(--status-non-compliant-text)" };
   if (counts.in_progress > 0) return { bg: "var(--status-in-progress-bg)", text: "var(--status-in-progress-text)" };
-  if (counts.not_assessed === counts.total) return { bg: "var(--status-not-assessed-bg)", text: "var(--status-not-assessed-text)" };
+  if (counts.not_assessed + counts.not_evidenced === counts.total) return { bg: "var(--status-not-assessed-bg)", text: "var(--status-not-assessed-text)" };
   if (counts.compliant + counts.not_applicable === counts.total) return { bg: "var(--status-compliant-bg)", text: "var(--status-compliant-text)" };
   return { bg: "var(--status-in-progress-bg)", text: "var(--status-in-progress-text)" };
 }
@@ -29,6 +30,7 @@ function getCellColor(counts: StatusCounts | undefined): { bg: string; text: str
 const STATUS_LABELS: { key: keyof StatusCounts; label: string }[] = [
   { key: "compliant", label: "Compliant" },
   { key: "non_compliant", label: "Non-Compliant" },
+  { key: "not_evidenced", label: "Not Evidenced" },
   { key: "in_progress", label: "In Progress" },
   { key: "not_assessed", label: "Not Assessed" },
   { key: "not_applicable", label: "N/A" },
