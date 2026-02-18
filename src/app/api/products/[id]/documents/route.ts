@@ -119,7 +119,7 @@ export async function POST(
   });
 
   return NextResponse.json(
-    { ...updated, batchJobId, batchError },
+    { ...updated, batchJobId, batchError, _v: "batch-v3" },
     { status: 201 }
   );
 }
