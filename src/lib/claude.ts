@@ -10,11 +10,12 @@ export async function askClaude(
   systemPrompt: string,
   userMessage: string,
   maxTokens: number = 4096,
-  options?: { userId?: string; endpoint?: string }
+  options?: { userId?: string; endpoint?: string; model?: string }
 ): Promise<string> {
-  console.log(`[Claude] Calling API (max_tokens: ${maxTokens})...`);
+  const model = options?.model ?? "claude-sonnet-4-5";
+  console.log(`[Claude] Calling API (model: ${model}, max_tokens: ${maxTokens})...`);
   const response = await anthropic.messages.create({
-    model: "claude-sonnet-4-5",
+    model,
     max_tokens: maxTokens,
     system: systemPrompt,
     messages: [{ role: "user", content: userMessage }],
@@ -65,7 +66,7 @@ export async function askClaudeJSON<T>(
   userMessage: string,
   maxTokens: number = 4096,
   label?: string,
-  options?: { userId?: string; endpoint?: string }
+  options?: { userId?: string; endpoint?: string; model?: string }
 ): Promise<T> {
   const tag = label ? `[Claude JSON: ${label}]` : "[Claude JSON]";
 

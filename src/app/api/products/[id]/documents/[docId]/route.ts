@@ -47,6 +47,21 @@ export async function GET(
     }
   }
 
+  // Safety net: if a T&Cs document is stuck in "pending", auto-trigger batch
+  if (doc.analysisStatus === "pending" && doc.documentType === "terms_and_conditions") {
+    try {
+      console.log(`[DocPoll] Auto-triggering batch for pending T&Cs doc ${docId}`);
+      await createBatchForDocuments([docId]);
+      const updated = await prisma.productDocument.findUnique({
+        where: { id: docId },
+        select: DOC_SELECT,
+      });
+      if (updated) return NextResponse.json(updated);
+    } catch (e) {
+      console.error("[DocPoll] Auto-trigger batch failed:", e);
+    }
+  }
+
   return NextResponse.json(doc);
 }
 

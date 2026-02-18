@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { Prisma } from "@prisma/client";
+import { calculateReadability } from "@/lib/readability-scorer";
+import { createBatchForDocuments } from "@/lib/batch-analyser";
 
 export async function GET() {
   const products = await prisma.product.findMany({
@@ -33,16 +36,37 @@ export async function POST(request: NextRequest) {
   });
 
   if (extractedText && extractedFileName) {
-    await prisma.productDocument.create({
+    // Compute readability scores
+    let readabilityScore: Prisma.InputJsonValue | null = null;
+    try {
+      if (extractedText.trim().length >= 100) {
+        const raw = calculateReadability(extractedText);
+        readabilityScore = JSON.parse(JSON.stringify(raw)) as Prisma.InputJsonValue;
+      }
+    } catch (e) {
+      console.error("[Product] Readability scoring failed:", e);
+    }
+
+    const doc = await prisma.productDocument.create({
       data: {
         productId: product.id,
         documentType: "terms_and_conditions",
         fileName: extractedFileName,
         content: extractedText,
         analysisStatus: "pending",
+        readabilityScore: readabilityScore ?? undefined,
       },
     });
-    // Analysis is triggered separately by the frontend
+
+    // Auto-submit to Anthropic Batch API for analysis
+    try {
+      console.log(`[Product] Creating batch job for document ${doc.id}`);
+      const batchJobId = await createBatchForDocuments([doc.id]);
+      console.log(`[Product] Batch job created: ${batchJobId}`);
+    } catch (batchErr) {
+      console.error(`[Product] Batch creation failed:`, batchErr instanceof Error ? batchErr.message : batchErr);
+      // Non-fatal — document stays "pending", user can re-trigger from product page
+    }
   }
 
   return NextResponse.json(product, { status: 201 });

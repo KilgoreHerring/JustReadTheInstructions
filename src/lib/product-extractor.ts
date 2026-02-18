@@ -34,6 +34,8 @@ export async function extractProductDetails(
   return askClaudeJSON<ExtractedProductDetails>(
     SYSTEM_PROMPT,
     userMessage,
-    2048
+    2048,
+    "product-extract",
+    { model: "claude-3-5-haiku-latest" }
   );
 }
