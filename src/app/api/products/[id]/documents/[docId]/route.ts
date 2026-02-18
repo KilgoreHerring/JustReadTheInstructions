@@ -90,22 +90,28 @@ export async function POST(
     }
   }
 
-  // Real-time: reset and re-run
-  const doc = await prisma.productDocument.update({
-    where: { id: docId },
-    data: {
-      analysisStatus: "analysing",
-      analysisResult: undefined,
-      analysisError: null,
-      analysisCompletedAt: null,
-    },
-    select: {
-      id: true, documentType: true, fileName: true,
-      analysisStatus: true, analysisCompletedAt: true, createdAt: true,
-    },
-  });
-
-  runAnalysis(docId).catch(() => {});
-
-  return NextResponse.json(doc);
+  // Real-time: await analysis (keeps the function alive until complete)
+  try {
+    await runAnalysis(docId);
+    const doc = await prisma.productDocument.findUniqueOrThrow({
+      where: { id: docId },
+      select: {
+        id: true, documentType: true, fileName: true,
+        analysisStatus: true, analysisResult: true,
+        analysisCompletedAt: true, createdAt: true,
+      },
+    });
+    return NextResponse.json(doc);
+  } catch (error) {
+    console.error("[Analysis] POST handler error:", error);
+    const doc = await prisma.productDocument.findUnique({
+      where: { id: docId },
+      select: {
+        id: true, documentType: true, fileName: true,
+        analysisStatus: true, analysisError: true,
+        analysisCompletedAt: true, createdAt: true,
+      },
+    });
+    return NextResponse.json(doc || { error: "Analysis failed" }, { status: 500 });
+  }
 }

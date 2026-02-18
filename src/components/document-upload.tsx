@@ -141,6 +141,7 @@ function DocumentSlot({
     setError(null);
 
     try {
+      // Step 1: Upload document (fast — just saves to DB + readability)
       const res = await fetch(`/api/products/${productId}/documents`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -160,6 +161,25 @@ function DocumentSlot({
       setDoc(created);
       setShowInput(false);
       setContent("");
+
+      // Step 2: Trigger analysis in a separate request (keeps function alive)
+      if (documentType === "terms_and_conditions") {
+        setDoc({ ...created, analysisStatus: "analysing" });
+        fetch(`/api/products/${productId}/documents/${created.id}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ mode: "realtime" }),
+        })
+          .then(async (analysisRes) => {
+            if (analysisRes.ok) {
+              const updated = await analysisRes.json();
+              setDoc(updated);
+            }
+          })
+          .catch(() => {
+            // Polling will pick up the final status
+          });
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
     } finally {

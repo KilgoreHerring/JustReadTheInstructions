@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { runAnalysis } from "@/lib/document-analyser";
-
-export const maxDuration = 300;
 
 export async function GET() {
   const products = await prisma.product.findMany({
@@ -36,7 +33,7 @@ export async function POST(request: NextRequest) {
   });
 
   if (extractedText && extractedFileName) {
-    const doc = await prisma.productDocument.create({
+    await prisma.productDocument.create({
       data: {
         productId: product.id,
         documentType: "terms_and_conditions",
@@ -45,7 +42,7 @@ export async function POST(request: NextRequest) {
         analysisStatus: "pending",
       },
     });
-    runAnalysis(doc.id).catch(() => {});
+    // Analysis is triggered separately by the frontend
   }
 
   return NextResponse.json(product, { status: 201 });
