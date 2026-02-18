@@ -36,6 +36,6 @@ export async function extractProductDetails(
     userMessage,
     2048,
     "product-extract",
-    { model: "claude-3-5-haiku-latest" }
+    { model: "claude-haiku-4-5-20251001" }
   );
 }
