@@ -54,10 +54,21 @@ export async function createBatchForDocuments(documentIds: string[]): Promise<st
       include: { product: { include: { productType: true } } },
     });
 
-    if (doc.documentType !== "terms_and_conditions") continue;
+    if (doc.documentType !== "terms_and_conditions") {
+      console.log(`[Batch] Skipping doc ${docId} — not T&Cs (type: ${doc.documentType})`);
+      continue;
+    }
 
+    console.log(`[Batch] Loading obligations for product ${doc.productId} (type: ${doc.product.productType.name})`);
     const obligations = await getApplicableObligations(doc.productId);
+    console.log(`[Batch] Found ${obligations.length} obligations for product ${doc.productId}`);
+
+    if (obligations.length === 0) {
+      console.warn(`[Batch] WARNING: Zero obligations for product ${doc.productId} (type: ${doc.product.productType.name}, typeId: ${doc.product.productTypeId})`);
+    }
+
     const regulationGroups = groupByRegulation(obligations);
+    console.log(`[Batch] ${regulationGroups.size} regulation groups: ${Array.from(regulationGroups.keys()).join(", ")}`);
     const overviewContext = await getProductOverviewContext(doc.productId);
 
     const productContext = `${doc.product.productType.name} product ("${doc.product.name}") aimed at ${doc.product.customerType} customers, distributed via ${doc.product.distributionChannel}, offered in ${doc.product.jurisdictions.join(", ")}`;
@@ -78,15 +89,11 @@ export async function createBatchForDocuments(documentIds: string[]): Promise<st
 
       itemRecords.push({ customId, documentId: docId, regulationTitle: regTitle });
     }
-
-    // Mark document as queued
-    await prisma.productDocument.update({
-      where: { id: docId },
-      data: { analysisStatus: "queued", analysisResult: undefined, analysisError: null, analysisCompletedAt: null },
-    });
   }
 
-  if (requests.length === 0) throw new Error("No analysable documents found");
+  if (requests.length === 0) {
+    throw new Error(`No analysable documents found — 0 regulation requests generated for ${documentIds.length} document(s). Check that the product type has obligations mapped.`);
+  }
 
   console.log(`[Batch] Creating batch with ${requests.length} requests across ${documentIds.length} documents`);
   console.log(`[Batch] Regulation groups: ${itemRecords.map(r => r.regulationTitle).join(", ")}`);
@@ -98,6 +105,14 @@ export async function createBatchForDocuments(documentIds: string[]): Promise<st
   } catch (apiErr) {
     console.error(`[Batch] Anthropic API error creating batch:`, apiErr);
     throw apiErr;
+  }
+
+  // Only mark documents as "queued" AFTER batch is successfully created
+  for (const docId of documentIds) {
+    await prisma.productDocument.update({
+      where: { id: docId },
+      data: { analysisStatus: "queued", analysisResult: undefined, analysisError: null, analysisCompletedAt: null },
+    });
   }
 
   const batchJob = await prisma.batchJob.create({

@@ -86,14 +86,21 @@ export async function POST(
   // For T&Cs: automatically submit to Anthropic Batch API for analysis
   // This is fast (~1-2s) — just submits the request, doesn't wait for results
   let batchJobId: string | null = null;
+  let batchError: string | null = null;
   if (documentType === "terms_and_conditions") {
     try {
-      console.log(`[Upload] Creating batch job for document ${doc.id}`);
+      console.log(`[Upload] Creating batch job for document ${doc.id} (product: ${id})`);
       batchJobId = await createBatchForDocuments([doc.id]);
-      console.log(`[Upload] Batch job created: ${batchJobId}`);
+      console.log(`[Upload] Batch job created successfully: ${batchJobId}`);
     } catch (batchErr) {
-      console.error("[Upload] Batch creation failed:", batchErr);
-      // Non-critical — document is saved, user can re-trigger analysis later
+      const errMsg = batchErr instanceof Error ? batchErr.message : String(batchErr);
+      console.error(`[Upload] Batch creation failed for doc ${doc.id}:`, errMsg);
+      batchError = errMsg;
+      // Reset document to "pending" so user can re-trigger
+      await prisma.productDocument.update({
+        where: { id: doc.id },
+        data: { analysisStatus: "pending" },
+      });
     }
   }
 
@@ -112,7 +119,7 @@ export async function POST(
   });
 
   return NextResponse.json(
-    { ...updated, batchJobId },
+    { ...updated, batchJobId, batchError },
     { status: 201 }
   );
 }
