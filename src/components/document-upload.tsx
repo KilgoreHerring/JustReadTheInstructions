@@ -164,6 +164,10 @@ function DocumentSlot({
 
       // Analysis is automatically submitted to the Batch API on upload.
       // The document status will be "queued" — polling handles the rest.
+      // If batch creation failed, show the error so we can diagnose.
+      if (created.batchError) {
+        setError(`Batch analysis failed: ${created.batchError}`);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
     } finally {
