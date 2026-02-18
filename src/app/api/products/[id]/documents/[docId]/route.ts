@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { runAnalysis } from "@/lib/document-analyser";
-import { createBatchForDocuments } from "@/lib/batch-analyser";
+import { createBatchForDocuments, resolveOutstandingBatches } from "@/lib/batch-analyser";
+
+export const maxDuration = 60;
 
 export async function GET(
   _request: NextRequest,
@@ -24,6 +26,31 @@ export async function GET(
 
   if (!doc) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+
+  // If the document is queued, try to resolve outstanding batch jobs
+  // so the frontend polling loop can detect completion
+  if (doc.analysisStatus === "queued") {
+    try {
+      await resolveOutstandingBatches();
+      // Re-fetch in case status changed
+      const updated = await prisma.productDocument.findUnique({
+        where: { id: docId },
+        select: {
+          id: true,
+          documentType: true,
+          fileName: true,
+          analysisStatus: true,
+          analysisResult: true,
+          analysisError: true,
+          analysisCompletedAt: true,
+          createdAt: true,
+        },
+      });
+      if (updated) return NextResponse.json(updated);
+    } catch (e) {
+      console.error("[DocPoll] Failed to resolve batches:", e);
+    }
   }
 
   return NextResponse.json(doc);

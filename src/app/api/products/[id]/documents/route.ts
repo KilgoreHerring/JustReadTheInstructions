@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { runAnalysis } from "@/lib/document-analyser";
+import { createBatchForDocuments } from "@/lib/batch-analyser";
 import { calculateReadability } from "@/lib/readability-scorer";
 
 export const maxDuration = 60;
@@ -76,9 +76,11 @@ export async function POST(
     },
   });
 
-  // Only analyse T&Cs — product overview is context-only
+  // Only analyse T&Cs — use batch API to avoid serverless timeout
   if (!isOverview) {
-    runAnalysis(doc.id).catch(() => {});
+    createBatchForDocuments([doc.id]).catch((err) => {
+      console.error("[Upload] Batch creation failed:", err);
+    });
   }
 
   return NextResponse.json(
