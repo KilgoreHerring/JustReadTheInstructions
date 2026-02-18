@@ -1,4 +1,8 @@
-import rs from "text-readability";
+import _rs from "text-readability";
+
+// text-readability uses ESM `export default` — handle CJS interop edge cases
+// where the default export may be nested under `.default`
+const rs = (_rs as unknown as { default?: typeof _rs }).default ?? _rs;
 
 export interface ReadabilityScores {
   fleschReadingEase: number;
