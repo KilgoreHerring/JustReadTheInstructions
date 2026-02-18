@@ -3,7 +3,7 @@ import { prisma } from "@/lib/db";
 import { runAnalysis } from "@/lib/document-analyser";
 import { createBatchForDocuments, resolveOutstandingBatches } from "@/lib/batch-analyser";
 
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 export async function GET(
   _request: NextRequest,

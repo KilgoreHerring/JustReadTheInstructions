@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { runAnalysis } from "@/lib/document-analyser";
 
+export const maxDuration = 300;
+
 export async function GET() {
   const products = await prisma.product.findMany({
     include: { productType: true },
