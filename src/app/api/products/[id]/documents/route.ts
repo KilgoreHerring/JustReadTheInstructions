@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { Prisma } from "@prisma/client";
 import { calculateReadability } from "@/lib/readability-scorer";
 
 export async function GET(
@@ -54,11 +55,12 @@ export async function POST(
   const isOverview = documentType === "product_overview";
 
   // Compute readability scores (fast, pure computation — no API call)
-  let readabilityScore: Record<string, unknown> | null = null;
+  let readabilityScore: Prisma.InputJsonValue | null = null;
   try {
     if (content.trim().length >= 100) {
-      readabilityScore = calculateReadability(content) as unknown as Record<string, unknown>;
-      console.log("[Upload] Readability scoring succeeded:", JSON.stringify({ fcaAssessment: readabilityScore?.fcaAssessment, hasScores: !!readabilityScore?.scores }));
+      const raw = calculateReadability(content);
+      readabilityScore = JSON.parse(JSON.stringify(raw)) as Prisma.InputJsonValue;
+      console.log("[Upload] Readability scoring succeeded:", JSON.stringify({ fcaAssessment: raw.fcaAssessment, hasScores: !!raw.scores }));
     } else {
       console.log(`[Upload] Skipping readability — content too short (${content.trim().length} chars)`);
     }
@@ -74,7 +76,7 @@ export async function POST(
       fileName,
       content,
       analysisStatus: isOverview ? "complete" : "pending",
-      readabilityScore: readabilityScore ?? undefined as undefined,
+      readabilityScore: readabilityScore ?? undefined,
     },
   });
 
