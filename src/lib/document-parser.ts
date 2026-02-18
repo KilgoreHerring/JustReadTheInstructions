@@ -1,4 +1,4 @@
-import { PDFParse } from "pdf-parse";
+import pdfParse from "pdf-parse";
 import mammoth from "mammoth";
 
 export type SupportedFileType = "pdf" | "docx";
@@ -16,8 +16,7 @@ export async function extractText(
 ): Promise<string> {
   switch (fileType) {
     case "pdf": {
-      const parser = new PDFParse({ data: new Uint8Array(buffer) });
-      const result = await parser.getText();
+      const result = await pdfParse(buffer);
       return result.text;
     }
     case "docx": {
