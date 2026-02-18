@@ -1,29 +1,16 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { jsonrepair } from "jsonrepair";
-import { readFileSync } from "fs";
-import { resolve } from "path";
-
-function getApiKey(): string | undefined {
-  const envKey = process.env.ANTHROPIC_API_KEY?.trim();
-  if (envKey) return envKey;
-  // Fallback: read .env.local directly (handles empty inherited env vars)
-  try {
-    const envFile = readFileSync(resolve(process.cwd(), ".env.local"), "utf-8");
-    const match = envFile.match(/^ANTHROPIC_API_KEY=(.+)$/m);
-    return match?.[1]?.trim();
-  } catch {
-    return undefined;
-  }
-}
+import { prisma } from "./db";
 
 const anthropic = new Anthropic({
-  apiKey: getApiKey(),
+  apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
 export async function askClaude(
   systemPrompt: string,
   userMessage: string,
-  maxTokens: number = 4096
+  maxTokens: number = 4096,
+  options?: { userId?: string; endpoint?: string }
 ): Promise<string> {
   const stream = anthropic.messages.stream({
     model: "claude-sonnet-4-5",
@@ -33,6 +20,21 @@ export async function askClaude(
   });
 
   const response = await stream.finalMessage();
+
+  // Log usage (fire-and-forget)
+  if (options?.userId) {
+    prisma.apiUsage
+      .create({
+        data: {
+          userId: options.userId,
+          endpoint: options.endpoint ?? "askClaude",
+          inputTokens: response.usage.input_tokens,
+          outputTokens: response.usage.output_tokens,
+        },
+      })
+      .catch(() => {});
+  }
+
   const block = response.content[0];
   if (block.type === "text") return block.text;
   throw new Error("Unexpected response type");
@@ -62,11 +64,12 @@ export async function askClaudeJSON<T>(
   systemPrompt: string,
   userMessage: string,
   maxTokens: number = 4096,
-  label?: string
+  label?: string,
+  options?: { userId?: string; endpoint?: string }
 ): Promise<T> {
   const tag = label ? `[Claude JSON: ${label}]` : "[Claude JSON]";
 
-  let text = await askClaude(systemPrompt + JSON_INSTRUCTION, userMessage, maxTokens);
+  let text = await askClaude(systemPrompt + JSON_INSTRUCTION, userMessage, maxTokens, options);
   text = stripFences(text);
 
   // Layer 1: Direct parse
@@ -87,7 +90,7 @@ export async function askClaudeJSON<T>(
   }
 
   // Layer 3: Retry once, then repair again if needed
-  text = await askClaude(systemPrompt + JSON_INSTRUCTION, userMessage, maxTokens);
+  text = await askClaude(systemPrompt + JSON_INSTRUCTION, userMessage, maxTokens, options);
   text = stripFences(text);
 
   try {

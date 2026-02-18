@@ -3,6 +3,7 @@ import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
 import { SidebarNav } from "@/components/sidebar-nav";
 import { ContextPanelProvider } from "@/components/context-panel-provider";
 import { ContextPanel } from "@/components/context-panel";
+import { auth } from "@/lib/auth";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -29,22 +30,30 @@ export const metadata: Metadata = {
     "Map financial products to regulatory obligations across jurisdictions",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
+
   return (
     <html
       lang="en"
       className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body suppressHydrationWarning className="flex h-screen overflow-hidden">
-        <SidebarNav />
-        <ContextPanelProvider>
-          <main className="flex-1 min-w-0 p-8 overflow-y-auto">{children}</main>
-          <ContextPanel />
-        </ContextPanelProvider>
+        {session ? (
+          <>
+            <SidebarNav user={{ name: session.user.name, email: session.user.email, image: session.user.image }} />
+            <ContextPanelProvider>
+              <main className="flex-1 min-w-0 p-8 overflow-y-auto">{children}</main>
+              <ContextPanel />
+            </ContextPanelProvider>
+          </>
+        ) : (
+          <main className="flex-1">{children}</main>
+        )}
       </body>
     </html>
   );

@@ -8,6 +8,7 @@ import {
   BookOpen,
   BookType,
   Telescope,
+  LogOut,
 } from "lucide-react";
 
 const navItems = [
@@ -19,7 +20,13 @@ const navItems = [
   { href: "/horizon", label: "Horizon Scanning", icon: Telescope },
 ];
 
-export function SidebarNav() {
+interface SidebarUser {
+  name?: string | null;
+  email?: string | null;
+  image?: string | null;
+}
+
+export function SidebarNav({ user }: { user?: SidebarUser }) {
   const pathname = usePathname();
 
   function isActive(href: string) {
@@ -62,6 +69,43 @@ export function SidebarNav() {
           );
         })}
       </nav>
+
+      {/* User info + sign out */}
+      {user && (
+        <div className="mt-auto px-3 py-4 border-t border-[var(--border)]">
+          <div className="flex items-center gap-2.5 px-3 py-1.5 mb-1">
+            {user.image ? (
+              <img
+                src={user.image}
+                alt=""
+                className="w-6 h-6 rounded-full shrink-0"
+                referrerPolicy="no-referrer"
+              />
+            ) : (
+              <div className="w-6 h-6 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] flex items-center justify-center text-[10px] font-medium shrink-0">
+                {(user.name || user.email || "?").charAt(0).toUpperCase()}
+              </div>
+            )}
+            <div className="min-w-0">
+              {user.name && (
+                <p className="text-xs font-medium text-[var(--foreground)] truncate">
+                  {user.name}
+                </p>
+              )}
+              <p className="text-[10px] text-[var(--muted-foreground)] truncate">
+                {user.email}
+              </p>
+            </div>
+          </div>
+          <a
+            href="/api/auth/signout"
+            className="flex items-center gap-2 px-3 py-1.5 text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--background)] rounded-md transition-colors"
+          >
+            <LogOut size={12} />
+            Sign out
+          </a>
+        </div>
+      )}
     </aside>
   );
 }

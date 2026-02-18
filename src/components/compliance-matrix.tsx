@@ -24,8 +24,8 @@ interface MatrixEntry {
     evidence: string;
     clauseReference?: string;
     qualityScore?: number;
-    gaps: string[];
-    recommendation: string;
+    gaps?: string[];
+    recommendation?: string;
   }[] | null;
   obligation: {
     id: string;
@@ -325,7 +325,7 @@ export function ComplianceMatrix({ productId, productName, entries: initialEntri
                       </span>
                     </div>
                     <p className="text-xs">{de.evidence}</p>
-                    {de.gaps.length > 0 && (
+                    {de.gaps && de.gaps.length > 0 && (
                       <div className="mt-1">
                         <p className="text-[10px] font-medium text-[var(--status-non-compliant-text)]">Gaps:</p>
                         <ul className="text-[10px] text-[var(--status-non-compliant-text)] list-disc list-inside">
@@ -566,7 +566,7 @@ function ObligationRow({
                 </p>
               )}
               <p className="leading-relaxed">{primaryFinding.evidence}</p>
-              {primaryFinding.gaps.length > 0 && (
+              {primaryFinding.gaps && primaryFinding.gaps.length > 0 && (
                 <ul className="text-[var(--status-non-compliant-text)] list-disc list-inside">
                   {primaryFinding.gaps.map((gap, gi) => <li key={gi}>{gap}</li>)}
                 </ul>
