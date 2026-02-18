@@ -12,14 +12,14 @@ export async function askClaude(
   maxTokens: number = 4096,
   options?: { userId?: string; endpoint?: string }
 ): Promise<string> {
-  const stream = anthropic.messages.stream({
+  console.log(`[Claude] Calling API (max_tokens: ${maxTokens})...`);
+  const response = await anthropic.messages.create({
     model: "claude-sonnet-4-5",
     max_tokens: maxTokens,
     system: systemPrompt,
     messages: [{ role: "user", content: userMessage }],
   });
-
-  const response = await stream.finalMessage();
+  console.log(`[Claude] Response received (${response.usage.input_tokens} in, ${response.usage.output_tokens} out)`);
 
   // Log usage (fire-and-forget)
   if (options?.userId) {
