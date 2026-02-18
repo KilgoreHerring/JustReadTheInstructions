@@ -3,7 +3,19 @@ import { prisma } from "@/lib/db";
 import { runAnalysis } from "@/lib/document-analyser";
 import { createBatchForDocuments, resolveOutstandingBatches } from "@/lib/batch-analyser";
 
-export const maxDuration = 800;
+export const maxDuration = 60;
+
+const DOC_SELECT = {
+  id: true,
+  documentType: true,
+  fileName: true,
+  analysisStatus: true,
+  analysisResult: true,
+  analysisError: true,
+  analysisCompletedAt: true,
+  readabilityScore: true,
+  createdAt: true,
+} as const;
 
 export async function GET(
   _request: NextRequest,
@@ -12,17 +24,7 @@ export async function GET(
   const { docId } = await params;
   const doc = await prisma.productDocument.findUnique({
     where: { id: docId },
-    select: {
-      id: true,
-      documentType: true,
-      fileName: true,
-      analysisStatus: true,
-      analysisResult: true,
-      analysisError: true,
-      analysisCompletedAt: true,
-      readabilityScore: true,
-      createdAt: true,
-    },
+    select: DOC_SELECT,
   });
 
   if (!doc) {
@@ -37,17 +39,7 @@ export async function GET(
       // Re-fetch in case status changed
       const updated = await prisma.productDocument.findUnique({
         where: { id: docId },
-        select: {
-          id: true,
-          documentType: true,
-          fileName: true,
-          analysisStatus: true,
-          analysisResult: true,
-          analysisError: true,
-          analysisCompletedAt: true,
-          readabilityScore: true,
-          createdAt: true,
-        },
+        select: DOC_SELECT,
       });
       if (updated) return NextResponse.json(updated);
     } catch (e) {
@@ -58,33 +50,33 @@ export async function GET(
   return NextResponse.json(doc);
 }
 
-// Re-trigger analysis — supports mode: "batch" | "realtime" (default)
+// Re-trigger analysis — supports mode: "batch" (default) | "realtime"
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string; docId: string }> }
 ) {
   const { docId } = await params;
 
-  let mode = "realtime";
+  let mode = "batch";
   try {
     const body = await request.json();
-    if (body.mode === "batch") mode = "batch";
+    if (body.mode === "realtime") mode = "realtime";
   } catch {
-    // No body or invalid JSON — default to realtime
+    // No body or invalid JSON — default to batch
   }
 
   if (mode === "batch") {
     try {
+      console.log(`[Analysis] Creating batch for document ${docId}`);
       const batchJobId = await createBatchForDocuments([docId]);
+      console.log(`[Analysis] Batch created: ${batchJobId}`);
       const doc = await prisma.productDocument.findUniqueOrThrow({
         where: { id: docId },
-        select: {
-          id: true, documentType: true, fileName: true,
-          analysisStatus: true, analysisCompletedAt: true, readabilityScore: true, createdAt: true,
-        },
+        select: DOC_SELECT,
       });
       return NextResponse.json({ ...doc, batchJobId });
     } catch (error) {
+      console.error("[Analysis] Batch creation failed:", error);
       return NextResponse.json(
         { error: error instanceof Error ? error.message : "Batch creation failed" },
         { status: 500 }
@@ -92,27 +84,19 @@ export async function POST(
     }
   }
 
-  // Real-time: await analysis (keeps the function alive until complete)
+  // Real-time: await analysis (use only for small/fast re-analyses)
   try {
     await runAnalysis(docId);
     const doc = await prisma.productDocument.findUniqueOrThrow({
       where: { id: docId },
-      select: {
-        id: true, documentType: true, fileName: true,
-        analysisStatus: true, analysisResult: true,
-        analysisCompletedAt: true, readabilityScore: true, createdAt: true,
-      },
+      select: DOC_SELECT,
     });
     return NextResponse.json(doc);
   } catch (error) {
     console.error("[Analysis] POST handler error:", error);
     const doc = await prisma.productDocument.findUnique({
       where: { id: docId },
-      select: {
-        id: true, documentType: true, fileName: true,
-        analysisStatus: true, analysisError: true,
-        analysisCompletedAt: true, readabilityScore: true, createdAt: true,
-      },
+      select: DOC_SELECT,
     });
     return NextResponse.json(doc || { error: "Analysis failed" }, { status: 500 });
   }

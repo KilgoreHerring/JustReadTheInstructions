@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { Prisma } from "@prisma/client";
 import { calculateReadability } from "@/lib/readability-scorer";
+import { createBatchForDocuments } from "@/lib/batch-analyser";
+
+export const maxDuration = 60;
 
 export async function GET(
   _request: NextRequest,
@@ -80,16 +83,36 @@ export async function POST(
     },
   });
 
-  return NextResponse.json(
-    {
-      id: doc.id,
-      documentType: doc.documentType,
-      fileName: doc.fileName,
-      analysisStatus: doc.analysisStatus,
-      analysisCompletedAt: doc.analysisCompletedAt,
-      readabilityScore: doc.readabilityScore,
-      createdAt: doc.createdAt,
+  // For T&Cs: automatically submit to Anthropic Batch API for analysis
+  // This is fast (~1-2s) — just submits the request, doesn't wait for results
+  let batchJobId: string | null = null;
+  if (documentType === "terms_and_conditions") {
+    try {
+      console.log(`[Upload] Creating batch job for document ${doc.id}`);
+      batchJobId = await createBatchForDocuments([doc.id]);
+      console.log(`[Upload] Batch job created: ${batchJobId}`);
+    } catch (batchErr) {
+      console.error("[Upload] Batch creation failed:", batchErr);
+      // Non-critical — document is saved, user can re-trigger analysis later
+    }
+  }
+
+  // Re-fetch to get the updated analysisStatus (batch sets it to "queued")
+  const updated = await prisma.productDocument.findUniqueOrThrow({
+    where: { id: doc.id },
+    select: {
+      id: true,
+      documentType: true,
+      fileName: true,
+      analysisStatus: true,
+      analysisCompletedAt: true,
+      readabilityScore: true,
+      createdAt: true,
     },
+  });
+
+  return NextResponse.json(
+    { ...updated, batchJobId },
     { status: 201 }
   );
 }

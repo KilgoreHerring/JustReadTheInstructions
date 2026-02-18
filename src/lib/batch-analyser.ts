@@ -89,8 +89,16 @@ export async function createBatchForDocuments(documentIds: string[]): Promise<st
   if (requests.length === 0) throw new Error("No analysable documents found");
 
   console.log(`[Batch] Creating batch with ${requests.length} requests across ${documentIds.length} documents`);
+  console.log(`[Batch] Regulation groups: ${itemRecords.map(r => r.regulationTitle).join(", ")}`);
 
-  const batch = await anthropic.messages.batches.create({ requests });
+  let batch;
+  try {
+    batch = await anthropic.messages.batches.create({ requests });
+    console.log(`[Batch] Anthropic batch created: ${batch.id} (status: ${batch.processing_status})`);
+  } catch (apiErr) {
+    console.error(`[Batch] Anthropic API error creating batch:`, apiErr);
+    throw apiErr;
+  }
 
   const batchJob = await prisma.batchJob.create({
     data: {
