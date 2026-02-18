@@ -4,12 +4,14 @@ import { PrismaNeon } from "@prisma/adapter-neon";
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
 function createPrismaClient(): PrismaClient {
-  // On Vercel, use the Neon serverless adapter (WebSocket-based)
-  if (process.env.VERCEL) {
-    const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
+  const url = process.env.DATABASE_URL ?? "";
+  // Use Neon adapter for direct Neon/Vercel Postgres connections
+  // Skip it for Prisma Accelerate URLs (db.prisma.io) which work with standard client
+  if (url.includes("neon.tech") || url.includes("neon-")) {
+    const adapter = new PrismaNeon({ connectionString: url });
     return new PrismaClient({ adapter }) as unknown as PrismaClient;
   }
-  // Locally, use the standard TCP connection
+  // Standard client for local dev (localhost) and Prisma Accelerate (db.prisma.io)
   return new PrismaClient();
 }
 
