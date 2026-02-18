@@ -3,7 +3,7 @@ import { prisma } from "@/lib/db";
 import { runAnalysis } from "@/lib/document-analyser";
 import { createBatchForDocuments, resolveOutstandingBatches } from "@/lib/batch-analyser";
 
-export const maxDuration = 300;
+export const maxDuration = 800;
 
 export async function GET(
   _request: NextRequest,
@@ -20,6 +20,7 @@ export async function GET(
       analysisResult: true,
       analysisError: true,
       analysisCompletedAt: true,
+      readabilityScore: true,
       createdAt: true,
     },
   });
@@ -44,6 +45,7 @@ export async function GET(
           analysisResult: true,
           analysisError: true,
           analysisCompletedAt: true,
+          readabilityScore: true,
           createdAt: true,
         },
       });
@@ -78,7 +80,7 @@ export async function POST(
         where: { id: docId },
         select: {
           id: true, documentType: true, fileName: true,
-          analysisStatus: true, analysisCompletedAt: true, createdAt: true,
+          analysisStatus: true, analysisCompletedAt: true, readabilityScore: true, createdAt: true,
         },
       });
       return NextResponse.json({ ...doc, batchJobId });
@@ -98,7 +100,7 @@ export async function POST(
       select: {
         id: true, documentType: true, fileName: true,
         analysisStatus: true, analysisResult: true,
-        analysisCompletedAt: true, createdAt: true,
+        analysisCompletedAt: true, readabilityScore: true, createdAt: true,
       },
     });
     return NextResponse.json(doc);
@@ -109,7 +111,7 @@ export async function POST(
       select: {
         id: true, documentType: true, fileName: true,
         analysisStatus: true, analysisError: true,
-        analysisCompletedAt: true, createdAt: true,
+        analysisCompletedAt: true, readabilityScore: true, createdAt: true,
       },
     });
     return NextResponse.json(doc || { error: "Analysis failed" }, { status: 500 });

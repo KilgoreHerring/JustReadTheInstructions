@@ -16,6 +16,7 @@ export async function GET(
       fileName: true,
       analysisStatus: true,
       analysisCompletedAt: true,
+      readabilityScore: true,
       createdAt: true,
     },
   });
@@ -53,11 +54,11 @@ export async function POST(
   const isOverview = documentType === "product_overview";
 
   // Compute readability scores (fast, pure computation — no API call)
-  let readabilityScore = null;
+  let readabilityScore: Record<string, unknown> | null = null;
   try {
     if (content.trim().length >= 100) {
-      readabilityScore = calculateReadability(content) as unknown as undefined;
-      console.log("[Upload] Readability scoring succeeded");
+      readabilityScore = calculateReadability(content) as unknown as Record<string, unknown>;
+      console.log("[Upload] Readability scoring succeeded:", JSON.stringify({ fcaAssessment: readabilityScore?.fcaAssessment, hasScores: !!readabilityScore?.scores }));
     } else {
       console.log(`[Upload] Skipping readability — content too short (${content.trim().length} chars)`);
     }
@@ -73,7 +74,7 @@ export async function POST(
       fileName,
       content,
       analysisStatus: isOverview ? "complete" : "pending",
-      readabilityScore: readabilityScore ?? undefined,
+      readabilityScore: readabilityScore ?? undefined as undefined,
     },
   });
 
@@ -84,6 +85,7 @@ export async function POST(
       fileName: doc.fileName,
       analysisStatus: doc.analysisStatus,
       analysisCompletedAt: doc.analysisCompletedAt,
+      readabilityScore: doc.readabilityScore,
       createdAt: doc.createdAt,
     },
     { status: 201 }
