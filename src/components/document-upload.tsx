@@ -94,6 +94,17 @@ function AnalyseDropdown({
   );
 }
 
+/** Clean extracted text to reduce size — PDF extraction often adds tons of junk whitespace */
+function cleanText(text: string): string {
+  return text
+    .replace(/\r\n/g, "\n")          // normalize line endings
+    .replace(/\f/g, "\n")            // form-feeds → newline
+    .replace(/\0/g, "")              // strip null bytes
+    .replace(/[ \t]+$/gm, "")        // trim trailing whitespace per line
+    .replace(/\n{3,}/g, "\n\n")      // collapse 3+ newlines to 2
+    .trim();
+}
+
 function DocumentSlot({
   productId,
   documentType,
@@ -141,15 +152,33 @@ function DocumentSlot({
     setError(null);
 
     try {
+      // Clean extracted text (PDF extraction often inflates with whitespace)
+      const cleaned = cleanText(content);
+
+      // Check size before sending — Vercel has a hard 4.5MB body limit
+      const payload = JSON.stringify({
+        documentType,
+        fileName: `${label}.txt`,
+        content: cleaned,
+      });
+      const payloadBytes = new Blob([payload]).size;
+      const MAX_PAYLOAD = 4 * 1024 * 1024; // 4MB (with headroom for Vercel's 4.5MB limit)
+
+      if (payloadBytes > MAX_PAYLOAD) {
+        const sizeMB = (payloadBytes / 1024 / 1024).toFixed(1);
+        setError(
+          `Document too large (${sizeMB}MB). Maximum is ~4MB of text. ` +
+          `Try removing headers/footers, table of contents, or appendices that aren't part of the core terms.`
+        );
+        setUploading(false);
+        return;
+      }
+
       // Step 1: Upload document (fast — just saves to DB + readability)
       const res = await fetch(`/api/products/${productId}/documents`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          documentType,
-          fileName: `${label}.txt`,
-          content: content.trim(),
-        }),
+        body: payload,
       });
 
       if (!res.ok) {
