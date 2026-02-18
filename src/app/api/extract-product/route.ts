@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { detectFileType, extractText } from "@/lib/document-parser";
 import { extractProductDetails } from "@/lib/product-extractor";
 
+export const maxDuration = 60;
+
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const file = formData.get("file") as File | null;

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { extractAndSaveObligations } from "@/lib/obligation-extractor";
 
+export const maxDuration = 60;
+
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const { ruleId } = body;

@@ -3,6 +3,8 @@ import { prisma } from "@/lib/db";
 import { runAnalysis } from "@/lib/document-analyser";
 import { calculateReadability } from "@/lib/readability-scorer";
 
+export const maxDuration = 60;
+
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
