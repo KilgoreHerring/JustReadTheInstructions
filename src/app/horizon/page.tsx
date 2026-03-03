@@ -1,9 +1,10 @@
 import { prisma } from "@/lib/db";
 import { HorizonList } from "@/components/horizon-list";
 import { HandbookNoticeSpotlight } from "@/components/handbook-notice-spotlight";
-import { OpenConsultationsSection } from "@/components/open-consultations-section";
+import { ConsultationTimeline } from "@/components/consultation-timeline";
 import { UpcomingChangesSection } from "@/components/upcoming-changes-section";
 import { RecentlyImplementedSection } from "@/components/recently-implemented-section";
+import { MonitoredSourcesSection } from "@/components/monitored-sources-section";
 import { HORIZON_STATUSES, HORIZON_ITEM_TYPES, HORIZON_PRIORITIES } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
@@ -22,6 +23,7 @@ async function getHorizonData() {
     openConsultations,
     upcomingChanges,
     recentlyImplemented,
+    feedSources,
   ] = await Promise.all([
     // All top-level items (for the flat list)
     prisma.horizonItem.findMany({
@@ -44,13 +46,13 @@ async function getHorizonData() {
     }),
     prisma.horizonItem.groupBy({
       by: ["itemType"],
-      where: { status: "open", parentId: null },
+      where: { status: { in: ["consultation", "proposed_change", "pending_change"] }, parentId: null },
       _count: { id: true },
     }),
     prisma.horizonItem.count({
       where: {
         parentId: null,
-        status: "open",
+        status: "consultation",
         responseDeadline: {
           gte: now,
           lte: new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000),
@@ -85,7 +87,7 @@ async function getHorizonData() {
       where: {
         parentId: null,
         itemType: "consultation_paper",
-        status: "open",
+        status: "consultation",
       },
       select: {
         id: true,
@@ -96,11 +98,11 @@ async function getHorizonData() {
       },
       orderBy: { responseDeadline: "asc" },
     }),
-    // Upcoming changes (effective date in the future, status open or closed)
+    // Upcoming changes (effective date in the future, active lifecycle statuses)
     prisma.horizonItem.findMany({
       where: {
         effectiveDate: { gt: now },
-        status: { in: ["open", "closed"] },
+        status: { in: ["consultation", "proposed_change", "pending_change"] },
       },
       select: {
         id: true,
@@ -117,7 +119,7 @@ async function getHorizonData() {
     prisma.horizonItem.findMany({
       where: {
         parentId: null,
-        status: "implemented",
+        status: "completed",
         updatedAt: { gte: threeMonthsAgo },
       },
       select: {
@@ -128,6 +130,18 @@ async function getHorizonData() {
       },
       orderBy: { updatedAt: "desc" },
       take: 10,
+    }),
+    // Feed sources
+    prisma.feedSource.findMany({
+      select: {
+        id: true,
+        name: true,
+        feedType: true,
+        isActive: true,
+        lastPolledAt: true,
+        regulator: { select: { abbreviation: true } },
+      },
+      orderBy: { name: "asc" },
     }),
   ]);
 
@@ -141,6 +155,7 @@ async function getHorizonData() {
     openConsultations,
     upcomingChanges,
     recentlyImplemented,
+    feedSources,
   };
 }
 
@@ -183,6 +198,11 @@ export default async function HorizonScanningPage() {
     effectiveDate: r.effectiveDate?.toISOString() ?? null,
   }));
 
+  const serialisedFeedSources = data.feedSources.map((f) => ({
+    ...f,
+    lastPolledAt: f.lastPolledAt?.toISOString() ?? null,
+  }));
+
   return (
     <div className="max-w-[1200px] mx-auto">
       <h1
@@ -193,7 +213,7 @@ export default async function HorizonScanningPage() {
       </h1>
 
       {/* Stats row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
         {Object.entries(HORIZON_STATUSES).map(([key, meta]) => (
           <div
             key={key}
@@ -236,9 +256,14 @@ export default async function HorizonScanningPage() {
         <HandbookNoticeSpotlight notices={serialisedNotices} />
       </div>
 
-      {/* Two-column: Open Consultations + Upcoming Changes */}
+      {/* Monitored Sources */}
+      <div className="mb-6">
+        <MonitoredSourcesSection sources={serialisedFeedSources} />
+      </div>
+
+      {/* Two-column: Consultations Timeline + Upcoming Changes */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <OpenConsultationsSection items={serialisedConsultations} />
+        <ConsultationTimeline items={serialisedConsultations} />
         <UpcomingChangesSection items={serialisedUpcoming} />
       </div>
 

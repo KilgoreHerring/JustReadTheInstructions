@@ -85,7 +85,7 @@ Extract ALL instruments mentioned in the notice. Be thorough.`;
       summary: extraction.overview,
       sourceUrl: pdfUrl,
       publishedDate: extraction.publishedDate ? new Date(extraction.publishedDate) : null,
-      status: "implemented",
+      status: "completed",
       priority: "medium",
       handbookNoticeNumber: noticeNumber,
       rawContent: pdfText.slice(0, 50000),
@@ -105,7 +105,7 @@ Extract ALL instruments mentioned in the notice. Be thorough.`;
 
     const earliestDate = parsedDates[0] ?? null;
     const allFuture = parsedDates.length > 0 && parsedDates.every((d) => d > now);
-    const status = allFuture ? "open" : "implemented";
+    const status = allFuture ? "pending_change" : "completed";
 
     await prisma.horizonItem.create({
       data: {

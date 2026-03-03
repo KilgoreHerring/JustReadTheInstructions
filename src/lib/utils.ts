@@ -76,9 +76,11 @@ export const HORIZON_ITEM_TYPES = {
 } as const;
 
 export const HORIZON_STATUSES = {
-  open: { label: "Open", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
-  closed: { label: "Closed", color: "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]" },
-  implemented: { label: "Implemented", color: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]" },
+  consultation: { label: "Consultation", color: "bg-[var(--horizon-cp-bg)] text-[var(--horizon-cp-text)]" },
+  proposed_change: { label: "Proposed Change", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
+  pending_change: { label: "Pending Change", color: "bg-[var(--horizon-si-bg)] text-[var(--horizon-si-text)]" },
+  active_change: { label: "Active", color: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]" },
+  completed: { label: "Completed", color: "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]" },
   withdrawn: { label: "Withdrawn", color: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]" },
 } as const;
 
@@ -112,6 +114,13 @@ export function deadlineUrgency(deadline: string | null): "overdue" | "urgent" |
   if (daysUntil <= 7) return "urgent";
   if (daysUntil <= 30) return "approaching";
   return null;
+}
+
+export function daysUntilDeadline(deadline: string | null): number | null {
+  if (!deadline) return null;
+  const d = new Date(deadline);
+  const now = new Date();
+  return Math.ceil((d.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
 }
 
 export function formatRelativeTime(date: Date | string | null): string {

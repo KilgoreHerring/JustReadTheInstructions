@@ -379,7 +379,7 @@ model HorizonItem {
   publishedDate        DateTime?
   responseDeadline     DateTime?
   effectiveDate        DateTime?
-  status               String                  @default("open") // "open" | "closed" | "implemented" | "withdrawn"
+  status               String                  @default("consultation") // "consultation" | "proposed_change" | "pending_change" | "active_change" | "completed" | "withdrawn"
   priority             String                  @default("medium") // "high" | "medium" | "low" | "info"
   rawContent           String?                 @db.Text
   aiClassified         Boolean                 @default(false)

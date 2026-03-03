@@ -95,10 +95,10 @@ async function getDashboardData() {
         },
         select: { documentEvidence: true },
       }),
-      prisma.horizonItem.count({ where: { status: "open" } }),
+      prisma.horizonItem.count({ where: { status: { in: ["consultation", "proposed_change", "pending_change"] } } }),
       prisma.horizonItem.count({
         where: {
-          status: "open",
+          status: { in: ["consultation", "proposed_change", "pending_change"] },
           responseDeadline: {
             gte: new Date(),
             lte: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
@@ -106,7 +106,7 @@ async function getDashboardData() {
         },
       }),
       prisma.horizonItem.findMany({
-        where: { status: "open" },
+        where: { status: { in: ["consultation", "proposed_change", "pending_change"] } },
         select: {
           id: true,
           title: true,
