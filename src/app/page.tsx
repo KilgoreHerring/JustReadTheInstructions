@@ -6,6 +6,7 @@ import { ProductComplianceGrid } from "@/components/dashboard/product-compliance
 import { AttentionQueue } from "@/components/dashboard/attention-queue";
 import { RecentActivityFeed } from "@/components/dashboard/recent-activity-feed";
 import { RiskSummary } from "@/components/dashboard/risk-summary";
+import { HorizonWidget } from "@/components/dashboard/horizon-widget";
 import { resolveOutstandingBatches } from "@/lib/batch-analyser";
 
 export const dynamic = "force-dynamic";
@@ -24,7 +25,7 @@ async function getDashboardData() {
   // Resolve any batch jobs that finished while the user was away
   await resolveOutstandingBatches();
 
-  const [heatmapEntries, products, recentAnalyses, gapObligations, entriesWithEvidence] =
+  const [heatmapEntries, products, recentAnalyses, gapObligations, entriesWithEvidence, horizonOpen, horizonDeadlines, horizonTopItems] =
     await Promise.all([
       prisma.complianceMatrixEntry.findMany({
         select: {
@@ -94,6 +95,29 @@ async function getDashboardData() {
         },
         select: { documentEvidence: true },
       }),
+      prisma.horizonItem.count({ where: { status: "open" } }),
+      prisma.horizonItem.count({
+        where: {
+          status: "open",
+          responseDeadline: {
+            gte: new Date(),
+            lte: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+          },
+        },
+      }),
+      prisma.horizonItem.findMany({
+        where: { status: "open" },
+        select: {
+          id: true,
+          title: true,
+          itemType: true,
+          priority: true,
+          referenceNumber: true,
+          responseDeadline: true,
+        },
+        orderBy: [{ priority: "asc" }, { publishedDate: "desc" }],
+        take: 5,
+      }),
     ]);
 
   // Secondary query: obligation details for top gaps
@@ -123,6 +147,9 @@ async function getDashboardData() {
     gapObligations,
     topGapObligations,
     entriesWithEvidence,
+    horizonOpen,
+    horizonDeadlines,
+    horizonTopItems,
   };
 }
 
@@ -353,10 +380,20 @@ export default async function Dashboard() {
       {/* Compliance Heatmap */}
       <ComplianceHeatmap data={heatmapData} />
 
-      {/* Sections B + C: Product Grid + Attention Queue */}
+      {/* Sections B + C: Product Grid + Attention Queue + Horizon */}
       <div className="grid grid-cols-1 xl:grid-cols-[3fr_2fr] gap-6 mb-6">
         <ProductComplianceGrid products={sortedProducts} />
-        <AttentionQueue items={attentionItems} />
+        <div className="space-y-6">
+          <AttentionQueue items={attentionItems} />
+          <HorizonWidget
+            openCount={data.horizonOpen}
+            deadlineCount={data.horizonDeadlines}
+            topItems={data.horizonTopItems.map((item) => ({
+              ...item,
+              responseDeadline: item.responseDeadline?.toISOString() ?? null,
+            }))}
+          />
+        </div>
       </div>
 
       {/* Sections D + E: Recent Activity + Risk Summary */}

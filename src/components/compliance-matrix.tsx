@@ -10,7 +10,7 @@ import {
   getComplianceLabel,
 } from "@/lib/utils";
 import { useContextPanel } from "./context-panel-provider";
-import { AlertTriangle, AlertCircle, CheckCircle2, Sparkles, HelpCircle, ChevronDown, ChevronRight, Building2, Info } from "lucide-react";
+import { AlertTriangle, AlertCircle, CheckCircle2, Sparkles, HelpCircle, ChevronDown, ChevronRight, Building2, Info, Telescope } from "lucide-react";
 
 interface MatrixEntry {
   id: string;
@@ -57,6 +57,7 @@ interface Props {
   productId: string;
   productName: string;
   entries: MatrixEntry[];
+  horizonCounts?: Record<string, number>;
 }
 
 type ViewMode = "regulation" | "theme" | "triage";
@@ -128,7 +129,7 @@ function getPrimaryFinding(entry: MatrixEntry) {
   return sorted[0];
 }
 
-export function ComplianceMatrix({ productId, productName, entries: initialEntries }: Props) {
+export function ComplianceMatrix({ productId, productName, entries: initialEntries, horizonCounts = {} }: Props) {
   const [entries, setEntries] = useState(initialEntries);
   const [filter, setFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -468,6 +469,7 @@ export function ComplianceMatrix({ productId, productName, entries: initialEntri
                     onStatusChange={handleStatusChange}
                     onOpenPanel={openObligationPanel}
                     showEvidence={viewMode === "triage"}
+                    horizonCount={horizonCounts[entry.obligation.id] || 0}
                   />
                 ))}
               </div>
@@ -486,6 +488,7 @@ function ObligationRow({
   onStatusChange,
   onOpenPanel,
   showEvidence = false,
+  horizonCount = 0,
 }: {
   entry: MatrixEntry;
   clauses: Record<string, { title: string; clauseText: string; guidance: string }>;
@@ -493,6 +496,7 @@ function ObligationRow({
   onStatusChange: (id: string, status: string) => void;
   onOpenPanel: (entry: MatrixEntry) => void;
   showEvidence?: boolean;
+  horizonCount?: number;
 }) {
   const ob = entry.obligation;
   const isPrinciple = ob.obligationType === "principle";
@@ -550,6 +554,15 @@ function ObligationRow({
             {hasDocEvidence && !showEvidence && (
               <span className="px-1.5 py-0.5 rounded text-[11px] font-medium bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]">
                 {entry.documentEvidence!.length} doc{entry.documentEvidence!.length > 1 ? "s" : ""}
+              </span>
+            )}
+            {horizonCount > 0 && (
+              <span
+                className="px-1.5 py-0.5 rounded text-[11px] font-medium bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)] flex items-center gap-1"
+                title={`${horizonCount} pending regulatory change${horizonCount !== 1 ? "s" : ""}`}
+              >
+                <Telescope size={10} />
+                {horizonCount} pending
               </span>
             )}
           </div>

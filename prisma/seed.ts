@@ -17,6 +17,7 @@ import genData from "../data/seed/obligations/gen-obligations.json";
 import ukGdprData from "../data/seed/obligations/uk-gdpr-obligations.json";
 import cra2015Data from "../data/seed/obligations/cra-2015-obligations.json";
 import ccd2Data from "../data/seed/obligations/ccd2-obligations.json";
+import feedSourcesData from "../data/seed/feed-sources.json";
 
 const prisma = new PrismaClient();
 
@@ -485,6 +486,33 @@ async function main() {
   totalObligations += ccd2.obligationCount;
   totalClauses += ccd2.clauseCount;
 
+  // 4. Seed feed sources for horizon scanning
+  console.log("\nSeeding feed sources...");
+  const regulatorByAbbrev: Record<string, string> = {};
+  for (const reg of regulatorsData) {
+    regulatorByAbbrev[reg.abbreviation] = reg.id;
+  }
+  let feedCount = 0;
+  for (const fs of feedSourcesData) {
+    const regulatorId = fs.regulatorAbbreviation
+      ? regulatorByAbbrev[fs.regulatorAbbreviation] || null
+      : null;
+    await prisma.feedSource.upsert({
+      where: { id: `feed-${fs.name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}` },
+      update: {},
+      create: {
+        id: `feed-${fs.name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`,
+        name: fs.name,
+        regulatorId,
+        feedUrl: fs.feedUrl,
+        feedType: fs.feedType,
+        filterTerms: fs.filterTerms,
+      },
+    });
+    feedCount++;
+    console.log(`  + ${fs.name}`);
+  }
+
   const regulationCount = 16;
   console.log(`\nSeed complete:`);
   console.log(`  Regulators: ${Object.keys(regulators).length}`);
@@ -492,6 +520,7 @@ async function main() {
   console.log(`  Product types: ${Object.keys(productTypeMap).length}`);
   console.log(`  Obligations: ${totalObligations}`);
   console.log(`  Clause templates: ${totalClauses}`);
+  console.log(`  Feed sources: ${feedCount}`);
 }
 
 main()

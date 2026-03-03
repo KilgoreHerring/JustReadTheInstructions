@@ -17,8 +17,22 @@ export default async function MatrixPage({
 
   if (!product) notFound();
 
-  // Generate / refresh the compliance matrix
-  const matrix = await generateComplianceMatrix(id);
+  // Generate / refresh the compliance matrix + fetch horizon link counts
+  const [matrix, horizonLinkCounts] = await Promise.all([
+    generateComplianceMatrix(id),
+    prisma.horizonObligationLink.groupBy({
+      by: ["obligationId"],
+      where: {
+        horizonItem: { status: "open" },
+      },
+      _count: { obligationId: true },
+    }),
+  ]);
+
+  const horizonCountMap: Record<string, number> = {};
+  for (const entry of horizonLinkCounts) {
+    horizonCountMap[entry.obligationId] = entry._count.obligationId;
+  }
 
   const entries = matrix.map((entry) => ({
     id: entry.id,
@@ -82,6 +96,7 @@ export default async function MatrixPage({
         productId={id}
         productName={product.name}
         entries={entries}
+        horizonCounts={horizonCountMap}
       />
     </div>
   );

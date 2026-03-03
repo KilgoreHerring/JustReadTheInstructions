@@ -1,0 +1,23 @@
+[
+  {
+    "name": "FCA News",
+    "regulatorAbbreviation": "FCA",
+    "feedUrl": "https://www.fca.org.uk/news/rss.xml",
+    "feedType": "rss",
+    "filterTerms": ["consultation", "policy statement", "handbook", "guidance", "dear ceo", "consumer duty", "BCOBS", "MCOB", "CONC", "COBS", "ICOBS", "DISP", "SYSC", "CASS", "PROD", "PRIN", "GEN", "payment services", "consumer credit"]
+  },
+  {
+    "name": "Bank of England / PRA News",
+    "regulatorAbbreviation": "PRA",
+    "feedUrl": "https://www.bankofengland.co.uk/news/rss",
+    "feedType": "rss",
+    "filterTerms": ["FCA", "financial conduct", "consumer", "banking", "deposit", "payment", "credit", "insurance"]
+  },
+  {
+    "name": "UK Legislation - Financial Services SIs",
+    "regulatorAbbreviation": null,
+    "feedUrl": "https://www.legislation.gov.uk/uksi/data.feed?text=financial+services",
+    "feedType": "atom",
+    "filterTerms": ["financial", "banking", "consumer", "payment", "credit", "insurance", "conduct"]
+  }
+]

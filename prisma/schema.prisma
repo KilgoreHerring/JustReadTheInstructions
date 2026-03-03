@@ -19,6 +19,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   apiUsage      ApiUsage[]
+  horizonItems  HorizonItem[]
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
@@ -83,6 +84,8 @@ model Regulator {
   website      String?
   rssFeedUrl   String?
   regulations  Regulation[]
+  horizonItems HorizonItem[]
+  feedSources  FeedSource[]
   createdAt    DateTime     @default(now())
 }
 
@@ -100,6 +103,7 @@ model Regulation {
   versions      RegulationVersion[]
   crossRefsFrom RegulationCrossReference[] @relation("CrossRefFrom")
   crossRefsTo   RegulationCrossReference[] @relation("CrossRefTo")
+  horizonLinks  HorizonRegulationLink[]
   createdAt     DateTime                   @default(now())
   updatedAt     DateTime                   @updatedAt
 
@@ -158,6 +162,7 @@ model Obligation {
   controls             ComplianceControl[]
   changes              ObligationChange[]
   matrixEntries        ComplianceMatrixEntry[]         @relation("MatrixObligations")
+  horizonLinks         HorizonObligationLink[]
   createdAt            DateTime                        @default(now())
   updatedAt            DateTime                        @updatedAt
 
@@ -356,4 +361,87 @@ model AuditLog {
   createdAt  DateTime @default(now())
 
   @@index([entityType, entityId])
+}
+
+// === Horizon Scanning ===
+
+model HorizonItem {
+  id                   String                  @id @default(cuid())
+  title                String
+  sourceType           String                  // "rss" | "legislation_api" | "manual"
+  itemType             String                  // "consultation_paper" | "policy_statement" | "handbook_notice" | "statutory_instrument" | "dear_ceo_letter" | "guidance" | "enforcement_notice" | "other"
+  regulatorId          String?
+  regulator            Regulator?              @relation(fields: [regulatorId], references: [id])
+  summary              String                  @db.Text
+  sourceUrl            String?
+  referenceNumber      String?                 // e.g. "CP26/7", "PS25/3", "SI 2026/142"
+  publishedDate        DateTime?
+  responseDeadline     DateTime?
+  effectiveDate        DateTime?
+  status               String                  @default("open") // "open" | "closed" | "implemented" | "withdrawn"
+  priority             String                  @default("medium") // "high" | "medium" | "low" | "info"
+  rawContent           String?                 @db.Text
+  aiClassified         Boolean                 @default(false)
+  aiClassification     Json?
+  feedEntryId          String?                 @unique // dedup key for automated feeds
+  parentId             String?
+  parent               HorizonItem?            @relation("HorizonChildren", fields: [parentId], references: [id])
+  children             HorizonItem[]           @relation("HorizonChildren")
+  handbookNoticeNumber Int?                    @unique
+  createdById          String?
+  createdBy            User?                   @relation(fields: [createdById], references: [id])
+  regulationLinks      HorizonRegulationLink[]
+  obligationLinks      HorizonObligationLink[]
+  createdAt            DateTime                @default(now())
+  updatedAt            DateTime                @updatedAt
+
+  @@index([regulatorId])
+  @@index([status])
+  @@index([publishedDate])
+  @@index([itemType])
+  @@index([parentId])
+}
+
+model HorizonRegulationLink {
+  id            String      @id @default(cuid())
+  horizonItemId String
+  horizonItem   HorizonItem @relation(fields: [horizonItemId], references: [id], onDelete: Cascade)
+  regulationId  String
+  regulation    Regulation  @relation(fields: [regulationId], references: [id])
+  confidence    Float?
+  source        String      @default("ai") // "ai" | "manual"
+
+  @@unique([horizonItemId, regulationId])
+  @@index([regulationId])
+}
+
+model HorizonObligationLink {
+  id            String      @id @default(cuid())
+  horizonItemId String
+  horizonItem   HorizonItem @relation(fields: [horizonItemId], references: [id], onDelete: Cascade)
+  obligationId  String
+  obligation    Obligation  @relation(fields: [obligationId], references: [id])
+  impactType    String      @default("unknown") // "amendment" | "new_requirement" | "repeal" | "clarification" | "unknown"
+  confidence    Float?
+  source        String      @default("ai") // "ai" | "manual"
+
+  @@unique([horizonItemId, obligationId])
+  @@index([obligationId])
+}
+
+model FeedSource {
+  id           String     @id @default(cuid())
+  name         String
+  regulatorId  String?
+  regulator    Regulator? @relation(fields: [regulatorId], references: [id])
+  feedUrl      String
+  feedType     String     // "rss" | "atom" | "legislation_api"
+  isActive     Boolean    @default(true)
+  lastPolledAt DateTime?
+  lastEntryAt  DateTime?
+  pollInterval Int        @default(360)
+  filterTerms  String[]
+  createdAt    DateTime   @default(now())
+
+  @@index([regulatorId])
 }

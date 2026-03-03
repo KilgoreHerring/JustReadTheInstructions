@@ -64,6 +64,31 @@ export const READABILITY_RATINGS = {
   concerning: { label: "Concerning", color: "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]" },
 } as const;
 
+export const HORIZON_ITEM_TYPES = {
+  consultation_paper: { label: "Consultation Paper", color: "bg-[var(--horizon-cp-bg)] text-[var(--horizon-cp-text)]" },
+  policy_statement: { label: "Policy Statement", color: "bg-[var(--horizon-ps-bg)] text-[var(--horizon-ps-text)]" },
+  statutory_instrument: { label: "Statutory Instrument", color: "bg-[var(--horizon-si-bg)] text-[var(--horizon-si-text)]" },
+  handbook_notice: { label: "Handbook Notice", color: "bg-[var(--horizon-handbook-bg)] text-[var(--horizon-handbook-text)]" },
+  dear_ceo_letter: { label: "Dear CEO Letter", color: "bg-[var(--horizon-enforcement-bg)] text-[var(--horizon-enforcement-text)]" },
+  guidance: { label: "Guidance", color: "bg-[var(--horizon-other-bg)] text-[var(--horizon-other-text)]" },
+  enforcement_notice: { label: "Enforcement", color: "bg-[var(--horizon-enforcement-bg)] text-[var(--horizon-enforcement-text)]" },
+  other: { label: "Other", color: "bg-[var(--horizon-other-bg)] text-[var(--horizon-other-text)]" },
+} as const;
+
+export const HORIZON_STATUSES = {
+  open: { label: "Open", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
+  closed: { label: "Closed", color: "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]" },
+  implemented: { label: "Implemented", color: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]" },
+  withdrawn: { label: "Withdrawn", color: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]" },
+} as const;
+
+export const HORIZON_PRIORITIES = {
+  high: { label: "High", color: "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]" },
+  medium: { label: "Medium", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
+  low: { label: "Low", color: "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]" },
+  info: { label: "Info", color: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]" },
+} as const;
+
 const PRINCIPLE_LABELS: Record<string, string> = {
   compliant: "Embedded",
   non_compliant: "Not Embedded",
@@ -76,6 +101,17 @@ const PRINCIPLE_LABELS: Record<string, string> = {
 export function getComplianceLabel(status: string, obligationType: string): string {
   if (obligationType === "principle") return PRINCIPLE_LABELS[status] || status;
   return COMPLIANCE_STATUSES[status as keyof typeof COMPLIANCE_STATUSES]?.label || status;
+}
+
+export function deadlineUrgency(deadline: string | null): "overdue" | "urgent" | "approaching" | null {
+  if (!deadline) return null;
+  const d = new Date(deadline);
+  const now = new Date();
+  const daysUntil = Math.ceil((d.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+  if (daysUntil < 0) return "overdue";
+  if (daysUntil <= 7) return "urgent";
+  if (daysUntil <= 30) return "approaching";
+  return null;
 }
 
 export function formatRelativeTime(date: Date | string | null): string {

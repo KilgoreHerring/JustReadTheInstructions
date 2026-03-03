@@ -76,6 +76,20 @@
 
   /* Citation pill */
   --citation-bg: #F3F4F6;
+
+  /* Horizon item types */
+  --horizon-cp-bg: #EEF2F7;
+  --horizon-cp-text: #1E3A5F;
+  --horizon-ps-bg: #F0F4EC;
+  --horizon-ps-text: #3A5A28;
+  --horizon-si-bg: #F5F0FF;
+  --horizon-si-text: #5B3A8A;
+  --horizon-handbook-bg: #FDF6EE;
+  --horizon-handbook-text: #7A5B3A;
+  --horizon-enforcement-bg: #FDF0EE;
+  --horizon-enforcement-text: #7A3B32;
+  --horizon-other-bg: #F3F4F6;
+  --horizon-other-text: #4B5563;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -144,6 +158,20 @@
     --analysis-failed-text: #D4A49C;
 
     --citation-bg: #2A2C30;
+
+    /* Horizon item types */
+    --horizon-cp-bg: #1E2A3A;
+    --horizon-cp-text: #6B9BD2;
+    --horizon-ps-bg: #2A3A24;
+    --horizon-ps-text: #B8CCA6;
+    --horizon-si-bg: #2E2440;
+    --horizon-si-text: #B8A0D4;
+    --horizon-handbook-bg: #3A3024;
+    --horizon-handbook-text: #D4BC9C;
+    --horizon-enforcement-bg: #3A2824;
+    --horizon-enforcement-text: #D4A49C;
+    --horizon-other-bg: #2A2C30;
+    --horizon-other-text: #9CA3AF;
   }
 }
 
