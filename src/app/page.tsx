@@ -383,7 +383,7 @@ export default async function Dashboard() {
       {/* Sections B + C: Product Grid + Attention Queue + Horizon */}
       <div className="grid grid-cols-1 xl:grid-cols-[3fr_2fr] gap-6 mb-6">
         <ProductComplianceGrid products={sortedProducts} />
-        <div className="space-y-6">
+        <div className="space-y-6 overflow-hidden">
           <AttentionQueue items={attentionItems} />
           <HorizonWidget
             openCount={data.horizonOpen}
