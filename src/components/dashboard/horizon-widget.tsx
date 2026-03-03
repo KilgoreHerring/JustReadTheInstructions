@@ -18,7 +18,7 @@ interface Props {
 
 export function HorizonWidget({ openCount, deadlineCount, topItems }: Props) {
   return (
-    <div className="border border-[var(--border)] rounded-lg h-full flex flex-col">
+    <div className="border border-[var(--border)] rounded-lg flex flex-col">
       <div className="px-4 py-3 border-b border-[var(--border)] flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Telescope size={16} className="text-[var(--accent)]" />
