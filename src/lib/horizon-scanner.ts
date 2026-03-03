@@ -3,6 +3,19 @@ import { askClaudeJSON } from "./claude";
 
 const HAIKU_MODEL = "claude-haiku-4-5-20251001";
 
+/** Safely parse a date string to ISO, returning null for unparseable values. */
+function safeParseDateToISO(dateStr: string | undefined | null): string | null {
+  if (!dateStr) return null;
+  // Try standard parsing first
+  let d = new Date(dateStr);
+  if (!isNaN(d.getTime())) return d.toISOString();
+  // Handle FCA format: "Tuesday, March 3, 2026 - 10:00"
+  const cleaned = dateStr.replace(/^\w+,\s*/, "").replace(/\s*-\s*/, " ");
+  d = new Date(cleaned);
+  if (!isNaN(d.getTime())) return d.toISOString();
+  return null;
+}
+
 // ── Handbook Notice Ingestion ──
 
 interface HandbookNoticeExtraction {
@@ -362,7 +375,7 @@ export function parseRSSItems(xmlText: string): FeedItem[] {
     title: item.title || "",
     summary: item.description || "",
     url: item.link || null,
-    publishedDate: item.pubDate ? new Date(item.pubDate).toISOString() : null,
+    publishedDate: safeParseDateToISO(item.pubDate),
     feedEntryId: item.guid || item.link || item.title || "",
   }));
 }
@@ -403,9 +416,9 @@ export function parseAtomItems(xmlText: string): FeedItem[] {
       summary,
       url: href,
       publishedDate: entry.updated
-        ? new Date(String(entry.updated)).toISOString()
+        ? safeParseDateToISO(String(entry.updated))
         : entry.published
-        ? new Date(String(entry.published)).toISOString()
+        ? safeParseDateToISO(String(entry.published))
         : null,
       feedEntryId: String(entry.id || href || entry.title || ""),
     };
