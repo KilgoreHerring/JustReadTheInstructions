@@ -6,6 +6,7 @@ interface ConsultationItem {
   title: string;
   referenceNumber: string | null;
   responseDeadline: string | null;
+  publishedDate?: string | null;
   regulator: { abbreviation: string } | null;
 }
 
@@ -153,11 +154,11 @@ export function ConsultationTimeline({ items }: Props) {
           );
         })}
 
-        {/* Items without deadlines */}
+        {/* Items without deadlines — show published/active date instead */}
         {noDeadline.length > 0 && (
           <div className={withDeadline.length > 0 ? "mt-2 pt-2 border-t border-[var(--border)]" : ""}>
             <p className="text-[11px] text-[var(--muted-foreground)] uppercase tracking-wide mb-2 font-medium">
-              No deadline
+              No deadline set
             </p>
             {noDeadline.map((item) => (
               <Link
@@ -166,15 +167,24 @@ export function ConsultationTimeline({ items }: Props) {
                 className="flex items-center gap-2 py-1.5 hover:opacity-80 transition-opacity"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--muted-foreground)] shrink-0" />
-                {item.referenceNumber && (
-                  <span
-                    className="shrink-0 px-1.5 py-0.5 rounded text-[11px] bg-[var(--horizon-cp-bg)] text-[var(--horizon-cp-text)] font-medium"
-                    style={{ fontFamily: "var(--font-mono)" }}
-                  >
-                    {item.referenceNumber}
-                  </span>
-                )}
-                <span className="text-sm truncate">{item.title}</span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    {item.referenceNumber && (
+                      <span
+                        className="shrink-0 px-1.5 py-0.5 rounded text-[11px] bg-[var(--horizon-cp-bg)] text-[var(--horizon-cp-text)] font-medium"
+                        style={{ fontFamily: "var(--font-mono)" }}
+                      >
+                        {item.referenceNumber}
+                      </span>
+                    )}
+                    <span className="text-sm truncate">{item.title}</span>
+                  </div>
+                  {item.publishedDate && (
+                    <p className="text-[11px] text-[var(--muted-foreground)] mt-0.5">
+                      Active since {formatDate(item.publishedDate)}
+                    </p>
+                  )}
+                </div>
               </Link>
             ))}
           </div>

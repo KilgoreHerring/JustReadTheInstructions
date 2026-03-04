@@ -1,8 +1,5 @@
 import { prisma } from "@/lib/db";
-import { HorizonList } from "@/components/horizon-list";
-import { ConsultationTimeline } from "@/components/consultation-timeline";
-import { UpcomingChangesSection } from "@/components/upcoming-changes-section";
-import { MonitoredSourcesSection } from "@/components/monitored-sources-section";
+import { HorizonPageLayout } from "@/components/horizon-page-layout";
 import { HORIZON_STATUSES } from "@/lib/utils";
 import { daysUntilDeadline } from "@/lib/utils";
 import Link from "next/link";
@@ -83,6 +80,7 @@ async function getHorizonData() {
         title: true,
         referenceNumber: true,
         responseDeadline: true,
+        publishedDate: true,
         regulator: { select: { abbreviation: true } },
       },
       orderBy: { responseDeadline: "asc" },
@@ -189,6 +187,7 @@ export default async function HorizonScanningPage() {
   const serialisedConsultations = data.openConsultations.map((c) => ({
     ...c,
     responseDeadline: c.responseDeadline?.toISOString() ?? null,
+    publishedDate: c.publishedDate?.toISOString() ?? null,
   }));
 
   const serialisedUpcoming = data.upcomingChanges.map((u) => ({
@@ -269,29 +268,17 @@ export default async function HorizonScanningPage() {
         ))}
       </div>
 
-      {/* Two-column layout: main content + sidebar */}
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
-        {/* Left column: All Items + Monitored Sources */}
-        <div>
-          <HorizonList
-            items={serialisedItems}
-            regulators={data.regulators}
-            topicCounts={data.topicCounts}
-            typeCounts={typeMap}
-            handbookNotices={serialisedNotices}
-          />
-
-          <div className="mt-6">
-            <MonitoredSourcesSection sources={serialisedFeedSources} />
-          </div>
-        </div>
-
-        {/* Right column: Consultation Timeline + Upcoming Changes */}
-        <div className="space-y-6">
-          <ConsultationTimeline items={serialisedConsultations} />
-          <UpcomingChangesSection items={serialisedUpcoming} />
-        </div>
-      </div>
+      {/* Client-side layout: full-width sections + two-column grid */}
+      <HorizonPageLayout
+        items={serialisedItems}
+        regulators={data.regulators}
+        topicCounts={data.topicCounts}
+        typeCounts={typeMap}
+        handbookNotices={serialisedNotices}
+        consultations={serialisedConsultations}
+        upcomingChanges={serialisedUpcoming}
+        feedSources={serialisedFeedSources}
+      />
     </div>
   );
 }
