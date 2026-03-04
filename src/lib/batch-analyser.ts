@@ -111,7 +111,7 @@ export async function createBatchForDocuments(documentIds: string[]): Promise<st
   for (const docId of documentIds) {
     await prisma.productDocument.update({
       where: { id: docId },
-      data: { analysisStatus: "queued", analysisResult: undefined, analysisError: null, analysisCompletedAt: null },
+      data: { analysisStatus: "queued", analysisResult: null as unknown as undefined, analysisError: null, analysisCompletedAt: null },
     });
   }
 
@@ -170,18 +170,42 @@ export async function pollBatchJob(batchJobId: string): Promise<BatchJobStatus> 
 
   const batch = await anthropic.messages.batches.retrieve(job.anthropicBatchId);
 
-  let newStatus = job.status;
-  if (batch.processing_status === "in_progress") newStatus = "processing";
-  else if (batch.processing_status === "canceling") newStatus = "cancelled";
-  else if (batch.processing_status === "ended") newStatus = "completed";
-
-  await prisma.batchJob.update({
-    where: { id: batchJobId },
-    data: { status: newStatus },
-  });
-
-  if (batch.processing_status === "ended") {
-    await processBatchResults(batchJobId);
+  if (batch.processing_status === "in_progress") {
+    await prisma.batchJob.update({
+      where: { id: batchJobId },
+      data: { status: "processing" },
+    });
+  } else if (batch.processing_status === "canceling") {
+    await prisma.batchJob.update({
+      where: { id: batchJobId },
+      data: { status: "cancelled" },
+    });
+  } else if (batch.processing_status === "ended") {
+    // Don't set "completed" here — processBatchResults sets it after
+    // successfully processing all results. If it throws, we catch and
+    // mark the batch as "failed" so resolveOutstandingBatches can retry.
+    try {
+      await processBatchResults(batchJobId);
+    } catch (e) {
+      console.error(`[Batch] processBatchResults failed for ${batchJobId}:`, e);
+      const errorMessage = e instanceof Error ? e.message : "Unknown error processing batch results";
+      await prisma.batchJob.update({
+        where: { id: batchJobId },
+        data: { status: "failed", error: errorMessage },
+      });
+      // Mark any still-queued documents as failed
+      const items = await prisma.batchJobItem.findMany({ where: { batchJobId } });
+      const docIds = [...new Set(items.map((i) => i.documentId))];
+      for (const docId of docIds) {
+        const doc = await prisma.productDocument.findUnique({ where: { id: docId } });
+        if (doc?.analysisStatus === "queued") {
+          await prisma.productDocument.update({
+            where: { id: docId },
+            data: { analysisStatus: "failed", analysisError: `Batch result processing failed: ${errorMessage}` },
+          });
+        }
+      }
+    }
   }
 
   return prisma.batchJob.findUniqueOrThrow({ where: { id: batchJobId } });

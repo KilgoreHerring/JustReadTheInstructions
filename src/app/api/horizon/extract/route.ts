@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { extractHorizonItemFromText } from "@/lib/horizon-scanner";
 
+export const maxDuration = 60;
+
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const { rawText } = body;

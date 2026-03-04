@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { classifyHorizonItem } from "@/lib/horizon-scanner";
 
+export const maxDuration = 60;
+
 export async function POST(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }

@@ -1,10 +1,3 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
 export function formatDate(date: Date | string | null): string {
   if (!date) return "—";
   return new Date(date).toLocaleDateString("en-GB", {
@@ -56,12 +49,6 @@ export const EVIDENCE_SCOPES = {
   term_required: { label: "Regulatory Expectation", color: "bg-[var(--scope-term-bg)] text-[var(--scope-term-text)]" },
   internal_governance: { label: "Internal Governance", color: "bg-[var(--scope-internal-bg)] text-[var(--scope-internal-text)]" },
   guidance: { label: "Guidance & Best Practice", color: "bg-[var(--scope-guidance-bg)] text-[var(--scope-guidance-text)]" },
-} as const;
-
-export const READABILITY_RATINGS = {
-  good: { label: "Good", color: "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]" },
-  acceptable: { label: "Acceptable", color: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]" },
-  concerning: { label: "Concerning", color: "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]" },
 } as const;
 
 export const HORIZON_ITEM_TYPES = {
@@ -152,25 +139,6 @@ export const REGULATOR_SOURCE_TYPES = {
   news: { label: "News & Intelligence" },
 } as const;
 
-export function computeUrgencyBand(
-  status: string,
-  responseDeadline: string | null,
-  effectiveDate: string | null
-): "live_consultation" | "upcoming_deadline" | "recently_enacted" | "horizon_item" | "archived" {
-  if (status === "completed" || status === "withdrawn") return "archived";
-  if (status === "consultation" && responseDeadline) {
-    const days = daysUntilDeadline(responseDeadline);
-    if (days !== null && days >= 0) return "live_consultation";
-    return "upcoming_deadline";
-  }
-  if (status === "pending_change" && effectiveDate) {
-    const days = daysUntilDeadline(effectiveDate);
-    if (days !== null && days <= 90) return "upcoming_deadline";
-  }
-  if (status === "active_change") return "recently_enacted";
-  return "horizon_item";
-}
-
 export function consultationUrgency(
   deadline: string | null
 ): "critical" | "urgent" | "approaching" | "open" | "closed" | null {
@@ -196,17 +164,6 @@ const PRINCIPLE_LABELS: Record<string, string> = {
 export function getComplianceLabel(status: string, obligationType: string): string {
   if (obligationType === "principle") return PRINCIPLE_LABELS[status] || status;
   return COMPLIANCE_STATUSES[status as keyof typeof COMPLIANCE_STATUSES]?.label || status;
-}
-
-export function deadlineUrgency(deadline: string | null): "overdue" | "urgent" | "approaching" | null {
-  if (!deadline) return null;
-  const d = new Date(deadline);
-  const now = new Date();
-  const daysUntil = Math.ceil((d.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-  if (daysUntil < 0) return "overdue";
-  if (daysUntil <= 7) return "urgent";
-  if (daysUntil <= 30) return "approaching";
-  return null;
 }
 
 export function daysUntilDeadline(deadline: string | null): number | null {

@@ -124,7 +124,7 @@ export async function GET(request: NextRequest) {
     step: "5. Check API key",
     status: hasKey ? "ok" : "error",
     detail: hasKey
-      ? `ANTHROPIC_API_KEY is set (${process.env.ANTHROPIC_API_KEY!.slice(0, 10)}...)`
+      ? "ANTHROPIC_API_KEY is set"
       : "ANTHROPIC_API_KEY is NOT set!",
   });
 

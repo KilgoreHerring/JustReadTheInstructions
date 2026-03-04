@@ -12,8 +12,7 @@
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
     "db:seed": "tsx prisma/seed.ts",
-    "db:studio": "prisma studio",
-    "extract": "tsx scripts/extract-obligations.ts"
+    "db:studio": "prisma studio"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -24,7 +23,6 @@
     "@neondatabase/serverless": "^1.0.2",
     "@prisma/adapter-neon": "^6.19.2",
     "@prisma/client": "^6.19.2",
-    "clsx": "^2.1.1",
     "fast-xml-parser": "^5.4.2",
     "jsonrepair": "^3.13.2",
     "lucide-react": "^0.474.0",
@@ -34,7 +32,6 @@
     "pdf-parse": "^1.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.0.0",
     "text-readability": "^1.1.1"
   },
   "devDependencies": {

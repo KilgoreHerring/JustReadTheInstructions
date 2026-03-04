@@ -130,6 +130,7 @@ export async function updateMatrixEntry(
     where: { id: entryId },
     data: {
       ...data,
+      evidenceSource: "manual",
       reviewedAt: new Date(),
     },
   });

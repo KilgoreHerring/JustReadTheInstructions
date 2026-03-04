@@ -387,7 +387,7 @@ model HorizonItem {
   aiClassification      Json?
   feedEntryId           String?                 @unique // dedup key for automated feeds
   parentId              String?
-  parent                HorizonItem?            @relation("HorizonChildren", fields: [parentId], references: [id])
+  parent                HorizonItem?            @relation("HorizonChildren", fields: [parentId], references: [id], onDelete: Cascade)
   children              HorizonItem[]           @relation("HorizonChildren")
   handbookNoticeNumber  Int?                    @unique
   createdById           String?

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { lightClassifyItem, deriveInitialStatus } from "@/lib/horizon-scanner";
 
+export const maxDuration = 60;
+
 export async function POST(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const mode = searchParams.get("mode"); // "status" for status-only backfill

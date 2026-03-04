@@ -4,6 +4,8 @@ import { Prisma } from "@prisma/client";
 import { calculateReadability } from "@/lib/readability-scorer";
 import { createBatchForDocuments } from "@/lib/batch-analyser";
 
+export const maxDuration = 60;
+
 export async function GET() {
   const products = await prisma.product.findMany({
     include: { productType: true },
