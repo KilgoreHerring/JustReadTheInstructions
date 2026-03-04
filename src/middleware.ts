@@ -10,7 +10,7 @@ export function middleware(req: NextRequest) {
   }
 
   // Allow cron/webhook API routes through (called by Vercel Cron, not users)
-  if (pathname === "/api/horizon/ingest") {
+  if (pathname === "/api/horizon/ingest" || pathname === "/api/horizon/feeds/seed") {
     return NextResponse.next();
   }
 

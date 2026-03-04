@@ -1,77 +1,77 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-
-const DEFAULT_FEEDS = [
-  {
-    name: "FCA Regulatory News",
-    feedUrl: "https://www.fca.org.uk/news/rss.xml",
-    feedType: "rss",
-    filterTerms: [],
-  },
-  {
-    name: "FCA Consultation Papers",
-    feedUrl: "https://www.fca.org.uk/publications/consultation-papers/rss.xml",
-    feedType: "rss",
-    filterTerms: [],
-  },
-  {
-    name: "FCA Policy Statements",
-    feedUrl: "https://www.fca.org.uk/publications/policy-statements/rss.xml",
-    feedType: "rss",
-    filterTerms: [],
-  },
-  {
-    name: "FCA Guidance Consultations",
-    feedUrl: "https://www.fca.org.uk/publications/guidance-consultations/rss.xml",
-    feedType: "rss",
-    filterTerms: [],
-  },
-];
+import regulatorsData from "../../../../../../data/seed/regulators.json";
+import feedSourcesData from "../../../../../../data/seed/feed-sources.json";
 
 export async function POST() {
-  // Find or create FCA regulator
-  let fca = await prisma.regulator.findFirst({
-    where: { abbreviation: "FCA" },
-  });
+  const results = { regulators: 0, feedSources: 0, errors: [] as string[] };
 
-  if (!fca) {
-    fca = await prisma.regulator.create({
-      data: {
-        name: "Financial Conduct Authority",
-        abbreviation: "FCA",
-        jurisdiction: "UK",
-        website: "https://www.fca.org.uk",
-      },
-    });
-  }
-
-  const created = [];
-  const skipped = [];
-
-  for (const feed of DEFAULT_FEEDS) {
-    // Skip if already exists (by URL)
-    const existing = await prisma.feedSource.findFirst({
-      where: { feedUrl: feed.feedUrl },
-    });
-
-    if (existing) {
-      skipped.push(feed.name);
-      continue;
+  // Upsert regulators
+  for (const reg of regulatorsData) {
+    try {
+      await prisma.regulator.upsert({
+        where: { abbreviation: reg.abbreviation },
+        update: {
+          name: reg.name,
+          jurisdiction: reg.jurisdiction,
+          website: reg.website,
+          sourceType: (reg as Record<string, unknown>).sourceType as string | undefined ?? "primary_regulator",
+        },
+        create: {
+          name: reg.name,
+          abbreviation: reg.abbreviation,
+          jurisdiction: reg.jurisdiction,
+          website: reg.website,
+          sourceType: (reg as Record<string, unknown>).sourceType as string | undefined ?? "primary_regulator",
+        },
+      });
+      results.regulators++;
+    } catch (e) {
+      results.errors.push(`Regulator ${reg.abbreviation}: ${e instanceof Error ? e.message : String(e)}`);
     }
-
-    const source = await prisma.feedSource.create({
-      data: {
-        ...feed,
-        regulatorId: fca.id,
-      },
-    });
-    created.push({ id: source.id, name: source.name });
   }
 
-  return NextResponse.json({
-    ok: true,
-    created,
-    skipped,
-    regulatorId: fca.id,
-  });
+  // Upsert feed sources
+  for (const feed of feedSourcesData) {
+    try {
+      let regulatorId: string | null = null;
+      if (feed.regulatorAbbreviation) {
+        const reg = await prisma.regulator.findFirst({
+          where: { abbreviation: feed.regulatorAbbreviation },
+        });
+        regulatorId = reg?.id ?? null;
+      }
+
+      const existing = await prisma.feedSource.findFirst({
+        where: { name: feed.name },
+      });
+
+      if (existing) {
+        await prisma.feedSource.update({
+          where: { id: existing.id },
+          data: {
+            feedUrl: feed.feedUrl,
+            feedType: feed.feedType,
+            filterTerms: feed.filterTerms,
+            regulatorId,
+          },
+        });
+      } else {
+        await prisma.feedSource.create({
+          data: {
+            name: feed.name,
+            feedUrl: feed.feedUrl,
+            feedType: feed.feedType,
+            filterTerms: feed.filterTerms,
+            regulatorId,
+          },
+        });
+      }
+      results.feedSources++;
+    } catch (e) {
+      results.errors.push(`Feed ${feed.name}: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
+
+  return NextResponse.json({ ok: true, ...results });
 }
