@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { pollAllFeeds } from "@/lib/horizon-scanner";
+import { pollAllFeeds, updateStaleStatuses } from "@/lib/horizon-scanner";
 
 export async function GET(request: NextRequest) {
   // Verify cron secret for Vercel Cron Jobs
@@ -11,11 +11,15 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const result = await pollAllFeeds();
+    const [result, staleCount] = await Promise.all([
+      pollAllFeeds(),
+      updateStaleStatuses(),
+    ]);
     return NextResponse.json({
       ok: true,
       created: result.total,
       byFeed: result.byFeed,
+      staleProgressed: staleCount,
     });
   } catch (e) {
     const message = e instanceof Error ? e.message : "Ingestion failed";
@@ -26,11 +30,15 @@ export async function GET(request: NextRequest) {
 // Manual poll trigger (no cron secret required)
 export async function POST() {
   try {
-    const result = await pollAllFeeds();
+    const [result, staleCount] = await Promise.all([
+      pollAllFeeds(),
+      updateStaleStatuses(),
+    ]);
     return NextResponse.json({
       ok: true,
       created: result.total,
       byFeed: result.byFeed,
+      staleProgressed: staleCount,
     });
   } catch (e) {
     const message = e instanceof Error ? e.message : "Ingestion failed";

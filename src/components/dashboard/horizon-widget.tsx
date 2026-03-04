@@ -1,4 +1,4 @@
-import { Telescope, ArrowRight, Clock } from "lucide-react";
+import { Telescope, ArrowRight, Clock, AlertTriangle } from "lucide-react";
 import { HORIZON_ITEM_TYPES, HORIZON_PRIORITIES, formatDate } from "@/lib/utils";
 
 interface HorizonWidgetItem {
@@ -13,10 +13,11 @@ interface HorizonWidgetItem {
 interface Props {
   openCount: number;
   deadlineCount: number;
+  responseRequiredCount: number;
   topItems: HorizonWidgetItem[];
 }
 
-export function HorizonWidget({ openCount, deadlineCount, topItems }: Props) {
+export function HorizonWidget({ openCount, deadlineCount, responseRequiredCount, topItems }: Props) {
   return (
     <div className="border border-[var(--border)] rounded-lg flex flex-col">
       <div className="px-4 py-3 border-b border-[var(--border)] flex items-center justify-between">
@@ -51,6 +52,19 @@ export function HorizonWidget({ openCount, deadlineCount, topItems }: Props) {
               </p>
               <p className="text-[11px] text-[var(--muted-foreground)]">
                 Deadline{deadlineCount !== 1 ? "s" : ""} in 30 days
+              </p>
+            </div>
+          </div>
+        )}
+        {responseRequiredCount > 0 && (
+          <div className="flex items-center gap-1.5">
+            <AlertTriangle size={13} className="text-[var(--status-non-compliant-text)]" />
+            <div>
+              <p className="text-sm font-semibold text-[var(--status-non-compliant-text)]">
+                {responseRequiredCount}
+              </p>
+              <p className="text-[11px] text-[var(--muted-foreground)]">
+                Response{responseRequiredCount !== 1 ? "s" : ""} required
               </p>
             </div>
           </div>

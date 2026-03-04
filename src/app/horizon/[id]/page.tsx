@@ -2,7 +2,15 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
-import { HORIZON_ITEM_TYPES, HORIZON_STATUSES, HORIZON_PRIORITIES } from "@/lib/utils";
+import {
+  HORIZON_ITEM_TYPES,
+  HORIZON_STATUSES,
+  HORIZON_PRIORITIES,
+  HORIZON_JURISDICTIONS,
+  HORIZON_TOPIC_AREAS,
+  HORIZON_CLIENT_SECTORS,
+  CROSS_REFERENCE_TYPES,
+} from "@/lib/utils";
 import { HorizonLinkManager } from "@/components/horizon-link-manager";
 import { HorizonDetailActions } from "@/components/horizon-detail-actions";
 
@@ -60,6 +68,16 @@ async function getHorizonItem(id: string) {
           },
           orderBy: { confidence: "desc" },
         },
+        crossRefsFrom: {
+          include: {
+            toItem: { select: { id: true, title: true, referenceNumber: true, itemType: true } },
+          },
+        },
+        crossRefsTo: {
+          include: {
+            fromItem: { select: { id: true, title: true, referenceNumber: true, itemType: true } },
+          },
+        },
       },
     }),
     prisma.regulation.findMany({
@@ -84,6 +102,22 @@ export default async function HorizonItemPage({
   const typeInfo = HORIZON_ITEM_TYPES[item.itemType as keyof typeof HORIZON_ITEM_TYPES];
   const statusInfo = HORIZON_STATUSES[item.status as keyof typeof HORIZON_STATUSES];
   const priorityInfo = HORIZON_PRIORITIES[item.priority as keyof typeof HORIZON_PRIORITIES];
+
+  // Combine cross-references into a single list
+  const crossRefs = [
+    ...item.crossRefsFrom.map((cr) => ({
+      id: cr.id,
+      relationship: cr.relationship,
+      direction: "outgoing" as const,
+      item: cr.toItem,
+    })),
+    ...item.crossRefsTo.map((cr) => ({
+      id: cr.id,
+      relationship: cr.relationship,
+      direction: "incoming" as const,
+      item: cr.fromItem,
+    })),
+  ];
 
   return (
     <div className="prose-column">
@@ -127,6 +161,16 @@ export default async function HorizonItemPage({
             {item.aiClassified && (
               <span className="px-2 py-0.5 rounded text-xs font-medium bg-[var(--accent-light)] text-[var(--accent)]">
                 AI Classified
+              </span>
+            )}
+            {item.requiresFirmResponse && (
+              <span className="px-2 py-0.5 rounded text-xs font-medium bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]">
+                Response Required
+              </span>
+            )}
+            {item.agBriefingPublished && (
+              <span className="px-2 py-0.5 rounded text-xs font-medium bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]">
+                AG Briefing Published
               </span>
             )}
           </div>
@@ -191,6 +235,88 @@ export default async function HorizonItemPage({
         )}
       </div>
 
+      {/* Taxonomy pills */}
+      {(item.jurisdictions?.length > 0 || item.topicAreas?.length > 0 || item.clientSectorRelevance?.length > 0) && (
+        <div className="mb-6 flex flex-wrap gap-3">
+          {item.jurisdictions?.length > 0 && (
+            <div>
+              <p className="text-[11px] text-[var(--muted-foreground)] uppercase tracking-wide mb-1">Jurisdiction</p>
+              <div className="flex gap-1.5">
+                {item.jurisdictions.map((j) => {
+                  const jInfo = HORIZON_JURISDICTIONS[j as keyof typeof HORIZON_JURISDICTIONS];
+                  return (
+                    <span key={j} className="px-2 py-0.5 rounded text-xs bg-[var(--muted)] font-medium">
+                      {jInfo?.label || j}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          {item.topicAreas?.length > 0 && (
+            <div>
+              <p className="text-[11px] text-[var(--muted-foreground)] uppercase tracking-wide mb-1">Topics</p>
+              <div className="flex gap-1.5 flex-wrap">
+                {item.topicAreas.map((t) => {
+                  const tInfo = HORIZON_TOPIC_AREAS[t as keyof typeof HORIZON_TOPIC_AREAS];
+                  return (
+                    <span key={t} className="px-2 py-0.5 rounded text-xs bg-[var(--accent-light)] text-[var(--accent)]">
+                      {tInfo?.label || t}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          {item.clientSectorRelevance?.length > 0 && (
+            <div>
+              <p className="text-[11px] text-[var(--muted-foreground)] uppercase tracking-wide mb-1">Sectors</p>
+              <div className="flex gap-1.5 flex-wrap">
+                {item.clientSectorRelevance.map((s) => {
+                  const sInfo = HORIZON_CLIENT_SECTORS[s as keyof typeof HORIZON_CLIENT_SECTORS];
+                  return (
+                    <span key={s} className="px-2 py-0.5 rounded text-xs bg-[var(--muted)]">
+                      {sInfo?.label || s}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Consultation tracking details */}
+      {(item.responseUrl || item.estimatedFinalRuleDate || item.relatedLegislation) && (
+        <div className="mb-6 border border-[var(--border)] rounded-lg p-4">
+          <h3 className="text-sm font-semibold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+            Consultation Tracking
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+            {item.responseUrl && (
+              <div>
+                <p className="text-xs text-[var(--muted-foreground)] mb-0.5">Response Portal</p>
+                <a href={item.responseUrl} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline break-all">
+                  {item.responseUrl}
+                </a>
+              </div>
+            )}
+            {item.estimatedFinalRuleDate && (
+              <div>
+                <p className="text-xs text-[var(--muted-foreground)] mb-0.5">Estimated Final Rule Date</p>
+                <p>{formatDate(item.estimatedFinalRuleDate)}</p>
+              </div>
+            )}
+            {item.relatedLegislation && (
+              <div>
+                <p className="text-xs text-[var(--muted-foreground)] mb-0.5">Related Legislation</p>
+                <p>{item.relatedLegislation}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Summary */}
       <div className="mb-6">
         <h2
@@ -203,6 +329,46 @@ export default async function HorizonItemPage({
           {item.summary}
         </div>
       </div>
+
+      {/* Cross-references */}
+      {crossRefs.length > 0 && (
+        <div className="mb-6">
+          <h2
+            className="text-lg font-semibold mb-3"
+            style={{ fontFamily: "var(--font-heading), Georgia, serif" }}
+          >
+            Cross-References ({crossRefs.length})
+          </h2>
+          <div className="border border-[var(--border)] rounded-lg divide-y divide-[var(--border)]">
+            {crossRefs.map((cr) => {
+              const relInfo = CROSS_REFERENCE_TYPES[cr.relationship as keyof typeof CROSS_REFERENCE_TYPES];
+              const crTypeInfo = HORIZON_ITEM_TYPES[cr.item.itemType as keyof typeof HORIZON_ITEM_TYPES];
+              return (
+                <Link
+                  key={cr.id}
+                  href={`/horizon/${cr.item.id}`}
+                  className="flex items-center gap-3 px-4 py-2.5 hover:bg-[var(--muted)] transition-colors"
+                >
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[var(--muted)] text-[var(--muted-foreground)] shrink-0">
+                    {cr.direction === "outgoing" ? relInfo?.label || cr.relationship : `← ${relInfo?.label || cr.relationship}`}
+                  </span>
+                  {crTypeInfo && (
+                    <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium shrink-0 ${crTypeInfo.color}`}>
+                      {crTypeInfo.label}
+                    </span>
+                  )}
+                  {cr.item.referenceNumber && (
+                    <span className="text-[11px] text-[var(--muted-foreground)] shrink-0" style={{ fontFamily: "var(--font-mono)" }}>
+                      {cr.item.referenceNumber}
+                    </span>
+                  )}
+                  <span className="text-sm truncate">{cr.item.title}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* AI Classification details */}
       {item.aiClassification && (

@@ -56,6 +56,16 @@ export async function GET(
         },
         orderBy: { confidence: "desc" },
       },
+      crossRefsFrom: {
+        include: {
+          toItem: { select: { id: true, title: true, referenceNumber: true, itemType: true } },
+        },
+      },
+      crossRefsTo: {
+        include: {
+          fromItem: { select: { id: true, title: true, referenceNumber: true, itemType: true } },
+        },
+      },
     },
   });
 
@@ -82,15 +92,24 @@ export async function PUT(
   const fields = [
     "title", "itemType", "regulatorId", "summary", "sourceUrl",
     "referenceNumber", "status", "priority", "rawContent",
+    "responseUrl", "relatedLegislation",
   ];
   for (const field of fields) {
     if (body[field] !== undefined) updatable[field] = body[field];
   }
-  const dateFields = ["publishedDate", "responseDeadline", "effectiveDate"];
+  const dateFields = ["publishedDate", "responseDeadline", "effectiveDate", "estimatedFinalRuleDate"];
   for (const field of dateFields) {
     if (body[field] !== undefined) {
       updatable[field] = body[field] ? new Date(body[field]) : null;
     }
+  }
+  const arrayFields = ["jurisdictions", "topicAreas", "clientSectorRelevance"];
+  for (const field of arrayFields) {
+    if (body[field] !== undefined) updatable[field] = body[field];
+  }
+  const boolFields = ["requiresFirmResponse", "agBriefingPublished"];
+  for (const field of boolFields) {
+    if (body[field] !== undefined) updatable[field] = body[field];
   }
 
   const item = await prisma.horizonItem.update({

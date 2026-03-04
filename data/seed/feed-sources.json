@@ -7,11 +7,25 @@
     "filterTerms": ["consultation", "policy statement", "handbook", "guidance", "dear ceo", "consumer duty", "BCOBS", "MCOB", "CONC", "COBS", "ICOBS", "DISP", "SYSC", "CASS", "PROD", "PRIN", "GEN", "payment services", "consumer credit"]
   },
   {
+    "name": "FCA Consultations",
+    "regulatorAbbreviation": "FCA",
+    "feedUrl": "https://www.fca.org.uk/publications/rss.xml",
+    "feedType": "rss",
+    "filterTerms": ["consultation", "policy statement", "discussion paper", "feedback statement", "guidance"]
+  },
+  {
     "name": "Bank of England / PRA News",
     "regulatorAbbreviation": "PRA",
-    "feedUrl": "https://www.bankofengland.co.uk/news/rss",
+    "feedUrl": "https://www.bankofengland.co.uk/rss/news",
     "feedType": "rss",
     "filterTerms": ["FCA", "financial conduct", "consumer", "banking", "deposit", "payment", "credit", "insurance"]
+  },
+  {
+    "name": "BoE Publications",
+    "regulatorAbbreviation": "BoE",
+    "feedUrl": "https://www.bankofengland.co.uk/rss/publications",
+    "feedType": "rss",
+    "filterTerms": []
   },
   {
     "name": "UK Legislation - Financial Services SIs",
@@ -19,5 +33,96 @@
     "feedUrl": "https://www.legislation.gov.uk/uksi/data.feed?text=financial+services",
     "feedType": "atom",
     "filterTerms": ["financial", "banking", "consumer", "payment", "credit", "insurance", "conduct"]
+  },
+  {
+    "name": "UK Legislation - Banking SIs",
+    "regulatorAbbreviation": null,
+    "feedUrl": "https://www.legislation.gov.uk/uksi/data.feed?text=banking",
+    "feedType": "atom",
+    "filterTerms": []
+  },
+  {
+    "name": "HMT Financial Services",
+    "regulatorAbbreviation": "HMT",
+    "feedUrl": "https://www.gov.uk/search/policy-papers-and-consultations.atom?organisations%5B%5D=hm-treasury&parent=hm-treasury",
+    "feedType": "atom",
+    "filterTerms": ["financial", "banking", "payment", "credit", "insurance", "FCA", "PRA", "regulation", "consumer"]
+  },
+  {
+    "name": "EBA News",
+    "regulatorAbbreviation": "EBA",
+    "feedUrl": "https://www.eba.europa.eu/news-press/news/rss.xml",
+    "feedType": "rss",
+    "filterTerms": []
+  },
+  {
+    "name": "ESMA News",
+    "regulatorAbbreviation": "ESMA",
+    "feedUrl": "https://www.esma.europa.eu/press-news/esma-news/feed",
+    "feedType": "rss",
+    "filterTerms": []
+  },
+  {
+    "name": "FSB Publications",
+    "regulatorAbbreviation": "FSB",
+    "feedUrl": "https://www.fsb.org/feed/",
+    "feedType": "rss",
+    "filterTerms": []
+  },
+  {
+    "name": "BIS/BCBS Publications",
+    "regulatorAbbreviation": "BIS/BCBS",
+    "feedUrl": "https://www.bis.org/doclist/rss_all_categories.rss",
+    "feedType": "rss",
+    "filterTerms": []
+  },
+  {
+    "name": "FATF Publications",
+    "regulatorAbbreviation": "FATF",
+    "feedUrl": "https://www.fatf-gafi.org/en/rss.xml",
+    "feedType": "rss",
+    "filterTerms": ["financial", "banking", "money laundering", "terrorist financing", "customer due diligence", "beneficial ownership", "risk-based", "virtual asset"]
+  },
+  {
+    "name": "ISDA News",
+    "regulatorAbbreviation": "ISDA",
+    "feedUrl": "https://www.isda.org/feed/",
+    "feedType": "rss",
+    "filterTerms": []
+  },
+  {
+    "name": "UK Finance News",
+    "regulatorAbbreviation": "UK Finance",
+    "feedUrl": "https://www.ukfinance.org.uk/feed",
+    "feedType": "rss",
+    "filterTerms": ["regulation", "policy", "FCA", "PRA", "consultation", "compliance", "conduct", "prudential", "consumer"]
+  },
+  {
+    "name": "ICMA News",
+    "regulatorAbbreviation": "ICMA",
+    "feedUrl": "https://www.icmagroup.org/feed/",
+    "feedType": "rss",
+    "filterTerms": []
+  },
+  {
+    "name": "UK Parliament Financial Bills",
+    "regulatorAbbreviation": "Parliament",
+    "feedUrl": "https://bills.parliament.uk/rss/publicbills.rss",
+    "feedType": "rss",
+    "filterTerms": ["financial", "banking", "payment", "credit", "insurance", "consumer", "fraud", "money laundering"]
+  },
+  {
+    "name": "FinExtra Headlines",
+    "regulatorAbbreviation": "FinExtra",
+    "feedUrl": "https://www.finextra.com/rss/headlines.aspx",
+    "feedType": "rss",
+    "filterTerms": ["regulation", "FCA", "PRA", "compliance", "Basel", "capital requirements", "conduct", "consumer duty", "prudential"]
+  },
+  {
+    "name": "Global Compliance News",
+    "regulatorAbbreviation": null,
+    "feedUrl": "https://globalcompliancenews.com/feed/",
+    "feedType": "rss",
+    "filterTerms": ["UK", "EU", "financial", "banking", "FCA", "PRA", "EBA", "ESMA", "conduct", "prudential"]
   }
 ]

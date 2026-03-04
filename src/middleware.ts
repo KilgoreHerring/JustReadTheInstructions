@@ -9,6 +9,11 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
+  // Allow cron/webhook API routes through (called by Vercel Cron, not users)
+  if (pathname === "/api/horizon/ingest") {
+    return NextResponse.next();
+  }
+
   // Check for NextAuth session token cookie (database strategy uses this name)
   const sessionToken =
     req.cookies.get("__Secure-authjs.session-token")?.value ||

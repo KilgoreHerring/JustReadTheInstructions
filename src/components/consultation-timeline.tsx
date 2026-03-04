@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatDate, daysUntilDeadline } from "@/lib/utils";
+import { formatDate, daysUntilDeadline, consultationUrgency } from "@/lib/utils";
 
 interface ConsultationItem {
   id: string;
@@ -51,13 +51,16 @@ export function ConsultationTimeline({ items }: Props) {
         {/* Timeline items with deadlines */}
         {withDeadline.map((item, index) => {
           const days = daysUntilDeadline(item.responseDeadline);
+          const urgency = consultationUrgency(item.responseDeadline);
           const isLast = index === withDeadline.length - 1 && noDeadline.length === 0;
 
-          // Dot colour: red for overdue/<=7 days, amber for <=30, grey for >30
+          // Dot colour: 4-tier system
           let dotClass = "bg-[var(--muted-foreground)]";
-          if (days !== null && days <= 7) {
+          if (urgency === "critical" || urgency === "closed") {
             dotClass = "bg-[var(--status-non-compliant-bg)]";
-          } else if (days !== null && days <= 30) {
+          } else if (urgency === "urgent") {
+            dotClass = "bg-[var(--status-non-compliant-bg)]";
+          } else if (urgency === "approaching") {
             dotClass = "bg-[var(--status-in-progress-bg)]";
           }
 
@@ -72,6 +75,12 @@ export function ConsultationTimeline({ items }: Props) {
               countdownText = `${days} day${days !== 1 ? "s" : ""} remaining`;
             }
           }
+
+          // Urgency label
+          let urgencyLabel = "";
+          if (urgency === "critical") urgencyLabel = "CRITICAL";
+          else if (urgency === "urgent") urgencyLabel = "URGENT";
+          else if (urgency === "approaching") urgencyLabel = "APPROACHING";
 
           return (
             <div key={item.id} className="relative flex gap-3">
@@ -104,6 +113,19 @@ export function ConsultationTimeline({ items }: Props) {
                           {item.regulator.abbreviation}
                         </span>
                       )}
+                      {urgencyLabel && (
+                        <span
+                          className={`px-1 py-0.5 rounded text-[9px] font-bold tracking-wider ${
+                            urgency === "critical" || urgency === "closed"
+                              ? "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]"
+                              : urgency === "urgent"
+                              ? "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]"
+                              : "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]"
+                          }`}
+                        >
+                          {urgencyLabel}
+                        </span>
+                      )}
                     </div>
                     <p className="text-sm font-medium leading-snug">{item.title}</p>
                     <p className="text-xs text-[var(--muted-foreground)] mt-0.5">
@@ -111,9 +133,11 @@ export function ConsultationTimeline({ items }: Props) {
                       {countdownText && (
                         <span
                           className={
-                            days !== null && days <= 7
+                            urgency === "critical" || urgency === "closed"
                               ? " text-[var(--status-non-compliant-text)] font-medium"
-                              : days !== null && days <= 30
+                              : urgency === "urgent"
+                              ? " text-[var(--status-non-compliant-text)]"
+                              : urgency === "approaching"
                               ? " text-[var(--status-in-progress-text)]"
                               : ""
                           }

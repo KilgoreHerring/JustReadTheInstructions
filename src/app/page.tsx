@@ -25,7 +25,7 @@ async function getDashboardData() {
   // Resolve any batch jobs that finished while the user was away
   await resolveOutstandingBatches();
 
-  const [heatmapEntries, products, recentAnalyses, gapObligations, entriesWithEvidence, horizonOpen, horizonDeadlines, horizonTopItems] =
+  const [heatmapEntries, products, recentAnalyses, gapObligations, entriesWithEvidence, horizonOpen, horizonDeadlines, horizonTopItems, horizonResponseRequired] =
     await Promise.all([
       prisma.complianceMatrixEntry.findMany({
         select: {
@@ -118,6 +118,12 @@ async function getDashboardData() {
         orderBy: [{ priority: "asc" }, { publishedDate: "desc" }],
         take: 5,
       }),
+      prisma.horizonItem.count({
+        where: {
+          requiresFirmResponse: true,
+          status: { in: ["consultation", "proposed_change"] },
+        },
+      }),
     ]);
 
   // Secondary query: obligation details for top gaps
@@ -150,6 +156,7 @@ async function getDashboardData() {
     horizonOpen,
     horizonDeadlines,
     horizonTopItems,
+    horizonResponseRequired,
   };
 }
 
@@ -388,6 +395,7 @@ export default async function Dashboard() {
           <HorizonWidget
             openCount={data.horizonOpen}
             deadlineCount={data.horizonDeadlines}
+            responseRequiredCount={data.horizonResponseRequired}
             topItems={data.horizonTopItems.map((item) => ({
               ...item,
               responseDeadline: item.responseDeadline?.toISOString() ?? null,

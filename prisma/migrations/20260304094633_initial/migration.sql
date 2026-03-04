@@ -68,6 +68,7 @@ CREATE TABLE "Regulator" (
     "jurisdiction" TEXT NOT NULL,
     "website" TEXT,
     "rssFeedUrl" TEXT,
+    "sourceType" TEXT NOT NULL DEFAULT 'primary_regulator',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Regulator_pkey" PRIMARY KEY ("id")
@@ -321,6 +322,97 @@ CREATE TABLE "AuditLog" (
     CONSTRAINT "AuditLog_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "HorizonItem" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "sourceType" TEXT NOT NULL,
+    "itemType" TEXT NOT NULL,
+    "regulatorId" TEXT,
+    "summary" TEXT NOT NULL,
+    "sourceUrl" TEXT,
+    "referenceNumber" TEXT,
+    "publishedDate" TIMESTAMP(3),
+    "responseDeadline" TIMESTAMP(3),
+    "effectiveDate" TIMESTAMP(3),
+    "status" TEXT NOT NULL DEFAULT 'consultation',
+    "priority" TEXT NOT NULL DEFAULT 'medium',
+    "rawContent" TEXT,
+    "aiClassified" BOOLEAN NOT NULL DEFAULT false,
+    "aiClassification" JSONB,
+    "feedEntryId" TEXT,
+    "parentId" TEXT,
+    "handbookNoticeNumber" INTEGER,
+    "createdById" TEXT,
+    "jurisdictions" TEXT[],
+    "topicAreas" TEXT[],
+    "clientSectorRelevance" TEXT[],
+    "requiresFirmResponse" BOOLEAN NOT NULL DEFAULT false,
+    "agBriefingPublished" BOOLEAN NOT NULL DEFAULT false,
+    "responseUrl" TEXT,
+    "estimatedFinalRuleDate" TIMESTAMP(3),
+    "relatedLegislation" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "HorizonItem_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "HorizonRegulationLink" (
+    "id" TEXT NOT NULL,
+    "horizonItemId" TEXT NOT NULL,
+    "regulationId" TEXT NOT NULL,
+    "confidence" DOUBLE PRECISION,
+    "source" TEXT NOT NULL DEFAULT 'ai',
+
+    CONSTRAINT "HorizonRegulationLink_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "HorizonObligationLink" (
+    "id" TEXT NOT NULL,
+    "horizonItemId" TEXT NOT NULL,
+    "obligationId" TEXT NOT NULL,
+    "impactType" TEXT NOT NULL DEFAULT 'unknown',
+    "confidence" DOUBLE PRECISION,
+    "source" TEXT NOT NULL DEFAULT 'ai',
+
+    CONSTRAINT "HorizonObligationLink_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "HorizonCrossReference" (
+    "id" TEXT NOT NULL,
+    "fromItemId" TEXT NOT NULL,
+    "toItemId" TEXT NOT NULL,
+    "relationship" TEXT NOT NULL,
+    "confidence" DOUBLE PRECISION,
+    "source" TEXT NOT NULL DEFAULT 'ai',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "HorizonCrossReference_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "FeedSource" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "regulatorId" TEXT,
+    "feedUrl" TEXT NOT NULL,
+    "feedType" TEXT NOT NULL,
+    "isActive" BOOLEAN NOT NULL DEFAULT true,
+    "lastPolledAt" TIMESTAMP(3),
+    "lastEntryAt" TIMESTAMP(3),
+    "lastErrorAt" TIMESTAMP(3),
+    "lastError" TEXT,
+    "pollInterval" INTEGER NOT NULL DEFAULT 360,
+    "filterTerms" TEXT[],
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "FeedSource_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
@@ -411,6 +503,48 @@ CREATE INDEX "BatchJobItem_documentId_idx" ON "BatchJobItem"("documentId");
 -- CreateIndex
 CREATE INDEX "AuditLog_entityType_entityId_idx" ON "AuditLog"("entityType", "entityId");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "HorizonItem_feedEntryId_key" ON "HorizonItem"("feedEntryId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "HorizonItem_handbookNoticeNumber_key" ON "HorizonItem"("handbookNoticeNumber");
+
+-- CreateIndex
+CREATE INDEX "HorizonItem_regulatorId_idx" ON "HorizonItem"("regulatorId");
+
+-- CreateIndex
+CREATE INDEX "HorizonItem_status_idx" ON "HorizonItem"("status");
+
+-- CreateIndex
+CREATE INDEX "HorizonItem_publishedDate_idx" ON "HorizonItem"("publishedDate");
+
+-- CreateIndex
+CREATE INDEX "HorizonItem_itemType_idx" ON "HorizonItem"("itemType");
+
+-- CreateIndex
+CREATE INDEX "HorizonItem_parentId_idx" ON "HorizonItem"("parentId");
+
+-- CreateIndex
+CREATE INDEX "HorizonRegulationLink_regulationId_idx" ON "HorizonRegulationLink"("regulationId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "HorizonRegulationLink_horizonItemId_regulationId_key" ON "HorizonRegulationLink"("horizonItemId", "regulationId");
+
+-- CreateIndex
+CREATE INDEX "HorizonObligationLink_obligationId_idx" ON "HorizonObligationLink"("obligationId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "HorizonObligationLink_horizonItemId_obligationId_key" ON "HorizonObligationLink"("horizonItemId", "obligationId");
+
+-- CreateIndex
+CREATE INDEX "HorizonCrossReference_toItemId_idx" ON "HorizonCrossReference"("toItemId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "HorizonCrossReference_fromItemId_toItemId_key" ON "HorizonCrossReference"("fromItemId", "toItemId");
+
+-- CreateIndex
+CREATE INDEX "FeedSource_regulatorId_idx" ON "FeedSource"("regulatorId");
+
 -- AddForeignKey
 ALTER TABLE "Account" ADD CONSTRAINT "Account_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -476,3 +610,33 @@ ALTER TABLE "ObligationChange" ADD CONSTRAINT "ObligationChange_obligationId_fke
 
 -- AddForeignKey
 ALTER TABLE "BatchJobItem" ADD CONSTRAINT "BatchJobItem_batchJobId_fkey" FOREIGN KEY ("batchJobId") REFERENCES "BatchJob"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonItem" ADD CONSTRAINT "HorizonItem_regulatorId_fkey" FOREIGN KEY ("regulatorId") REFERENCES "Regulator"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonItem" ADD CONSTRAINT "HorizonItem_parentId_fkey" FOREIGN KEY ("parentId") REFERENCES "HorizonItem"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonItem" ADD CONSTRAINT "HorizonItem_createdById_fkey" FOREIGN KEY ("createdById") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonRegulationLink" ADD CONSTRAINT "HorizonRegulationLink_horizonItemId_fkey" FOREIGN KEY ("horizonItemId") REFERENCES "HorizonItem"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonRegulationLink" ADD CONSTRAINT "HorizonRegulationLink_regulationId_fkey" FOREIGN KEY ("regulationId") REFERENCES "Regulation"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonObligationLink" ADD CONSTRAINT "HorizonObligationLink_horizonItemId_fkey" FOREIGN KEY ("horizonItemId") REFERENCES "HorizonItem"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonObligationLink" ADD CONSTRAINT "HorizonObligationLink_obligationId_fkey" FOREIGN KEY ("obligationId") REFERENCES "Obligation"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonCrossReference" ADD CONSTRAINT "HorizonCrossReference_fromItemId_fkey" FOREIGN KEY ("fromItemId") REFERENCES "HorizonItem"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "HorizonCrossReference" ADD CONSTRAINT "HorizonCrossReference_toItemId_fkey" FOREIGN KEY ("toItemId") REFERENCES "HorizonItem"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "FeedSource" ADD CONSTRAINT "FeedSource_regulatorId_fkey" FOREIGN KEY ("regulatorId") REFERENCES "Regulator"("id") ON DELETE SET NULL ON UPDATE CASCADE;

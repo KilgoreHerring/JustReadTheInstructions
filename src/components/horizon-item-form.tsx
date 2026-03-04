@@ -2,7 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { HORIZON_ITEM_TYPES, HORIZON_PRIORITIES } from "@/lib/utils";
+import {
+  HORIZON_ITEM_TYPES,
+  HORIZON_PRIORITIES,
+  HORIZON_JURISDICTIONS,
+  HORIZON_TOPIC_AREAS,
+  HORIZON_CLIENT_SECTORS,
+} from "@/lib/utils";
+import { ChevronDown, ChevronRight } from "lucide-react";
 
 interface Regulator {
   id: string;
@@ -22,6 +29,13 @@ interface FormState {
   sourceUrl: string;
   priority: string;
   rawContent: string;
+  jurisdictions: string[];
+  topicAreas: string[];
+  clientSectorRelevance: string[];
+  requiresFirmResponse: boolean;
+  responseUrl: string;
+  estimatedFinalRuleDate: string;
+  relatedLegislation: string;
 }
 
 const initialState: FormState = {
@@ -36,10 +50,54 @@ const initialState: FormState = {
   sourceUrl: "",
   priority: "medium",
   rawContent: "",
+  jurisdictions: [],
+  topicAreas: [],
+  clientSectorRelevance: [],
+  requiresFirmResponse: false,
+  responseUrl: "",
+  estimatedFinalRuleDate: "",
+  relatedLegislation: "",
 };
 
 const inputClass =
   "w-full border border-[var(--border)] rounded-md px-3 py-2 text-sm bg-[var(--background)] focus:border-[var(--accent)] focus:outline-none transition-colors";
+
+function CheckboxGroup({
+  label,
+  options,
+  selected,
+  onChange,
+}: {
+  label: string;
+  options: Record<string, { label: string }>;
+  selected: string[];
+  onChange: (values: string[]) => void;
+}) {
+  return (
+    <div>
+      <p className="text-sm font-medium mb-1.5">{label}</p>
+      <div className="flex flex-wrap gap-2">
+        {Object.entries(options).map(([key, meta]) => (
+          <label key={key} className="flex items-center gap-1.5 text-sm cursor-pointer">
+            <input
+              type="checkbox"
+              checked={selected.includes(key)}
+              onChange={(e) => {
+                if (e.target.checked) {
+                  onChange([...selected, key]);
+                } else {
+                  onChange(selected.filter((v) => v !== key));
+                }
+              }}
+              className="accent-[var(--accent)]"
+            />
+            {meta.label}
+          </label>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function HorizonItemForm({ regulators }: { regulators: Regulator[] }) {
   const router = useRouter();
@@ -47,6 +105,8 @@ export function HorizonItemForm({ regulators }: { regulators: Regulator[] }) {
   const [loading, setLoading] = useState(false);
   const [extracting, setExtracting] = useState(false);
   const [error, setError] = useState("");
+  const [taxonomyOpen, setTaxonomyOpen] = useState(false);
+  const [consultationOpen, setConsultationOpen] = useState(false);
 
   const setField = <K extends keyof FormState>(key: K, value: FormState[K]) =>
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -58,8 +118,6 @@ export function HorizonItemForm({ regulators }: { regulators: Regulator[] }) {
     if (/^(CP|PS|GC|FG|TR|DP|FS)\d/.test(ref)) {
       const fca = regulators.find((r) => r.abbreviation === "FCA");
       if (fca) setField("regulatorId", fca.id);
-    } else if (/^SI\s?\d/.test(ref)) {
-      // Statutory instrument — no specific regulator
     }
   }, [form.referenceNumber, form.regulatorId, regulators]);
 
@@ -114,6 +172,13 @@ export function HorizonItemForm({ regulators }: { regulators: Regulator[] }) {
           sourceUrl: form.sourceUrl || null,
           priority: form.priority,
           rawContent: form.rawContent || null,
+          jurisdictions: form.jurisdictions,
+          topicAreas: form.topicAreas,
+          clientSectorRelevance: form.clientSectorRelevance,
+          requiresFirmResponse: form.requiresFirmResponse,
+          responseUrl: form.responseUrl || null,
+          estimatedFinalRuleDate: form.estimatedFinalRuleDate || null,
+          relatedLegislation: form.relatedLegislation || null,
         }),
       });
 
@@ -280,6 +345,101 @@ export function HorizonItemForm({ regulators }: { regulators: Regulator[] }) {
           className={inputClass}
           placeholder="https://..."
         />
+      </div>
+
+      {/* Taxonomy section (collapsible) */}
+      <div className="border border-[var(--border)] rounded-lg">
+        <button
+          type="button"
+          onClick={() => setTaxonomyOpen(!taxonomyOpen)}
+          className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium hover:bg-[var(--muted)] transition-colors"
+        >
+          {taxonomyOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+          Taxonomy
+          {(form.jurisdictions.length > 0 || form.topicAreas.length > 0 || form.clientSectorRelevance.length > 0) && (
+            <span className="text-[11px] text-[var(--muted-foreground)] font-normal">
+              ({form.jurisdictions.length + form.topicAreas.length + form.clientSectorRelevance.length} selected)
+            </span>
+          )}
+        </button>
+        {taxonomyOpen && (
+          <div className="px-4 pb-4 space-y-4 border-t border-[var(--border)]">
+            <div className="pt-3" />
+            <CheckboxGroup
+              label="Jurisdictions"
+              options={HORIZON_JURISDICTIONS}
+              selected={form.jurisdictions}
+              onChange={(v) => setField("jurisdictions", v)}
+            />
+            <CheckboxGroup
+              label="Topic Areas"
+              options={HORIZON_TOPIC_AREAS}
+              selected={form.topicAreas}
+              onChange={(v) => setField("topicAreas", v)}
+            />
+            <CheckboxGroup
+              label="Client Sectors"
+              options={HORIZON_CLIENT_SECTORS}
+              selected={form.clientSectorRelevance}
+              onChange={(v) => setField("clientSectorRelevance", v)}
+            />
+            <label className="flex items-center gap-2 text-sm cursor-pointer">
+              <input
+                type="checkbox"
+                checked={form.requiresFirmResponse}
+                onChange={(e) => setField("requiresFirmResponse", e.target.checked)}
+                className="accent-[var(--accent)]"
+              />
+              Requires firm response
+            </label>
+          </div>
+        )}
+      </div>
+
+      {/* Consultation details (collapsible) */}
+      <div className="border border-[var(--border)] rounded-lg">
+        <button
+          type="button"
+          onClick={() => setConsultationOpen(!consultationOpen)}
+          className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium hover:bg-[var(--muted)] transition-colors"
+        >
+          {consultationOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+          Consultation Details
+        </button>
+        {consultationOpen && (
+          <div className="px-4 pb-4 space-y-3 border-t border-[var(--border)]">
+            <div className="pt-3" />
+            <div>
+              <label className="block text-sm font-medium mb-1">Response URL</label>
+              <input
+                type="url"
+                value={form.responseUrl}
+                onChange={(e) => setField("responseUrl", e.target.value)}
+                className={inputClass}
+                placeholder="Direct link to response portal..."
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1">Estimated Final Rule Date</label>
+              <input
+                type="date"
+                value={form.estimatedFinalRuleDate}
+                onChange={(e) => setField("estimatedFinalRuleDate", e.target.value)}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1">Related Legislation</label>
+              <input
+                type="text"
+                value={form.relatedLegislation}
+                onChange={(e) => setField("relatedLegislation", e.target.value)}
+                className={inputClass}
+                placeholder="e.g. FSMA 2023 s.XX"
+              />
+            </div>
+          </div>
+        )}
       </div>
 
       {error && (

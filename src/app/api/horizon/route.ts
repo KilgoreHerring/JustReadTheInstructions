@@ -65,6 +65,13 @@ export async function POST(request: NextRequest) {
     priority,
     rawContent,
     parentId: bodyParentId,
+    jurisdictions,
+    topicAreas,
+    clientSectorRelevance,
+    requiresFirmResponse,
+    responseUrl,
+    estimatedFinalRuleDate,
+    relatedLegislation,
   } = body;
 
   if (!title || !itemType || !summary) {
@@ -89,6 +96,13 @@ export async function POST(request: NextRequest) {
       priority: priority || "medium",
       rawContent: rawContent || null,
       parentId: bodyParentId || null,
+      jurisdictions: jurisdictions || [],
+      topicAreas: topicAreas || [],
+      clientSectorRelevance: clientSectorRelevance || [],
+      requiresFirmResponse: requiresFirmResponse || false,
+      responseUrl: responseUrl || null,
+      estimatedFinalRuleDate: estimatedFinalRuleDate ? new Date(estimatedFinalRuleDate) : null,
+      relatedLegislation: relatedLegislation || null,
     },
     include: {
       regulator: { select: { id: true, name: true, abbreviation: true } },

@@ -146,6 +146,47 @@ Extract ALL instruments mentioned in the notice. Be thorough.`;
   return { parentId: parent.id, instrumentCount };
 }
 
+// ── Light Classification (cheap, runs on every ingested item) ──
+
+interface LightClassificationResult {
+  jurisdictions: string[];
+  topicAreas: string[];
+  documentType: string;
+  requiresFirmResponse: boolean;
+  clientSectorRelevance: string[];
+  suggestedPriority: "high" | "medium" | "low" | "info";
+}
+
+export async function lightClassifyItem(
+  title: string,
+  summary: string,
+  regulatorAbbreviation: string | null
+): Promise<LightClassificationResult> {
+  const systemPrompt = `You are a UK financial services regulatory analyst. Classify this regulatory development.
+
+Return a JSON object with:
+- jurisdictions: array from ["UK", "EU", "UK+EU", "Global", "US"]
+- topicAreas: array from ["capital_requirements", "liquidity", "conduct_retail", "consumer_duty", "aml_cft", "payments", "insurance", "markets_mifid", "operational_resilience", "data_privacy", "esg_sustainability", "digital_crypto", "ai_technology", "consumer_credit", "governance_fitness"]
+- documentType: one of ["consultation_paper", "policy_statement", "discussion_paper", "statutory_instrument", "primary_legislation", "legislative_proposal", "handbook_notice", "supervisory_statement", "rts_its", "dear_ceo_letter", "guidance", "qa_guidance", "enforcement_notice", "speech", "report", "market_study", "other"]
+- requiresFirmResponse: boolean — true if this is a live consultation/call for input
+- clientSectorRelevance: array from ["bank", "insurer", "investment_firm", "payment_firm", "consumer_credit_firm", "asset_manager", "wealth_manager"]
+- suggestedPriority: "high" | "medium" | "low" | "info"
+
+Be concise. Only include relevant values — don't tag everything.`;
+
+  const userMessage = `Title: ${title}
+${regulatorAbbreviation ? `Regulator: ${regulatorAbbreviation}` : ""}
+Summary: ${summary}`;
+
+  return askClaudeJSON<LightClassificationResult>(
+    systemPrompt,
+    userMessage,
+    1024,
+    "light-classify",
+    { model: HAIKU_MODEL, endpoint: "light-classify" }
+  );
+}
+
 // ── AI Classification ──
 
 interface ClassificationResult {
@@ -161,6 +202,14 @@ interface ClassificationResult {
     confidence: number;
     reasoning: string;
   }[];
+  jurisdictions: string[];
+  topicAreas: string[];
+  documentType: string;
+  requiresFirmResponse: boolean;
+  clientSectorRelevance: string[];
+  estimatedFinalRuleDate: string | null;
+  relatedLegislation: string | null;
+  crossReferences: { referenceNumber: string; relationship: string }[];
   relevanceScore: number;
   suggestedPriority: "high" | "medium" | "low" | "info";
   summary: string;
@@ -189,6 +238,14 @@ ${regIndex}
 Analyse the regulatory development and return a JSON object with:
 - affectedRegulations: array of { regulationId, confidence (0-1), reasoning }
 - affectedObligations: array of { reference (e.g. "BCOBS 5.1.1R"), impactType ("amendment"|"new_requirement"|"repeal"|"clarification"|"unknown"), confidence (0-1), reasoning }
+- jurisdictions: array from ["UK", "EU", "UK+EU", "Global", "US"]
+- topicAreas: array from ["capital_requirements", "liquidity", "conduct_retail", "consumer_duty", "aml_cft", "payments", "insurance", "markets_mifid", "operational_resilience", "data_privacy", "esg_sustainability", "digital_crypto", "ai_technology", "consumer_credit", "governance_fitness"]
+- documentType: refined item type from ["consultation_paper", "policy_statement", "discussion_paper", "statutory_instrument", "primary_legislation", "legislative_proposal", "handbook_notice", "supervisory_statement", "rts_its", "dear_ceo_letter", "guidance", "qa_guidance", "enforcement_notice", "speech", "report", "market_study", "other"]
+- requiresFirmResponse: boolean
+- clientSectorRelevance: array from ["bank", "insurer", "investment_firm", "payment_firm", "consumer_credit_firm", "asset_manager", "wealth_manager"]
+- estimatedFinalRuleDate: ISO date string (YYYY-MM-DD) or null — when final rules/policy statement expected
+- relatedLegislation: string or null — primary legislation reference (e.g. "FSMA 2023 s.XX")
+- crossReferences: array of { referenceNumber (e.g. "CP25/3", "PS24/16"), relationship ("supersedes"|"implements"|"responds_to"|"amends"|"references"|"related") } — other regulatory documents mentioned
 - relevanceScore: 0-10 (how relevant this development is to the tracked regulations)
 - suggestedPriority: "high"|"medium"|"low"|"info"
 - summary: one-sentence summary of the regulatory impact
@@ -272,13 +329,45 @@ ${item.rawContent ? `Full text:\n${item.rawContent.slice(0, 8000)}` : ""}`;
     });
   }
 
-  // Update item
+  // Create cross-references by matching referenceNumbers against existing items
+  if (classification.crossReferences?.length) {
+    for (const crossRef of classification.crossReferences) {
+      if (!crossRef.referenceNumber) continue;
+      const target = await prisma.horizonItem.findFirst({
+        where: { referenceNumber: crossRef.referenceNumber },
+        select: { id: true },
+      });
+      if (target && target.id !== item.id) {
+        await prisma.horizonCrossReference.upsert({
+          where: { fromItemId_toItemId: { fromItemId: item.id, toItemId: target.id } },
+          update: { relationship: crossRef.relationship, source: "ai" },
+          create: {
+            fromItemId: item.id,
+            toItemId: target.id,
+            relationship: crossRef.relationship,
+            source: "ai",
+          },
+        });
+      }
+    }
+  }
+
+  // Update item with full classification
   await prisma.horizonItem.update({
     where: { id: item.id },
     data: {
       aiClassified: true,
       aiClassification: JSON.parse(JSON.stringify(classification)),
       priority: classification.suggestedPriority,
+      jurisdictions: classification.jurisdictions || [],
+      topicAreas: classification.topicAreas || [],
+      clientSectorRelevance: classification.clientSectorRelevance || [],
+      requiresFirmResponse: classification.requiresFirmResponse || false,
+      itemType: classification.documentType || item.itemType,
+      estimatedFinalRuleDate: classification.estimatedFinalRuleDate
+        ? new Date(classification.estimatedFinalRuleDate)
+        : null,
+      relatedLegislation: classification.relatedLegislation || null,
     },
   });
 
@@ -328,11 +417,51 @@ Return a JSON object with:
 
 // ── Feed Parsing (Phase 3) ──
 
-const REF_PATTERN = /\b(CP|PS|GC|TR|DP|FS|FG)\d{2}\/\d+\b/;
+// Reference patterns for multiple regulators
+const REF_PATTERNS = [
+  // FCA: CP26/7, PS25/3, GC26/1, TR25/1, DP26/1, FS26/1, FG26/1
+  /\b(CP|PS|GC|TR|DP|FS|FG)\d{2}\/\d+\b/,
+  // BoE/PRA: SS1/23, SoP (Statement of Policy)
+  /\bSS\d+\/\d+\b/,
+  // EU EBA: EBA/GL/2025/01, EBA/CP/2025/01
+  /\bEBA\/(GL|CP|RTS|ITS|DP|Rep)\/\d{4}\/\d+\b/,
+  // EU ESMA: ESMA70-1234567890-123
+  /\bESMA\d{2}-\d+-\d+\b/,
+  // UK SI: SI 2026/142
+  /\bSI\s?\d{4}\/\d+\b/,
+];
+
+const REF_TYPE_MAP: Record<string, string> = {
+  CP: "consultation_paper",
+  PS: "policy_statement",
+  GC: "guidance",
+  FG: "guidance",
+  TR: "report",
+  DP: "discussion_paper",
+  FS: "other",
+  SS: "supervisory_statement",
+  SI: "statutory_instrument",
+};
 
 export function extractReferenceNumber(text: string): string | null {
-  const match = text.match(REF_PATTERN);
-  return match ? match[0] : null;
+  for (const pattern of REF_PATTERNS) {
+    const match = text.match(pattern);
+    if (match) return match[0];
+  }
+  return null;
+}
+
+export function itemTypeFromReference(ref: string): string {
+  // Get prefix: first 2 letters, or special cases
+  if (ref.startsWith("EBA/GL/")) return "guidance";
+  if (ref.startsWith("EBA/CP/")) return "consultation_paper";
+  if (ref.startsWith("EBA/RTS/") || ref.startsWith("EBA/ITS/")) return "rts_its";
+  if (ref.startsWith("EBA/DP/")) return "discussion_paper";
+  if (ref.startsWith("EBA/Rep/")) return "report";
+  if (ref.startsWith("ESMA")) return "guidance";
+  if (ref.startsWith("SI")) return "statutory_instrument";
+  const prefix = ref.slice(0, 2);
+  return REF_TYPE_MAP[prefix] || "other";
 }
 
 export function matchesFilterTerms(
@@ -371,13 +500,32 @@ export function parseRSSItems(xmlText: string): FeedItem[] {
     ? [channel.item]
     : [];
 
-  return rawItems.map((item: Record<string, string>) => ({
-    title: item.title || "",
-    summary: item.description || "",
-    url: item.link || null,
-    publishedDate: safeParseDateToISO(item.pubDate),
-    feedEntryId: item.guid || item.link || item.title || "",
-  }));
+  return rawItems.map((item: Record<string, unknown>) => {
+    // RSS <link> can be a string or { "#text": "url", ... } from fast-xml-parser
+    const rawLink = item.link;
+    const link =
+      typeof rawLink === "string"
+        ? rawLink
+        : rawLink && typeof rawLink === "object" && "#text" in rawLink
+        ? String((rawLink as Record<string, unknown>)["#text"])
+        : null;
+
+    const rawGuid = item.guid;
+    const guid =
+      typeof rawGuid === "string"
+        ? rawGuid
+        : rawGuid && typeof rawGuid === "object" && "#text" in rawGuid
+        ? String((rawGuid as Record<string, unknown>)["#text"])
+        : null;
+
+    return {
+      title: String(item.title || ""),
+      summary: String(item.description || ""),
+      url: link,
+      publishedDate: safeParseDateToISO(String(item.pubDate || "")),
+      feedEntryId: guid || link || String(item.title || ""),
+    };
+  });
 }
 
 export function parseAtomItems(xmlText: string): FeedItem[] {
@@ -401,8 +549,18 @@ export function parseAtomItems(xmlText: string): FeedItem[] {
   return entries.map((entry: Record<string, unknown>) => {
     const link = entry.link;
     let href: string | null = null;
-    if (typeof link === "string") href = link;
-    else if (link && typeof link === "object" && "@_href" in link) href = String(link["@_href"]);
+    if (typeof link === "string") {
+      href = link;
+    } else if (Array.isArray(link)) {
+      // GOV.UK Atom feeds nest links as arrays with rel attributes
+      const alternate = link.find(
+        (l: Record<string, string>) => l["@_rel"] === "alternate" || !l["@_rel"]
+      );
+      if (alternate && "@_href" in alternate) href = String(alternate["@_href"]);
+      else if (link[0] && "@_href" in link[0]) href = String(link[0]["@_href"]);
+    } else if (link && typeof link === "object" && "@_href" in link) {
+      href = String((link as Record<string, string>)["@_href"]);
+    }
 
     const content = entry.content || entry.summary;
     const summary = typeof content === "string"
@@ -435,6 +593,13 @@ export async function pollFeedSource(feedSourceId: string): Promise<number> {
   const res = await fetch(source.feedUrl);
   if (!res.ok) {
     console.error(`[Horizon] Feed fetch failed for ${source.name}: ${res.status}`);
+    await prisma.feedSource.update({
+      where: { id: source.id },
+      data: {
+        lastErrorAt: new Date(),
+        lastError: `HTTP ${res.status} ${res.statusText}`,
+      },
+    });
     return 0;
   }
 
@@ -472,22 +637,18 @@ export async function pollFeedSource(feedSourceId: string): Promise<number> {
 
     // Detect item type from reference number or title
     const ref = extractReferenceNumber(item.title);
-    let itemType = "other";
-    if (ref) {
-      const prefix = ref.slice(0, 2);
-      const typeMap: Record<string, string> = {
-        CP: "consultation_paper",
-        PS: "policy_statement",
-        GC: "guidance",
-        FG: "guidance",
-        TR: "other",
-        DP: "consultation_paper",
-        FS: "other",
-      };
-      itemType = typeMap[prefix] || "other";
-    }
+    const itemType = ref ? itemTypeFromReference(ref) : "other";
 
-    await prisma.horizonItem.create({
+    // Pre-populate jurisdiction from regulator as fallback
+    const regulatorJurisdiction = source.regulator
+      ? (await prisma.regulator.findUnique({
+          where: { id: source.regulator.id },
+          select: { jurisdiction: true },
+        }))?.jurisdiction
+      : null;
+    const fallbackJurisdictions = regulatorJurisdiction ? [regulatorJurisdiction] : [];
+
+    const newItem = await prisma.horizonItem.create({
       data: {
         title: item.title,
         sourceType: source.feedType === "atom" ? "legislation_api" : "rss",
@@ -499,12 +660,46 @@ export async function pollFeedSource(feedSourceId: string): Promise<number> {
         publishedDate: item.publishedDate ? new Date(item.publishedDate) : null,
         feedEntryId: item.feedEntryId,
         aiClassified: false,
+        jurisdictions: fallbackJurisdictions,
       },
     });
+
+    // Light classification (non-fatal)
+    try {
+      const regulatorAbbrev = source.regulator
+        ? (await prisma.regulator.findUnique({
+            where: { id: source.regulator.id },
+            select: { abbreviation: true },
+          }))?.abbreviation ?? null
+        : null;
+
+      const classification = await lightClassifyItem(
+        item.title,
+        item.summary,
+        regulatorAbbrev
+      );
+
+      await prisma.horizonItem.update({
+        where: { id: newItem.id },
+        data: {
+          jurisdictions: classification.jurisdictions.length > 0
+            ? classification.jurisdictions
+            : fallbackJurisdictions,
+          topicAreas: classification.topicAreas,
+          clientSectorRelevance: classification.clientSectorRelevance,
+          requiresFirmResponse: classification.requiresFirmResponse,
+          itemType: classification.documentType || itemType,
+          priority: classification.suggestedPriority,
+        },
+      });
+    } catch (e) {
+      console.warn(`[Horizon] Light classification failed for "${item.title}":`, e);
+    }
+
     created++;
   }
 
-  // Update feed source polling timestamp
+  // Update feed source polling timestamp (and clear any prior error)
   await prisma.feedSource.update({
     where: { id: source.id },
     data: {
@@ -512,10 +707,28 @@ export async function pollFeedSource(feedSourceId: string): Promise<number> {
       lastEntryAt: items.length > 0 && items[0].publishedDate
         ? new Date(items[0].publishedDate)
         : undefined,
+      lastErrorAt: null,
+      lastError: null,
     },
   });
 
   return created;
+}
+
+/** Auto-progress consultations past their deadline to proposed_change */
+export async function updateStaleStatuses(): Promise<number> {
+  const now = new Date();
+  const result = await prisma.horizonItem.updateMany({
+    where: {
+      status: "consultation",
+      responseDeadline: { lt: now },
+    },
+    data: { status: "proposed_change" },
+  });
+  if (result.count > 0) {
+    console.log(`[Horizon] Auto-progressed ${result.count} stale consultation(s) to proposed_change`);
+  }
+  return result.count;
 }
 
 export async function pollAllFeeds(): Promise<{ total: number; byFeed: Record<string, number> }> {

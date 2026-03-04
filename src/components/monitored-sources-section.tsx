@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { RefreshCw } from "lucide-react";
-import { formatRelativeTime } from "@/lib/utils";
+import { formatRelativeTime, REGULATOR_SOURCE_TYPES } from "@/lib/utils";
 
 interface FeedSourceSummary {
   id: string;
@@ -10,7 +10,9 @@ interface FeedSourceSummary {
   feedType: string;
   isActive: boolean;
   lastPolledAt: string | null;
-  regulator: { abbreviation: string } | null;
+  lastErrorAt: string | null;
+  lastError: string | null;
+  regulator: { abbreviation: string; sourceType: string } | null;
 }
 
 interface Props {
@@ -37,6 +39,14 @@ export function MonitoredSourcesSection({ sources }: Props) {
     .sort((a, b) => new Date(b.lastPolledAt!).getTime() - new Date(a.lastPolledAt!).getTime())[0]
     ?.lastPolledAt ?? null;
 
+  // Group feeds by source type
+  const grouped: Record<string, FeedSourceSummary[]> = {};
+  for (const source of sources) {
+    const sourceType = source.regulator?.sourceType || "primary_regulator";
+    if (!grouped[sourceType]) grouped[sourceType] = [];
+    grouped[sourceType].push(source);
+  }
+
   async function handlePoll() {
     setPolling(true);
     setPollResult(null);
@@ -51,6 +61,17 @@ export function MonitoredSourcesSection({ sources }: Props) {
     } finally {
       setPolling(false);
     }
+  }
+
+  function getStatusDot(source: FeedSourceSummary) {
+    if (!source.isActive) return "bg-[var(--muted-foreground)]";
+    if (source.lastErrorAt) {
+      // Error within last 24 hours
+      const errorAge = Date.now() - new Date(source.lastErrorAt).getTime();
+      if (errorAge < 24 * 60 * 60 * 1000) return "bg-[var(--status-non-compliant-bg)]";
+      return "bg-[var(--status-in-progress-bg)]"; // Stale error
+    }
+    return "bg-[var(--status-compliant-bg)]";
   }
 
   return (
@@ -80,49 +101,91 @@ export function MonitoredSourcesSection({ sources }: Props) {
         </div>
       )}
 
-      <div className="divide-y divide-[var(--border)]">
-        {sources.map((source) => (
-          <div
-            key={source.id}
-            className="flex items-center gap-3 px-4 py-2.5"
-          >
-            {/* Status dot */}
-            <span
-              className={`w-2 h-2 rounded-full shrink-0 ${
-                source.isActive
-                  ? "bg-[var(--status-compliant-bg)]"
-                  : "bg-[var(--muted-foreground)]"
-              }`}
-            />
+      {/* Grouped feeds */}
+      {Object.entries(REGULATOR_SOURCE_TYPES).map(([typeKey, typeMeta]) => {
+        const groupSources = grouped[typeKey];
+        if (!groupSources || groupSources.length === 0) return null;
+        return (
+          <div key={typeKey}>
+            <div className="px-4 py-1.5 bg-[var(--muted)] border-t border-[var(--border)]">
+              <p className="text-[11px] font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">
+                {typeMeta.label} ({groupSources.length})
+              </p>
+            </div>
+            <div className="divide-y divide-[var(--border)]">
+              {groupSources.map((source) => (
+                <div
+                  key={source.id}
+                  className="flex items-center gap-3 px-4 py-2.5"
+                >
+                  {/* Status dot */}
+                  <span
+                    className={`w-2 h-2 rounded-full shrink-0 ${getStatusDot(source)}`}
+                    title={source.lastError || undefined}
+                  />
 
-            {/* Name */}
-            <span className="text-sm font-medium flex-1 min-w-0 truncate">
-              {source.name}
-            </span>
+                  {/* Name */}
+                  <span className="text-sm font-medium flex-1 min-w-0 truncate">
+                    {source.name}
+                  </span>
 
-            {/* Feed type badge */}
-            <span className="shrink-0 px-1.5 py-0.5 rounded text-[10px] font-medium bg-[var(--muted)] text-[var(--muted-foreground)]">
-              {FEED_TYPE_LABELS[source.feedType] || source.feedType}
-            </span>
+                  {/* Feed type badge */}
+                  <span className="shrink-0 px-1.5 py-0.5 rounded text-[10px] font-medium bg-[var(--muted)] text-[var(--muted-foreground)]">
+                    {FEED_TYPE_LABELS[source.feedType] || source.feedType}
+                  </span>
 
-            {/* Regulator */}
-            {source.regulator && (
-              <span className="shrink-0 text-xs text-[var(--muted-foreground)]">
-                {source.regulator.abbreviation}
-              </span>
-            )}
+                  {/* Regulator */}
+                  {source.regulator && (
+                    <span className="shrink-0 text-xs text-[var(--muted-foreground)]">
+                      {source.regulator.abbreviation}
+                    </span>
+                  )}
 
-            {/* Last polled */}
-            <span className="shrink-0 text-xs text-[var(--muted-foreground)]">
-              {source.isActive
-                ? source.lastPolledAt
-                  ? `Polled ${formatRelativeTime(source.lastPolledAt)}`
-                  : "Not polled yet"
-                : "Inactive"}
-            </span>
+                  {/* Last polled / error */}
+                  <span className="shrink-0 text-xs text-[var(--muted-foreground)]">
+                    {!source.isActive
+                      ? "Inactive"
+                      : source.lastErrorAt && (Date.now() - new Date(source.lastErrorAt).getTime() < 24 * 60 * 60 * 1000)
+                        ? `Error ${formatRelativeTime(source.lastErrorAt)}`
+                        : source.lastPolledAt
+                          ? `Polled ${formatRelativeTime(source.lastPolledAt)}`
+                          : "Not polled yet"
+                    }
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
+        );
+      })}
+
+      {/* Ungrouped feeds (no regulator / unknown type) */}
+      {sources.filter((s) => !s.regulator?.sourceType && !grouped["primary_regulator"]?.includes(s)).length > 0 && (
+        <div>
+          <div className="px-4 py-1.5 bg-[var(--muted)] border-t border-[var(--border)]">
+            <p className="text-[11px] font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">
+              Other Sources
+            </p>
+          </div>
+          <div className="divide-y divide-[var(--border)]">
+            {sources.filter((s) => !s.regulator).map((source) => (
+              <div
+                key={source.id}
+                className="flex items-center gap-3 px-4 py-2.5"
+              >
+                <span className={`w-2 h-2 rounded-full shrink-0 ${getStatusDot(source)}`} />
+                <span className="text-sm font-medium flex-1 min-w-0 truncate">{source.name}</span>
+                <span className="shrink-0 px-1.5 py-0.5 rounded text-[10px] font-medium bg-[var(--muted)] text-[var(--muted-foreground)]">
+                  {FEED_TYPE_LABELS[source.feedType] || source.feedType}
+                </span>
+                <span className="shrink-0 text-xs text-[var(--muted-foreground)]">
+                  {source.lastPolledAt ? `Polled ${formatRelativeTime(source.lastPolledAt)}` : "Not polled yet"}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Summary footer */}
       <div className="px-4 py-2 border-t border-[var(--border)] bg-[var(--muted)]">

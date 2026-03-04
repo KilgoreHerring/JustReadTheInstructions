@@ -8,6 +8,7 @@
     "description": "The Financial Conduct Authority regulates the conduct of financial services firms and financial markets in the United Kingdom.",
     "supervisoryApproach": "conduct",
     "keyLegislation": ["Financial Services and Markets Act 2000", "Financial Services Act 2012"],
+    "sourceType": "primary_regulator",
     "active": true
   },
   {
@@ -19,6 +20,7 @@
     "description": "The Prudential Regulation Authority is responsible for the prudential regulation and supervision of banks, building societies, credit unions, insurers and major investment firms in the United Kingdom.",
     "supervisoryApproach": "prudential",
     "keyLegislation": ["Financial Services and Markets Act 2000", "Bank of England Act 1998"],
+    "sourceType": "primary_regulator",
     "active": true
   },
   {
@@ -30,6 +32,7 @@
     "description": "The European Commission proposes and enforces legislation across the European Union, including financial services regulation through directives and regulations.",
     "supervisoryApproach": "legislative",
     "keyLegislation": ["MiFID II", "PSD2", "GDPR", "Consumer Credit Directive"],
+    "sourceType": "primary_regulator",
     "active": true
   },
   {
@@ -41,6 +44,7 @@
     "description": "The Securities and Exchange Commission protects investors, maintains fair and efficient markets, and facilitates capital formation in the United States.",
     "supervisoryApproach": "conduct",
     "keyLegislation": ["Securities Act of 1933", "Securities Exchange Act of 1934", "Dodd-Frank Act"],
+    "sourceType": "primary_regulator",
     "active": true
   },
   {
@@ -52,6 +56,7 @@
     "description": "The Consumer Financial Protection Bureau is a regulatory agency responsible for consumer protection in the financial sector in the United States.",
     "supervisoryApproach": "conduct",
     "keyLegislation": ["Dodd-Frank Act", "Truth in Lending Act", "Fair Credit Reporting Act"],
+    "sourceType": "primary_regulator",
     "active": true
   },
   {
@@ -63,6 +68,7 @@
     "description": "The Information Commissioner's Office is the UK's independent supervisory authority for data protection and freedom of information rights.",
     "supervisoryApproach": "data_protection",
     "keyLegislation": ["UK GDPR", "Data Protection Act 2018", "Freedom of Information Act 2000"],
+    "sourceType": "primary_regulator",
     "active": true
   },
   {
@@ -74,6 +80,151 @@
     "description": "Primary legislation enacted by the UK Parliament. The Consumer Rights Act 2015 is enforced by the CMA and local authority Trading Standards services.",
     "supervisoryApproach": "legislative",
     "keyLegislation": ["Consumer Rights Act 2015", "Financial Services and Markets Act 2000"],
+    "sourceType": "primary_regulator",
+    "active": true
+  },
+  {
+    "id": "hmt",
+    "name": "HM Treasury",
+    "abbreviation": "HMT",
+    "jurisdiction": "UK",
+    "website": "https://www.gov.uk/government/organisations/hm-treasury",
+    "description": "HM Treasury is the government's economic and finance ministry, responsible for financial services policy and legislation.",
+    "supervisoryApproach": "legislative",
+    "keyLegislation": ["Financial Services and Markets Act 2000", "FSMA 2023"],
+    "sourceType": "primary_regulator",
+    "active": true
+  },
+  {
+    "id": "boe",
+    "name": "Bank of England",
+    "abbreviation": "BoE",
+    "jurisdiction": "UK",
+    "website": "https://www.bankofengland.co.uk",
+    "description": "The Bank of England is the central bank of the United Kingdom, responsible for monetary policy, financial stability, and supervision of payment systems.",
+    "supervisoryApproach": "prudential",
+    "keyLegislation": ["Bank of England Act 1998", "Financial Services and Markets Act 2000"],
+    "sourceType": "primary_regulator",
+    "active": true
+  },
+  {
+    "id": "eba",
+    "name": "European Banking Authority",
+    "abbreviation": "EBA",
+    "jurisdiction": "EU",
+    "website": "https://www.eba.europa.eu",
+    "description": "The EBA is an independent EU authority working to ensure effective and consistent prudential regulation and supervision across the European banking sector.",
+    "supervisoryApproach": "prudential",
+    "keyLegislation": ["CRD/CRR", "PSD2", "AMLD"],
+    "sourceType": "primary_regulator",
+    "active": true
+  },
+  {
+    "id": "esma",
+    "name": "European Securities and Markets Authority",
+    "abbreviation": "ESMA",
+    "jurisdiction": "EU",
+    "website": "https://www.esma.europa.eu",
+    "description": "ESMA is an independent EU authority that enhances investor protection and promotes stable and orderly financial markets.",
+    "supervisoryApproach": "conduct",
+    "keyLegislation": ["MiFID II", "MAR", "EMIR", "SFDR"],
+    "sourceType": "primary_regulator",
+    "active": true
+  },
+  {
+    "id": "ecb",
+    "name": "European Central Bank (Banking Supervision)",
+    "abbreviation": "ECB",
+    "jurisdiction": "EU",
+    "website": "https://www.bankingsupervision.europa.eu",
+    "description": "The ECB's banking supervision arm (SSM) directly supervises significant banks in the euro area.",
+    "supervisoryApproach": "prudential",
+    "keyLegislation": ["SSM Regulation", "CRD/CRR"],
+    "sourceType": "primary_regulator",
+    "active": true
+  },
+  {
+    "id": "fsb",
+    "name": "Financial Stability Board",
+    "abbreviation": "FSB",
+    "jurisdiction": "Global",
+    "website": "https://www.fsb.org",
+    "description": "The FSB monitors and makes recommendations about the global financial system, coordinating financial regulation across jurisdictions.",
+    "supervisoryApproach": "standard_setting",
+    "keyLegislation": [],
+    "sourceType": "standard_setter",
+    "active": true
+  },
+  {
+    "id": "bis-bcbs",
+    "name": "Bank for International Settlements / Basel Committee",
+    "abbreviation": "BIS/BCBS",
+    "jurisdiction": "Global",
+    "website": "https://www.bis.org",
+    "description": "The Basel Committee on Banking Supervision provides a forum for regular cooperation on banking supervisory matters. Its objective is to enhance understanding of key supervisory issues and improve the quality of banking supervision worldwide.",
+    "supervisoryApproach": "standard_setting",
+    "keyLegislation": ["Basel III", "Basel IV"],
+    "sourceType": "standard_setter",
+    "active": true
+  },
+  {
+    "id": "fatf",
+    "name": "Financial Action Task Force",
+    "abbreviation": "FATF",
+    "jurisdiction": "Global",
+    "website": "https://www.fatf-gafi.org",
+    "description": "FATF is the global money laundering and terrorist financing watchdog, setting international standards to prevent these illegal activities.",
+    "supervisoryApproach": "standard_setting",
+    "keyLegislation": ["FATF Recommendations"],
+    "sourceType": "standard_setter",
+    "active": true
+  },
+  {
+    "id": "isda",
+    "name": "International Swaps and Derivatives Association",
+    "abbreviation": "ISDA",
+    "jurisdiction": "Global",
+    "website": "https://www.isda.org",
+    "description": "ISDA fosters safe and efficient derivatives markets to facilitate effective risk management for all users of derivative products.",
+    "supervisoryApproach": "industry",
+    "keyLegislation": [],
+    "sourceType": "trade_body",
+    "active": true
+  },
+  {
+    "id": "uk-finance",
+    "name": "UK Finance",
+    "abbreviation": "UK Finance",
+    "jurisdiction": "UK",
+    "website": "https://www.ukfinance.org.uk",
+    "description": "UK Finance represents nearly 300 of the leading firms providing finance, banking, markets and payments-related services in or from the UK.",
+    "supervisoryApproach": "industry",
+    "keyLegislation": [],
+    "sourceType": "trade_body",
+    "active": true
+  },
+  {
+    "id": "icma",
+    "name": "International Capital Market Association",
+    "abbreviation": "ICMA",
+    "jurisdiction": "Global",
+    "website": "https://www.icmagroup.org",
+    "description": "ICMA promotes the development of the international capital and securities markets, providing industry guidance, rules and recommendations.",
+    "supervisoryApproach": "industry",
+    "keyLegislation": [],
+    "sourceType": "trade_body",
+    "active": true
+  },
+  {
+    "id": "finextra",
+    "name": "FinExtra",
+    "abbreviation": "FinExtra",
+    "jurisdiction": "Global",
+    "website": "https://www.finextra.com",
+    "description": "FinExtra is a leading source of news and information about technology innovation in financial services.",
+    "supervisoryApproach": "media",
+    "keyLegislation": [],
+    "sourceType": "news",
     "active": true
   }
 ]

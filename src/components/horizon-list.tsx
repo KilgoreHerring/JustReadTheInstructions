@@ -6,8 +6,11 @@ import {
   HORIZON_ITEM_TYPES,
   HORIZON_STATUSES,
   HORIZON_PRIORITIES,
+  HORIZON_JURISDICTIONS,
+  HORIZON_TOPIC_AREAS,
+  HORIZON_CLIENT_SECTORS,
   formatDate,
-  deadlineUrgency,
+  consultationUrgency,
 } from "@/lib/utils";
 import { ExternalLink, Plus } from "lucide-react";
 
@@ -21,6 +24,10 @@ interface HorizonItemRow {
   publishedDate: string | null;
   responseDeadline: string | null;
   sourceUrl: string | null;
+  jurisdictions: string[];
+  topicAreas: string[];
+  clientSectorRelevance: string[];
+  requiresFirmResponse: boolean;
   regulator: { id: string; name: string; abbreviation: string } | null;
   _count: { regulationLinks: number; obligationLinks: number };
 }
@@ -40,6 +47,10 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
   const [typeFilter, setTypeFilter] = useState("all");
   const [regulatorFilter, setRegulatorFilter] = useState("all");
   const [priorityFilter, setPriorityFilter] = useState("all");
+  const [jurisdictionFilter, setJurisdictionFilter] = useState("all");
+  const [topicFilter, setTopicFilter] = useState("all");
+  const [sectorFilter, setSectorFilter] = useState("all");
+  const [responseFilter, setResponseFilter] = useState(false);
 
   const filtered = items.filter((item) => {
     const matchesSearch =
@@ -50,13 +61,18 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
     const matchesType = typeFilter === "all" || item.itemType === typeFilter;
     const matchesRegulator = regulatorFilter === "all" || item.regulator?.id === regulatorFilter;
     const matchesPriority = priorityFilter === "all" || item.priority === priorityFilter;
-    return matchesSearch && matchesStatus && matchesType && matchesRegulator && matchesPriority;
+    const matchesJurisdiction = jurisdictionFilter === "all" || item.jurisdictions?.includes(jurisdictionFilter);
+    const matchesTopic = topicFilter === "all" || item.topicAreas?.includes(topicFilter);
+    const matchesSector = sectorFilter === "all" || item.clientSectorRelevance?.includes(sectorFilter);
+    const matchesResponse = !responseFilter || item.requiresFirmResponse;
+    return matchesSearch && matchesStatus && matchesType && matchesRegulator
+      && matchesPriority && matchesJurisdiction && matchesTopic && matchesSector && matchesResponse;
   });
 
   return (
     <div>
       {/* Filter bar */}
-      <div className="flex items-center gap-3 mb-4 flex-wrap">
+      <div className="flex items-center gap-3 mb-3 flex-wrap">
         <input
           type="text"
           placeholder="Search items..."
@@ -88,6 +104,36 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
             <option key={k} value={k}>{v.label}</option>
           ))}
         </select>
+      </div>
+      <div className="flex items-center gap-3 mb-4 flex-wrap">
+        <select value={jurisdictionFilter} onChange={(e) => setJurisdictionFilter(e.target.value)} className={inputClass}>
+          <option value="all">All jurisdictions</option>
+          {Object.entries(HORIZON_JURISDICTIONS).map(([k, v]) => (
+            <option key={k} value={k}>{v.label}</option>
+          ))}
+        </select>
+        <select value={topicFilter} onChange={(e) => setTopicFilter(e.target.value)} className={inputClass}>
+          <option value="all">All topics</option>
+          {Object.entries(HORIZON_TOPIC_AREAS).map(([k, v]) => (
+            <option key={k} value={k}>{v.label}</option>
+          ))}
+        </select>
+        <select value={sectorFilter} onChange={(e) => setSectorFilter(e.target.value)} className={inputClass}>
+          <option value="all">All sectors</option>
+          {Object.entries(HORIZON_CLIENT_SECTORS).map(([k, v]) => (
+            <option key={k} value={k}>{v.label}</option>
+          ))}
+        </select>
+        <label className="flex items-center gap-1.5 text-sm cursor-pointer">
+          <input
+            type="checkbox"
+            checked={responseFilter}
+            onChange={(e) => setResponseFilter(e.target.checked)}
+            className="accent-[var(--accent)]"
+          />
+          Response required
+        </label>
+        <div className="flex-1" />
         <Link
           href="/horizon/new"
           className="px-4 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-md text-sm font-medium hover:opacity-90 flex items-center gap-1.5 whitespace-nowrap"
@@ -112,7 +158,7 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
             const typeInfo = HORIZON_ITEM_TYPES[item.itemType as keyof typeof HORIZON_ITEM_TYPES];
             const statusInfo = HORIZON_STATUSES[item.status as keyof typeof HORIZON_STATUSES];
             const priorityInfo = HORIZON_PRIORITIES[item.priority as keyof typeof HORIZON_PRIORITIES];
-            const urgency = item.status === "open" ? deadlineUrgency(item.responseDeadline) : null;
+            const urgency = item.status === "consultation" ? consultationUrgency(item.responseDeadline) : null;
 
             return (
               <Link
@@ -147,6 +193,24 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
                           {priorityInfo.label}
                         </span>
                       )}
+                      {item.jurisdictions?.length > 0 && (
+                        <span className="text-[11px] text-[var(--muted-foreground)]">
+                          {item.jurisdictions.join(", ")}
+                        </span>
+                      )}
+                      {item.topicAreas?.slice(0, 2).map((topic) => {
+                        const topicInfo = HORIZON_TOPIC_AREAS[topic as keyof typeof HORIZON_TOPIC_AREAS];
+                        return topicInfo ? (
+                          <span key={topic} className="px-1.5 py-0.5 rounded text-[10px] bg-[var(--muted)] text-[var(--muted-foreground)]">
+                            {topicInfo.shortLabel}
+                          </span>
+                        ) : null;
+                      })}
+                      {item.requiresFirmResponse && (
+                        <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]">
+                          Response required
+                        </span>
+                      )}
                     </div>
 
                     {/* Title */}
@@ -160,7 +224,9 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
                       {item.responseDeadline && (
                         <span
                           className={
-                            urgency === "overdue"
+                            urgency === "closed"
+                              ? "text-[var(--status-non-compliant-text)] font-medium"
+                              : urgency === "critical"
                               ? "text-[var(--status-non-compliant-text)] font-medium"
                               : urgency === "urgent"
                               ? "text-[var(--status-non-compliant-text)]"
@@ -169,7 +235,7 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
                               : ""
                           }
                         >
-                          {urgency === "overdue" ? "Overdue — " : "Deadline "}
+                          {urgency === "closed" ? "Overdue — " : "Deadline "}
                           {formatDate(item.responseDeadline)}
                         </span>
                       )}

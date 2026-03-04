@@ -67,11 +67,20 @@ export const READABILITY_RATINGS = {
 export const HORIZON_ITEM_TYPES = {
   consultation_paper: { label: "Consultation Paper", color: "bg-[var(--horizon-cp-bg)] text-[var(--horizon-cp-text)]" },
   policy_statement: { label: "Policy Statement", color: "bg-[var(--horizon-ps-bg)] text-[var(--horizon-ps-text)]" },
+  discussion_paper: { label: "Discussion Paper", color: "bg-[var(--horizon-cp-bg)] text-[var(--horizon-cp-text)]" },
   statutory_instrument: { label: "Statutory Instrument", color: "bg-[var(--horizon-si-bg)] text-[var(--horizon-si-text)]" },
+  primary_legislation: { label: "Primary Legislation", color: "bg-[var(--horizon-si-bg)] text-[var(--horizon-si-text)]" },
+  legislative_proposal: { label: "Legislative Proposal", color: "bg-[var(--horizon-si-bg)] text-[var(--horizon-si-text)]" },
   handbook_notice: { label: "Handbook Notice", color: "bg-[var(--horizon-handbook-bg)] text-[var(--horizon-handbook-text)]" },
+  supervisory_statement: { label: "Supervisory Statement", color: "bg-[var(--horizon-ps-bg)] text-[var(--horizon-ps-text)]" },
+  rts_its: { label: "RTS/ITS", color: "bg-[var(--horizon-si-bg)] text-[var(--horizon-si-text)]" },
   dear_ceo_letter: { label: "Dear CEO Letter", color: "bg-[var(--horizon-enforcement-bg)] text-[var(--horizon-enforcement-text)]" },
   guidance: { label: "Guidance", color: "bg-[var(--horizon-other-bg)] text-[var(--horizon-other-text)]" },
+  qa_guidance: { label: "Q&A / Guidance", color: "bg-[var(--horizon-other-bg)] text-[var(--horizon-other-text)]" },
   enforcement_notice: { label: "Enforcement", color: "bg-[var(--horizon-enforcement-bg)] text-[var(--horizon-enforcement-text)]" },
+  speech: { label: "Speech", color: "bg-[var(--horizon-other-bg)] text-[var(--horizon-other-text)]" },
+  report: { label: "Report", color: "bg-[var(--horizon-other-bg)] text-[var(--horizon-other-text)]" },
+  market_study: { label: "Market Study", color: "bg-[var(--horizon-cp-bg)] text-[var(--horizon-cp-text)]" },
   other: { label: "Other", color: "bg-[var(--horizon-other-bg)] text-[var(--horizon-other-text)]" },
 } as const;
 
@@ -90,6 +99,90 @@ export const HORIZON_PRIORITIES = {
   low: { label: "Low", color: "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]" },
   info: { label: "Info", color: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]" },
 } as const;
+
+export const HORIZON_JURISDICTIONS = {
+  UK: { label: "UK", shortLabel: "UK" },
+  EU: { label: "EU", shortLabel: "EU" },
+  "UK+EU": { label: "UK + EU", shortLabel: "UK+EU" },
+  Global: { label: "Global", shortLabel: "Global" },
+  US: { label: "US", shortLabel: "US" },
+} as const;
+
+export const HORIZON_TOPIC_AREAS = {
+  capital_requirements: { label: "Capital Requirements", shortLabel: "Capital" },
+  liquidity: { label: "Liquidity & Treasury", shortLabel: "Liquidity" },
+  conduct_retail: { label: "Retail Conduct", shortLabel: "Conduct" },
+  consumer_duty: { label: "Consumer Duty", shortLabel: "ConsDuty" },
+  aml_cft: { label: "AML / CFT", shortLabel: "AML" },
+  payments: { label: "Payments & E-Money", shortLabel: "Payments" },
+  insurance: { label: "Insurance & IDD", shortLabel: "Insurance" },
+  markets_mifid: { label: "Markets & MiFID", shortLabel: "Markets" },
+  operational_resilience: { label: "Operational Resilience", shortLabel: "OpRes" },
+  data_privacy: { label: "Data & Privacy", shortLabel: "Data" },
+  esg_sustainability: { label: "ESG & Sustainability", shortLabel: "ESG" },
+  digital_crypto: { label: "Digital Assets & Crypto", shortLabel: "Crypto" },
+  ai_technology: { label: "AI & Technology", shortLabel: "AI/Tech" },
+  consumer_credit: { label: "Consumer Credit", shortLabel: "Credit" },
+  governance_fitness: { label: "Governance & Fitness", shortLabel: "Gov" },
+} as const;
+
+export const HORIZON_CLIENT_SECTORS = {
+  bank: { label: "Bank / Building Society" },
+  insurer: { label: "Insurer" },
+  investment_firm: { label: "Investment Firm" },
+  payment_firm: { label: "Payment / E-Money Firm" },
+  consumer_credit_firm: { label: "Consumer Credit Firm" },
+  asset_manager: { label: "Asset Manager" },
+  wealth_manager: { label: "Wealth Manager" },
+} as const;
+
+export const CROSS_REFERENCE_TYPES = {
+  supersedes: { label: "Supersedes" },
+  implements: { label: "Implements" },
+  responds_to: { label: "Responds to" },
+  amends: { label: "Amends" },
+  references: { label: "References" },
+  related: { label: "Related" },
+} as const;
+
+export const REGULATOR_SOURCE_TYPES = {
+  primary_regulator: { label: "Primary Regulators" },
+  standard_setter: { label: "Standard Setters" },
+  trade_body: { label: "Trade Bodies" },
+  news: { label: "News & Intelligence" },
+} as const;
+
+export function computeUrgencyBand(
+  status: string,
+  responseDeadline: string | null,
+  effectiveDate: string | null
+): "live_consultation" | "upcoming_deadline" | "recently_enacted" | "horizon_item" | "archived" {
+  if (status === "completed" || status === "withdrawn") return "archived";
+  if (status === "consultation" && responseDeadline) {
+    const days = daysUntilDeadline(responseDeadline);
+    if (days !== null && days >= 0) return "live_consultation";
+    return "upcoming_deadline";
+  }
+  if (status === "pending_change" && effectiveDate) {
+    const days = daysUntilDeadline(effectiveDate);
+    if (days !== null && days <= 90) return "upcoming_deadline";
+  }
+  if (status === "active_change") return "recently_enacted";
+  return "horizon_item";
+}
+
+export function consultationUrgency(
+  deadline: string | null
+): "critical" | "urgent" | "approaching" | "open" | "closed" | null {
+  if (!deadline) return null;
+  const days = daysUntilDeadline(deadline);
+  if (days === null) return null;
+  if (days < 0) return "closed";
+  if (days <= 7) return "critical";
+  if (days <= 30) return "urgent";
+  if (days <= 60) return "approaching";
+  return "open";
+}
 
 const PRINCIPLE_LABELS: Record<string, string> = {
   compliant: "Embedded",

@@ -173,13 +173,16 @@ async function main() {
   for (const reg of regulatorsData) {
     const created = await prisma.regulator.upsert({
       where: { id: reg.id },
-      update: {},
+      update: {
+        sourceType: (reg as Record<string, unknown>).sourceType as string | undefined ?? "primary_regulator",
+      },
       create: {
         id: reg.id,
         name: reg.name,
         abbreviation: reg.abbreviation,
         jurisdiction: reg.jurisdiction,
         website: reg.website,
+        sourceType: (reg as Record<string, unknown>).sourceType as string | undefined ?? "primary_regulator",
       },
     });
     regulators[reg.id] = created.id;
