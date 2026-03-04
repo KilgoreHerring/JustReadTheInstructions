@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { RefreshCw } from "lucide-react";
+import { RefreshCw, ChevronDown, ChevronRight } from "lucide-react";
 import { formatRelativeTime, REGULATOR_SOURCE_TYPES } from "@/lib/utils";
 
 interface FeedSourceSummary {
@@ -28,6 +28,7 @@ const FEED_TYPE_LABELS: Record<string, string> = {
 export function MonitoredSourcesSection({ sources }: Props) {
   const [polling, setPolling] = useState(false);
   const [pollResult, setPollResult] = useState<{ created: number; byFeed: Record<string, number> } | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   if (sources.length === 0) {
     return null;
@@ -76,24 +77,34 @@ export function MonitoredSourcesSection({ sources }: Props) {
 
   return (
     <div className="border border-[var(--border)] rounded-lg overflow-hidden">
-      <div className="px-4 py-3 border-b border-[var(--border)] bg-[var(--muted)] flex items-center justify-between">
-        <h2
-          className="text-sm font-semibold tracking-wide uppercase"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          Monitored Sources
-        </h2>
+      <button
+        type="button"
+        onClick={() => setIsExpanded((prev) => !prev)}
+        className="w-full px-4 py-3 border-b border-[var(--border)] bg-[var(--muted)] flex items-center justify-between cursor-pointer hover:bg-[var(--border)]/30 transition-colors"
+      >
+        <div className="flex items-center gap-2">
+          {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+          <h2
+            className="text-sm font-semibold tracking-wide uppercase"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Monitored Sources
+          </h2>
+          <span className="text-[11px] text-[var(--muted-foreground)]">
+            {sources.length} source{sources.length !== 1 ? "s" : ""} · {activeCount} active
+          </span>
+        </div>
         <button
-          onClick={handlePoll}
+          onClick={(e) => { e.stopPropagation(); handlePoll(); }}
           disabled={polling}
           className="flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-[var(--accent)] text-[var(--accent-foreground)] hover:opacity-90 disabled:opacity-50 transition-opacity"
         >
           <RefreshCw size={12} className={polling ? "animate-spin" : ""} />
           {polling ? "Polling..." : "Poll now"}
         </button>
-      </div>
+      </button>
 
-      {/* Poll result banner */}
+      {/* Poll result banner (always visible) */}
       {pollResult && (
         <div className="px-4 py-2 bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)] text-xs">
           Polled all feeds — {pollResult.created} new item{pollResult.created !== 1 ? "s" : ""} ingested.
@@ -101,6 +112,8 @@ export function MonitoredSourcesSection({ sources }: Props) {
         </div>
       )}
 
+      {/* Collapsible body */}
+      {isExpanded && <>
       {/* Grouped feeds */}
       {Object.entries(REGULATOR_SOURCE_TYPES).map(([typeKey, typeMeta]) => {
         const groupSources = grouped[typeKey];
@@ -200,6 +213,7 @@ export function MonitoredSourcesSection({ sources }: Props) {
           )}
         </p>
       </div>
+      </>}
     </div>
   );
 }

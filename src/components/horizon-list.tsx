@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   HORIZON_ITEM_TYPES,
@@ -12,7 +12,31 @@ import {
   formatDate,
   consultationUrgency,
 } from "@/lib/utils";
-import { ExternalLink, Plus } from "lucide-react";
+import { ExternalLink, Plus, ChevronLeft, ChevronRight } from "lucide-react";
+import { HandbookNoticeSpotlight } from "@/components/handbook-notice-spotlight";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type JsonValue = any;
+
+interface InstrumentChild {
+  id: string;
+  title: string;
+  summary: string;
+  effectiveDate: string | null;
+  status: string;
+  referenceNumber: string | null;
+  aiClassification: JsonValue;
+}
+
+interface HandbookNotice {
+  id: string;
+  title: string;
+  summary: string;
+  publishedDate: string | null;
+  sourceUrl: string | null;
+  handbookNoticeNumber: number | null;
+  children: InstrumentChild[];
+}
 
 interface HorizonItemRow {
   id: string;
@@ -35,12 +59,23 @@ interface HorizonItemRow {
 interface Props {
   items: HorizonItemRow[];
   regulators: { id: string; name: string; abbreviation: string }[];
+  topicCounts: Record<string, number>;
+  typeCounts: Record<string, number>;
+  handbookNotices: HandbookNotice[];
 }
+
+const ITEMS_PER_PAGE = 10;
 
 const inputClass =
   "border border-[var(--border)] rounded-md px-3 py-2 text-sm bg-[var(--background)]";
 
-export function HorizonList({ items: initialItems, regulators }: Props) {
+export function HorizonList({
+  items: initialItems,
+  regulators,
+  topicCounts,
+  typeCounts,
+  handbookNotices,
+}: Props) {
   const [items] = useState(initialItems);
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -51,6 +86,12 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
   const [topicFilter, setTopicFilter] = useState("all");
   const [sectorFilter, setSectorFilter] = useState("all");
   const [responseFilter, setResponseFilter] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Reset to page 1 when any filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, statusFilter, typeFilter, regulatorFilter, priorityFilter, jurisdictionFilter, topicFilter, sectorFilter, responseFilter]);
 
   const filtered = items.filter((item) => {
     const matchesSearch =
@@ -69,8 +110,89 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
       && matchesPriority && matchesJurisdiction && matchesTopic && matchesSector && matchesResponse;
   });
 
+  const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+  const paginatedItems = filtered.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  function getPageNumbers(): (number | "ellipsis")[] {
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+    const pages: (number | "ellipsis")[] = [1];
+    if (currentPage > 3) pages.push("ellipsis");
+    const start = Math.max(2, currentPage - 1);
+    const end = Math.min(totalPages - 1, currentPage + 1);
+    for (let i = start; i <= end; i++) pages.push(i);
+    if (currentPage < totalPages - 2) pages.push("ellipsis");
+    pages.push(totalPages);
+    return pages;
+  }
+
   return (
     <div>
+      {/* Clickable Active Topics */}
+      {Object.keys(topicCounts).length > 0 && (
+        <div className="mb-4 border border-[var(--border)] rounded-lg p-4">
+          <h2
+            className="text-sm font-semibold tracking-wide uppercase mb-3"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Active Topics
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {Object.entries(topicCounts)
+              .sort((a, b) => b[1] - a[1])
+              .map(([key, count]) => {
+                const topicInfo = HORIZON_TOPIC_AREAS[key as keyof typeof HORIZON_TOPIC_AREAS];
+                if (!topicInfo) return null;
+                const isActive = topicFilter === key;
+                return (
+                  <button
+                    key={key}
+                    onClick={() => setTopicFilter(isActive ? "all" : key)}
+                    className={`px-2 py-1 rounded text-xs transition-colors cursor-pointer ${
+                      isActive
+                        ? "bg-[var(--accent)] text-[var(--accent-foreground)] font-semibold"
+                        : "bg-[var(--muted)] text-[var(--foreground)] hover:bg-[var(--border)]"
+                    }`}
+                  >
+                    {topicInfo.label} <span className="font-semibold">{count}</span>
+                  </button>
+                );
+              })}
+          </div>
+        </div>
+      )}
+
+      {/* Clickable Type Badges */}
+      {Object.keys(typeCounts).length > 0 && (
+        <div className="flex items-center gap-3 mb-4 flex-wrap">
+          {Object.entries(HORIZON_ITEM_TYPES).map(([key, meta]) => {
+            const count = typeCounts[key] || 0;
+            if (count === 0) return null;
+            const isActive = typeFilter === key;
+            return (
+              <button
+                key={key}
+                onClick={() => setTypeFilter(isActive ? "all" : key)}
+                className={`px-2 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${meta.color} ${
+                  isActive ? "ring-2 ring-[var(--accent)] ring-offset-1" : ""
+                }`}
+              >
+                {count} {meta.label}{count !== 1 ? "s" : ""}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {/* FCA Handbook Notice Spotlight */}
+      <div className="mb-4">
+        <HandbookNoticeSpotlight notices={handbookNotices} />
+      </div>
+
       {/* Filter bar */}
       <div className="flex items-center gap-3 mb-3 flex-wrap">
         <input
@@ -145,16 +267,17 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
 
       <p className="text-xs text-[var(--muted-foreground)] mb-4">
         {filtered.length} item{filtered.length !== 1 ? "s" : ""} shown ({items.length} total)
+        {totalPages > 1 && ` · Page ${currentPage} of ${totalPages}`}
       </p>
 
-      {/* Item list */}
-      {filtered.length === 0 ? (
+      {/* Item list (paginated) */}
+      {paginatedItems.length === 0 ? (
         <div className="border border-[var(--border)] rounded-lg p-8 text-center text-sm text-[var(--muted-foreground)]">
           No horizon items found matching your filters.
         </div>
       ) : (
         <div className="border border-[var(--border)] rounded-lg divide-y divide-[var(--border)]">
-          {filtered.map((item) => {
+          {paginatedItems.map((item) => {
             const typeInfo = HORIZON_ITEM_TYPES[item.itemType as keyof typeof HORIZON_ITEM_TYPES];
             const statusInfo = HORIZON_STATUSES[item.status as keyof typeof HORIZON_STATUSES];
             const priorityInfo = HORIZON_PRIORITIES[item.priority as keyof typeof HORIZON_PRIORITIES];
@@ -265,6 +388,49 @@ export function HorizonList({ items: initialItems, regulators }: Props) {
               </Link>
             );
           })}
+        </div>
+      )}
+
+      {/* Pagination controls */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-1.5 mt-4">
+          <button
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded text-xs font-medium border border-[var(--border)] hover:bg-[var(--muted)] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          >
+            <ChevronLeft size={12} />
+            Previous
+          </button>
+
+          {getPageNumbers().map((page, i) =>
+            page === "ellipsis" ? (
+              <span key={`ellipsis-${i}`} className="px-1.5 text-xs text-[var(--muted-foreground)]">
+                ...
+              </span>
+            ) : (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+                  currentPage === page
+                    ? "bg-[var(--accent)] text-[var(--accent-foreground)]"
+                    : "border border-[var(--border)] hover:bg-[var(--muted)]"
+                }`}
+              >
+                {page}
+              </button>
+            )
+          )}
+
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded text-xs font-medium border border-[var(--border)] hover:bg-[var(--muted)] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          >
+            Next
+            <ChevronRight size={12} />
+          </button>
         </div>
       )}
     </div>

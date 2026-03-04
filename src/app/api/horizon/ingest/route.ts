@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { pollAllFeeds, updateStaleStatuses } from "@/lib/horizon-scanner";
 
+export const maxDuration = 60;
+
 export async function GET(request: NextRequest) {
   // Verify cron secret for Vercel Cron Jobs
   const authHeader = request.headers.get("authorization");

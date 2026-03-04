@@ -1,19 +1,16 @@
 import { prisma } from "@/lib/db";
 import { HorizonList } from "@/components/horizon-list";
-import { HandbookNoticeSpotlight } from "@/components/handbook-notice-spotlight";
 import { ConsultationTimeline } from "@/components/consultation-timeline";
 import { UpcomingChangesSection } from "@/components/upcoming-changes-section";
-import { RecentlyImplementedSection } from "@/components/recently-implemented-section";
 import { MonitoredSourcesSection } from "@/components/monitored-sources-section";
-import { HORIZON_STATUSES, HORIZON_ITEM_TYPES, HORIZON_PRIORITIES, HORIZON_TOPIC_AREAS } from "@/lib/utils";
-import { daysUntilDeadline, formatDate } from "@/lib/utils";
+import { HORIZON_STATUSES } from "@/lib/utils";
+import { daysUntilDeadline } from "@/lib/utils";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
 async function getHorizonData() {
   const now = new Date();
-  const threeMonthsAgo = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000);
   const thirtyDaysFromNow = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
 
   const [
@@ -21,11 +18,9 @@ async function getHorizonData() {
     regulators,
     statusCounts,
     typeCounts,
-    upcomingDeadlines,
     handbookNotices,
     openConsultations,
     upcomingChanges,
-    recentlyImplemented,
     feedSources,
     urgentConsultations,
   ] = await Promise.all([
@@ -52,16 +47,6 @@ async function getHorizonData() {
       by: ["itemType"],
       where: { status: { in: ["consultation", "proposed_change", "pending_change"] }, parentId: null },
       _count: { id: true },
-    }),
-    prisma.horizonItem.count({
-      where: {
-        parentId: null,
-        status: "consultation",
-        responseDeadline: {
-          gte: now,
-          lte: thirtyDaysFromNow,
-        },
-      },
     }),
     // Handbook notices (parent items with children)
     prisma.horizonItem.findMany({
@@ -119,22 +104,6 @@ async function getHorizonData() {
       orderBy: { effectiveDate: "asc" },
       take: 20,
     }),
-    // Recently implemented (last 3 months, top-level only)
-    prisma.horizonItem.findMany({
-      where: {
-        parentId: null,
-        status: "completed",
-        updatedAt: { gte: threeMonthsAgo },
-      },
-      select: {
-        id: true,
-        title: true,
-        effectiveDate: true,
-        regulator: { select: { abbreviation: true } },
-      },
-      orderBy: { updatedAt: "desc" },
-      take: 10,
-    }),
     // Feed sources with regulator sourceType
     prisma.feedSource.findMany({
       select: {
@@ -184,11 +153,9 @@ async function getHorizonData() {
     regulators,
     statusCounts,
     typeCounts,
-    upcomingDeadlines,
     handbookNotices,
     openConsultations,
     upcomingChanges,
-    recentlyImplemented,
     feedSources,
     urgentConsultations,
     topicCounts,
@@ -229,11 +196,6 @@ export default async function HorizonScanningPage() {
     effectiveDate: u.effectiveDate?.toISOString() ?? null,
   }));
 
-  const serialisedImplemented = data.recentlyImplemented.map((r) => ({
-    ...r,
-    effectiveDate: r.effectiveDate?.toISOString() ?? null,
-  }));
-
   const serialisedFeedSources = data.feedSources.map((f) => ({
     ...f,
     lastPolledAt: f.lastPolledAt?.toISOString() ?? null,
@@ -247,7 +209,7 @@ export default async function HorizonScanningPage() {
   }));
 
   return (
-    <div className="max-w-[1200px] mx-auto">
+    <div className="max-w-[1400px] mx-auto">
       <h1
         className="text-2xl font-semibold tracking-tight mb-6"
         style={{ fontFamily: "var(--font-heading), Georgia, serif" }}
@@ -288,7 +250,7 @@ export default async function HorizonScanningPage() {
         </div>
       )}
 
-      {/* Stats row */}
+      {/* Stats row — full width */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
         {Object.entries(HORIZON_STATUSES).map(([key, meta]) => (
           <div
@@ -307,87 +269,28 @@ export default async function HorizonScanningPage() {
         ))}
       </div>
 
-      {/* Type breakdown for open items + deadline count */}
-      {data.allItems.length > 0 && (
-        <div className="flex items-center gap-3 mb-6 flex-wrap">
-          {Object.entries(HORIZON_ITEM_TYPES).map(([key, meta]) => {
-            const count = typeMap[key] || 0;
-            if (count === 0) return null;
-            return (
-              <span key={key} className={`px-2 py-1 rounded text-xs font-medium ${meta.color}`}>
-                {count} {meta.label}{count !== 1 ? "s" : ""}
-              </span>
-            );
-          })}
-          {data.upcomingDeadlines > 0 && (
-            <span className={`px-2 py-1 rounded text-xs font-medium ${HORIZON_PRIORITIES.high.color}`}>
-              {data.upcomingDeadlines} deadline{data.upcomingDeadlines !== 1 ? "s" : ""} in next 30 days
-            </span>
-          )}
-        </div>
-      )}
+      {/* Two-column layout: main content + sidebar */}
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
+        {/* Left column: All Items + Monitored Sources */}
+        <div>
+          <HorizonList
+            items={serialisedItems}
+            regulators={data.regulators}
+            topicCounts={data.topicCounts}
+            typeCounts={typeMap}
+            handbookNotices={serialisedNotices}
+          />
 
-      {/* Topic area activity breakdown */}
-      {Object.keys(data.topicCounts).length > 0 && (
-        <div className="mb-6 border border-[var(--border)] rounded-lg p-4">
-          <h2
-            className="text-sm font-semibold tracking-wide uppercase mb-3"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Active Topics
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {Object.entries(data.topicCounts)
-              .sort((a, b) => b[1] - a[1])
-              .map(([key, count]) => {
-                const topicInfo = HORIZON_TOPIC_AREAS[key as keyof typeof HORIZON_TOPIC_AREAS];
-                if (!topicInfo) return null;
-                return (
-                  <span
-                    key={key}
-                    className="px-2 py-1 rounded text-xs bg-[var(--muted)] text-[var(--foreground)]"
-                  >
-                    {topicInfo.label} <span className="font-semibold">{count}</span>
-                  </span>
-                );
-              })}
+          <div className="mt-6">
+            <MonitoredSourcesSection sources={serialisedFeedSources} />
           </div>
         </div>
-      )}
 
-      {/* Handbook Notice Spotlight */}
-      <div className="mb-6">
-        <HandbookNoticeSpotlight notices={serialisedNotices} />
-      </div>
-
-      {/* Monitored Sources */}
-      <div className="mb-6">
-        <MonitoredSourcesSection sources={serialisedFeedSources} />
-      </div>
-
-      {/* Two-column: Consultations Timeline + Upcoming Changes */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <ConsultationTimeline items={serialisedConsultations} />
-        <UpcomingChangesSection items={serialisedUpcoming} />
-      </div>
-
-      {/* Recently Implemented */}
-      <div className="mb-8">
-        <RecentlyImplementedSection items={serialisedImplemented} />
-      </div>
-
-      {/* All Items — full filterable list */}
-      <div className="border-t border-[var(--border)] pt-6">
-        <h2
-          className="text-lg font-semibold tracking-tight mb-4"
-          style={{ fontFamily: "var(--font-heading), Georgia, serif" }}
-        >
-          All Items
-        </h2>
-        <HorizonList
-          items={serialisedItems}
-          regulators={data.regulators}
-        />
+        {/* Right column: Consultation Timeline + Upcoming Changes */}
+        <div className="space-y-6">
+          <ConsultationTimeline items={serialisedConsultations} />
+          <UpcomingChangesSection items={serialisedUpcoming} />
+        </div>
       </div>
     </div>
   );
