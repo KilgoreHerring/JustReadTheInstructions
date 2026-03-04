@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { PrismaNeon } from "@prisma/adapter-neon";
 import regulatorsData from "../data/seed/regulators.json";
 import productTypesData from "../data/seed/product-types.json";
 import consumerDutyData from "../data/seed/obligations/consumer-duty-obligations.json";
@@ -19,7 +20,16 @@ import cra2015Data from "../data/seed/obligations/cra-2015-obligations.json";
 import ccd2Data from "../data/seed/obligations/ccd2-obligations.json";
 import feedSourcesData from "../data/seed/feed-sources.json";
 
-const prisma = new PrismaClient();
+function createPrismaClient(): PrismaClient {
+  const url = process.env.tractable_DATABASE_URL || process.env.DATABASE_URL || "";
+  if (url.includes("neon.tech") || url.includes("neon-")) {
+    const adapter = new PrismaNeon({ connectionString: url });
+    return new PrismaClient({ adapter }) as unknown as PrismaClient;
+  }
+  return new PrismaClient();
+}
+
+const prisma = createPrismaClient();
 
 interface SectionData {
   section: { number: string; title: string; level: number };
