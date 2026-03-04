@@ -371,16 +371,221 @@ export default async function HorizonItemPage({
       )}
 
       {/* AI Classification details */}
-      {item.aiClassification && (
-        <div className="mb-6 border border-[var(--border)] rounded-lg p-4 bg-[var(--muted)]">
-          <h3 className="text-sm font-semibold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-            AI Classification
-          </h3>
-          <pre className="text-xs overflow-x-auto whitespace-pre-wrap" style={{ fontFamily: "var(--font-mono)" }}>
-            {JSON.stringify(item.aiClassification, null, 2)}
-          </pre>
-        </div>
-      )}
+      {item.aiClassification && (() => {
+        const ai = item.aiClassification as {
+          summary?: string;
+          relevanceScore?: number;
+          suggestedPriority?: string;
+          affectedRegulations?: { regulationId: string; confidence: number; reasoning: string }[];
+          affectedObligations?: { reference: string; obligationId?: string; impactType: string; confidence: number; reasoning: string }[];
+          crossReferences?: { referenceNumber: string; relationship: string }[];
+          estimatedFinalRuleDate?: string;
+          relatedLegislation?: string;
+        };
+
+        const confidenceColor = (c: number) =>
+          c >= 0.8 ? "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]"
+          : c >= 0.5 ? "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]"
+          : "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]";
+
+        const impactColors: Record<string, string> = {
+          amendment: "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]",
+          new_requirement: "bg-[var(--horizon-cp-bg)] text-[var(--horizon-cp-text)]",
+          repeal: "bg-[var(--status-non-compliant-bg)] text-[var(--status-non-compliant-text)]",
+          clarification: "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]",
+          unknown: "bg-[var(--status-na-bg)] text-[var(--status-na-text)]",
+        };
+
+        const impactLabels: Record<string, string> = {
+          amendment: "Amendment",
+          new_requirement: "New Requirement",
+          repeal: "Repeal",
+          clarification: "Clarification",
+          unknown: "Unknown",
+        };
+
+        const relationshipLabels: Record<string, string> = {
+          supersedes: "Supersedes",
+          implements: "Implements",
+          responds_to: "Responds to",
+          amends: "Amends",
+          references: "References",
+          related: "Related",
+        };
+
+        return (
+          <div className="mb-6 space-y-4">
+            <h2
+              className="text-lg font-semibold"
+              style={{ fontFamily: "var(--font-heading), Georgia, serif" }}
+            >
+              AI Classification
+            </h2>
+
+            {/* Summary */}
+            {ai.summary && (
+              <div className="border border-[var(--border)] rounded-lg p-4 bg-[var(--muted)]">
+                <p className="text-sm leading-relaxed">{ai.summary}</p>
+              </div>
+            )}
+
+            {/* Relevance & Priority */}
+            {(ai.relevanceScore !== undefined || ai.suggestedPriority) && (
+              <div className="flex items-center gap-3">
+                {ai.relevanceScore !== undefined && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-[var(--muted-foreground)]">Relevance</span>
+                    <span className={`px-2 py-0.5 rounded text-xs font-semibold ${
+                      ai.relevanceScore >= 7 ? "bg-[var(--status-compliant-bg)] text-[var(--status-compliant-text)]"
+                      : ai.relevanceScore >= 4 ? "bg-[var(--status-in-progress-bg)] text-[var(--status-in-progress-text)]"
+                      : "bg-[var(--status-not-assessed-bg)] text-[var(--status-not-assessed-text)]"
+                    }`}>
+                      {ai.relevanceScore}/10
+                    </span>
+                  </div>
+                )}
+                {ai.suggestedPriority && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-[var(--muted-foreground)]">Priority</span>
+                    <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                      HORIZON_PRIORITIES[ai.suggestedPriority as keyof typeof HORIZON_PRIORITIES]?.color || ""
+                    }`}>
+                      {HORIZON_PRIORITIES[ai.suggestedPriority as keyof typeof HORIZON_PRIORITIES]?.label || ai.suggestedPriority}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Affected Regulations */}
+            {ai.affectedRegulations && ai.affectedRegulations.length > 0 && (
+              <div>
+                <h3 className="text-sm font-semibold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                  Affected Regulations ({ai.affectedRegulations.length})
+                </h3>
+                <div className="border border-[var(--border)] rounded-lg divide-y divide-[var(--border)]">
+                  {ai.affectedRegulations.map((reg, i) => {
+                    const regInfo = allRegulations.find((r) => r.id === reg.regulationId);
+                    const pct = Math.round(reg.confidence * 100);
+                    return (
+                      <div key={i} className="px-4 py-3">
+                        <div className="flex items-center justify-between gap-3 mb-1.5">
+                          <p className="text-sm font-medium">
+                            {regInfo ? regInfo.title : reg.regulationId}
+                            {regInfo?.citation && (
+                              <span className="ml-1.5 text-xs text-[var(--muted-foreground)]">({regInfo.citation})</span>
+                            )}
+                          </p>
+                          <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-medium ${confidenceColor(reg.confidence)}`}>
+                            {pct}%
+                          </span>
+                        </div>
+                        <div className="w-full h-1.5 rounded-full bg-[var(--border)] mb-1.5">
+                          <div
+                            className={`h-full rounded-full ${
+                              pct >= 80 ? "bg-[var(--status-compliant-text)]"
+                              : pct >= 50 ? "bg-[var(--status-in-progress-text)]"
+                              : "bg-[var(--status-non-compliant-text)]"
+                            }`}
+                            style={{ width: `${pct}%` }}
+                          />
+                        </div>
+                        {reg.reasoning && (
+                          <details className="text-xs text-[var(--muted-foreground)]">
+                            <summary className="cursor-pointer hover:text-[var(--foreground)]">Reasoning</summary>
+                            <p className="mt-1 pl-2 border-l-2 border-[var(--border)]">{reg.reasoning}</p>
+                          </details>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Affected Obligations */}
+            {ai.affectedObligations && ai.affectedObligations.length > 0 && (
+              <div>
+                <h3 className="text-sm font-semibold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                  Affected Obligations ({ai.affectedObligations.length})
+                </h3>
+                <div className="border border-[var(--border)] rounded-lg divide-y divide-[var(--border)]">
+                  {ai.affectedObligations.map((ob, i) => {
+                    const pct = Math.round(ob.confidence * 100);
+                    return (
+                      <div key={i} className="px-4 py-3">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <span className="text-sm font-medium" style={{ fontFamily: "var(--font-mono)" }}>
+                            {ob.reference}
+                          </span>
+                          <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${
+                            impactColors[ob.impactType] || impactColors.unknown
+                          }`}>
+                            {impactLabels[ob.impactType] || ob.impactType}
+                          </span>
+                          <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${confidenceColor(ob.confidence)}`}>
+                            {pct}%
+                          </span>
+                        </div>
+                        {ob.reasoning && (
+                          <details className="text-xs text-[var(--muted-foreground)]">
+                            <summary className="cursor-pointer hover:text-[var(--foreground)]">Reasoning</summary>
+                            <p className="mt-1 pl-2 border-l-2 border-[var(--border)]">{ob.reasoning}</p>
+                          </details>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Consultation tracking from AI */}
+            {(ai.estimatedFinalRuleDate || ai.relatedLegislation) && (
+              <div className="border border-[var(--border)] rounded-lg p-4">
+                <h3 className="text-sm font-semibold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                  Consultation Tracking (AI)
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                  {ai.estimatedFinalRuleDate && (
+                    <div>
+                      <p className="text-xs text-[var(--muted-foreground)] mb-0.5">Estimated Final Rule Date</p>
+                      <p>{formatDate(ai.estimatedFinalRuleDate)}</p>
+                    </div>
+                  )}
+                  {ai.relatedLegislation && (
+                    <div>
+                      <p className="text-xs text-[var(--muted-foreground)] mb-0.5">Related Legislation</p>
+                      <p>{ai.relatedLegislation}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* AI Cross-References */}
+            {ai.crossReferences && ai.crossReferences.length > 0 && (
+              <div>
+                <h3 className="text-sm font-semibold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                  AI Cross-References ({ai.crossReferences.length})
+                </h3>
+                <div className="border border-[var(--border)] rounded-lg divide-y divide-[var(--border)]">
+                  {ai.crossReferences.map((cr, i) => (
+                    <div key={i} className="flex items-center gap-3 px-4 py-2.5">
+                      <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[var(--muted)] text-[var(--muted-foreground)]">
+                        {relationshipLabels[cr.relationship] || cr.relationship}
+                      </span>
+                      <span className="text-sm" style={{ fontFamily: "var(--font-mono)" }}>
+                        {cr.referenceNumber}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })()}
 
       {/* Child instruments (for parent handbook notices) */}
       {item.children && item.children.length > 0 && (

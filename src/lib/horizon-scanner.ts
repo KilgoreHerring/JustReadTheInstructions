@@ -415,6 +415,36 @@ Return a JSON object with:
   return result;
 }
 
+// ── Status Derivation ──
+
+/** Map document type to the appropriate lifecycle status on ingestion. */
+export function deriveInitialStatus(documentType: string): string {
+  switch (documentType) {
+    case "consultation_paper":
+    case "discussion_paper":
+    case "market_study":
+    case "legislative_proposal":
+    case "speech":
+    case "report":
+      return "consultation";
+    case "policy_statement":
+    case "supervisory_statement":
+      return "proposed_change";
+    case "dear_ceo_letter":
+    case "enforcement_notice":
+    case "guidance":
+    case "qa_guidance":
+      return "active_change";
+    case "handbook_notice":
+    case "statutory_instrument":
+    case "primary_legislation":
+    case "rts_its":
+      return "pending_change";
+    default:
+      return "consultation";
+  }
+}
+
 // ── Feed Parsing (Phase 3) ──
 
 // Reference patterns for multiple regulators
@@ -661,6 +691,7 @@ export async function pollFeedSource(feedSourceId: string): Promise<number> {
         feedEntryId: item.feedEntryId,
         aiClassified: false,
         jurisdictions: fallbackJurisdictions,
+        status: deriveInitialStatus(itemType),
       },
     });
 
@@ -679,6 +710,7 @@ export async function pollFeedSource(feedSourceId: string): Promise<number> {
         regulatorAbbrev
       );
 
+      const refinedType = classification.documentType || itemType;
       await prisma.horizonItem.update({
         where: { id: newItem.id },
         data: {
@@ -688,8 +720,9 @@ export async function pollFeedSource(feedSourceId: string): Promise<number> {
           topicAreas: classification.topicAreas,
           clientSectorRelevance: classification.clientSectorRelevance,
           requiresFirmResponse: classification.requiresFirmResponse,
-          itemType: classification.documentType || itemType,
+          itemType: refinedType,
           priority: classification.suggestedPriority,
+          status: deriveInitialStatus(refinedType),
         },
       });
     } catch (e) {
@@ -715,20 +748,53 @@ export async function pollFeedSource(feedSourceId: string): Promise<number> {
   return created;
 }
 
-/** Auto-progress consultations past their deadline to proposed_change */
+/** Auto-progress items through lifecycle based on dates */
 export async function updateStaleStatuses(): Promise<number> {
   const now = new Date();
-  const result = await prisma.horizonItem.updateMany({
+  let total = 0;
+
+  // 1. Consultation past deadline → proposed_change
+  const r1 = await prisma.horizonItem.updateMany({
     where: {
       status: "consultation",
       responseDeadline: { lt: now },
     },
     data: { status: "proposed_change" },
   });
-  if (result.count > 0) {
-    console.log(`[Horizon] Auto-progressed ${result.count} stale consultation(s) to proposed_change`);
+  if (r1.count > 0) {
+    console.log(`[Horizon] Auto-progressed ${r1.count} stale consultation(s) to proposed_change`);
   }
-  return result.count;
+  total += r1.count;
+
+  // 2. Pending change with effective date passed → active_change
+  const r2 = await prisma.horizonItem.updateMany({
+    where: {
+      status: "pending_change",
+      effectiveDate: { lt: now },
+    },
+    data: { status: "active_change" },
+  });
+  if (r2.count > 0) {
+    console.log(`[Horizon] Auto-progressed ${r2.count} pending_change(s) to active_change`);
+  }
+  total += r2.count;
+
+  // 3. Active change with effective date > 6 months ago → completed
+  const sixMonthsAgo = new Date(now);
+  sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+  const r3 = await prisma.horizonItem.updateMany({
+    where: {
+      status: "active_change",
+      effectiveDate: { lt: sixMonthsAgo },
+    },
+    data: { status: "completed" },
+  });
+  if (r3.count > 0) {
+    console.log(`[Horizon] Auto-completed ${r3.count} old active_change(s)`);
+  }
+  total += r3.count;
+
+  return total;
 }
 
 export async function pollAllFeeds(): Promise<{ total: number; byFeed: Record<string, number> }> {

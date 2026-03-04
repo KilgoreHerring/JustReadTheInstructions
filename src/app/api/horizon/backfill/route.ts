@@ -1,10 +1,48 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { lightClassifyItem } from "@/lib/horizon-scanner";
+import { lightClassifyItem, deriveInitialStatus } from "@/lib/horizon-scanner";
 
-export async function POST() {
+export async function POST(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const mode = searchParams.get("mode"); // "status" for status-only backfill
+
   try {
-    // Find items missing taxonomy data (topicAreas empty)
+    // ── Status backfill mode ──
+    if (mode === "status") {
+      const consultationTypes = [
+        "consultation_paper", "discussion_paper", "market_study",
+        "legislative_proposal", "speech", "report", "other",
+      ];
+
+      const mismatched = await prisma.horizonItem.findMany({
+        where: {
+          status: "consultation",
+          itemType: { notIn: consultationTypes },
+        },
+        select: { id: true, itemType: true },
+      });
+
+      let updated = 0;
+      for (const item of mismatched) {
+        const correctStatus = deriveInitialStatus(item.itemType);
+        if (correctStatus !== "consultation") {
+          await prisma.horizonItem.update({
+            where: { id: item.id },
+            data: { status: correctStatus },
+          });
+          updated++;
+        }
+      }
+
+      return NextResponse.json({
+        ok: true,
+        mode: "status",
+        found: mismatched.length,
+        updated,
+      });
+    }
+
+    // ── Taxonomy backfill mode (default) ──
     const items = await prisma.horizonItem.findMany({
       where: {
         topicAreas: { isEmpty: true },
@@ -31,6 +69,7 @@ export async function POST() {
           item.regulator?.abbreviation ?? null
         );
 
+        const refinedType = result.documentType || item.itemType;
         await prisma.horizonItem.update({
           where: { id: item.id },
           data: {
@@ -41,7 +80,8 @@ export async function POST() {
             clientSectorRelevance: result.clientSectorRelevance,
             requiresFirmResponse: result.requiresFirmResponse,
             priority: result.suggestedPriority,
-            itemType: result.documentType || item.itemType,
+            itemType: refinedType,
+            status: deriveInitialStatus(refinedType),
           },
         });
         classified++;
@@ -50,7 +90,6 @@ export async function POST() {
       }
     }
 
-    // Count remaining
     const remaining = await prisma.horizonItem.count({
       where: { topicAreas: { isEmpty: true } },
     });
