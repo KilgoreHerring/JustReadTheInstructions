@@ -1,7 +1,7 @@
 import { prisma } from "./db";
 import { askClaudeJSON } from "./claude";
 
-const HAIKU_MODEL = "claude-haiku-4-5-20251001";
+const HAIKU_MODEL = "claude-haiku-4-5";
 
 /** Safely parse a date string to ISO, returning null for unparseable values. */
 function safeParseDateToISO(dateStr: string | undefined | null): string | null {
